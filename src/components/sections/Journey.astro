@@ -3,7 +3,13 @@ import Icon from "../Icon.astro";
 import { Image } from "astro:assets";
 import lockup from "../../assets/convergencia-lockup.webp";
 import mark from "../../assets/convergencia-mark.webp";
-import { stageCaptions } from "../../data/journey";
+import { getDictionary } from "../../i18n";
+import { highlightBrand } from "../../i18n/locales";
+const { journey: t, hero, client, meta } = getDictionary(Astro.currentLocale);
+const { stageCaptions } = client;
+const [firstBefore, firstAfter] = t.exampleAnswers[0].split(highlightBrand);
+const [secondBefore, secondAfter] = t.exampleAnswers[1].split(highlightBrand);
+const [thirdBefore, thirdAfter] = t.exampleAnswers[2].split(highlightBrand);
 ---
 
 <section id="recorrido" class="journey" aria-labelledby="journey-title">
@@ -11,35 +17,40 @@ import { stageCaptions } from "../../data/journey";
     <div class="wrap">
       <div class="section-heading">
         <div>
-          <span class="eyebrow">EL RECORRIDO</span>
+          <span class="eyebrow">{t.eyebrow}</span>
           <h2 id="journey-title">
-            Mirá lo que pasa
+            {t.title[0]}
             <br />
-            después de preguntar.
+            {t.title[1]}
           </h2>
         </div>
         <p>
-          Una consulta se convierte en respuestas,
+          {t.intro[0]}
           <br />
-          fuentes y una lectura para decidir.
+          {t.intro[1]}
         </p>
       </div>
       <div class="journey-shell">
-        <div class="journey-nav" role="group" aria-label="Etapas del recorrido">
+        <div class="journey-nav" role="group" aria-label={t.navLabel}>
           <button data-stage="0" aria-pressed="true">
-            <span>01</span>Pregunta
+            <span>01</span>
+            {t.steps[0]}
           </button>
           <button data-stage="1" aria-pressed="false">
-            <span>02</span>Modelos
+            <span>02</span>
+            {t.steps[1]}
           </button>
           <button data-stage="2" aria-pressed="false">
-            <span>03</span>Patrones
+            <span>03</span>
+            {t.steps[2]}
           </button>
           <button data-stage="3" aria-pressed="false">
-            <span>04</span>Revisión
+            <span>04</span>
+            {t.steps[3]}
           </button>
           <button data-stage="4" aria-pressed="false">
-            <span>05</span>Informe
+            <span>05</span>
+            {t.steps[4]}
           </button>
         </div>
         <div class="journey-progress" aria-hidden="true">
@@ -47,43 +58,39 @@ import { stageCaptions } from "../../data/journey";
         </div>
         <div class="journey-canvas" data-stage-active="0">
           <div class="scene scene-question" data-scene="0">
-            <span class="scene-kicker">
-              Norte · Software de inventario · Marca ficticia
-            </span>
+            <span class="scene-kicker">{t.caseLabel}</span>
             <div class="large-question">
               <Icon name="MagnifyingGlass" />
               <span>
-                ¿Qué software de inventario
+                {t.question[0]}
                 <br />
-                conviene a una pyme?
+                {t.question[1]}
               </span>
               <span class="send-disc">
                 <Icon name="ArrowUpRight" />
               </span>
             </div>
             <div class="query-options">
-              <span>Inventario</span>
-              <span>Pymes</span>
-              <span>Integraciones</span>
+              <span>{t.options[0]}</span>
+              <span>{t.options[1]}</span>
+              <span>{t.options[2]}</span>
             </div>
-            <p class="scene-note">
-              El contexto de la pregunta cambia lo que podemos aprender.
-            </p>
+            <p class="scene-note">{t.questionNote}</p>
           </div>
           <div class="scene scene-network" data-scene="1" hidden>
             <svg class="network-connections" aria-hidden="true"></svg>
             <div class="network-query network-node" data-node="query">
               <Icon name="MagnifyingGlass" />
               <span>
-                Una consulta
+                {t.networkQuery[0]}
                 <br />
-                <strong>Inventario para pymes.</strong>
+                <strong>{t.networkQuery[1]}</strong>
               </span>
             </div>
             <div class="network-hub network-node" data-node="hub">
               <Image
                 src={mark}
-                alt="KAIRUM"
+                alt={meta.siteName}
                 loading="eager"
                 width={192}
                 height={192}
@@ -93,86 +100,85 @@ import { stageCaptions } from "../../data/journey";
               <div class="network-provider network-node" data-node="openai">
                 <img src="/assets/openai.svg" alt="" />
                 <div>
-                  OpenAI API<small>Explorando una respuesta</small>
+                  {hero.providerNames[0]}
+                  <small>{t.networkNotes[0]}</small>
                 </div>
                 <Icon name="Check" />
               </div>
               <div class="network-provider network-node" data-node="gemini">
                 <img src="/assets/gemini.svg" alt="" />
                 <div>
-                  Gemini API<small>Otra perspectiva</small>
+                  {hero.providerNames[1]}
+                  <small>{t.networkNotes[1]}</small>
                 </div>
                 <Icon name="Check" />
               </div>
               <div class="network-provider network-node" data-node="claude">
                 <img src="/assets/claude.svg" alt="" />
                 <div>
-                  Claude API<small>Su propia forma de responder</small>
+                  {hero.providerNames[2]}
+                  <small>{t.networkNotes[2]}</small>
                 </div>
                 <Icon name="Check" />
               </div>
             </div>
-            <p class="scene-note">
-              Una pregunta viaja por distintos modelos. Cada respuesta puede ser
-              diferente.
-            </p>
+            <p class="scene-note">{t.networkNote}</p>
           </div>
           <div class="scene scene-answers" data-scene="2" hidden>
             <div class="mini-answer">
               <div>
                 <img src="/assets/openai.svg" alt="" />
-                OpenAI API
+                {hero.providerNames[0]}
               </div>
               <p>
-                Para controlar stock en tiempo real, <mark>Norte</mark> es una
-                alternativa. Revisá si incluye las integraciones que necesita tu
-                equipo.
+                {firstBefore}
+                <mark>{highlightBrand}</mark>
+                {firstAfter}
               </p>
               <span>
-                <Icon name="Link" /> norte.example
+                <Icon name="Link" /> {t.answerSources[0]}
               </span>
             </div>
             <div class="mini-answer featured">
               <div>
                 <img src="/assets/gemini.svg" alt="" />
-                Gemini API
+                {hero.providerNames[1]}
               </div>
               <p>
-                <mark>Norte</mark> presenta funciones de inventario para pymes.
-                La información sobre sus integraciones no es suficiente para
-                elegir.
+                {secondBefore}
+                <mark>{highlightBrand}</mark>
+                {secondAfter}
               </p>
               <span>
-                <Icon name="Link" /> sector.example
+                <Icon name="Link" /> {t.answerSources[1]}
               </span>
             </div>
             <div class="mini-answer">
               <div>
                 <img src="/assets/claude.svg" alt="" />
-                Claude API
+                {hero.providerNames[2]}
               </div>
               <p>
-                Compará el control de stock y las integraciones de
-                <mark>Norte</mark> con tu operación antes de decidir.
+                {thirdBefore}
+                <mark>{highlightBrand}</mark>
+                {thirdAfter}
               </p>
               <span>
-                <Icon name="Link" /> guia.example
+                <Icon name="Link" /> {t.answerSources[2]}
               </span>
             </div>
-            <p class="scene-note">
-              Un patrón en las respuestas: el stock se entiende; las
-              integraciones dejan dudas.
-            </p>
+            <p class="scene-note">{t.answersNote}</p>
           </div>
           <div class="scene scene-evidence" data-scene="3" hidden>
             <article class="evidence-response">
-              <span class="doc-kicker">RESPUESTA</span>
+              <span class="doc-kicker">{t.responseLabel}</span>
               <p>
-                “<mark>Norte</mark> permite controlar stock, pero conviene
-                revisar las integraciones.”
+                {t.evidenceAnswer[0]}
+                <mark>{highlightBrand}</mark>
+                {t.evidenceAnswer[1]}
               </p>
               <span class="source-badge">
-                <Icon name="Link" /> norte.example / producto
+                <Icon name="Link" /> {t.evidenceSource}
               </span>
             </article>
             <div class="evidence-bridge">
@@ -180,68 +186,57 @@ import { stageCaptions } from "../../data/journey";
             </div>
             <article class="evidence-document">
               <div class="doc-browser">
-                <Icon name="Globe" /> norte.example
+                <Icon name="Globe" /> {t.answerSources[0]}
               </div>
-              <h3>Qué dice la fuente.</h3>
+              <h3>{t.evidenceTitle}</h3>
               <p>
-                Norte permite
-                <mark>ver el stock en tiempo real y registrar movimientos</mark>
-                en una sola plataforma.
+                {t.evidenceExcerpt[0]}
+                <mark>{t.evidenceExcerpt[1]}</mark>
+                {t.evidenceExcerpt[2]}
               </p>
               <div class="review-chip">
-                <Icon name="Eye" /> Revisión humana: la fuente no confirma
-                integraciones.
+                <Icon name="Eye" /> {t.reviewChip}
               </div>
             </article>
-            <p class="scene-note">
-              Conectamos la respuesta con la fuente y revisamos qué sostiene
-              realmente.
-            </p>
+            <p class="scene-note">{t.evidenceNote}</p>
           </div>
           <div class="scene scene-report" data-scene="4" hidden>
             <div class="report-orbit">
               <span>
-                <Icon name="Quotes" /> Patrón detectado
+                <Icon name="Quotes" /> {t.reportOrbit[0]}
               </span>
               <span>
-                <Icon name="Link" /> Fuente revisada
+                <Icon name="Link" /> {t.reportOrbit[1]}
               </span>
               <span>
-                <Icon name="CursorClick" /> Próximos pasos
+                <Icon name="CursorClick" /> {t.reportOrbit[2]}
               </span>
             </div>
             <article class="journey-report">
               <div class="report-brand">
-                <div class="brand brand-lockup" role="img" aria-label="KAIRUM">
-                  <Image
-                    src={lockup}
-                    alt=""
-                    width={1536}
-                    height={1024}
-                    loading="eager"
-                  />
+                <div
+                  class="brand brand-lockup"
+                  role="img"
+                  aria-label={meta.siteName}
+                >
+                  <Image src={lockup} alt="" loading="eager" />
                 </div>
-                <span>Ejemplo ilustrativo</span>
+                <span>{t.exampleLabel}</span>
               </div>
               <h3>
-                Una lectura clara.
+                {t.reportTitle[0]}
                 <br />
-                Para la próxima decisión.
+                {t.reportTitle[1]}
               </h3>
               <div class="report-rule"></div>
               <div class="report-summary">
-                <span>Lo que encontramos</span>
-                <p>
-                  Norte aparece por su control de stock. Las integraciones dejan
-                  una pregunta abierta.
-                </p>
-                <span>Lo que conviene revisar</span>
-                <p>Explicar las integraciones disponibles en la web.</p>
+                <span>{t.foundLabel}</span>
+                <p>{t.found}</p>
+                <span>{t.reviewLabel}</span>
+                <p>{t.review}</p>
               </div>
             </article>
-            <p class="scene-note">
-              El recorrido termina en algo que tu equipo puede conversar y usar.
-            </p>
+            <p class="scene-note">{t.reportNote}</p>
           </div>
         </div>
         <div class="journey-bottom">
@@ -249,9 +244,9 @@ import { stageCaptions } from "../../data/journey";
             {stageCaptions[0]}
           </span>
           <span class="scroll-hint">
-            <Icon name="ArrowDown" /> Avanzá con scroll o elegí una etapa
+            <Icon name="ArrowDown" /> {t.scrollHint}
           </span>
-          <span>Caso ficticio: Norte</span>
+          <span>{t.fictionalCase}</span>
         </div>
       </div>
     </div>

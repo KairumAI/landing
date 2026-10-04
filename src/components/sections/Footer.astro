@@ -1,15 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import lockup from "../../assets/convergencia-lockup.webp";
+import { getDictionary, toLocale } from "../../i18n";
+import { localeMeta, locales } from "../../i18n/locales";
+const { footer: t, header } = getDictionary(Astro.currentLocale);
+const locale = toLocale(Astro.currentLocale);
 ---
 
 <footer class="site-footer wrap">
-  <a href="#inicio" class="brand brand-lockup" aria-label="KAIRUM, inicio">
-    <Image src={lockup} alt="" width={1536} height={1024} loading="eager" />
+  <a href="#inicio" class="brand brand-lockup" aria-label={t.brandLabel}>
+    <Image src={lockup} alt="" loading="lazy" />
   </a>
-  <p>Visibilidad. Contexto. Decisiones.</p>
+  <p>{t.motto}</p>
   <div>
-    <a href="#recorrido">Cómo funciona</a>
-    <a href="#preguntas">Preguntas frecuentes</a>
+    <a href="#recorrido">{header.how}</a>
+    <a href="#preguntas">{header.faq}</a>
   </div>
+  <nav class="language-switch" aria-label={t.languageLabel}>
+    {locales.map((code) => (
+      <a
+        href={localeMeta[code].path}
+        hreflang={localeMeta[code].hreflang}
+        lang={localeMeta[code].htmlLang}
+        aria-current={code === locale ? "page" : undefined}
+      >
+        {localeMeta[code].name}
+      </a>
+    ))}
+  </nav>
 </footer>

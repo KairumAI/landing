@@ -2,49 +2,55 @@
 import Icon from "../Icon.astro";
 import { Image } from "astro:assets";
 import lockup from "../../assets/convergencia-lockup.webp";
+import { getDictionary } from "../../i18n";
+import { bookingUrl } from "../../i18n/locales";
+const { header: t, book, client } = getDictionary(Astro.currentLocale);
 ---
 
 <header class="site-header">
   <div class="nav wrap">
-    <a href="#inicio" class="brand brand-lockup" aria-label="KAIRUM, inicio">
-      <Image src={lockup} alt="" width={1536} height={1024} loading="eager" />
+    <a href="#inicio" class="brand brand-lockup" aria-label={t.brandLabel}>
+      <Image src={lockup} alt="" loading="eager" />
     </a>
-    <nav class="desktop-nav" aria-label="Principal">
-      <a href="#recorrido">Cómo funciona</a>
-      <a href="#equipos">Para quién</a>
-      <a href="#informe">El informe</a>
+    <nav class="desktop-nav" aria-label={t.navLabel}>
+      <a href="#recorrido">{t.how}</a>
+      <a href="#equipos">{t.who}</a>
+      <a href="#informe">{t.report}</a>
     </nav>
     <a
       class="button primary nav-cta"
       data-book
-      href="https://calendly.com/brunodecruz/30min"
+      href={bookingUrl}
+      aria-describedby="new-tab-hint"
       target="_blank"
       rel="noopener noreferrer"
     >
-      Book a call <Icon name="ArrowUpRight" />
+      {book.label} <Icon name="ArrowUpRight" />
     </a>
     <button
       class="motion-toggle"
       id="motion-toggle"
-      aria-label="Pausar todas las animaciones"
+      aria-label={client.motion.pauseLabel}
       aria-pressed="false"
+      data-state="playing"
     >
       <Icon name="Pause" />
-      <span>Pausar movimiento</span>
+      <Icon name="Play" />
+      <span>{client.motion.pause}</span>
     </button>
     <button
       class="icon-button menu-toggle"
-      aria-label="Abrir menú"
+      aria-label={client.menu.open}
       aria-expanded="false"
       aria-controls="mobile-nav"
     >
       <Icon name="List" />
     </button>
   </div>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Menú móvil" hidden>
-    <a href="#recorrido">Cómo funciona</a>
-    <a href="#equipos">Para quién</a>
-    <a href="#informe">El informe</a>
-    <a href="#preguntas">Preguntas frecuentes</a>
+  <nav id="mobile-nav" class="mobile-nav" aria-label={t.mobileLabel} hidden>
+    <a href="#recorrido">{t.how}</a>
+    <a href="#equipos">{t.who}</a>
+    <a href="#informe">{t.report}</a>
+    <a href="#preguntas">{t.faq}</a>
   </nav>
 </header>

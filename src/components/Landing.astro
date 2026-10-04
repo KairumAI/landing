@@ -1,0 +1,103 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "./sections/Header.astro";
+import Hero from "./sections/Hero.astro";
+import Context from "./sections/Context.astro";
+import Journey from "./sections/Journey.astro";
+import Answers from "./sections/Answers.astro";
+import Patterns from "./sections/Patterns.astro";
+import Sources from "./sections/Sources.astro";
+import Audience from "./sections/Audience.astro";
+import Report from "./sections/Report.astro";
+import Faq from "./sections/Faq.astro";
+import Contact from "./sections/Contact.astro";
+import Footer from "./sections/Footer.astro";
+import ReportDialog from "./sections/ReportDialog.astro";
+import IconSprite from "./IconSprite.astro";
+import { getDictionary, toLocale } from "../i18n";
+import { localeMeta, locales } from "../i18n/locales";
+
+const locale = toLocale(Astro.currentLocale);
+const t = getDictionary(locale);
+const home = new URL("/", Astro.site).href;
+const page = new URL(localeMeta[locale].path, Astro.site).href;
+const image = new URL(localeMeta[locale].ogImage, Astro.site).href;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${home}#organization`,
+      name: t.meta.siteName,
+      url: home,
+      logo: new URL("/apple-touch-icon.png", Astro.site).href,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${home}#website`,
+      name: t.meta.siteName,
+      url: home,
+      inLanguage: locales.map((code) => localeMeta[code].htmlLang),
+      publisher: { "@id": `${home}#organization` },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${page}#webpage`,
+      url: page,
+      inLanguage: localeMeta[locale].htmlLang,
+      isPartOf: { "@id": `${home}#website` },
+      about: { "@id": `${home}#organization` },
+      primaryImageOfPage: image,
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${page}#preguntas`,
+      inLanguage: localeMeta[locale].htmlLang,
+      mainEntity: t.faq.items.map(({ question, answer }) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+    },
+  ],
+};
+---
+
+<Base>
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData).replaceAll("<", "\\u003c")}
+  />
+  <IconSprite />
+  <a class="skip" href="#contenido">
+    {t.skipLink}
+  </a>
+  <span id="new-tab-hint" hidden>
+    {t.book.newTab}
+  </span>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <Context />
+    <Journey />
+    <Answers />
+    <Patterns />
+    <Sources />
+    <Audience />
+    <Report />
+    <Faq />
+    <Contact />
+  </main>
+  <Footer />
+  <ReportDialog />
+  <script
+    type="application/json"
+    id="i18n-client"
+    set:html={JSON.stringify(t.client).replaceAll("<", "\\u003c")}
+  />
+  <script>
+    import "../scripts/main.ts";
+  </script>
+</Base>

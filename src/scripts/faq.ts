@@ -1,4 +1,5 @@
-import { $, $$, gsap, ScrollTrigger } from "./dom";
+import { $, $$ } from "./dom";
+import { ease } from "./anim";
 import { motion, faqControllers } from "./state";
 
 $$<HTMLDetailsElement>(".faq-list details").forEach((details) => {
@@ -6,17 +7,18 @@ $$<HTMLDetailsElement>(".faq-list details").forEach((details) => {
   const answer = $(".faq-answer", details);
   const content = $("p", answer);
   let expanded = details.open;
-  let transition: gsap.core.Timeline | null = null;
+  let transition: Animation[] = [];
+
+  function stop() {
+    transition.forEach((animation) => animation.cancel());
+    transition = [];
+  }
 
   function finish() {
-    if (!transition) return;
-    transition.kill();
-    transition = null;
+    if (!transition.length) return;
+    stop();
     details.open = expanded;
     delete details.dataset.faqAnimating;
-    gsap.set(answer, { clearProps: "height" });
-    gsap.set(content, { clearProps: "opacity,transform" });
-    ScrollTrigger.refresh();
   }
 
   summary.addEventListener("click", (event) => {
@@ -25,50 +27,50 @@ $$<HTMLDetailsElement>(".faq-list details").forEach((details) => {
       ? answer.getBoundingClientRect().height
       : 0;
     const wasClosed = !details.open;
+    // Reversals continue from where the running transition left the text.
+    const { opacity, translate } = getComputedStyle(content);
     expanded = !expanded;
-    transition?.kill();
-    transition = null;
+    stop();
     details.dataset.faqExpanded = String(expanded);
 
     if (motion.reduced || motion.globalPaused || document.hidden) {
       details.open = expanded;
       delete details.dataset.faqAnimating;
-      gsap.set(answer, { clearProps: "height" });
-      gsap.set(content, { clearProps: "opacity,transform" });
-      ScrollTrigger.refresh();
       return;
     }
 
     // Keep native details open until the closing animation has finished.
     details.open = true;
     details.dataset.faqAnimating = expanded ? "opening" : "closing";
-    gsap.set(answer, { height: startHeight });
-    if (wasClosed) gsap.set(content, { opacity: 0, y: 7 });
-    transition = gsap.timeline({ onComplete: finish });
-    transition
-      .to(
-        answer,
-        {
-          height: expanded ? content.offsetHeight : 0,
-          duration: expanded ? 0.36 : 0.3,
-          ease: "power2.inOut",
-        },
-        0,
-      )
-      .to(
-        content,
-        {
-          opacity: expanded ? 1 : 0,
-          y: expanded ? 0 : -4,
-          duration: expanded ? 0.28 : 0.2,
-          ease: "power2.out",
-        },
-        expanded ? 0.06 : 0,
-      );
+    const height = answer.animate(
+      [
+        { height: `${startHeight}px` },
+        { height: `${expanded ? content.offsetHeight : 0}px` },
+      ],
+      {
+        duration: expanded ? 360 : 300,
+        easing: ease.cubicInOut,
+        fill: "forwards",
+      },
+    );
+    const text = content.animate(
+      [
+        wasClosed ? { opacity: 0, translate: "0 7px" } : { opacity, translate },
+        { opacity: expanded ? 1 : 0, translate: `0 ${expanded ? 0 : -4}px` },
+      ],
+      {
+        duration: expanded ? 280 : 200,
+        delay: expanded ? 60 : 0,
+        easing: ease.cubicOut,
+        fill: "both",
+      },
+    );
+    transition = [height, text];
+    height.onfinish = finish;
   });
 
   details.addEventListener("toggle", () => {
-    if (transition) return;
+    if (transition.length) return;
     expanded = details.open;
     details.dataset.faqExpanded = String(expanded);
   });

@@ -1,67 +1,60 @@
 ---
 import Icon from "../Icon.astro";
-import { providerExamples } from "../../data/providers";
-import { heroQueryText } from "../../data/hero";
-const [beforeBrand, afterBrand] = providerExamples[0].answer.split("Norte");
+import { getDictionary } from "../../i18n";
+import { highlightBrand } from "../../i18n/locales";
+const { answers: t, client } = getDictionary(Astro.currentLocale);
+const [beforeBrand, afterBrand] =
+  client.providerExamples[0].answer.split(highlightBrand);
 ---
 
 <section id="plataforma" class="answer-section wrap section-pad">
   <div class="split">
     <div class="feature-copy reveal">
-      <span class="eyebrow">DISTINTAS PERSPECTIVAS</span>
+      <span class="eyebrow">{t.eyebrow}</span>
       <h2>
-        Una misma pregunta.
+        {t.title[0]}
         <br />
-        Distintas maneras
+        {t.title[1]}
         <br />
-        de contar tu marca.
+        {t.title[2]}
       </h2>
-      <p>
-        La mención es solo una parte. Importan las palabras, las alternativas y
-        el contexto en el que aparecés.
-      </p>
-      <div
-        class="provider-switch"
-        role="group"
-        aria-label="Elegir respuesta de ejemplo"
-      >
+      <p>{t.intro}</p>
+      <div class="provider-switch" role="group" aria-label={t.selectLabel}>
         <button data-provider="0" aria-pressed="true">
           <img src="/assets/openai.svg" alt="" />
-          OpenAI API
+          {t.providerButtons[0]}
         </button>
         <button data-provider="1" aria-pressed="false">
           <img src="/assets/gemini.svg" alt="" />
-          Gemini
+          {t.providerButtons[1]}
         </button>
         <button data-provider="2" aria-pressed="false">
           <img src="/assets/claude.svg" alt="" />
-          Claude
+          {t.providerButtons[2]}
         </button>
       </div>
-      <span class="small-muted">
-        Respuestas ilustrativas de modelos vía API.
-      </span>
+      <span class="small-muted">{t.apiNote}</span>
     </div>
-    <div class="answer-stack" aria-live="polite">
+    <div class="answer-stack" aria-live="polite" data-selected-provider="0">
       <div class="stack-ghost ghost-back" aria-hidden="true"></div>
       <div class="stack-ghost ghost-mid" aria-hidden="true"></div>
       <article class="answer-card">
         <div class="response-heading">
           <img id="stack-logo" src="/assets/openai.svg" alt="" />
-          <span id="stack-provider">{providerExamples[0].name}</span>
-          <span>Ejemplo ilustrativo</span>
+          <span id="stack-provider">{client.providerExamples[0].name}</span>
+          <span>{t.exampleLabel}</span>
         </div>
-        <div class="stack-question">{heroQueryText}</div>
+        <div class="stack-question">{client.heroQuery}</div>
         <blockquote id="stack-answer">
           {beforeBrand}
-          <mark>Norte</mark>
+          <mark>{highlightBrand}</mark>
           {afterBrand}
         </blockquote>
         <div class="reading-note">
           <Icon name="Eye" />
           <div>
-            <span>Lo que cambia</span>
-            <p id="stack-insight">{providerExamples[0].insight}</p>
+            <span>{t.changeLabel}</span>
+            <p id="stack-insight">{client.providerExamples[0].insight}</p>
           </div>
         </div>
       </article>

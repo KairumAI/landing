@@ -1,6 +1,6 @@
 @font-face {
   font-family: Inter;
-  src: url("/assets/inter.woff2") format("woff2");
+  src: url("../assets/fonts/inter.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -395,19 +395,12 @@ mark {
 .brand.brand-lockup {
   flex-shrink: 0;
   display: block;
-  position: relative;
   width: 194px;
-  height: auto;
-  aspect-ratio: 1220 / 310;
-  overflow: hidden;
 }
 .brand.brand-lockup img {
-  position: absolute;
-  width: 125.90164%;
-  max-width: none;
+  display: block;
+  width: 100%;
   height: auto;
-  top: -116.12903%;
-  left: -13.11475%;
   mix-blend-mode: multiply;
 }
 .report-brand .brand.brand-lockup {

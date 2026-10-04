@@ -1,91 +1,85 @@
 ---
 import Icon from "../Icon.astro";
-import { heroQueryText } from "../../data/hero";
+import { getDictionary } from "../../i18n";
+import { bookingUrl } from "../../i18n/locales";
+const { hero: t, book, client } = getDictionary(Astro.currentLocale);
 ---
 
 <section id="inicio" class="hero" aria-labelledby="hero-title">
   <div class="hero-atmosphere" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow hero-category">VISIBILIDAD DE MARCA EN IA</span>
+      <span class="eyebrow hero-category">{t.eyebrow}</span>
       <h1 id="hero-title">
-        Una pregunta.
+        {t.titleFirst}
         <br />
-        Todo un mapa de <span>oportunidades.</span>
+        {t.titleSecond}
+        <span>{t.titleHighlight}</span>
       </h1>
-      <p>
-        Entendé cómo la IA describe tu marca, qué fuentes cita y qué información
-        conviene revisar. KAIRUM conecta las respuestas con decisiones para tu
-        equipo.
-      </p>
+      <p>{t.intro}</p>
       <div class="actions">
         <a
           class="button primary"
           data-book
-          href="https://calendly.com/brunodecruz/30min"
+          href={bookingUrl}
+          aria-describedby="new-tab-hint"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book a call <Icon name="ArrowUpRight" />
+          {book.label} <Icon name="ArrowUpRight" />
         </a>
         <a class="text-link" href="#recorrido">
-          Mirá cómo funciona <Icon name="ArrowDown" />
+          {t.how} <Icon name="ArrowDown" />
         </a>
       </div>
       <div class="hero-proof">
         <span>
-          <Icon name="Eye" /> Mirá las respuestas
+          <Icon name="Eye" /> {t.proof[0]}
         </span>
         <span>
-          <Icon name="Link" /> Seguí las fuentes
+          <Icon name="Link" /> {t.proof[1]}
         </span>
         <span>
-          <Icon name="CursorClick" /> Decidí qué sigue
+          <Icon name="CursorClick" /> {t.proof[2]}
         </span>
       </div>
     </div>
-    <div
-      class="hero-visual"
-      aria-label="Demostración animada de una consulta y sus respuestas"
-    >
+    <div class="hero-visual" role="group" aria-label={t.visualLabel}>
       <div class="floating-provider provider-a">
         <img src="/assets/openai.svg" alt="" />
-        OpenAI API
+        {t.providerNames[0]}
       </div>
       <div class="floating-provider provider-b">
         <img src="/assets/gemini.svg" alt="" />
-        Gemini API
+        {t.providerNames[1]}
       </div>
       <div class="floating-provider provider-c">
         <img src="/assets/claude.svg" alt="" />
-        Claude API
+        {t.providerNames[2]}
       </div>
       <div class="hero-console">
         <div class="console-top">
           <span>
-            <Icon name="Sparkle" /> Una consulta, más contexto.
+            <Icon name="Sparkle" /> {t.console}
           </span>
           <span id="hero-status" class="live-status">
-            Preparando consulta
+            {t.initialStatus}
           </span>
         </div>
         <div class="query-bar">
           <Icon name="MagnifyingGlass" />
           <span id="hero-query" aria-hidden="true"></span>
-          <span class="sr-only">{heroQueryText}</span>
+          <span class="sr-only">{client.heroQuery}</span>
           <span class="typing-caret" aria-hidden="true"></span>
         </div>
         <div class="hero-response">
           <div class="response-heading">
             <img src="/assets/gemini.svg" alt="" />
-            Gemini API
-            <span>Ejemplo ilustrativo</span>
+            {t.providerNames[1]}
+            <span>{t.exampleLabel}</span>
           </div>
           <p id="hero-answer" aria-hidden="true"></p>
-          <span class="sr-only">
-            Ejemplo ficticio: Norte aparece por su control de stock, pero sus
-            integraciones quedan por verificar.
-          </span>
+          <span class="sr-only">{t.screenReaderAnswer}</span>
           <div class="answer-lines" aria-hidden="true">
             <b></b>
             <b></b>
@@ -93,13 +87,13 @@ import { heroQueryText } from "../../data/hero";
           </div>
         </div>
         <div class="hero-sources">
-          <span>Fuentes de esta respuesta</span>
+          <span>{t.sourcesLabel}</span>
           <div>
             <span>
-              <Icon name="Globe" /> norte.example
+              <Icon name="Globe" /> {t.sourceDomains[0]}
             </span>
             <span>
-              <Icon name="FileText" /> sector.example
+              <Icon name="FileText" /> {t.sourceDomains[1]}
             </span>
           </div>
         </div>
@@ -108,8 +102,8 @@ import { heroQueryText } from "../../data/hero";
             <Icon name="Check" />
           </span>
           <div>
-            <strong>Aparece por su control de stock.</strong>
-            <span>Las integraciones quedan por verificar.</span>
+            <strong>{t.resultTitle}</strong>
+            <span>{t.resultDetail}</span>
           </div>
           <Icon name="ArrowUpRight" />
         </div>
@@ -117,20 +111,25 @@ import { heroQueryText } from "../../data/hero";
       <div class="hero-report">
         <Icon name="FileText" />
         <div>
-          <span>Tu próximo paso</span>
-          <strong>Aclarar las integraciones en la web</strong>
+          <span>{t.nextStepLabel}</span>
+          <strong>{t.nextStep}</strong>
         </div>
         <Icon name="CheckCircle" />
       </div>
       <div class="demo-controls">
-        <span>Norte · Marca ficticia del ejemplo</span>
-        <button id="hero-pause" aria-label="Pausar demostración">
+        <span>{t.demoNote}</span>
+        <button
+          id="hero-pause"
+          aria-label={client.motion.demoPauseLabel}
+          data-state="playing"
+        >
           <Icon name="Pause" />
-          <span>Pausar</span>
+          <Icon name="Play" />
+          <span>{client.motion.demoPause}</span>
         </button>
-        <button id="hero-replay" aria-label="Repetir demostración">
+        <button id="hero-replay" aria-label={t.replayLabel}>
           <Icon name="ArrowClockwise" />
-          <span>Repetir</span>
+          <span>{t.replay}</span>
         </button>
       </div>
     </div>

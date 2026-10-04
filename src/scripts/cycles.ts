@@ -24,11 +24,6 @@ function createMotionCycle(
       !motion.reduced &&
       !document.hidden &&
       !controls.contains(document.activeElement);
-    section.dataset.autoplay = manual
-      ? "manual"
-      : canPlay
-        ? "playing"
-        : "paused";
     if (canPlay)
       timer = window.setTimeout(() => {
         advance();
@@ -65,7 +60,6 @@ createMotionCycle(
   () => {
     selectProvider(
       (Number($(".answer-stack").dataset.selectedProvider) + 1) % 3,
-      true,
       true,
     );
   },

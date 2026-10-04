@@ -24,6 +24,10 @@
 .motion-paused * {
   animation-play-state: paused !important;
 }
+[data-state="playing"] > [data-icon="Play"],
+[data-state="paused"] > [data-icon="Pause"] {
+  display: none;
+}
 @media (max-width: 850px) {
   .motion-toggle {
     right: 14px;

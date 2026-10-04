@@ -2,7 +2,13 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: process.env.SITE_URL || undefined,
+  site: "https://kairum.com.ar",
+  i18n: {
+    locales: ["es", "en", "pt-br"],
+    defaultLocale: "es",
+    routing: { prefixDefaultLocale: false },
+  },
   image: { service: { entrypoint: "astro/assets/services/noop" } },
-  build: { inlineStylesheets: "always" },
+  // "preserve" emits en/404.html (not en/404/index.html) so Cloudflare Pages finds each locale's 404.
+  build: { inlineStylesheets: "always", format: "preserve" },
 });

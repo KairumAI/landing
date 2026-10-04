@@ -1,0 +1,9 @@
+---
+import { icons, iconViewBox } from "./icons";
+---
+
+<svg style="display: none" aria-hidden="true">
+  {Object.entries(icons).map(([name, body]) => (
+    <symbol id={`icon-${name}`} viewBox={iconViewBox} set:html={body} />
+  ))}
+</svg>

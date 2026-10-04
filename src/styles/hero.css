@@ -639,10 +639,13 @@
   color: var(--kairum-yellow);
 }
 .hero-result > i,
-.hero-result div > span,
+.hero-result div > span {
+  color: #55514a;
+}
+/* Sits on the atmosphere gradient: darker than the console text to keep 4.5:1. */
 .demo-controls,
 .demo-controls button {
-  color: #55514a;
+  color: #46423b;
 }
 .hero-category {
   display: block;

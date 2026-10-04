@@ -1,49 +1,53 @@
 ---
 import Icon from "../Icon.astro";
+import { getDictionary } from "../../i18n";
+import { bookingUrl } from "../../i18n/locales";
+const { contact: t, book } = getDictionary(Astro.currentLocale);
 ---
 
 <section id="contacto" class="contact-section">
   <div class="contact-light" aria-hidden="true"></div>
   <div class="wrap contact-inner">
-    <span>EL PRÓXIMO PASO EMPIEZA CON VOS.</span>
+    <span>{t.eyebrow}</span>
     <h2>
-      Hagamos una buena pregunta.
+      {t.title[0]}
       <br />
-      <em>Sobre tu marca.</em>
+      <em>{t.title[1]}</em>
     </h2>
     <p class="contact-intro">
-      Traé tu sitio y una pregunta que hoy te importe.
-      <br /> El primer paso es entender qué querés resolver.
+      {t.intro[0]}
+      <br /> {t.intro[1]}
     </p>
     <a
       class="button gold"
       data-book
-      href="https://calendly.com/brunodecruz/30min"
+      href={bookingUrl}
+      aria-describedby="new-tab-hint"
       target="_blank"
       rel="noopener noreferrer"
     >
-      Book a call <Icon name="ArrowUpRight" />
+      {book.label} <Icon name="ArrowUpRight" />
     </a>
-    <ol class="call-agenda" aria-label="Qué conversamos en la primera llamada">
+    <ol class="call-agenda" aria-label={t.agendaLabel}>
       <li>
         <span>01</span>
         <div>
-          <h3>Tu contexto.</h3>
-          <p>La marca, la categoría y la decisión que tenés por delante.</p>
+          <h3>{t.agenda[0].title}</h3>
+          <p>{t.agenda[0].detail}</p>
         </div>
       </li>
       <li>
         <span>02</span>
         <div>
-          <h3>Un foco claro.</h3>
-          <p>Las preguntas que vale la pena mirar y el alcance del análisis.</p>
+          <h3>{t.agenda[1].title}</h3>
+          <p>{t.agenda[1].detail}</p>
         </div>
       </li>
       <li>
         <span>03</span>
         <div>
-          <h3>El próximo paso.</h3>
-          <p>Cómo organizar una lectura que tu equipo pueda usar.</p>
+          <h3>{t.agenda[2].title}</h3>
+          <p>{t.agenda[2].detail}</p>
         </div>
       </li>
     </ol>

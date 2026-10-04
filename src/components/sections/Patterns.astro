@@ -1,6 +1,9 @@
 ---
 import Icon from "../Icon.astro";
-import { patterns, stateLabels, type PatternState } from "../../data/patterns";
+import { getDictionary } from "../../i18n";
+import type { PatternState } from "../../i18n/types";
+const { patterns: t, client, hero } = getDictionary(Astro.currentLocale);
+const { patterns, stateLabels } = client;
 const stateIcons: Record<PatternState, string> = {
   mencion: "Check",
   comparacion: "Stack",
@@ -8,93 +11,100 @@ const stateIcons: Record<PatternState, string> = {
 };
 ---
 
-<section class="patterns-section section-pad" aria-labelledby="patterns-title">
+<section
+  class="patterns-section section-pad"
+  aria-labelledby="patterns-title"
+  data-intent="explorar"
+>
   <div class="wrap">
     <div class="section-heading">
       <div class="reveal">
-        <span class="eyebrow">EL MAPA DE CONVERSACIONES</span>
+        <span class="eyebrow">{t.eyebrow}</span>
         <h2 id="patterns-title">
-          El lugar cambia
+          {t.title[0]}
           <br />
-          con la pregunta.
+          {t.title[1]}
         </h2>
       </div>
       <p class="reveal">
-        Explorar una categoría, comparar alternativas
-        <br />y elegir una solución son conversaciones distintas.
+        {t.intro[0]}
+        <br />
+        {t.intro[1]}
       </p>
     </div>
-    <div
-      class="pattern-controls"
-      role="group"
-      aria-label="Cambiar intención de las preguntas"
-    >
+    <div class="pattern-controls" role="group" aria-label={t.controlsLabel}>
       <button data-intent="explorar" aria-pressed="true">
-        01 · Explorar
+        01 · {t.intents[0]}
       </button>
       <button data-intent="comparar" aria-pressed="false">
-        02 · Comparar
+        02 · {t.intents[1]}
       </button>
       <button data-intent="elegir" aria-pressed="false">
-        03 · Elegir
+        03 · {t.intents[2]}
       </button>
-      <span>Ejemplo ilustrativo</span>
+      <span>{t.exampleLabel}</span>
     </div>
     <div class="patterns-body">
       <div class="pattern-reading">
-        <span>LA PREGUNTA CAMBIA EL FOCO</span>
+        <span>{t.focusLabel}</span>
         <h3 id="pattern-question">{patterns.explorar.question}</h3>
         <p id="pattern-insight">{patterns.explorar.insight}</p>
         <div class="pattern-legend">
           <span>
-            <b class="dot mention"></b>Mención
+            <b class="dot mention"></b>
+            {stateLabels.mencion}
           </span>
           <span>
-            <b class="dot gold"></b>Comparación
+            <b class="dot gold"></b>
+            {stateLabels.comparacion}
           </span>
           <span>
-            <b class="dot neutral"></b>Sin mención
+            <b class="dot neutral"></b>
+            {stateLabels.ausente}
           </span>
         </div>
       </div>
       <div
         class="matrix-scroll"
+        role="region"
         tabindex="0"
-        aria-label="Matriz ilustrativa de conversaciones por modelo"
+        aria-label={t.matrixLabel}
       >
         <table class="pattern-matrix">
           <thead>
             <tr>
-              <th>Conversación</th>
+              <th>{t.conversationLabel}</th>
               <th>
                 <img src="/assets/openai.svg" alt="" />
-                OpenAI API
+                {hero.providerNames[0]}
               </th>
               <th>
                 <img src="/assets/gemini.svg" alt="" />
-                Gemini API
+                {hero.providerNames[1]}
               </th>
               <th>
                 <img src="/assets/claude.svg" alt="" />
-                Claude API
+                {hero.providerNames[2]}
               </th>
             </tr>
           </thead>
-          <tbody id="matrix-body">
-            {patterns.explorar.rows.map(([question, ...states]) => (
-              <tr>
-                <td>{question}</td>
-                {states.map((state) => (
-                  <td>
-                    <span class={`matrix-state ${state}`}>
-                      <Icon name={stateIcons[state]} />
-                      {stateLabels[state]}
-                    </span>
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
+          {Object.entries(patterns).map(([intent, pattern]) => (
+            <tbody data-intent-rows={intent} hidden={intent !== "explorar"}>
+              {pattern.rows.map(([question, ...states]) => (
+                <tr>
+                  <td>{question}</td>
+                  {states.map((state) => (
+                    <td>
+                      <span class={`matrix-state ${state}`}>
+                        <Icon name={stateIcons[state]} />
+                        {stateLabels[state]}
+                      </span>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          ))}
         </table>
       </div>
     </div>

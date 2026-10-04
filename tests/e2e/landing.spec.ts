@@ -19,64 +19,126 @@ async function heightSamples(answer: Locator) {
   );
 }
 
-test("public landing loads all local resources and fits desktop/mobile", async ({
-  page,
-  baseURL,
-}) => {
-  const errors: string[] = [];
-  const external: string[] = [];
-  page.on("pageerror", (error) => errors.push(error.message));
-  page.on("response", (response) => {
-    if (response.status() >= 400)
-      errors.push(`${response.status()} ${response.url()}`);
-  });
-  page.on("request", (request) => {
-    if (new URL(request.url()).origin !== new URL(baseURL!).origin)
-      external.push(request.url());
-  });
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  const response = await page.goto("/");
-  expect(response?.status()).toBe(200);
-  await expect(page).toHaveTitle("KAIRUM — Visibilidad de marca en IA");
-  await expect(page.locator("main > section")).toHaveCount(10);
-  await expect(page.locator(".brand-lockup")).toHaveCount(4);
-  await expect(page.locator("body")).toHaveAttribute("data-motion", "reduced");
-  await page.evaluate(() => document.fonts.ready);
-  expect(
-    await page
-      .locator("img")
-      .evaluateAll((images) =>
-        images.every(
-          (image) =>
-            image instanceof HTMLImageElement &&
-            image.complete &&
-            image.naturalWidth > 0,
+const locales = [
+  { path: "/", lang: "es-AR", title: "KAIRUM · Visibilidad de marca en IA" },
+  { path: "/en/", lang: "en", title: "KAIRUM · AI Brand Visibility" },
+  {
+    path: "/pt-br/",
+    lang: "pt-BR",
+    title: "KAIRUM · Visibilidade de marca em IA",
+  },
+];
+
+for (const locale of locales) {
+  test(`${locale.path} loads all local resources and fits desktop/mobile`, async ({
+    page,
+    baseURL,
+  }) => {
+    const errors: string[] = [];
+    const external: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    page.on("response", (response) => {
+      if (response.status() >= 400)
+        errors.push(`${response.status()} ${response.url()}`);
+    });
+    page.on("request", (request) => {
+      if (new URL(request.url()).origin !== new URL(baseURL!).origin)
+        external.push(request.url());
+    });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    const response = await page.goto(locale.path);
+    expect(response?.status()).toBe(200);
+    await expect(page).toHaveTitle(locale.title);
+    await expect(page.locator("html")).toHaveAttribute("lang", locale.lang);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      `https://kairum.com.ar${locale.path}`,
+    );
+    // Every page lists every language plus x-default, so search engines can pair them.
+    const alternates = await page
+      .locator('link[rel="alternate"][hreflang]')
+      .evaluateAll((links) =>
+        links.map((link) => [
+          link.getAttribute("hreflang"),
+          link.getAttribute("href"),
+        ]),
+      );
+    expect(alternates).toEqual([
+      ["es", "https://kairum.com.ar/"],
+      ["en", "https://kairum.com.ar/en/"],
+      ["pt-BR", "https://kairum.com.ar/pt-br/"],
+      ["x-default", "https://kairum.com.ar/"],
+    ]);
+    await expect(page.locator("main > section")).toHaveCount(10);
+    await expect(page.locator(".brand-lockup")).toHaveCount(4);
+    await expect(page.locator("body")).toHaveAttribute(
+      "data-motion",
+      "reduced",
+    );
+    await page.evaluate(() => document.fonts.ready);
+    // The footer logo is lazy: bring it into view before checking every image.
+    await page.locator("footer").scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        page
+          .locator("img")
+          .evaluateAll((images) =>
+            images.every(
+              (image) =>
+                image instanceof HTMLImageElement &&
+                image.complete &&
+                image.naturalWidth > 0,
+            ),
+          ),
+      )
+      .toBe(true);
+    for (const width of [
+      360, 390, 600, 601, 620, 768, 850, 851, 900, 1024, 1100, 1280, 1440,
+    ]) {
+      await page.setViewportSize({ width, height: 1000 });
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth),
+      ).toBeLessThanOrEqual(width);
+      const nav = page.locator(".nav");
+      expect(
+        await nav.evaluate(
+          (element) => element.scrollWidth <= element.clientWidth,
         ),
-      ),
-  ).toBe(true);
-  for (const width of [
-    360, 390, 600, 601, 620, 768, 850, 851, 900, 1024, 1100, 1280, 1440,
-  ]) {
-    await page.setViewportSize({ width, height: 1000 });
-    expect(
-      await page.evaluate(() => document.documentElement.scrollWidth),
-    ).toBeLessThanOrEqual(width);
-    const nav = page.locator(".nav");
-    expect(
-      await nav.evaluate(
-        (element) => element.scrollWidth <= element.clientWidth,
-      ),
-    ).toBe(true);
-  }
-  const audit = await new AxeBuilder({ page })
-    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
-    .analyze();
-  expect(audit.violations).toEqual([]);
-  expect(errors).toEqual([]);
-  expect(external).toEqual([]);
+      ).toBe(true);
+    }
+    const audit = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(audit.violations).toEqual([]);
+    expect(errors).toEqual([]);
+    expect(external).toEqual([]);
+  });
+}
+
+test("language switcher opens a translated page whose scripts use its own strings", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("navigation", { name: "Idioma" })
+    .getByRole("link", { name: "Português" })
+    .click();
+  await expect(page).toHaveURL(/\/pt-br\/$/);
+  await expect(
+    page
+      .getByRole("navigation", { name: "Idioma" })
+      .getByRole("link", { name: "Português" }),
+  ).toHaveAttribute("aria-current", "page");
+  await page.locator("#motion-toggle").click();
+  await expect(page.locator("#motion-toggle")).toHaveAccessibleName(
+    "Ativar animações",
+  );
+  await expect(page.locator("#hero-pause")).toHaveAccessibleName(
+    "Retomar demonstração",
+  );
 });
 
-test("all three Book a call links navigate to the supplied Calendly without JavaScript", async ({
+test("all three booking links navigate to the supplied Calendly without JavaScript", async ({
   browser,
   baseURL,
 }) => {
@@ -93,7 +155,7 @@ test("all three Book a call links navigate to the supplied Calendly without Java
   );
   const page = await context.newPage();
   await page.goto("/");
-  const links = page.getByRole("link", { name: "Book a call", exact: true });
+  const links = page.getByRole("link", { name: "Hablemos", exact: true });
   await expect(links).toHaveCount(3);
   for (const link of await links.all()) {
     await expect(link).toHaveAttribute("href", bookingUrl);

@@ -1,25 +1,21 @@
 ---
+import { getDictionary } from "../../i18n";
+const { context: t } = getDictionary(Astro.currentLocale);
 ---
 
 <section class="context-section wrap" aria-labelledby="context-title">
   <div class="context-grid">
     <h2 id="context-title" class="reveal">
-      La decisión puede empezar
+      {t.title[0]}
       <br />
-      mucho antes de tu web.
+      {t.title[1]}
     </h2>
-    <p class="reveal">
-      Alguien pregunta. La IA compara, describe y recomienda. KAIRUM te ayuda a
-      ver qué lugar ocupa tu marca en esa conversación.
-    </p>
+    <p class="reveal">{t.intro}</p>
   </div>
-  <div
-    class="question-ribbon"
-    aria-label="Ejemplos de preguntas sobre una categoría"
-  >
-    <span>¿Qué opción me conviene?</span>
-    <span>¿En qué se diferencian?</span>
-    <span>¿Qué marca recomendarías?</span>
-    <span>¿Dónde puedo saber más?</span>
+  <div class="question-ribbon" role="group" aria-label={t.questionsLabel}>
+    <span>{t.questions[0]}</span>
+    <span>{t.questions[1]}</span>
+    <span>{t.questions[2]}</span>
+    <span>{t.questions[3]}</span>
   </div>
 </section>

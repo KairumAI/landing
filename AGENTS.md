@@ -5,6 +5,8 @@
 - Conservar el diseño y comportamiento de la landing aprobada, así como los textos, IDs y atributos ARIA y `data-*` que usan los tests.
 - Comparar cada cambio visual con la versión aprobada en escritorio y móvil. Requiere revisión independiente y al menos 9/10 en usabilidad, estilo y fidelidad antes de publicar.
 - Norte es ficticia; respuestas y fuentes ilustrativas rotuladas como API, nunca como ChatGPT. No inventar métricas, resultados ni clientes.
-- Conservar licencias de Inter (SIL OFL 1.1), Phosphor (MIT) y GSAP (licencia estándar). Los logos de terceros no implican aval.
+- Textos solo en `src/i18n/`. Todo cambio de copy se refleja en español, inglés y portugués (Brasil); nada de texto visible en componentes ni scripts.
+- Conservar licencias de Inter (SIL OFL 1.1) y Phosphor (MIT). Los logos de terceros no implican aval.
+- Sin dependencias de runtime: las animaciones usan la Web Animations API (`src/scripts/anim.ts`). Antes de sumar una librería o script externo, justificar el peso y actualizar la CSP de `public/_headers`.
 - Servidores locales solo en `127.0.0.1`, nunca en `0.0.0.0`; detener los procesos abiertos al terminar.
 - Documentación de Astro: https://docs.astro.build.

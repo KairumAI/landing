@@ -15,6 +15,16 @@
   font-size: 11px;
   color: #737373;
 }
+.site-footer .language-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 11px;
+  color: #737373;
+}
+.site-footer .language-switch a[aria-current="page"] {
+  color: var(--kairum-ink);
+}
 @media (max-width: 850px) {
   .site-footer {
     flex-wrap: wrap;
@@ -43,6 +53,9 @@
   .site-footer > div {
     font-size: 10px;
     gap: 25px;
+  }
+  .site-footer .language-switch {
+    font-size: 10px;
   }
 }
 .site-footer p {

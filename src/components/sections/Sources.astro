@@ -1,29 +1,27 @@
 ---
 import Icon from "../Icon.astro";
-import { sources } from "../../data/sources";
+import { getDictionary } from "../../i18n";
+const { sources: t, client } = getDictionary(Astro.currentLocale);
+const { sources } = client;
 ---
 
 <section id="fuentes" class="sources-section wrap section-pad">
   <div class="split source-layout">
-    <div class="source-workspace reveal">
+    <div class="source-workspace reveal" data-selected-source="0">
       <div class="source-top">
-        <Icon name="Link" /> Seguí la evidencia
-        <span>Ejemplo ilustrativo</span>
+        <Icon name="Link" /> {t.followLabel}
+        <span>{t.exampleLabel}</span>
       </div>
       <div class="source-quote">
         “<span id="source-prefix">{sources[0].prefix}</span>{" "}
         <mark id="source-highlight">{sources[0].highlight}</mark>.”
       </div>
-      <div
-        class="source-tabs"
-        role="group"
-        aria-label="Elegir fuente de ejemplo"
-      >
+      <div class="source-tabs" role="group" aria-label={t.selectLabel}>
         <button data-source="0" aria-pressed="true">
-          <Icon name="Globe" /> Sitio de la marca
+          <Icon name="Globe" /> {t.tabs[0]}
         </button>
         <button data-source="1" aria-pressed="false">
-          <Icon name="FileText" /> Guía de la categoría
+          <Icon name="FileText" /> {t.tabs[1]}
         </button>
       </div>
       <article class="source-document">
@@ -31,40 +29,41 @@ import { sources } from "../../data/sources";
           {sources[0].url}
         </div>
         <h3 id="source-title">{sources[0].title}</h3>
-        <p id="source-excerpt" set:html={sources[0].excerpt} />
+        <p id="source-excerpt">
+          {sources[0].excerpt[0]}
+          <mark>{sources[0].excerpt[1]}</mark>
+          {sources[0].excerpt[2]}
+        </p>
         <div class="human-note">
           <span class="reviewer-avatar">
             <Icon name="NotePencil" />
           </span>
           <div>
-            <strong>Una segunda mirada.</strong>
+            <strong>{t.reviewTitle}</strong>
             <p id="source-review">{sources[0].review}</p>
           </div>
         </div>
       </article>
     </div>
     <div class="feature-copy reveal">
-      <span class="eyebrow">FUENTES + REVISIÓN HUMANA</span>
+      <span class="eyebrow">{t.eyebrow}</span>
       <h2>
-        De la respuesta
-        <br />a la fuente.
+        {t.title[0]}
         <br />
-        Sin perder el hilo.
+        {t.title[1]}
+        <br />
+        {t.title[2]}
       </h2>
-      <p>
-        Una cita puede estar, pero decir otra cosa. Miramos la respuesta en su
-        contexto y comprobamos qué respaldan las fuentes disponibles. Cuando
-        falta evidencia, la duda queda a la vista.
-      </p>
+      <p>{t.intro}</p>
       <ul class="clean-list">
         <li>
-          <Icon name="Check" /> La respuesta, en su contexto.
+          <Icon name="Check" /> {t.benefits[0]}
         </li>
         <li>
-          <Icon name="Check" /> La fuente, a la vista.
+          <Icon name="Check" /> {t.benefits[1]}
         </li>
         <li>
-          <Icon name="Check" /> La interpretación, revisada.
+          <Icon name="Check" /> {t.benefits[2]}
         </li>
       </ul>
     </div>

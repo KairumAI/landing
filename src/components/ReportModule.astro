@@ -1,13 +1,16 @@
 ---
 import Icon from "./Icon.astro";
-import { modules } from "../data/report";
+import { getDictionary } from "../i18n";
+import type { ReportModuleKey } from "../i18n/types";
 
 interface Props {
-  moduleKey: keyof typeof modules;
+  moduleKey: ReportModuleKey;
 }
 
 const { moduleKey } = Astro.props;
-const reportModule = modules[moduleKey];
+const reportModule = getDictionary(Astro.currentLocale).client.modules[
+  moduleKey
+];
 ---
 
 <section class="report-module" data-report-module={moduleKey}>

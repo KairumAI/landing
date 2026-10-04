@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import lockup from "../assets/convergencia-lockup.webp";
+import { getDictionary, toLocale } from "../i18n";
+import { localeMeta } from "../i18n/locales";
+const locale = toLocale(Astro.currentLocale);
+const t = getDictionary(locale).notFound;
+const home = localeMeta[locale].path;
+---
+
+<Base title={t.title} noindex>
+  <main class="not-found">
+    <a class="brand brand-lockup" href={home} aria-label={t.brandLabel}>
+      <Image src={lockup} alt="" loading="eager" />
+    </a>
+    <p class="code">{t.code}</p>
+    <h1>{t.heading}</h1>
+    <p>{t.intro}</p>
+    <nav aria-label={t.navLabel}>
+      <a class="primary" href={home}>
+        {t.homeLabel}
+      </a>
+    </nav>
+  </main>
+</Base>
+<style>
+  .not-found {
+    width: min(100%, 780px);
+    margin: 12vh auto;
+    padding: var(--kairum-space-6) var(--kairum-space-5);
+  }
+  .not-found .brand.brand-lockup {
+    width: 176px;
+  }
+  .not-found .code {
+    margin-top: var(--kairum-space-8);
+    color: var(--kairum-warning);
+    font-size: var(--kairum-text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  .not-found h1 {
+    max-width: 660px;
+    margin: var(--kairum-space-4) 0;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.05;
+  }
+  .not-found p {
+    color: var(--kairum-muted);
+    line-height: 1.6;
+  }
+  .not-found nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--kairum-space-4);
+    margin-top: var(--kairum-space-6);
+  }
+  .not-found nav a {
+    display: inline-flex;
+    min-height: var(--kairum-target);
+    align-items: center;
+    padding: var(--kairum-space-4) var(--kairum-space-5);
+    border: 1px solid var(--kairum-control-line);
+    border-radius: var(--kairum-radius-sm);
+    color: var(--kairum-ink);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--kairum-motion-fast) var(--kairum-ease);
+  }
+  .not-found nav a:hover {
+    background: var(--kairum-canvas);
+  }
+  .not-found nav .primary {
+    background: var(--kairum-yellow);
+    border-color: var(--kairum-yellow);
+  }
+  .not-found nav .primary:hover {
+    background: var(--kairum-yellow-hover);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .not-found nav a {
+      transition: none;
+    }
+  }
+</style>
