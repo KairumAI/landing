@@ -49,7 +49,7 @@ Cloudflare Pages sirve la salida estática `dist/` en el proyecto `kairum-landin
 El flujo de trabajo y las convenciones están en [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - **CI** (`.github/workflows/ci.yml`): corre en cada PR. Verifica formato, tipos y compilación, y corre los tests en el Chrome que trae el runner. Es el check `verify` que exige el ruleset de `main`.
-- **Deploy** (`.github/workflows/deploy.yml`): cada merge a `main` propone publicar ese commit exacto. El environment `production` lo retiene hasta que Bruno lo aprueba en **Actions → Deploy → Review deployments**, y solo admite `main`. Un merge nuevo reemplaza al que seguía esperando. **Run workflow** vuelve a publicar el `main` actual, con la misma aprobación.
+- **Deploy** (`.github/workflows/deploy.yml`): corre solo al publicar un release con tag `v*` sobre `main`; un merge no publica nada. El environment `production` solo admite tags `v*` y retiene el deploy hasta que Bruno lo aprueba en **Actions → Deploy → Review deployments**. **Run workflow** sobre un tag existente lo vuelve a publicar, por ejemplo para volver atrás. Los tags `v*` no se pueden mover ni borrar.
 
 ### Activación (una sola vez)
 
@@ -64,4 +64,4 @@ El workflow queda listo, pero falla en el paso de publicación hasta completar e
    gh secret set CLOUDFLARE_ACCOUNT_ID --env production --repo KairumAI/landing
    ```
 
-4. **Actions → Deploy → Run workflow** sobre `main` y aprobar.
+4. Publicar el primer release (`gh release create v0.1.0 --target main --generate-notes`) y aprobar el deploy.
