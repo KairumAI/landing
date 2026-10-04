@@ -7,7 +7,6 @@
 }
 .site-footer p {
   font-size: 10px;
-  color: #a0a0a0;
 }
 .site-footer > div {
   margin-left: auto;
@@ -16,10 +15,39 @@
   font-size: 11px;
   color: #737373;
 }
-.site-footer .brand span {
-  font-size: 19px;
+@media (max-width: 850px) {
+  .site-footer {
+    flex-wrap: wrap;
+    padding-bottom: 70px;
+  }
+  .site-footer > div {
+    margin-left: 0;
+  }
+  .site-footer p {
+    margin-left: auto;
+  }
+  .site-footer > div {
+    width: 100%;
+    gap: 25px;
+  }
 }
-.site-footer .brand img {
-  width: 34px;
-  height: 34px;
+@media (max-width: 600px) {
+  .site-footer {
+    gap: 18px;
+    padding-top: 26px;
+    padding-bottom: 70px;
+  }
+  .site-footer p {
+    font-size: 8px;
+  }
+  .site-footer > div {
+    font-size: 10px;
+    gap: 25px;
+  }
+}
+.site-footer p {
+  color: #626262;
+}
+.site-footer .brand.brand-lockup {
+  width: 170px;
 }

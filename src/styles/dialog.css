@@ -4,7 +4,7 @@ dialog {
   padding: 0;
   width: min(710px, calc(100vw - 32px));
   max-height: calc(100dvh - 48px);
-  color: var(--ink);
+  color: var(--kairum-ink);
   background: #fff;
   box-shadow: 0 40px 90px #1e1e1e50;
 }
@@ -17,7 +17,6 @@ dialog::backdrop {
   justify-content: space-between;
   align-items: center;
   padding: 13px 24px;
-  background: #f7f7f7;
   border-bottom: 1px solid #e4e4e4;
   position: sticky;
   top: 0;
@@ -49,4 +48,111 @@ dialog::backdrop {
 .dialog-content .report-module > i {
   width: 21px;
   height: 21px;
+}
+@media (max-width: 600px) {
+  .dialog-content {
+    padding: 29px 25px 35px;
+  }
+  .dialog-content > h2 {
+    font-size: 30px;
+  }
+
+  .dialog-content > p {
+    font-size: 12px;
+  }
+  .dialog-toolbar {
+    padding: 10px 16px;
+  }
+  .dialog-content .report-module h4 {
+    font-size: 15px;
+  }
+  .dialog-content .report-module p {
+    font-size: 12px;
+  }
+}
+.dialog-toolbar {
+  background: #fff9e3;
+}
+.report-context {
+  margin: 26px 0 8px;
+  padding: 22px 24px;
+  background: #fff9e3;
+  border: 1px solid #e9dfb6;
+  border-radius: 10px;
+}
+.report-context .eyebrow {
+  font-size: 9px;
+}
+.report-context h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin-top: 12px;
+}
+.report-context p {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #655d43;
+}
+.report-evidence {
+  border-top: 1px solid var(--kairum-line);
+  margin-top: 22px;
+}
+.report-evidence summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 0;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 550;
+  cursor: pointer;
+}
+.report-evidence summary::-webkit-details-marker {
+  display: none;
+}
+.report-evidence[open] summary > i {
+  transform: rotate(45deg);
+}
+.report-evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.report-evidence-grid .eyebrow {
+  display: block;
+  font-size: 8px;
+  line-height: 1.8;
+  letter-spacing: 0.7px;
+}
+.report-evidence-grid blockquote,
+.report-evidence-grid p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 14px 0 0;
+  color: #49463f;
+}
+.report-review {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 12px;
+  margin: 22px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f6f5ef;
+  color: #5d5748;
+}
+@media (max-width: 600px) {
+  .report-context {
+    padding: 18px;
+  }
+  .report-context h3 {
+    font-size: 18px;
+  }
+  .report-evidence-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
 }

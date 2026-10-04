@@ -4,15 +4,15 @@ Landing pública de KAIRUM, implementada en Astro como sitio estático. Su dise�
 
 ## Requisitos y comandos
 
-Node 26.10.0 (`.nvmrc`) y pnpm 12.9.1 (`packageManager` en `package.json`). Desde la raíz del proyecto:
+Node 26.10.0 (`.nvmrc`) y pnpm 12.9.1 (`packageManager` en `package.json`).
 
 ```sh
-fnm exec --using 26.10.0 -- pnpm install --frozen-lockfile
-fnm exec --using 26.10.0 -- pnpm dev
-fnm exec --using 26.10.0 -- pnpm format:check
-fnm exec --using 26.10.0 -- pnpm check
-fnm exec --using 26.10.0 -- pnpm build
-fnm exec --using 26.10.0 -- pnpm test
+pnpm install --frozen-lockfile
+pnpm dev            # http://127.0.0.1:4321
+pnpm format:check
+pnpm check
+pnpm build
+pnpm test
 ```
 
 `pnpm preview` sirve la compilación localmente en `127.0.0.1`; los tests compilan y abren esa vista previa en Chromium. `pnpm test` necesita el navegador de Playwright instalado (`pnpm exec playwright install --with-deps chromium`).

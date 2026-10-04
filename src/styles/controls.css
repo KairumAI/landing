@@ -8,9 +8,7 @@
   gap: 8px;
   border: 1px solid #e3e3e3;
   border-radius: 30px;
-  background: #fffef7ed;
   backdrop-filter: blur(10px);
-  color: #5f5f5f;
   padding: 10px 14px;
   font-size: 10px;
   box-shadow: 0 5px 20px #30303010;
@@ -25,4 +23,61 @@
 }
 .motion-paused * {
   animation-play-state: paused !important;
+}
+@media (max-width: 850px) {
+  .motion-toggle {
+    right: 14px;
+    bottom: 12px;
+    padding: 9px 11px;
+    font-size: 9px;
+  }
+}
+@media (max-width: 600px) {
+  .motion-toggle {
+    font-size: 8px;
+    padding: 9px 11px;
+    gap: 6px;
+  }
+  .motion-toggle i {
+    width: 12px;
+    height: 12px;
+    flex-basis: 12px;
+  }
+}
+.motion-toggle {
+  background: #fffffff2;
+  border-color: #dedbd0;
+  color: #534b33;
+}
+.site-header .motion-toggle {
+  position: static;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  margin-left: -14px;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: none;
+}
+.site-header .motion-toggle span {
+  display: none;
+}
+.site-header .motion-toggle i {
+  width: 14px;
+  height: 14px;
+  flex-basis: 14px;
+}
+@media (max-width: 850px) {
+  .site-header .motion-toggle {
+    margin-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .site-header .motion-toggle {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
 }
