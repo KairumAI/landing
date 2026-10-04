@@ -1,0 +1,3 @@
+[run]
+# Ejecuta los binarios de node_modules con el runtime de Bun en vez de Node.
+bun = true

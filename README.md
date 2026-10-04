@@ -4,18 +4,18 @@ Landing pública de KAIRUM, implementada en Astro como sitio estático. Su dise�
 
 ## Requisitos y comandos
 
-Node 26.10.0 (`.nvmrc`) y pnpm 12.9.1 (`packageManager` en `package.json`).
+Bun 1.4.0 (`packageManager` en `package.json`) como gestor de paquetes y runtime. `bunfig.toml` hace que `bun run` ejecute Astro, Prettier y Playwright sobre Bun en vez de Node, así que no hace falta tener Node instalado.
 
 ```sh
-pnpm install --frozen-lockfile
-pnpm dev            # http://127.0.0.1:4321
-pnpm format:check
-pnpm check
-pnpm build
-pnpm test
+bun install --frozen-lockfile
+bun dev             # http://127.0.0.1:4321
+bun format:check
+bun check
+bun run build
+bun run test
 ```
 
-`pnpm preview` sirve la compilación localmente en `127.0.0.1`; los tests compilan y abren esa vista previa en Chromium. `pnpm test` necesita el navegador de Playwright instalado (`pnpm exec playwright install --with-deps chromium`).
+`bun preview` sirve la compilación localmente en `127.0.0.1`; los tests compilan y abren esa vista previa en Chromium. `build` y `test` van con `bun run` porque `bun build` y `bun test` son comandos propios de Bun (bundler y test runner). `bun run test` necesita el navegador de Playwright instalado (`bunx playwright install --with-deps chromium`).
 
 ## Estructura
 

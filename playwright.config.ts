@@ -13,7 +13,7 @@ export default defineConfig({
   },
   webServer: {
     // --ignore-lock keeps Astro in the foreground even when it detects an AI agent.
-    command: `pnpm build && pnpm preview --port ${port} --ignore-lock`,
+    command: `bun run build && bun run preview --port ${port} --ignore-lock`,
     url: `http://127.0.0.1:${port}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
