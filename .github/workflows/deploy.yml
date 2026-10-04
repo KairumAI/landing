@@ -1,18 +1,18 @@
 name: Deploy
 
-# Every merge to main proposes a deploy of that exact commit. The "production"
-# environment holds it until Bruno approves it (decision 0007 in KairumAI/docs).
-# "Run workflow" redeploys the current main.
+# Publishing a release (tag vX.Y.Z on main) proposes a deploy of that tag. The
+# "production" environment only accepts v* tags and holds the deploy until
+# Bruno approves it (decision 0007 in KairumAI/docs).
+# "Run workflow" on an existing tag redeploys it, for example to roll back.
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# A newer merge replaces a deploy still waiting for approval: only the latest
-# main is up for approval.
+# A newer release replaces a deploy still waiting for approval.
 concurrency:
   group: deploy-production
   cancel-in-progress: true
@@ -26,6 +26,10 @@ jobs:
       url: https://kairum-landing.pages.dev
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Check that the tag points to a commit on main
+        run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run build
