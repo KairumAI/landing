@@ -1,0 +1,36 @@
+name: Deploy
+
+# Every merge to main proposes a deploy of that exact commit. The "production"
+# environment holds it until Bruno approves it (decision 0007 in KairumAI/docs).
+# "Run workflow" redeploys the current main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer merge replaces a deploy still waiting for approval: only the latest
+# main is up for approval.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: production
+      url: https://kairum-landing.pages.dev
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Publish to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bunx wrangler@4.147.0 pages deploy dist --project-name kairum-landing --branch main
