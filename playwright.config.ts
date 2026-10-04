@@ -4,8 +4,12 @@ const port = Number(process.env.PORT ?? 4322);
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
   use: {
     ...devices["Desktop Chrome"],
+    // The GitHub runner ships Google Chrome; using it skips the Playwright browser download.
+    channel: process.env.CI ? "chrome" : undefined,
     baseURL: `http://127.0.0.1:${port}`,
     viewport: { width: 1440, height: 1000 },
     trace: "retain-on-failure",

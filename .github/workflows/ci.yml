@@ -1,24 +1,29 @@
 name: CI
 
+# main only accepts pull requests that passed this check (ruleset "main"),
+# so pushes to main are not verified again.
 on:
   pull_request:
-  push:
-    branches: [main]
 
 permissions:
   contents: read
 
+# A newer push to the same branch or PR cancels the run in progress.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun format:check
       - run: bun check
-      - run: bun run build
-      - run: bun playwright install --with-deps chromium
+      # Builds the site, serves it and runs the browser tests against the runner's Chrome.
       - run: bun run test
       - uses: actions/upload-artifact@v7
         if: failure()

@@ -44,4 +44,24 @@ Norte es una marca ficticia. Las respuestas y fuentes ilustrativas deben rotular
 
 ## Publicación
 
-Cloudflare Pages sirve la salida estática `dist/`. La publicación es manual, por commit y únicamente después de la aprobación de Bruno. CI verifica formato, tipos, compilación y pruebas; no publica automáticamente.
+Cloudflare Pages sirve la salida estática `dist/` en el proyecto `kairum-landing` (`kairum-landing.pages.dev`). El dominio `kairum.com.ar` sigue en el proyecto `kairum`, que publica `geo-product` con los informes; moverlo es una decisión aparte.
+
+El flujo de trabajo y las convenciones están en [CONTRIBUTING.md](CONTRIBUTING.md).
+
+- **CI** (`.github/workflows/ci.yml`): corre en cada PR. Verifica formato, tipos y compilación, y corre los tests en el Chrome que trae el runner. Es el check `verify` que exige el ruleset de `main`.
+- **Deploy** (`.github/workflows/deploy.yml`): cada merge a `main` propone publicar ese commit exacto. El environment `production` lo retiene hasta que Bruno lo aprueba en **Actions → Deploy → Review deployments**, y solo admite `main`. Un merge nuevo reemplaza al que seguía esperando. **Run workflow** vuelve a publicar el `main` actual, con la misma aprobación.
+
+### Activación (una sola vez)
+
+El workflow queda listo, pero falla en el paso de publicación hasta completar esto con la cuenta de Cloudflare dueña de `kairum`:
+
+1. Crear el proyecto: `bunx wrangler@4.147.0 pages project create kairum-landing --production-branch main`.
+2. Crear un API token con el permiso **Account → Cloudflare Pages → Edit**, limitado a esa cuenta.
+3. Cargar los secretos en el environment, no en el repo:
+
+   ```sh
+   gh secret set CLOUDFLARE_API_TOKEN --env production --repo KairumAI/landing
+   gh secret set CLOUDFLARE_ACCOUNT_ID --env production --repo KairumAI/landing
+   ```
+
+4. **Actions → Deploy → Run workflow** sobre `main` y aprobar.
