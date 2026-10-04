@@ -1,22 +1,9 @@
-## Development
+# Reglas para agentes
 
-When starting the dev server, use background mode:
-
-```
-astro dev --background
-```
-
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
-
-## Documentation
-
-Full documentation: https://docs.astro.build
-
-Consult these guides before working on related tasks:
-
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+- Usar Node 26.10.0 y pnpm 12.9.1: ejecutar comandos como `fnm exec --using 26.10.0 -- pnpm <comando>`.
+- Conservar el diseño y comportamiento de la landing aprobada, así como los textos, IDs y atributos ARIA y `data-*` que usan los tests.
+- Comparar cada cambio visual con la versión aprobada en escritorio y móvil. Requiere revisión independiente y al menos 9/10 en usabilidad, estilo y fidelidad antes de publicar.
+- Norte es ficticia; respuestas y fuentes ilustrativas rotuladas como API, nunca como ChatGPT. No inventar métricas, resultados ni clientes.
+- Conservar licencias de Inter (SIL OFL 1.1), Phosphor (MIT) y GSAP (licencia estándar). Los logos de terceros no implican aval.
+- Servidores locales solo en `127.0.0.1`, nunca en `0.0.0.0`; detener los procesos abiertos al terminar.
+- Documentación de Astro: https://docs.astro.build. Si se usa `astro dev --background`, detenerlo al terminar con `astro dev stop`.

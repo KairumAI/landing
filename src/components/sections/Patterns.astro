@@ -1,0 +1,102 @@
+---
+import Icon from "../Icon.astro";
+import { patterns, stateLabels, type PatternState } from "../../data/patterns";
+const stateIcons: Record<PatternState, string> = {
+  mencion: "Check",
+  comparacion: "Stack",
+  ausente: "Minus",
+};
+---
+
+<section class="patterns-section section-pad" aria-labelledby="patterns-title">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="reveal">
+        <span class="eyebrow">EL MAPA DE CONVERSACIONES</span>
+        <h2 id="patterns-title">
+          El lugar cambia
+          <br />
+          con la pregunta.
+        </h2>
+      </div>
+      <p class="reveal">
+        Explorar una categoría, comparar alternativas
+        <br />y elegir una solución son conversaciones distintas.
+      </p>
+    </div>
+    <div
+      class="pattern-controls"
+      role="group"
+      aria-label="Cambiar intención de las preguntas"
+    >
+      <button data-intent="explorar" aria-pressed="true">
+        01 · Explorar
+      </button>
+      <button data-intent="comparar" aria-pressed="false">
+        02 · Comparar
+      </button>
+      <button data-intent="elegir" aria-pressed="false">
+        03 · Elegir
+      </button>
+      <span>Ejemplo ilustrativo</span>
+    </div>
+    <div class="patterns-body">
+      <div class="pattern-reading">
+        <span>LA PREGUNTA CAMBIA EL FOCO</span>
+        <h3 id="pattern-question">{patterns.explorar.question}</h3>
+        <p id="pattern-insight">{patterns.explorar.insight}</p>
+        <div class="pattern-legend">
+          <span>
+            <b class="dot mention"></b>Mención
+          </span>
+          <span>
+            <b class="dot gold"></b>Comparación
+          </span>
+          <span>
+            <b class="dot neutral"></b>Sin mención
+          </span>
+        </div>
+      </div>
+      <div
+        class="matrix-scroll"
+        tabindex="0"
+        aria-label="Matriz ilustrativa de conversaciones por modelo"
+      >
+        <table class="pattern-matrix">
+          <thead>
+            <tr>
+              <th>Conversación</th>
+              <th>
+                <img src="/assets/openai.svg" alt="" />
+                OpenAI API
+              </th>
+              <th>
+                <img src="/assets/gemini.svg" alt="" />
+                Gemini API
+              </th>
+              <th>
+                <img src="/assets/claude.svg" alt="" />
+                Claude API
+              </th>
+            </tr>
+          </thead>
+          <tbody id="matrix-body">
+            {patterns.explorar.rows.map(([question, ...states]) => (
+              <tr>
+                <td>{question}</td>
+                {states.map((state) => (
+                  <td>
+                    <span class={`matrix-state ${state}`}>
+                      <Icon name={stateIcons[state]} />
+                      {stateLabels[state]}
+                    </span>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

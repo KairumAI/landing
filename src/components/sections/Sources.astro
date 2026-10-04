@@ -1,0 +1,72 @@
+---
+import Icon from "../Icon.astro";
+import { sources } from "../../data/sources";
+---
+
+<section id="fuentes" class="sources-section wrap section-pad">
+  <div class="split source-layout">
+    <div class="source-workspace reveal">
+      <div class="source-top">
+        <Icon name="Link" /> Seguí la evidencia
+        <span>Ejemplo ilustrativo</span>
+      </div>
+      <div class="source-quote">
+        “<span id="source-prefix">{sources[0].prefix}</span>{" "}
+        <mark id="source-highlight">{sources[0].highlight}</mark>.”
+      </div>
+      <div
+        class="source-tabs"
+        role="group"
+        aria-label="Elegir fuente de ejemplo"
+      >
+        <button data-source="0" aria-pressed="true">
+          <Icon name="Globe" /> Sitio de la marca
+        </button>
+        <button data-source="1" aria-pressed="false">
+          <Icon name="FileText" /> Guía de la categoría
+        </button>
+      </div>
+      <article class="source-document">
+        <div class="source-url" id="source-url">
+          {sources[0].url}
+        </div>
+        <h3 id="source-title">{sources[0].title}</h3>
+        <p id="source-excerpt" set:html={sources[0].excerpt} />
+        <div class="human-note">
+          <span class="reviewer-avatar">
+            <Icon name="NotePencil" />
+          </span>
+          <div>
+            <strong>Una segunda mirada.</strong>
+            <p id="source-review">{sources[0].review}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="feature-copy reveal">
+      <span class="eyebrow">FUENTES + REVISIÓN HUMANA</span>
+      <h2>
+        De la respuesta
+        <br />a la fuente.
+        <br />
+        Sin perder el hilo.
+      </h2>
+      <p>
+        Una cita puede estar, pero decir otra cosa. Miramos la respuesta en su
+        contexto y comprobamos qué respaldan las fuentes disponibles. Cuando
+        falta evidencia, la duda queda a la vista.
+      </p>
+      <ul class="clean-list">
+        <li>
+          <Icon name="Check" /> La respuesta, en su contexto.
+        </li>
+        <li>
+          <Icon name="Check" /> La fuente, a la vista.
+        </li>
+        <li>
+          <Icon name="Check" /> La interpretación, revisada.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

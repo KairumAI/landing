@@ -1,0 +1,70 @@
+---
+import Icon from "../Icon.astro";
+import { providerExamples } from "../../data/providers";
+import { heroQueryText } from "../../data/hero";
+const [beforeBrand, afterBrand] = providerExamples[0].answer.split("Norte");
+---
+
+<section id="plataforma" class="answer-section wrap section-pad">
+  <div class="split">
+    <div class="feature-copy reveal">
+      <span class="eyebrow">DISTINTAS PERSPECTIVAS</span>
+      <h2>
+        Una misma pregunta.
+        <br />
+        Distintas maneras
+        <br />
+        de contar tu marca.
+      </h2>
+      <p>
+        La mención es solo una parte. Importan las palabras, las alternativas y
+        el contexto en el que aparecés.
+      </p>
+      <div
+        class="provider-switch"
+        role="group"
+        aria-label="Elegir respuesta de ejemplo"
+      >
+        <button data-provider="0" aria-pressed="true">
+          <img src="/assets/openai.svg" alt="" />
+          OpenAI API
+        </button>
+        <button data-provider="1" aria-pressed="false">
+          <img src="/assets/gemini.svg" alt="" />
+          Gemini
+        </button>
+        <button data-provider="2" aria-pressed="false">
+          <img src="/assets/claude.svg" alt="" />
+          Claude
+        </button>
+      </div>
+      <span class="small-muted">
+        Respuestas ilustrativas de modelos vía API.
+      </span>
+    </div>
+    <div class="answer-stack" aria-live="polite">
+      <div class="stack-ghost ghost-back" aria-hidden="true"></div>
+      <div class="stack-ghost ghost-mid" aria-hidden="true"></div>
+      <article class="answer-card">
+        <div class="response-heading">
+          <img id="stack-logo" src="/assets/openai.svg" alt="" />
+          <span id="stack-provider">{providerExamples[0].name}</span>
+          <span>Ejemplo ilustrativo</span>
+        </div>
+        <div class="stack-question">{heroQueryText}</div>
+        <blockquote id="stack-answer">
+          {beforeBrand}
+          <mark>Norte</mark>
+          {afterBrand}
+        </blockquote>
+        <div class="reading-note">
+          <Icon name="Eye" />
+          <div>
+            <span>Lo que cambia</span>
+            <p id="stack-insight">{providerExamples[0].insight}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

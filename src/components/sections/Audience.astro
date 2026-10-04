@@ -1,0 +1,98 @@
+---
+import Icon from "../Icon.astro";
+import { audienceReadings } from "../../data/audiences";
+---
+
+<section
+  id="equipos"
+  class="audience-section wrap section-pad"
+  aria-labelledby="audience-title"
+>
+  <div class="section-heading">
+    <div class="reveal">
+      <span class="eyebrow">PARA QUIENES MUEVEN LA MARCA</span>
+      <h2 id="audience-title">
+        La misma evidencia.
+        <br />
+        Tu próxima decisión.
+      </h2>
+    </div>
+    <p class="reveal">
+      Marketing, contenido y agencias.
+      <br />
+      Distintas preguntas, una lectura compartida.
+    </p>
+  </div>
+  <div class="audience-layout reveal">
+    <div
+      class="audience-controls"
+      role="group"
+      aria-label="Explorar cómo puede usar KAIRUM tu equipo"
+    >
+      <button
+        data-audience="marca"
+        aria-pressed="true"
+        aria-controls="audience-panel"
+      >
+        <span class="audience-number">01</span>
+        <span>
+          <strong>Marketing y marca</strong>
+          <small>Entender cómo te describen.</small>
+        </span>
+        <Icon name="ArrowUpRight" />
+      </button>
+      <button
+        data-audience="contenido"
+        aria-pressed="false"
+        aria-controls="audience-panel"
+      >
+        <span class="audience-number">02</span>
+        <span>
+          <strong>Contenido y SEO</strong>
+          <small>Decidir qué información revisar.</small>
+        </span>
+        <Icon name="ArrowUpRight" />
+      </button>
+      <button
+        data-audience="agencias"
+        aria-pressed="false"
+        aria-controls="audience-panel"
+      >
+        <span class="audience-number">03</span>
+        <span>
+          <strong>Agencias</strong>
+          <small>Llevar evidencia a la conversación.</small>
+        </span>
+        <Icon name="ArrowUpRight" />
+      </button>
+    </div>
+    <div
+      class="audience-panel"
+      id="audience-panel"
+      aria-live="polite"
+      aria-atomic="true"
+      data-selected-audience="marca"
+    >
+      <div class="audience-panel-top">
+        <Icon name="Quotes" />
+        <span id="audience-lens">{audienceReadings.marca.lens}</span>
+      </div>
+      <div class="audience-panel-copy">
+        <h3 id="audience-question">{audienceReadings.marca.question}</h3>
+        <p id="audience-reading">{audienceReadings.marca.reading}</p>
+        <div class="audience-outcome">
+          <Icon name="ArrowRight" />
+          <div>
+            <span>PARA TU EQUIPO</span>
+            <strong id="audience-action">
+              {audienceReadings.marca.action}
+            </strong>
+          </div>
+        </div>
+      </div>
+      <a class="text-link" href="#informe">
+        Mirá cómo se convierte en un informe <Icon name="ArrowDown" />
+      </a>
+    </div>
+  </div>
+</section>

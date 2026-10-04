@@ -1,0 +1,53 @@
+---
+import Icon from "../Icon.astro";
+---
+
+<dialog id="report-dialog" aria-labelledby="report-dialog-title">
+  <div class="dialog-toolbar">
+    <span id="report-dialog-title">KAIRUM · Informe ilustrativo</span>
+    <button class="icon-button" data-close-dialog aria-label="Cerrar informe">
+      <Icon name="X" />
+    </button>
+  </div>
+  <div class="dialog-content">
+    <h2>Norte, en contexto.</h2>
+    <p>
+      Vista ilustrativa del informe. El contenido muestra cómo se organiza una
+      lectura, sin representar resultados de una marca real.
+    </p>
+    <div class="report-context">
+      <span class="eyebrow">LA CONSULTA</span>
+      <h3>¿Qué software de inventario conviene a una pyme?</h3>
+      <p>Norte · Marca ficticia · Software de inventario</p>
+    </div>
+    <div id="expanded-report"></div>
+    <details class="report-evidence">
+      <summary>
+        Ver la respuesta y su fuente <Icon name="Plus" />
+      </summary>
+      <div class="report-evidence-grid">
+        <div>
+          <span class="eyebrow">RESPUESTA ILUSTRATIVA · OPENAI API</span>
+          <blockquote>
+            Para controlar stock en tiempo real, Norte es una alternativa.
+            Revisá si incluye las integraciones que necesita tu equipo.
+          </blockquote>
+        </div>
+        <div>
+          <span class="eyebrow">
+            FUENTE FICTICIA · NORTE.EXAMPLE / PRODUCTO
+          </span>
+          <p>
+            Norte permite ver el stock en tiempo real y registrar movimientos en
+            una sola plataforma.
+          </p>
+        </div>
+      </div>
+      <p class="report-review">
+        <Icon name="Eye" />
+        Lectura del ejemplo: la fuente describe el stock; las integraciones
+        quedan sin confirmar.
+      </p>
+    </details>
+  </div>
+</dialog>

@@ -1,0 +1,19 @@
+---
+import Icon from "./Icon.astro";
+import { modules } from "../data/report";
+
+interface Props {
+  moduleKey: keyof typeof modules;
+}
+
+const { moduleKey } = Astro.props;
+const reportModule = modules[moduleKey];
+---
+
+<section class="report-module" data-report-module={moduleKey}>
+  <Icon name={reportModule.icon} />
+  <div>
+    <h4>{reportModule.title}</h4>
+    <p>{reportModule.copy}</p>
+  </div>
+</section>

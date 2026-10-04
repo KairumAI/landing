@@ -1,0 +1,83 @@
+---
+import Icon from "../Icon.astro";
+import { Image } from "astro:assets";
+import lockup from "../../assets/convergencia-lockup.webp";
+import ReportModule from "../ReportModule.astro";
+import { modules } from "../../data/report";
+---
+
+<section id="informe" class="report-section section-pad">
+  <div class="wrap split">
+    <div class="feature-copy reveal">
+      <span class="eyebrow">EL ENTREGABLE</span>
+      <h2>
+        Un informe.
+        <br />
+        Con evidencia.
+        <br />Y próximos pasos.
+      </h2>
+      <p>
+        Las consultas acordadas, las respuestas observadas y las fuentes
+        disponibles. Todo conectado con una lectura humana para saber qué
+        revisar primero.
+      </p>
+      <div
+        class="report-options"
+        role="group"
+        aria-label="Módulos del informe ilustrativo"
+      >
+        <button data-module="menciones" aria-pressed="true">
+          <Icon name="Check" />
+          Menciones
+        </button>
+        <button data-module="fuentes" aria-pressed="true">
+          <Icon name="Check" />
+          Fuentes
+        </button>
+        <button data-module="prioridades" aria-pressed="true">
+          <Icon name="Check" />
+          Próximos pasos
+        </button>
+      </div>
+      <button class="text-link" id="read-report">
+        Abrí el informe de ejemplo <Icon name="ArrowUpRight" />
+      </button>
+      <p class="deliverable-note">
+        Probá los módulos. El ejemplo incluye la consulta, la evidencia y el
+        criterio detrás de cada lectura.
+      </p>
+    </div>
+    <div class="report-stage">
+      <div class="paper-back back-two" aria-hidden="true"></div>
+      <div class="paper-back back-one" aria-hidden="true"></div>
+      <article class="report-paper">
+        <div class="report-brand">
+          <div class="brand brand-lockup" role="img" aria-label="KAIRUM">
+            <Image
+              src={lockup}
+              alt=""
+              width={1536}
+              height={1024}
+              loading="eager"
+            />
+          </div>
+          <span>Ejemplo ilustrativo</span>
+        </div>
+        <h3>
+          Norte.
+          <br />
+          En contexto.
+        </h3>
+        <p class="paper-subtitle">Caso ficticio · Software de inventario</p>
+        <div id="report-modules">
+          {(Object.keys(modules) as (keyof typeof modules)[]).map(
+            (moduleKey) => (
+              <ReportModule moduleKey={moduleKey} />
+            ),
+          )}
+        </div>
+        <div class="paper-foot">PREGUNTAR · ENTENDER · DECIDIR</div>
+      </article>
+    </div>
+  </div>
+</section>

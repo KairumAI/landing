@@ -1,0 +1,38 @@
+.contact-section {
+  background: #232323;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 108px 0 118px;
+  color: #f8f8f8;
+}
+.contact-light {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--atmosphere-image) center/cover no-repeat;
+  opacity: 0.08;
+  mix-blend-mode: screen;
+  transform: scale(1.2);
+}
+.contact-inner {
+  text-align: center;
+}
+.contact-inner > span {
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: #b8b8b8;
+}
+.contact-inner h2 {
+  font-size: clamp(35px, 4.3vw, 61px);
+  line-height: 1.09;
+  letter-spacing: -2.6px;
+  margin: 28px 0 33px;
+}
+.contact-inner em {
+  font-style: normal;
+  color: #d3d3d3;
+}
+.contact-inner .button {
+  min-width: 182px;
+}

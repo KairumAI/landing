@@ -1,0 +1,125 @@
+.audience-section {
+  border-top: 1px solid var(--line);
+}
+.audience-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 52px;
+}
+.audience-controls {
+  display: flex;
+  flex-direction: column;
+}
+.audience-controls button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+  min-height: 111px;
+  padding: 26px 17px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  transition:
+    background 0.25s,
+    box-shadow 0.25s;
+}
+.audience-controls button:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.audience-controls button:hover {
+  background: #fffdf5;
+}
+.audience-controls button[aria-pressed="true"] {
+  background: #fff8da;
+  box-shadow: inset 3px 0 var(--gold);
+}
+.audience-number {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #756b4e;
+}
+.audience-controls strong,
+.audience-controls small {
+  display: block;
+}
+.audience-controls strong {
+  font-size: 18px;
+  font-weight: 550;
+  letter-spacing: -0.5px;
+}
+.audience-controls small {
+  margin-top: 7px;
+  font-size: 12px;
+  color: #625e52;
+  line-height: 1.5;
+}
+.audience-controls i {
+  margin-left: auto;
+  color: #6b624a;
+}
+.audience-panel {
+  background: #fafaf7;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 36px;
+  min-height: 401px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.audience-panel-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #6c5b29;
+}
+.audience-panel-top > i {
+  color: #927000;
+}
+.audience-panel-copy h3 {
+  margin-top: 26px;
+  max-width: 390px;
+  font-size: 32px;
+  line-height: 1.14;
+  letter-spacing: -1.2px;
+}
+.audience-panel-copy > p {
+  font-size: 14px;
+  margin-top: 18px;
+  color: #57554e;
+  min-height: 70px;
+}
+.audience-outcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 24px 0 25px;
+  padding-top: 22px;
+  border-top: 1px solid #deddd4;
+}
+.audience-outcome > i {
+  margin-top: 2px;
+  color: #8d6c00;
+}
+.audience-outcome span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #706342;
+  margin-bottom: 8px;
+}
+.audience-outcome strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+.audience-panel > .text-link {
+  font-size: 12px;
+  align-self: flex-start;
+}

@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import lockup from "../../assets/convergencia-lockup.webp";
+---
+
+<footer class="site-footer wrap">
+  <a href="#inicio" class="brand brand-lockup" aria-label="KAIRUM, inicio">
+    <Image src={lockup} alt="" width={1536} height={1024} loading="eager" />
+  </a>
+  <p>Visibilidad. Contexto. Decisiones.</p>
+  <div>
+    <a href="#recorrido">Cómo funciona</a>
+    <a href="#preguntas">Preguntas frecuentes</a>
+  </div>
+</footer>

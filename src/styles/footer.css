@@ -1,0 +1,25 @@
+.site-footer {
+  padding-top: 31px;
+  padding-bottom: 34px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.site-footer p {
+  font-size: 10px;
+  color: #a0a0a0;
+}
+.site-footer > div {
+  margin-left: auto;
+  display: flex;
+  gap: 27px;
+  font-size: 11px;
+  color: #737373;
+}
+.site-footer .brand span {
+  font-size: 19px;
+}
+.site-footer .brand img {
+  width: 34px;
+  height: 34px;
+}

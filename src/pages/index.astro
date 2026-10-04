@@ -1,17 +1,40 @@
 ---
-
+import Base from "../layouts/Base.astro";
+import Header from "../components/sections/Header.astro";
+import Hero from "../components/sections/Hero.astro";
+import Context from "../components/sections/Context.astro";
+import Journey from "../components/sections/Journey.astro";
+import Answers from "../components/sections/Answers.astro";
+import Patterns from "../components/sections/Patterns.astro";
+import Sources from "../components/sections/Sources.astro";
+import Audience from "../components/sections/Audience.astro";
+import Report from "../components/sections/Report.astro";
+import Faq from "../components/sections/Faq.astro";
+import Contact from "../components/sections/Contact.astro";
+import Footer from "../components/sections/Footer.astro";
+import ReportDialog from "../components/sections/ReportDialog.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <a class="skip" href="#contenido">
+    Ir al contenido
+  </a>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <Context />
+    <Journey />
+    <Answers />
+    <Patterns />
+    <Sources />
+    <Audience />
+    <Report />
+    <Faq />
+    <Contact />
+  </main>
+  <Footer />
+  <ReportDialog />
+  <script>
+    import "../scripts/main.ts";
+  </script>
+</Base>

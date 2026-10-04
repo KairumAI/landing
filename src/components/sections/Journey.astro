@@ -1,0 +1,259 @@
+---
+import Icon from "../Icon.astro";
+import { Image } from "astro:assets";
+import lockup from "../../assets/convergencia-lockup.webp";
+import mark from "../../assets/convergencia-mark.webp";
+import { stageCaptions } from "../../data/journey";
+---
+
+<section id="recorrido" class="journey" aria-labelledby="journey-title">
+  <div class="journey-sticky">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">EL RECORRIDO</span>
+          <h2 id="journey-title">
+            Mirá lo que pasa
+            <br />
+            después de preguntar.
+          </h2>
+        </div>
+        <p>
+          Una consulta se convierte en respuestas,
+          <br />
+          fuentes y una lectura para decidir.
+        </p>
+      </div>
+      <div class="journey-shell">
+        <div class="journey-nav" role="group" aria-label="Etapas del recorrido">
+          <button data-stage="0" aria-pressed="true">
+            <span>01</span>Pregunta
+          </button>
+          <button data-stage="1" aria-pressed="false">
+            <span>02</span>Modelos
+          </button>
+          <button data-stage="2" aria-pressed="false">
+            <span>03</span>Patrones
+          </button>
+          <button data-stage="3" aria-pressed="false">
+            <span>04</span>Revisión
+          </button>
+          <button data-stage="4" aria-pressed="false">
+            <span>05</span>Informe
+          </button>
+        </div>
+        <div class="journey-progress" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="journey-canvas" data-stage-active="0">
+          <div class="scene scene-question" data-scene="0">
+            <span class="scene-kicker">
+              Norte · Software de inventario · Marca ficticia
+            </span>
+            <div class="large-question">
+              <Icon name="MagnifyingGlass" />
+              <span>
+                ¿Qué software de inventario
+                <br />
+                conviene a una pyme?
+              </span>
+              <span class="send-disc">
+                <Icon name="ArrowUpRight" />
+              </span>
+            </div>
+            <div class="query-options">
+              <span>Inventario</span>
+              <span>Pymes</span>
+              <span>Integraciones</span>
+            </div>
+            <p class="scene-note">
+              El contexto de la pregunta cambia lo que podemos aprender.
+            </p>
+          </div>
+          <div class="scene scene-network" data-scene="1" hidden>
+            <svg class="network-connections" aria-hidden="true"></svg>
+            <div class="network-query network-node" data-node="query">
+              <Icon name="MagnifyingGlass" />
+              <span>
+                Una consulta
+                <br />
+                <strong>Inventario para pymes.</strong>
+              </span>
+            </div>
+            <div class="network-hub network-node" data-node="hub">
+              <Image
+                src={mark}
+                alt="KAIRUM"
+                loading="eager"
+                width={192}
+                height={192}
+              />
+            </div>
+            <div class="network-models">
+              <div class="network-provider network-node" data-node="openai">
+                <img src="/assets/openai.svg" alt="" />
+                <div>
+                  OpenAI API<small>Explorando una respuesta</small>
+                </div>
+                <Icon name="Check" />
+              </div>
+              <div class="network-provider network-node" data-node="gemini">
+                <img src="/assets/gemini.svg" alt="" />
+                <div>
+                  Gemini API<small>Otra perspectiva</small>
+                </div>
+                <Icon name="Check" />
+              </div>
+              <div class="network-provider network-node" data-node="claude">
+                <img src="/assets/claude.svg" alt="" />
+                <div>
+                  Claude API<small>Su propia forma de responder</small>
+                </div>
+                <Icon name="Check" />
+              </div>
+            </div>
+            <p class="scene-note">
+              Una pregunta viaja por distintos modelos. Cada respuesta puede ser
+              diferente.
+            </p>
+          </div>
+          <div class="scene scene-answers" data-scene="2" hidden>
+            <div class="mini-answer">
+              <div>
+                <img src="/assets/openai.svg" alt="" />
+                OpenAI API
+              </div>
+              <p>
+                Para controlar stock en tiempo real, <mark>Norte</mark> es una
+                alternativa. Revisá si incluye las integraciones que necesita tu
+                equipo.
+              </p>
+              <span>
+                <Icon name="Link" /> norte.example
+              </span>
+            </div>
+            <div class="mini-answer featured">
+              <div>
+                <img src="/assets/gemini.svg" alt="" />
+                Gemini API
+              </div>
+              <p>
+                <mark>Norte</mark> presenta funciones de inventario para pymes.
+                La información sobre sus integraciones no es suficiente para
+                elegir.
+              </p>
+              <span>
+                <Icon name="Link" /> sector.example
+              </span>
+            </div>
+            <div class="mini-answer">
+              <div>
+                <img src="/assets/claude.svg" alt="" />
+                Claude API
+              </div>
+              <p>
+                Compará el control de stock y las integraciones de
+                <mark>Norte</mark> con tu operación antes de decidir.
+              </p>
+              <span>
+                <Icon name="Link" /> guia.example
+              </span>
+            </div>
+            <p class="scene-note">
+              Un patrón en las respuestas: el stock se entiende; las
+              integraciones dejan dudas.
+            </p>
+          </div>
+          <div class="scene scene-evidence" data-scene="3" hidden>
+            <article class="evidence-response">
+              <span class="doc-kicker">RESPUESTA</span>
+              <p>
+                “<mark>Norte</mark> permite controlar stock, pero conviene
+                revisar las integraciones.”
+              </p>
+              <span class="source-badge">
+                <Icon name="Link" /> norte.example / producto
+              </span>
+            </article>
+            <div class="evidence-bridge">
+              <Icon name="ArrowRight" />
+            </div>
+            <article class="evidence-document">
+              <div class="doc-browser">
+                <Icon name="Globe" /> norte.example
+              </div>
+              <h3>Qué dice la fuente.</h3>
+              <p>
+                Norte permite
+                <mark>ver el stock en tiempo real y registrar movimientos</mark>
+                en una sola plataforma.
+              </p>
+              <div class="review-chip">
+                <Icon name="Eye" /> Revisión humana: la fuente no confirma
+                integraciones.
+              </div>
+            </article>
+            <p class="scene-note">
+              Conectamos la respuesta con la fuente y revisamos qué sostiene
+              realmente.
+            </p>
+          </div>
+          <div class="scene scene-report" data-scene="4" hidden>
+            <div class="report-orbit">
+              <span>
+                <Icon name="Quotes" /> Patrón detectado
+              </span>
+              <span>
+                <Icon name="Link" /> Fuente revisada
+              </span>
+              <span>
+                <Icon name="CursorClick" /> Próximos pasos
+              </span>
+            </div>
+            <article class="journey-report">
+              <div class="report-brand">
+                <div class="brand brand-lockup" role="img" aria-label="KAIRUM">
+                  <Image
+                    src={lockup}
+                    alt=""
+                    width={1536}
+                    height={1024}
+                    loading="eager"
+                  />
+                </div>
+                <span>Ejemplo ilustrativo</span>
+              </div>
+              <h3>
+                Una lectura clara.
+                <br />
+                Para la próxima decisión.
+              </h3>
+              <div class="report-rule"></div>
+              <div class="report-summary">
+                <span>Lo que encontramos</span>
+                <p>
+                  Norte aparece por su control de stock. Las integraciones dejan
+                  una pregunta abierta.
+                </p>
+                <span>Lo que conviene revisar</span>
+                <p>Explicar las integraciones disponibles en la web.</p>
+              </div>
+            </article>
+            <p class="scene-note">
+              El recorrido termina en algo que tu equipo puede conversar y usar.
+            </p>
+          </div>
+        </div>
+        <div class="journey-bottom">
+          <span id="journey-caption" aria-live="polite">
+            {stageCaptions[0]}
+          </span>
+          <span class="scroll-hint">
+            <Icon name="ArrowDown" /> Avanzá con scroll o elegí una etapa
+          </span>
+          <span>Caso ficticio: Norte</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
