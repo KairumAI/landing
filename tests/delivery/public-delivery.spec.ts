@@ -9,7 +9,6 @@ import {
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
-import { assertReleaseContext } from "../../scripts/check-release-ref";
 import { checkPublicDeliveryLive } from "../../scripts/check-public-delivery-live";
 import {
   digest,
@@ -168,29 +167,6 @@ test("detects broken report references after a shared landing asset is removed",
     await item.dispose();
   }
 });
-
-const release = {
-  repository: "KairumAI/landing",
-  event: "release",
-  ref: "refs/tags/v1.0.0",
-};
-for (const event of ["release", "workflow_dispatch"]) {
-  test(`admits a version tag for ${event}`, () => {
-    expect(() => assertReleaseContext({ ...release, event })).not.toThrow();
-  });
-}
-for (const change of [
-  { event: "push" },
-  { event: "pull_request" },
-  { ref: "refs/heads/main" },
-  { ref: "refs/heads/v1.0.0" },
-  { ref: "refs/tags/v1" },
-  { repository: "another-owner/landing" },
-]) {
-  test(`rejects an ineligible release request: ${JSON.stringify(change)}`, () => {
-    expect(() => assertReleaseContext({ ...release, ...change })).toThrow();
-  });
-}
 
 for (const scenario of [
   "correct",

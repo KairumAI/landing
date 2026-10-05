@@ -1,10 +1,10 @@
 name: Deploy
 
-# Releases propose a complete landing + report package. Bruno approves the
-# production environment; main merges alone never publish this site.
+# Bruno authorized automatic publication of verified main commits (ADR-0010).
+# Other branches, tags and superseded retries cannot publish.
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     outputs:
+      publish: ${{ steps.current.outputs.publish }}
       manifest_sha256: ${{ steps.manifest.outputs.sha256 }}
     steps:
       - uses: actions/checkout@v7
@@ -28,19 +29,28 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.4.0
-      - name: Admit only a release tag from main
-        run: bun scripts/check-release-ref.ts
-      - run: bun install --frozen-lockfile
-      - run: bun format:check
-      - run: bun run check:reference
-      - run: bun check
-      - run: bun run test:delivery
+      - name: Admit only the current main commit
+        id: current
+        run: bun scripts/check-publication-ref.ts
+      - if: steps.current.outputs.publish == 'true'
+        run: bun install --frozen-lockfile
+      - if: steps.current.outputs.publish == 'true'
+        run: bun format:check
+      - if: steps.current.outputs.publish == 'true'
+        run: bun run check:reference
+      - if: steps.current.outputs.publish == 'true'
+        run: bun check
+      - if: steps.current.outputs.publish == 'true'
+        run: bun run test:delivery
       # Browser tests build the complete package and verify the published reports.
-      - run: bun run test
+      - if: steps.current.outputs.publish == 'true'
+        run: bun run test
       - name: Record the verified package digest
         id: manifest
+        if: steps.current.outputs.publish == 'true'
         run: printf 'sha256=%s\n' "$(sha256sum build/public-delivery-manifest.json | cut -d ' ' -f 1)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v7
+        if: steps.current.outputs.publish == 'true'
         with:
           name: kairum-public-${{ github.sha }}
           path: |
@@ -51,6 +61,7 @@ jobs:
 
   deploy:
     needs: verify
+    if: needs.verify.outputs.publish == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:
@@ -67,11 +78,15 @@ jobs:
         with:
           name: kairum-public-${{ github.sha }}
           path: verified-public/
-      - name: Verify the exact approved package
+      - name: Verify the exact tested package
         env:
           EXPECTED_MANIFEST_SHA: ${{ needs.verify.outputs.manifest_sha256 }}
         run: bun scripts/verify-delivery-artifact.ts verified-public
+      - name: Recheck main immediately before upload
+        id: current
+        run: bun scripts/check-publication-ref.ts
       - name: Publish the complete static site to the existing Pages project
+        if: steps.current.outputs.publish == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -80,8 +95,10 @@ jobs:
           test "$CLOUDFLARE_ACCOUNT_ID" = '1dde4cbeefbdfa598e7c64a4d8aad15f'
           bunx wrangler@4.147.0 pages deploy verified-public/dist --project-name kairum --branch main --commit-hash "$GITHUB_SHA"
       - name: Check the public landing, reports and excluded routes
+        if: steps.current.outputs.publish == 'true'
         run: bun scripts/check-public-delivery-live.ts verified-public/build/public-delivery-manifest.json
-      - name: Summarize the approved publication
+      - name: Summarize the verified publication
+        if: steps.current.outputs.publish == 'true'
         run: |
           printf 'Published commit `%s` to the existing Pages project `kairum`.\n\n' "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
           printf '[Landing](https://kairum.com.ar) · [Informes](https://kairum.com.ar/informes/)\n' >> "$GITHUB_STEP_SUMMARY"

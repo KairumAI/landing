@@ -24,7 +24,11 @@ assert.equal(
 );
 const expected: DeliveryManifest = JSON.parse(bytes.toString());
 assert.equal(expected.schema_version, 1);
-assert.equal(expected.commit, process.env.GITHUB_SHA, "Wrong release artifact");
+assert.equal(
+  expected.commit,
+  process.env.GITHUB_SHA,
+  "Wrong publication artifact",
+);
 const reports = validateReportsManifest(
   JSON.parse(
     await readFile(join(root, "publishing/reports-manifest.json"), "utf8"),

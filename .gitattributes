@@ -3,3 +3,4 @@ public/informes/** -text whitespace=-trailing-space
 public/licenses/OFL-*.txt -text
 # Captured command output keeps its original spacing as historical evidence.
 docs/evidence/2026-10-05-single-public-deploy/*.log whitespace=-trailing-space
+docs/evidence/2026-10-05-automatic-main/*.log whitespace=-trailing-space

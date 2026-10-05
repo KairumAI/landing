@@ -92,13 +92,13 @@ La decisión y los pasos de publicación y rollback están en
 El flujo de trabajo y las convenciones están en [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - **CI** (`.github/workflows/ci.yml`): corre en cada PR. Verifica formato, tipos y compilación, y corre los tests en el Chrome que trae el runner. Es el check `verify` que exige el ruleset de `main`.
-- **Deploy** (`.github/workflows/deploy.yml`): corre solo al publicar un release con tag `v*` sobre `main`; un merge no publica nada. El environment `production` solo admite tags `v*` y retiene el deploy hasta que Bruno lo aprueba en **Actions → Deploy → Review deployments**. **Run workflow** sobre un tag existente lo vuelve a publicar, por ejemplo para volver atrás. Los tags `v*` no se pueden mover ni borrar.
+- **Deploy** (`.github/workflows/deploy.yml`): cada push a `main` verifica el SHA integrado y publica automáticamente landing e informes. `production` sólo admite `main`, sin reviewer obligatorio, según [ADR-0010](docs/decisions/0010-automatic-main-publication.md). No publica ramas de PR ni tags. **Run workflow** sobre `main` reintenta su versión actual; una ejecución desplazada por otro merge se omite. Los releases son registros opcionales.
 
 ### Activación y biblioteca
 
-Los secretos se configuran en `KairumAI/landing → production`. El reviewer Bruno
-y la restricción de tags `v*` se conservan. No crear otro proyecto ni mover el
-dominio. Un release inicia validación; la publicación exige aprobación de Bruno.
+Los secretos se conservan en `KairumAI/landing → production`, limitado a `main`.
+Bruno autorizó retirar la aprobación individual de cada deploy. No crear otro
+proyecto ni mover el dominio. Un merge inicia la validación y publicación automática.
 
 ```sh
 gh secret set CLOUDFLARE_API_TOKEN --env production --repo KairumAI/landing
@@ -108,11 +108,12 @@ gh secret set CLOUDFLARE_ACCOUNT_ID --env production --repo KairumAI/landing
 `public/informes/` conserva la biblioteca publicada y sus licencias. Build
 comprueba cada archivo contra `publishing/reports-manifest.json`, rechaza extras,
 valida sus enlaces y crea `build/public-delivery-manifest.json` fuera de `dist/`.
-`bun run test:delivery` ejercita errores de empaquetado, tags y entrega HTTP.
-El deploy publica el artifact comprobado; no recompila después de la aprobación.
+`bun run test:delivery` ejercita errores de empaquetado, contexto de publicación,
+reintentos desplazados y entrega HTTP. El deploy publica el artifact comprobado;
+no recompila ni descarga informes desde una fuente mutable durante el upload.
 
 Antes de activar este writer, mantener CD de geo-product deshabilitado y su
 environment `kairum-production` restringido a la rama reservada inexistente.
-Los tags previos a esta migración no sirven para volver atrás porque no contienen
-el paquete completo de informes. Para nuevos informes, revisar e incorporar
+Recuperar una versión mediante un PR de revert o un deployment Pages completo.
+Para nuevos informes, revisar e incorporar
 otro snapshot público mediante PR, sin copiar carpetas del repo privado.

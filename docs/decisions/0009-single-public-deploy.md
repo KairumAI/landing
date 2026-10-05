@@ -3,6 +3,8 @@
 Fecha: 2026-10-05. Estado: autorizada por Bruno para implementación y validación.
 Amplía ADR-0008 en el alcance de la entrega pública y sustituye la propuesta
 de crear `kairum-landing`.
+El release y gate manual de esta decisión fueron sustituidos por
+[ADR-0010](0010-automatic-main-publication.md), autorizado posteriormente el mismo día.
 
 ## Contexto
 

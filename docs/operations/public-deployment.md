@@ -3,45 +3,56 @@
 Destino único: Cloudflare Pages `kairum`, rama de producción `main`, dominio
 [kairum.com.ar](https://kairum.com.ar). No crear `kairum-landing`, cambiar DNS ni
 cambiar el plan. Se conserva Direct Upload con Wrangler 4.147.0.
-Decisión: [ADR-0009](../decisions/0009-single-public-deploy.md).
+Decisiones: [ADR-0009](../decisions/0009-single-public-deploy.md) para el paquete
+y [ADR-0010](../decisions/0010-automatic-main-publication.md) para el CD automático.
 
-## Antes del primer release
+## Antes de activar la publicación automática
 
-1. Integrar mediante PR la migración Astro y el paquete público completo.
+1. Preparar y revisar el PR de migración Astro y el paquete público completo.
+   Esperar a configurar `production` antes de integrarlo: el merge dispara CD.
 2. Comprobar que CD de geo-product está deshabilitado y `kairum-production`
    admite sólo la rama inexistente reservada `kairum-publication-paused`.
    No debe haber ejecuciones viejas de publicación en curso.
 3. Mantener los dos secretos exclusivamente en el environment `production`
    de `KairumAI/landing`: `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID`.
    No poner valores en código, documentos, logs ni secretos de repo generales.
-4. No modificar el reviewer Bruno ni la restricción de tags `v*` de `production`.
+4. Configurar `production` con una única política de rama `main`, sin reviewer
+   obligatorio ni espera. Bruno autorizó reemplazar la política anterior de tags
+   y aprobación por deployment. Conservar el ruleset de PR y CI en `main`.
 5. En Pages `kairum` → **Deployments**, identificar y registrar el deployment de
    producción exitoso que sirve la versión anterior con los 26 informes. Su
    commit de origen es `32093714116cfcd5cf44927dfe95e1cae289f58b`. Conservarlo
-   como destino de recuperación del primer release; no borrar ese deployment.
+   como destino de recuperación inicial; no borrar ese deployment.
+6. Con CI en verde y la política de rama `main` comprobada, integrar mediante
+   squash merge. Si el primer push había quedado rechazado por la política vieja,
+   completar la configuración y ejecutar **Deploy → Run workflow → main**.
 
 La consulta de sólo lectura del 2026-10-05 identificó el deployment de producción
 `783b90f8-e7b1-44e4-81a9-984c4fe708c5`, origen `3209371`, en el proyecto existente.
 Antes de publicar, confirmar que ese destino sigue disponible y conserva los
 informes; esta preparación no ejecuta un rollback.
 
-## Publicar una versión
+## Publicar cambios
 
-Crear un release con tag `vMAJOR.MINOR.PATCH` de un commit integrado en `main`.
-El tag es inmutable. Para esta migración de estructura corresponde una versión
-mayor; revisar los releases existentes para elegir el número disponible.
+Abrir un PR, aprobar la revisión y comprobar el check `verify` en verde.
+Integrar con squash merge. El push resultante a `main` inicia **Deploy** y publica
+automáticamente; no hace falta un release ni una aprobación de deployment.
 
-`Deploy / verify` admite sólo un tag de este repo que pertenezca a `main`.
+`Deploy / verify` admite sólo push o solicitud manual sobre `main` de este repo.
+Exige checkout igual al SHA de la ejecución y consulta el SHA remoto de `main`.
+Si otra versión lo desplazó, omite la publicación.
 Ejecuta formato, referencia R05, tipos, tests de entrega y navegador. Build
 verifica el snapshot fuente, compila Astro y comprueba los archivos, recursos,
 hashes y límites del paquete final. Guarda `dist/` y el manifiesto de sus hashes
 como artifact de la misma ejecución.
 
-Bruno aprueba `production` en **Actions → Deploy → Review deployments**.
 `Deploy / deploy` descarga y comprueba ese paquete exacto, lo publica en Pages
 `kairum` y verifica por HTTPS Home, Analytics, robots, sitemap, biblioteca,
 los informes, PDF, lectores representativos y rutas privadas excluidas.
-Un merge, un push a una rama o un tag sin pertenecer a `main` no publican el sitio.
+Antes del upload vuelve a consultar `main`: un reintento antiguo no sobrescribe
+una versión nueva. Un push a una rama de trabajo, un tag o un release no publican.
+Las publicaciones se serializan sin cancelar uploads en curso. Un merge ocurrido
+durante un upload se publica mediante la siguiente ejecución.
 La verificación HTTP reintenta seis veces con diez segundos entre intentos.
 
 Un fallo después de subir no deshace la publicación. Revisar el historial Pages
@@ -85,8 +96,7 @@ en el paso de despliegue. Cada actualización requiere revisión del alcance pú
 
 ## Volver atrás
 
-Si el primer release introduce un problema, todavía no habrá un tag Astro
-completo anterior. Bruno puede restaurar el deployment de producción exitoso
+Si la primera publicación introduce un problema, Bruno puede restaurar el deployment de producción exitoso
 registrado antes de publicar: **Pages `kairum` → Deployments → All deployments →
 menú del deployment anterior → Rollback to this deployment**, y confirmar la
 restauración. Esto recupera la landing anterior y sus informes en el mismo
@@ -95,17 +105,12 @@ Comprobar después la Home, `/informes/`, un PDF y un lector, y conservar el CD
 de geo-product deshabilitado. Ver el
 [procedimiento oficial de Cloudflare](https://developers.cloudflare.com/pages/configuration/rollbacks/).
 
-Un fallo transitorio del upload puede resolverse reintentando el mismo tag
-verificado, con nueva aprobación de Bruno. Ese reintento no revierte un defecto
-del paquete; para un defecto, restaurar el deployment anterior y corregir por PR.
-
-Cuando ya exista un release Astro completo conocido:
-
-En **Actions → Deploy → Run workflow**, elegir un tag de una versión completa
-de esta migración o posterior y aprobarlo en `production`. La compilación falla
-si faltan los informes. Los tags anteriores a la migración no son destinos válidos
-para `kairum`; conservar una versión completa conocida para la recuperación.
-Después revertir el PR responsable y publicar un nuevo release completo.
+Un fallo transitorio del upload puede resolverse en **Actions → Deploy → Run
+workflow → main**. Reintenta únicamente el SHA actual; una ejecución histórica
+desplazada se omite. Ese reintento no revierte un defecto del paquete: para un
+defecto, restaurar un deployment completo y revertir el cambio responsable por PR.
+El nuevo `main` publica la corrección automáticamente. No publicar tags antiguos
+ni reactivar el writer anterior para recuperar la landing.
 
 ## Retiro del circuito anterior
 
