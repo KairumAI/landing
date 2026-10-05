@@ -1,0 +1,165 @@
+{
+  "name": "final-product-traffic-scene-es-desktop-reduced",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:56:35.165Z",
+  "sha256": "ee33fa0c0cd2027c3ba77797642531d9e7ea614460351ef168b6a8b8d018c80b",
+  "activeElement": {
+    "label": "TrafficExplorarCómo funcionaCapacidadesFAQ\n    KAIRUM TrafficDe una respuesta a tu web. Seguí las señales.Visitas referidas por IA y actividad de rast",
+    "tag": "MAIN"
+  },
+  "charts": [],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "es-AR",
+  "menus": [
+    {
+      "name": "Productos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 365.03125,
+        "right": 481.125,
+        "top": 0,
+        "width": 116.09375,
+        "x": 365.03125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluciones",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 530.078125,
+        "right": 652.109375,
+        "top": 0,
+        "width": 122.03125,
+        "x": 530.078125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 701.0625,
+        "right": 810.5625,
+        "top": 0,
+        "width": 109.5,
+        "x": 701.0625,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 859.515625,
+        "right": 964.46875,
+        "top": 0,
+        "width": 104.953125,
+        "x": 859.515625,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "reduced",
+  "preference": true,
+  "scenes": [
+    {
+      "ambient": "reduced",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "traffic-observation-art",
+          "playState": "running",
+          "rect": {
+            "bottom": 843.390625,
+            "height": 586.65625,
+            "left": 272.5,
+            "right": 1152.5,
+            "top": 256.734375,
+            "width": 880,
+            "x": 272.5,
+            "y": 256.734375
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "traffic",
+      "labels": [
+        {
+          "class": "traffic-observation-head",
+          "rect": {
+            "bottom": 240.734375,
+            "height": 68,
+            "left": 272.5,
+            "right": 1152.5,
+            "top": 172.734375,
+            "width": 880,
+            "x": 272.5,
+            "y": 172.734375
+          }
+        },
+        {
+          "class": "traffic-observation-details",
+          "rect": {
+            "bottom": 938.390625,
+            "height": 95,
+            "left": 272.5,
+            "right": 1152.5,
+            "top": 843.390625,
+            "width": 880,
+            "x": 272.5,
+            "y": 843.390625
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 980.390625,
+        "height": 807.65625,
+        "left": 272.5,
+        "right": 1152.5,
+        "top": 172.734375,
+        "width": 880,
+        "x": 272.5,
+        "y": 172.734375
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "Traffic — KAIRUM",
+  "url": "http://127.0.0.1:4328/productos/traffic/",
+  "viewport": {
+    "clientWidth": 1425,
+    "dpr": 1,
+    "height": 1000,
+    "scrollWidth": 1425,
+    "scrollY": 464,
+    "width": 1440
+  },
+  "screenshot": {
+    "file": "final-product-traffic-scene-es-desktop-reduced.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 1425,
+    "pixel_height": 990,
+    "bytes": 73577,
+    "sha256": "ee33fa0c0cd2027c3ba77797642531d9e7ea614460351ef168b6a8b8d018c80b",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}

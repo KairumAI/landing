@@ -10,5 +10,5 @@ export default defineConfig({
   },
   image: { service: { entrypoint: "astro/assets/services/noop" } },
   // "preserve" emits en/404.html (not en/404/index.html) so Cloudflare Pages finds each locale's 404.
-  build: { inlineStylesheets: "always", format: "preserve" },
+  build: { inlineStylesheets: "never", format: "preserve" },
 });

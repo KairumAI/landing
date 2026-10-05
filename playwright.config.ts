@@ -10,6 +10,9 @@ export default defineConfig({
     ...devices["Desktop Chrome"],
     // The GitHub runner ships Google Chrome; using it skips the Playwright browser download.
     channel: process.env.CI ? "chrome" : undefined,
+    launchOptions: {
+      executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
+    },
     baseURL: `http://127.0.0.1:${port}`,
     viewport: { width: 1440, height: 1000 },
     trace: "retain-on-failure",

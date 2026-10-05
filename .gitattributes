@@ -1,0 +1,2 @@
+# Preserve this approved vendor logo byte-for-byte; check:reference verifies it.
+public/kairum/assets/models/claude.svg -whitespace

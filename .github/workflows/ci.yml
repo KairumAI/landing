@@ -22,6 +22,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun format:check
+      - run: bun run check:reference
       - run: bun check
       # Builds the site, serves it and runs the browser tests against the runner's Chrome.
       - run: bun run test

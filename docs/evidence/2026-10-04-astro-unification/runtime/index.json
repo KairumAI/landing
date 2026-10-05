@@ -1,0 +1,1332 @@
+{
+  "candidate_version": "7207357b71e1",
+  "reference_version": "477f1e2338d2",
+  "capture_provider": "Codex In-app Browser native screenshot",
+  "capture_limits": [
+    "Original screenshot bytes; actual image encoding and pixel dimensions are recorded per file.",
+    "The provider image may omit scrollbar pixels and differ in height from the reported CSS viewport; no 1:1 viewport-to-pixel mapping is assumed.",
+    "Opener-at-top frames show page hierarchy; corresponding scene frames show full product visual.",
+    "Reduced-motion captures prove composition only; playing pairs and E2E prove motion.",
+    "Files in ../historical are excluded from this final gate.",
+    "The first 46 frames were captured on 596cdb6215c7 and review unchanged surfaces; the English FAQ correction has a new native frame. Client bundle, CSS and all Spanish/Portuguese documents are byte-identical across candidates."
+  ],
+  "captures": [
+    {
+      "metadata": "final-agents-home-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-agents-home-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 56252,
+        "sha256": "40ec876c29c3f4579d0e20a35951dc4d7649cd68195c8ab0a441a823591c3fcc",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 2951,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:38:22.063Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-analytics-es-320-nojs.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-analytics-es-320-nojs.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 31117,
+        "sha256": "84ccdbc3ec8e3f2275aecac5bf6e031a4e969fa97d9a218b6b07ea962e9b72c2",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 2841,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:52:23.400Z",
+      "motion": "disabled",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-analytics-es-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-analytics-es-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 29050,
+        "sha256": "bacf347017fe60f721b626ac478f961726930680ab079d347b9e37501c8e0ee6",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 2410,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:52:15.752Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-analytics-home-desktop-1440.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-analytics-home-desktop-1440.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 99615,
+        "sha256": "510449e1081794d0e95f0ca397fff2664d3de16bfcdb1033cba1340268856268",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 1994,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:41:34.493Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-brand-hub-desktop-a.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-brand-hub-desktop-a.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 67276,
+        "sha256": "42c1acb723312d121080ee5ae26bafc9b72a321857be8ed3124190b42873a37d",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 4345,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:41:09.997Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-brand-hub-desktop-b.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-brand-hub-desktop-b.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 66614,
+        "sha256": "371e0c7c87ef224d985d7713e099ffe5b7502f70513213a0be6c6a3e6a9bb508",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 4345,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:41:33.445Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-brand-hub-es-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-brand-hub-es-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 31103,
+        "sha256": "fd1338d4b6c439d33c66105d4812378b9fc8c5e220f9f099c1c92444639427c7",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 5660,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:52:15.267Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-home-en-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-home-en-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 125714,
+        "sha256": "24d70cea50716de772f5ca709340ba40b4e3009c92d9010a40e690dbc28dab43",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/en/#contenido",
+      "locale": "en",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:52:41.969Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-home-es-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-home-es-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 38711,
+        "sha256": "5cd3abcdd3cd2bc2d2f6fce168d78bce321ee5992c4313010297ac221f8d5784",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 0,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:51:33.508Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-home-es-desktop-a.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-home-es-desktop-a.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 126050,
+        "sha256": "7cdebf001aa0e31e8279b9b962c02fe976605479471768ad750ef67494298380",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:44:42.090Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-home-es-desktop-stable-b.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-home-es-desktop-stable-b.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 128415,
+        "sha256": "1c33e65c07d0f57d5eabe94007896c50caea7a794be5cbaa59b4d41b9667b937",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:45:19.394Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-home-pt-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-home-pt-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 37092,
+        "sha256": "1df11a880b25c629e72b3a07c16481aef9ce5f78397639785b6e166a6c433329",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/#contenido",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 0,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:53:06.994Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-home-pt-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-home-pt-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 128293,
+        "sha256": "d404fb9e8a6a0a569adcb9f4546189523c94b50036196d61a0f2ae5d1a454c8c",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/#contenido",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:53:07.297Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-language-footer-es-320-keyboard.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-language-footer-es-320-keyboard.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 22254,
+        "sha256": "c59238f6a250ccc68a9edec1a72f0a9e4cd3d4882c104fb60ac9aaff3efb9cd5",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/prompt-intelligence/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 5666,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:58:28.290Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-menu-company-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-menu-company-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 128762,
+        "sha256": "c467046d5bf749618150164f6944d37d9dc4bb5251584161c1e86ade958e672c",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:44:43.900Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-menu-products-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-menu-products-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 120713,
+        "sha256": "a74f9fdb6c4e8c7390d1b9ed5153f9290c14dbadee4c2dde12622419f9f1f42d",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:44:42.720Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-menu-products-es-320.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-menu-products-es-320.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 320,
+        "pixel_height": 900,
+        "bytes": 29357,
+        "sha256": "4456d6396360eb7ec71d65286936401de33ee4c9b741d9828c5d74a181f3a310",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 320,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 320,
+        "scrollY": 0,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:51:44.865Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-menu-resources-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-menu-resources-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 126287,
+        "sha256": "1006d6f2b49c229abbd2dff2f5f29734bcb25464d85bc69ee908c5ec5df60349",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:44:43.515Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-menu-solutions-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-menu-solutions-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 126953,
+        "sha256": "a42f5ad5f633df007c0f50245dd0cba84bdc284f67ad64499dfa3a47d4edb849",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:44:43.174Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-agents-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-agents-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 78109,
+        "sha256": "795c1d91a3f253d01dc3cde3355ca7ed43819b334b9b303c4614b753660619c2",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/agents/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:55:53.521Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-agents-scene-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-agents-scene-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 73818,
+        "sha256": "c41046a7acda19f922d491d09adbee46a9a22b388d620fffd8acae5205b97cd2",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/agents/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 300,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:56:36.130Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-analytics-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-analytics-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 82634,
+        "sha256": "d193a1657abba78e78c8d27c743d714f7d20cb5422a704bde57ff8cea5c2ec25",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/analytics/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:55:52.923Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-analytics-scene-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-analytics-scene-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 99171,
+        "sha256": "c028312c47ab810131c1013683f0a5026713c434948cb438510da812a91a184d",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/analytics/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 421,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:56:37.063Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-en-equivalent-anchor.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-prompt-en-equivalent-anchor.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 78651,
+        "sha256": "210aa23a038bcfc236594f8eacffb74557522180e77bedee3484ec96dbe31246",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/en/productos/prompt-intelligence/#como-funciona",
+      "locale": "en",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 1306,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:54:58.905Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-prompt-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 72838,
+        "sha256": "642892f96103702b63d58e6fb1749b612533126aed2ddd37109db3ebf3cceed7",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/prompt-intelligence/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:54:35.534Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-faq-en-copy-corrected.json",
+      "captured_candidate_version": "7207357b71e1",
+      "image": {
+        "file": "final-product-prompt-faq-en-copy-corrected.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 70856,
+        "sha256": "0b538ba25c716cd93dd0a81da3d3d003d846e7a17cdb913b04bfdd25387e2648",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/en/productos/prompt-intelligence/#preguntas",
+      "locale": "en",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 3665,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T02:08:47.505Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-faq-keyboard.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-prompt-faq-keyboard.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 81860,
+        "sha256": "696b37b476e4157c7173e6f33f81b44e8e14ca0c7ef5c964e8cff552fec724a8",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/prompt-intelligence/#preguntas",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 3689,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:54:57.978Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-pt-320-playing.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-prompt-pt-320-playing.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 29337,
+        "sha256": "0140c8a0230a7b3d2d659de4b0410755b964cc47db6d57279b62d6b98d8875cf",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/productos/prompt-intelligence/",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 459,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:54:23.764Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-real-anchor.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-prompt-real-anchor.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 80117,
+        "sha256": "2777760dcc8328fb8e360a0cc1dd556bb2e4b8639281f0528f90775db292fc13",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/prompt-intelligence/#como-funciona",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 1378,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:54:58.309Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-prompt-scene-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-prompt-scene-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 70898,
+        "sha256": "def344086e561e315dad94a65a24654d367bd74f8fd8ef36d593f14203b0205e",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/prompt-intelligence/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 524,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:56:50.998Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-traffic-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-traffic-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 72440,
+        "sha256": "fa11297d4b1cd009ed135ff583f6af04cff2314d03d13f573dffcab1296ecfac",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/traffic/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 0,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:55:54.104Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-product-traffic-scene-es-desktop-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-product-traffic-scene-es-desktop-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 73577,
+        "sha256": "ee33fa0c0cd2027c3ba77797642531d9e7ea614460351ef168b6a8b8d018c80b",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/productos/traffic/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 464,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:56:35.165Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-en-1024-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-en-1024-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1009,
+        "pixel_height": 985,
+        "bytes": 66670,
+        "sha256": "d62d08546a0895af20e1ecf6aaf6e7ec4af8b0cbf0f9076a9ca343e7096c70f6",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/en/#contenido",
+      "locale": "en",
+      "viewport": {
+        "clientWidth": 1009,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1009,
+        "scrollY": 787,
+        "width": 1024
+      },
+      "captured_at": "2026-10-05T01:52:42.517Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-en-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-en-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 26519,
+        "sha256": "8a03a80144045eee1278930445024b492da9c4784438a60e7531eb28d5bdb301",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/en/#contenido",
+      "locale": "en",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 1266,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:52:43.110Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-es-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-es-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 27871,
+        "sha256": "250256508c70ad7bbe5a936b6843c66dae32250a2e9dab665347fcffc330a22b",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 1277,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:51:45.704Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-es-651-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-es-651-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 636,
+        "pixel_height": 977,
+        "bytes": 44635,
+        "sha256": "e5836424339cbb478f51c7fba0bab4860cc1302f5f153030f6ec281ae31a0899",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 636,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 636,
+        "scrollY": 999,
+        "width": 651
+      },
+      "captured_at": "2026-10-05T01:51:23.165Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-home-desktop-a.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-home-desktop-a.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 83616,
+        "sha256": "6b3b9e89541d99c79a57d82c5cf67637361f1f553ee534e56123244108017f2c",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 858,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:43:29.706Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-home-desktop-b.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-home-desktop-b.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 83613,
+        "sha256": "7316e680e7a3382bb286d3074f10acafa0df83bb59b530dded0a793a469ce077",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 858,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:45:19.966Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-pt-1201-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-pt-1201-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1186,
+        "pixel_height": 988,
+        "bytes": 76129,
+        "sha256": "aed8040bbd467d5ecf98e80a83454d12a548dc776c21e5a2b5d2131bcd4e0eca",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/#contenido",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 1186,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1186,
+        "scrollY": 817,
+        "width": 1201
+      },
+      "captured_at": "2026-10-05T01:53:07.892Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-pt-320-playing-a.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-pt-320-playing-a.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 27746,
+        "sha256": "b0bf176b99b51a29b370bb985aeaf4a694199eeef46ab31114437d5ff396f4b5",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/#contenido",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 1351,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:54:07.713Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-pt-320-playing-b.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-pt-320-playing-b.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 27943,
+        "sha256": "4c7f45040aadb366ef7af11f1d46061fd57f051257f5620b1999f31a39359900",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/#contenido",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 1351,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:54:07.797Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-prompt-pt-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-prompt-pt-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 28577,
+        "sha256": "afacf4258846e23029640d77e05337e1904a7fef705ff5f7d72dd2ccb89d7a2f",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/pt-br/#contenido",
+      "locale": "pt-BR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 1351,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:53:08.410Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-resources-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-resources-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 74100,
+        "sha256": "e629ee357ee1e2b360b51fe936d210182548a3f50c8088c49c43fae35b1c6680",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 5395,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:41:10.826Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-services-desktop.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-services-desktop.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 80347,
+        "sha256": "b7843f0b224b036bd90f2a94e6efc043206134c287a8d9d0bdaff19ea528dd12",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 4781,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:41:11.354Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-traffic-es-320-reduced.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-traffic-es-320-reduced.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 305,
+        "pixel_height": 858,
+        "bytes": 30902,
+        "sha256": "03124f6c3de9e5878fb8139e89a8c2b33ac9f609d69e3bd07a8a9122f086ebdc",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/#contenido",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 305,
+        "dpr": 1,
+        "height": 900,
+        "scrollWidth": 305,
+        "scrollY": 4862,
+        "width": 320
+      },
+      "captured_at": "2026-10-05T01:51:46.164Z",
+      "motion": "reduced",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-traffic-home-desktop-a.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-traffic-home-desktop-a.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 75222,
+        "sha256": "534dc20934cd08dbeeb484da9b0f6584a0788a930efb0aabbc923d49b856250f",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 3568,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:40:36.830Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    },
+    {
+      "metadata": "final-traffic-home-desktop-b.json",
+      "captured_candidate_version": "596cdb6215c7",
+      "image": {
+        "file": "final-traffic-home-desktop-b.jpg",
+        "mime_type": "image/jpeg",
+        "pixel_width": 1425,
+        "pixel_height": 990,
+        "bytes": 76363,
+        "sha256": "a259a95dd833f6cf2f43a9444e8ed4732baa8421454005ebe5f2c7f8c85a35b9",
+        "native_bytes_unmodified": true
+      },
+      "url": "http://127.0.0.1:4328/",
+      "locale": "es-AR",
+      "viewport": {
+        "clientWidth": 1425,
+        "dpr": 1,
+        "height": 1000,
+        "scrollWidth": 1425,
+        "scrollY": 3568,
+        "width": 1440
+      },
+      "captured_at": "2026-10-05T01:41:33.961Z",
+      "motion": "full",
+      "initial_entry": [
+        "/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+      ]
+    }
+  ],
+  "previous_candidate_version": "596cdb6215c7"
+}

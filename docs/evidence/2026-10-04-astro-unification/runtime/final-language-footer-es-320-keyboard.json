@@ -1,0 +1,165 @@
+{
+  "name": "final-language-footer-es-320-keyboard",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:58:28.290Z",
+  "sha256": "c59238f6a250ccc68a9edec1a72f0a9e4cd3d4882c104fb60ac9aaff3efb9cd5",
+  "activeElement": {
+    "label": "English",
+    "tag": "A"
+  },
+  "charts": [],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "es-AR",
+  "menus": [
+    {
+      "name": "Productos",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluciones",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "reduced",
+  "preference": true,
+  "scenes": [
+    {
+      "ambient": "reduced",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "prompt-discovery-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": -4635.78125,
+            "height": 351.890625,
+            "left": 16,
+            "right": 289,
+            "top": -4987.671875,
+            "width": 273,
+            "x": 16,
+            "y": -4987.671875
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "prompts",
+      "labels": [
+        {
+          "class": "prompt-featured-query",
+          "rect": {
+            "bottom": -4805.78125,
+            "height": 181.890625,
+            "left": 26.90625,
+            "right": 278.09375,
+            "top": -4987.671875,
+            "width": 251.1875,
+            "x": 26.90625,
+            "y": -4987.671875
+          }
+        },
+        {
+          "class": "prompt-research-plan",
+          "rect": {
+            "bottom": -4356.65625,
+            "height": 289.125,
+            "left": 16,
+            "right": 289,
+            "top": -4645.78125,
+            "width": 273,
+            "x": 16,
+            "y": -4645.78125
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": -4356.65625,
+        "height": 631.015625,
+        "left": 16,
+        "right": 289,
+        "top": -4987.671875,
+        "width": 273,
+        "x": 16,
+        "y": -4987.671875
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "Prompt Intelligence — KAIRUM",
+  "url": "http://127.0.0.1:4328/productos/prompt-intelligence/",
+  "viewport": {
+    "clientWidth": 305,
+    "dpr": 1,
+    "height": 900,
+    "scrollWidth": 305,
+    "scrollY": 5666,
+    "width": 320
+  },
+  "screenshot": {
+    "file": "final-language-footer-es-320-keyboard.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 305,
+    "pixel_height": 858,
+    "bytes": 22254,
+    "sha256": "c59238f6a250ccc68a9edec1a72f0a9e4cd3d4882c104fb60ac9aaff3efb9cd5",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}

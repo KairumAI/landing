@@ -1,0 +1,19 @@
+Model marks used only to identify the AI-answer ecosystem:
+ChatGPT / GPT, Gemini, Claude, Grok, Perplexity.
+
+Source page inspected with Computer Use:
+https://www.tryprofound.com/features/answer-engine-insights
+
+Original SVG paths on www.tryprofound.com, captured 2026-10-02:
+/_next/static/immutable/media/chatgpt-logo.2h0a6b4yqf6zr.svg
+/_next/static/immutable/media/gemini-logo.2ps7z_flw6pr6.svg
+/_next/static/immutable/media/claude-logo.3vzhwh8ts3spf.svg
+/_next/static/immutable/media/grok-logo.38-qd9tn-dfao.svg
+/_next/static/immutable/media/perplexity-logo.24pa6ed6ylfrr.svg
+
+Provenance record in the repository:
+docs/design/2026-10-kairum-redesign/design-board/assets/models/provenance.json
+
+Marks remain the property of their respective owners. This provenance record
+does not assert a third-party license grant, partnership, active integration
+or access to the consumer interfaces. The visible site states this scope.

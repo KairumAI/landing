@@ -1,0 +1,165 @@
+{
+  "name": "final-product-prompt-real-anchor",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:54:58.309Z",
+  "sha256": "2777760dcc8328fb8e360a0cc1dd556bb2e4b8639281f0528f90775db292fc13",
+  "activeElement": {
+    "label": "Cómo funcionaMenos preguntas sueltas. Más dirección.Preguntas, contexto y revisión para dar forma al próximo paso.01Reuní tus preguntasPacks, pregunta",
+    "tag": "SECTION"
+  },
+  "charts": [],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "es-AR",
+  "menus": [
+    {
+      "name": "Productos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 365.03125,
+        "right": 481.125,
+        "top": 0,
+        "width": 116.09375,
+        "x": 365.03125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluciones",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 530.078125,
+        "right": 652.109375,
+        "top": 0,
+        "width": 122.03125,
+        "x": 530.078125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 701.0625,
+        "right": 810.5625,
+        "top": 0,
+        "width": 109.5,
+        "x": 701.0625,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 859.515625,
+        "right": 964.46875,
+        "top": 0,
+        "width": 104.953125,
+        "x": 859.515625,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "reduced",
+  "preference": true,
+  "scenes": [
+    {
+      "ambient": "reduced",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "prompt-discovery-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": -89.1875,
+            "height": 580,
+            "left": 277.5,
+            "right": 1147.5,
+            "top": -669.1875,
+            "width": 870,
+            "x": 277.5,
+            "y": -669.1875
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "prompts",
+      "labels": [
+        {
+          "class": "prompt-featured-query",
+          "rect": {
+            "bottom": -515.0625,
+            "height": 154.125,
+            "left": 364.5,
+            "right": 1060.5,
+            "top": -669.1875,
+            "width": 696,
+            "x": 364.5,
+            "y": -669.1875
+          }
+        },
+        {
+          "class": "prompt-research-plan",
+          "rect": {
+            "bottom": 115.59375,
+            "height": 212.78125,
+            "left": 329.6875,
+            "right": 1095.3125,
+            "top": -97.1875,
+            "width": 765.625,
+            "x": 329.6875,
+            "y": -97.1875
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 115.59375,
+        "height": 784.78125,
+        "left": 277.5,
+        "right": 1147.5,
+        "top": -669.1875,
+        "width": 870,
+        "x": 277.5,
+        "y": -669.1875
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "Prompt Intelligence — KAIRUM",
+  "url": "http://127.0.0.1:4328/productos/prompt-intelligence/#como-funciona",
+  "viewport": {
+    "clientWidth": 1425,
+    "dpr": 1,
+    "height": 1000,
+    "scrollWidth": 1425,
+    "scrollY": 1378,
+    "width": 1440
+  },
+  "screenshot": {
+    "file": "final-product-prompt-real-anchor.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 1425,
+    "pixel_height": 990,
+    "bytes": 80117,
+    "sha256": "2777760dcc8328fb8e360a0cc1dd556bb2e4b8639281f0528f90775db292fc13",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}
