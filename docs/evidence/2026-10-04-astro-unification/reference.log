@@ -1,0 +1,2 @@
+$ bun scripts/verify-approved-reference.ts
+R05 477f1e2338d2: 51 assets, 5 styles and 13 approved Spanish pages match.

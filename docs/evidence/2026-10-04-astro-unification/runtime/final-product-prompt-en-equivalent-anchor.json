@@ -1,0 +1,165 @@
+{
+  "name": "final-product-prompt-en-equivalent-anchor",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:54:58.905Z",
+  "sha256": "210aa23a038bcfc236594f8eacffb74557522180e77bedee3484ec96dbe31246",
+  "activeElement": {
+    "label": "Skip to content\n    \n      Products The platformA complete view of your brand in AI.Context, evidenceand connected decisions.View the platformView the",
+    "tag": "BODY"
+  },
+  "charts": [],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "en",
+  "menus": [
+    {
+      "name": "Products",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 381.75,
+        "right": 488.25,
+        "top": 0,
+        "width": 106.5,
+        "x": 381.75,
+        "y": 0
+      }
+    },
+    {
+      "name": "Solutions",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 537.203125,
+        "right": 646,
+        "top": 0,
+        "width": 108.796875,
+        "x": 537.203125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Resources",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 694.953125,
+        "right": 813.515625,
+        "top": 0,
+        "width": 118.5625,
+        "x": 694.953125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Company",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 862.46875,
+        "right": 973.921875,
+        "top": 0,
+        "width": 111.453125,
+        "x": 862.46875,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "reduced",
+  "preference": true,
+  "scenes": [
+    {
+      "ambient": "reduced",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "prompt-discovery-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": -89.265625,
+            "height": 580,
+            "left": 277.5,
+            "right": 1147.5,
+            "top": -669.265625,
+            "width": 870,
+            "x": 277.5,
+            "y": -669.265625
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "prompts",
+      "labels": [
+        {
+          "class": "prompt-featured-query",
+          "rect": {
+            "bottom": -515.140625,
+            "height": 154.125,
+            "left": 364.5,
+            "right": 1060.5,
+            "top": -669.265625,
+            "width": 696,
+            "x": 364.5,
+            "y": -669.265625
+          }
+        },
+        {
+          "class": "prompt-research-plan",
+          "rect": {
+            "bottom": 115.515625,
+            "height": 212.78125,
+            "left": 329.6875,
+            "right": 1095.3125,
+            "top": -97.265625,
+            "width": 765.625,
+            "x": 329.6875,
+            "y": -97.265625
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 115.515625,
+        "height": 784.78125,
+        "left": 277.5,
+        "right": 1147.5,
+        "top": -669.265625,
+        "width": 870,
+        "x": 277.5,
+        "y": -669.265625
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "Prompt Intelligence — KAIRUM",
+  "url": "http://127.0.0.1:4328/en/productos/prompt-intelligence/#como-funciona",
+  "viewport": {
+    "clientWidth": 1425,
+    "dpr": 1,
+    "height": 1000,
+    "scrollWidth": 1425,
+    "scrollY": 1306,
+    "width": 1440
+  },
+  "screenshot": {
+    "file": "final-product-prompt-en-equivalent-anchor.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 1425,
+    "pixel_height": 990,
+    "bytes": 78651,
+    "sha256": "210aa23a038bcfc236594f8eacffb74557522180e77bedee3484ec96dbe31246",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}

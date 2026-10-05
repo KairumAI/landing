@@ -1,0 +1,186 @@
+{
+  "name": "final-product-agents-es-desktop-reduced",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:55:53.521Z",
+  "sha256": "795c1d91a3f253d01dc3cde3355ca7ed43819b334b9b303c4614b753660619c2",
+  "activeElement": {
+    "label": "Ir al contenido\n    \n      Productos La plataformaUna vista completa de tu marca en la IA.Contexto, evidenciay decisiones conectadas.Ver la plataforma",
+    "tag": "BODY"
+  },
+  "charts": [],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "es-AR",
+  "menus": [
+    {
+      "name": "Productos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 365.03125,
+        "right": 481.125,
+        "top": 0,
+        "width": 116.09375,
+        "x": 365.03125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluciones",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 530.078125,
+        "right": 652.109375,
+        "top": 0,
+        "width": 122.03125,
+        "x": 530.078125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 701.0625,
+        "right": 810.5625,
+        "top": 0,
+        "width": 109.5,
+        "x": 701.0625,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 859.515625,
+        "right": 964.46875,
+        "top": 0,
+        "width": 104.953125,
+        "x": 859.515625,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "reduced",
+  "preference": true,
+  "scenes": [
+    {
+      "ambient": "reduced",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "agent-paper",
+          "playState": "running",
+          "rect": {
+            "bottom": 869.052490234375,
+            "height": 156.4488525390625,
+            "left": 276.6443176269531,
+            "right": 521.3326416015625,
+            "top": 712.6036376953125,
+            "width": 244.68832397460935,
+            "x": 276.6443176269531,
+            "y": 712.6036376953125
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "agent-paper",
+          "playState": "running",
+          "rect": {
+            "bottom": 1043.749267578125,
+            "height": 159.17071533203125,
+            "left": 271.86077880859375,
+            "right": 518.624755859375,
+            "top": 884.5785522460938,
+            "width": 246.76397705078125,
+            "x": 271.86077880859375,
+            "y": 884.5785522460938
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "agent-paper agent-draft",
+          "playState": "running",
+          "rect": {
+            "bottom": 1028.77587890625,
+            "height": 301.66290283203125,
+            "left": 560.59619140625,
+            "right": 839.616943359375,
+            "top": 727.1129760742188,
+            "width": 279.020751953125,
+            "x": 560.59619140625,
+            "y": 727.1129760742188
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "agent-paper agent-review",
+          "playState": "running",
+          "rect": {
+            "bottom": 1031.9482421875,
+            "height": 307.91278076171875,
+            "left": 884.8792724609375,
+            "right": 1176.32275390625,
+            "top": 724.0354614257812,
+            "width": 291.4434814453125,
+            "x": 884.8792724609375,
+            "y": 724.0354614257812
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "agents",
+      "labels": [],
+      "progress": "1",
+      "rect": {
+        "bottom": 1044.8125,
+        "height": 336,
+        "left": 262.5,
+        "right": 1162.5,
+        "top": 708.8125,
+        "width": 900,
+        "x": 262.5,
+        "y": 708.8125
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "Agents — KAIRUM",
+  "url": "http://127.0.0.1:4328/productos/agents/",
+  "viewport": {
+    "clientWidth": 1425,
+    "dpr": 1,
+    "height": 1000,
+    "scrollWidth": 1425,
+    "scrollY": 0,
+    "width": 1440
+  },
+  "screenshot": {
+    "file": "final-product-agents-es-desktop-reduced.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 1425,
+    "pixel_height": 990,
+    "bytes": 78109,
+    "sha256": "795c1d91a3f253d01dc3cde3355ca7ed43819b334b9b303c4614b753660619c2",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}

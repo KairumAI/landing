@@ -1,42 +1,29 @@
 ---
-import { getImage } from "astro:assets";
-import atmosphere from "../assets/atmosphere-yellow.webp";
-import interFont from "../assets/fonts/inter.woff2?url";
-import { getDictionary, toLocale } from "../i18n";
-import { localeMeta, locales } from "../i18n/locales";
-
-import "../styles/tokens.css";
-import "../styles/base.css";
-import "../styles/header.css";
-import "../styles/hero.css";
-import "../styles/context.css";
-import "../styles/journey.css";
-import "../styles/answers.css";
-import "../styles/patterns.css";
-import "../styles/sources.css";
-import "../styles/audience.css";
-import "../styles/report.css";
-import "../styles/faq.css";
-import "../styles/contact.css";
-import "../styles/footer.css";
-import "../styles/controls.css";
-import "../styles/dialog.css";
-
+import { toLocale } from "../i18n";
+import { locales, localeMeta, type Locale } from "../i18n/locales";
+import { equivalentPaths, type PageId } from "../lib/routes";
+import { metadata } from "../lib/metadata";
+import "../styles/kairum-tokens.css";
+import "../styles/kairum-styles.css";
+import "../styles/kairum-brand.css";
+import "../styles/kairum-home.css";
+import "../styles/kairum-cinematic.css";
 interface Props {
+  pageId?: PageId;
+  locale?: Locale;
   title?: string;
   description?: string;
   noindex?: boolean;
 }
-
-const locale = toLocale(Astro.currentLocale);
-const t = getDictionary(locale);
+const { pageId = "home", locale = toLocale(Astro.currentLocale) } = Astro.props;
+const meta = metadata(pageId, locale, Astro.site!);
 const {
-  title = t.meta.title,
-  description = t.meta.description,
-  noindex = false,
+  title = meta.title,
+  description = meta.description,
+  noindex = meta.noindex,
 } = Astro.props;
-const background = await getImage({ src: atmosphere });
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const alternates = equivalentPaths(pageId);
 const ogImage = new URL(localeMeta[locale].ogImage, Astro.site).href;
 ---
 
@@ -49,27 +36,26 @@ const ogImage = new URL(localeMeta[locale].ogImage, Astro.site).href;
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fffdf5" />
     {noindex ? (
-      <meta name="robots" content="noindex" />
+      <meta name="robots" content="noindex, follow" />
     ) : (
-      <link rel="canonical" href={canonical} />
-    )}
-    {!noindex &&
-      locales.map((code) => (
+      <>
+        <link rel="canonical" href={canonical} />
+        {alternates.map(({ locale: code, path }) => (
+          <link
+            rel="alternate"
+            hreflang={localeMeta[code].hreflang}
+            href={new URL(path, Astro.site).href}
+          />
+        ))}
         <link
           rel="alternate"
-          hreflang={localeMeta[code].hreflang}
-          href={new URL(localeMeta[code].path, Astro.site).href}
+          hreflang="x-default"
+          href={new URL(alternates[0].path, Astro.site).href}
         />
-      ))}
-    {!noindex && (
-      <link
-        rel="alternate"
-        hreflang="x-default"
-        href={new URL("/", Astro.site).href}
-      />
+      </>
     )}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={t.meta.siteName} />
+    <meta property="og:site_name" content="KAIRUM" />
     <meta property="og:locale" content={localeMeta[locale].ogLocale} />
     {locales
       .filter((code) => code !== locale)
@@ -85,28 +71,33 @@ const ogImage = new URL(localeMeta[locale].ogImage, Astro.site).href;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={t.meta.ogImageAlt} />
+    <meta property="og:image:alt" content="KAIRUM" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="KAIRUM" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="96x96" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link
       rel="preload"
-      href={interFont}
+      href="/kairum/assets/inter.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link
-      rel="preload"
-      href={background.src}
-      as="image"
-      type="image/webp"
-      fetchpriority="high"
-    />
+    {pageId === "home" && !noindex && (
+      <link
+        rel="preload"
+        href="/kairum/assets/home-hero-stage.png"
+        as="image"
+        fetchpriority="high"
+      />
+    )}
     <slot name="head" />
   </head>
-  <body style={`--atmosphere-image: url("${background.src}")`}>
+  <body data-page={pageId}>
     <slot />
   </body>
 </html>

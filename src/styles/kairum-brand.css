@@ -1,0 +1,38 @@
+/* Canonical Convergencia crop; the original asset is shared with Brand. */
+.brand-lockup {
+  display: block;
+  position: relative;
+  width: 168px;
+  flex-shrink: 0;
+  aspect-ratio: 1220 / 310;
+  overflow: hidden;
+}
+.brand-lockup img {
+  position: absolute;
+  width: 125.90164%;
+  max-width: none;
+  height: auto;
+  top: -116.12903%;
+  left: -13.11475%;
+  mix-blend-mode: multiply;
+}
+.window-bar .brand-lockup {
+  width: 108px;
+}
+.site-footer .brand-lockup {
+  width: 184px;
+  height: 60px;
+  border: 8px solid var(--kairum-white);
+  background: var(--kairum-white);
+  border-radius: 3px;
+}
+
+/* The link keeps a 44px hit area without stretching the canonical lockup. */
+a.brand-lockup {
+  height: 44px;
+  aspect-ratio: auto;
+}
+a.brand-lockup img {
+  top: 50%;
+  transform: translateY(-50%);
+}

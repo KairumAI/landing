@@ -1,0 +1,26 @@
+
+.reader-hero p:not(.eyebrow):not(.reader-meta) { max-width: 80ch; line-height: 1.75; }
+.reader-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.reader-intro { margin:16px 0 24px; }
+.reader-jumps { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 48px; }
+.reader-jumps a { display:inline-flex; align-items:center; min-height:44px; border:1px solid var(--line); border-radius:8px; padding:8px 14px; font-size:13px; background:var(--paper); text-decoration:none; }
+.reader-jumps a:hover { border-color:var(--ink); }
+.dimension-group { scroll-margin-top:110px; }
+.dimension-group > h3 { font-size:26px; margin-bottom:12px; }
+.reader-directed-heading { padding:40px 0; scroll-margin-top:110px; }
+.reader-directed-heading h2 { margin-block:14px; }
+.coverage-list { list-style:none; padding:0; margin:0; }
+.coverage-entry { border-top:1px solid var(--line); padding:24px 0; }
+.coverage-entry-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.coverage-entry-heading a { display:inline-flex; align-items:center; min-height:44px; font-size:14px; }
+.coverage-entry h3 { font-size:18px; line-height:1.5; max-width:84ch; margin:12px 0; }
+.coverage-entry p { font-size:14px; }
+.coverage-entry blockquote { white-space:pre-wrap; overflow-wrap:anywhere; border-left:3px solid var(--kairum-signal); padding-left:18px; margin:18px 0 0; font-size:14px; line-height:1.7; }
+.reader-sources > .button { display:flex; margin-top:14px; }
+.reader-original-note { margin-bottom:20px; font-size:14px; line-height:1.7; color:var(--muted); }
+.reader-review-note { padding:22px; margin-bottom:24px; border:1px solid var(--line); border-left:4px solid var(--kairum-signal); border-radius:10px; background:var(--soft); }
+.reader-review-note h3 { margin:12px 0; font-size:20px; line-height:1.35; }
+.reader-review-note p:last-child { font-size:14px; line-height:1.7; }
+.reader-raw { tab-size:2; }
+.dimension-group.evidence-case { padding:24px; background:var(--paper); border:1px solid var(--line); border-radius:14px; margin-bottom:24px; }
+@media (max-width:720px) { .dimension-group.evidence-case { padding:18px; } .coverage-entry-heading { align-items:flex-start; } }

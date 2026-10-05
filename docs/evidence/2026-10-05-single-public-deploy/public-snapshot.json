@@ -1,0 +1,30 @@
+{
+  "source_run_id": 37248157603,
+  "public_origin": "https://kairum.com.ar",
+  "verified_public_samples": [
+    {
+      "path": "informes/index.html",
+      "status": 200,
+      "sha256": "1a4e5925893fb676f316fc4ab761fd1cc47ce83a1138e556e86027f2ba3ca7d6",
+      "noindex": true
+    },
+    {
+      "path": "informes/megaresearch/index.html",
+      "status": 200,
+      "sha256": "1ca932eb1ae99c194e652c6c63d2840289b15415ddb64a2d74f08c34e53cca6d",
+      "noindex": true
+    },
+    {
+      "path": "informes/megaresearch/informe.pdf",
+      "status": 200,
+      "sha256": "7fcdb623092ebda5619f0ccf5caa59c04acbc8a87a7c9b2b40d689831232f681",
+      "noindex": true
+    },
+    {
+      "path": "informes/megaresearch/evidence/D-001.html",
+      "status": 200,
+      "sha256": "ba889a0ffb26f5b8f1b7fc95d7d654221700a8bff6f0e82e304d994d8bee064a",
+      "noindex": true
+    }
+  ]
+}

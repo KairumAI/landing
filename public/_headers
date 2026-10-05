@@ -12,6 +12,15 @@
 /assets/*
   Cache-Control: public, max-age=86400
 
+# Native approved illustrations keep their filenames and must revalidate.
+/kairum/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Preserve the published report library's indexing policy and revalidation.
+/informes/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Explicit charset: these generated text files contain accented characters.
 /robots.txt
   Content-Type: text/plain; charset=utf-8

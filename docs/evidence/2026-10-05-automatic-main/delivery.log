@@ -1,0 +1,58 @@
+$ playwright test --config playwright.delivery.config.ts
+
+Running 40 tests using 6 workers
+
+(node:720837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:720833) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:720832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:720838) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:720830) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:720835) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✓   2 tests/delivery/public-delivery.spec.ts:86:2 › rejects a changed report file (15ms)
+  ✓   1 tests/delivery/public-delivery.spec.ts:86:2 › rejects a extra report file (24ms)
+  ✓   5 tests/delivery/public-delivery.spec.ts:116:2 › rejects a private or escaping manifest path: informes/a/propuesta.pdf (3ms)
+  ✓   3 tests/delivery/public-delivery.spec.ts:86:2 › rejects a missing report file (22ms)
+  ✓   8 tests/delivery/public-delivery.spec.ts:116:2 › rejects a private or escaping manifest path: informes/a/../../secret.txt (2ms)
+  ✓   7 tests/delivery/public-delivery.spec.ts:116:2 › rejects a private or escaping manifest path: informes/a/data/responses.json (4ms)
+  ✓   4 tests/delivery/public-delivery.spec.ts:116:2 › rejects a private or escaping manifest path: ../secret.txt (13ms)
+  ✓  10 tests/delivery/public-delivery.spec.ts:116:2 › rejects a private or escaping manifest path: informes/a/bad.json (2ms)
+  ✓  11 tests/delivery/public-delivery.spec.ts:132:2 › rejects a private route or server in the final output: .env (6ms)
+  ✓  12 tests/delivery/public-delivery.spec.ts:116:2 › rejects a private or escaping manifest path: informes/.env (3ms)
+  ✓  14 tests/delivery/public-delivery.spec.ts:132:2 › rejects a private route or server in the final output: functions/index.js (11ms)
+  ✓  15 tests/delivery/public-delivery.spec.ts:132:2 › rejects a private route or server in the final output: _worker.js (7ms)
+  ✓   6 tests/delivery/public-delivery.spec.ts:73:0 › complete package preserves report checksums and resolves its assets and links (27ms)
+  ✓  13 tests/delivery/public-delivery.spec.ts:132:2 › rejects a private route or server in the final output: propuestas/propuesta.pdf (14ms)
+  ✓  16 tests/delivery/public-delivery.spec.ts:144:0 › rejects an asset above the Pages Free limit (10ms)
+  ✓   9 tests/delivery/public-delivery.spec.ts:86:2 › rejects a symlink report file (18ms)
+  ✓  18 tests/delivery/public-delivery.spec.ts:177:2 › live verification checks correct (7ms)
+  ✓  17 tests/delivery/public-delivery.spec.ts:157:0 › detects broken report references after a shared landing asset is removed (10ms)
+  ✓  19 tests/delivery/public-delivery.spec.ts:177:2 › live verification checks stale report (9ms)
+  ✓  20 tests/delivery/public-delivery.spec.ts:177:2 › live verification checks missing noindex (9ms)
+  ✓  21 tests/delivery/public-delivery.spec.ts:177:2 › live verification checks public proposal (11ms)
+  ✓  22 tests/delivery/publication.spec.ts:21:2 › admits the current main commit for workflow_dispatch (1ms)
+  ✓  23 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"event":"pull_request"} (2ms)
+  ✓  24 tests/delivery/publication.spec.ts:21:2 › admits the current main commit for push (3ms)
+  ✓  25 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"event":"release"} (2ms)
+  ✓  27 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"ref":"refs/heads/main-other"} (2ms)
+  ✓  26 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"event":"pull_request_target"} (2ms)
+  ✓  29 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"ref":"refs/tags/v1.0.0"} (2ms)
+  ✓  28 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"ref":"refs/heads/develop"} (4ms)
+  ✓  31 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"repository":"another-owner/landing"} (3ms)
+  ✓  32 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"sha":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} (3ms)
+  ✓  30 tests/delivery/publication.spec.ts:40:2 › denies an ineligible publication: {"ref":"refs/pull/3/merge"} (5ms)
+  ✓  33 tests/delivery/publication.spec.ts:45:0 › denies a checkout that differs from the workflow SHA (4ms)
+  ✓  34 tests/delivery/publication.spec.ts:51:0 › skips a superseded main commit or historical retry (4ms)
+  ✓  35 tests/delivery/publication.spec.ts:57:0 › fails closed if the remote main SHA cannot be identified (6ms)
+  ✓  39 tests/delivery/publication.spec.ts:161:2 › the real CLI fails without publication output for wrong ref (96ms)
+  ✓  38 tests/delivery/publication.spec.ts:161:2 › the real CLI fails without publication output for wrong checkout (107ms)
+  ✓  36 tests/delivery/publication.spec.ts:128:0 › the real CLI publishes only the checkout matching current remote main (111ms)
+  ✓  40 tests/delivery/publication.spec.ts:161:2 › the real CLI fails without publication output for missing remote (107ms)
+  ✓  37 tests/delivery/publication.spec.ts:138:0 › the real CLI skips a historical attempt after main advances (133ms)
+
+  40 passed (891ms)

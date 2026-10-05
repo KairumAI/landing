@@ -13,7 +13,7 @@
 
 3. Abrir un PR contra `main`. El CI corre `format:check`, `check` y los tests de Playwright.
 4. Con el CI en verde, integrar con **Squash and merge**. Se puede activar auto-merge para que entre solo cuando el CI pase.
-5. Integrar no publica nada. Se publica creando un release (ver [Publicar](#publicar)).
+5. El merge a `main` dispara **Deploy**, que verifica el SHA integrado y publica automáticamente (ver [Publicar](#publicar)).
 
 `main` está protegida con el ruleset `main`: solo admite PRs con el check `verify` en verde, sin push directo, sin force-push y con historial lineal. Las ramas se borran solas al integrarse.
 
@@ -47,21 +47,18 @@ El título del PR es el mensaje del commit en `main`, porque el squash lo usa co
 
 ## Publicar
 
-Una versión es un release con tag `vMAJOR.MINOR.PATCH` sobre `main`. La versión vive solo en el tag; `package.json` no se toca.
+Cada merge a `main` dispara **Deploy**. El workflow verifica formato, referencia, tipos, pruebas e integridad del paquete completo. Después comprueba el artifact descargado, confirma que el SHA sigue siendo el actual de `main`, publica en Pages `kairum` y verifica por HTTPS landing e informes. No hace falta crear un release ni aprobar cada deploy.
+
+`production` sólo admite `main` y conserva sus secretos. Las ejecuciones se serializan sin cancelar un upload en curso. Si otro merge desplazó una ejecución antes de publicar, ésta se omite. **Actions → Deploy → Run workflow → main** permite reintentar la versión actual, sin publicar un SHA antiguo.
+
+El destino es el proyecto existente Pages `kairum`, con landing e informes en el mismo paquete. Seguir [el procedimiento de publicación](docs/operations/public-deployment.md) antes de activar este flujo; el CD de geo-product debe permanecer retirado.
+
+Los releases son registros opcionales sobre `main`; no disparan publicación. Se puede usar `vMAJOR.MINOR.PATCH` para identificar hitos, sin cambiar `package.json`:
 
 - `PATCH` (`v0.1.1`): solo `fix`, `perf` o cambios menores de texto.
 - `MINOR` (`v0.2.0`): algún `feat`, por ejemplo una sección o contenido nuevo.
 - `MAJOR` (`v1.0.0`): rediseño o cambio de estructura de la landing.
 
-```sh
-git switch main && git pull
-gh release create v0.2.0 --target main --generate-notes
-```
-
-`--generate-notes` arma las notas con los títulos de los PRs incluidos. También se puede crear desde **Releases → Draft a new release**, que no publica nada hasta apretar **Publish release**.
-
-Al publicar el release arranca el workflow **Deploy**, que espera la aprobación de Bruno en **Actions → Deploy → Review deployments**. Si se publica otro release antes de la aprobación, reemplaza al anterior. Un tag que no apunta a un commit de `main` falla antes de publicar.
-
 ## Volver atrás
 
-Para volver a una versión anterior: **Actions → Deploy → Run workflow**, elegir el tag de esa versión y aprobar. Después revertir el PR que causó el problema y publicar un release nuevo, para que la próxima versión no traiga el error de vuelta.
+Revertir por PR el cambio que causó el problema. El nuevo `main` publica la corrección automáticamente. Ante una incidencia, Bruno también puede restaurar un deployment de producción completo desde Pages según [el procedimiento](docs/operations/public-deployment.md#volver-atrás), sin reactivar geo-product. No reintentar una ejecución histórica para sobrescribir el `main` actual.

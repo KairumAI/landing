@@ -1,0 +1,15 @@
+---
+import type { GetStaticPaths } from "astro";
+import MarketingPage from "../../../components/MarketingPage.astro";
+import { pages } from "../../../lib/routes";
+export const getStaticPaths = (() =>
+  pages
+    .filter((page) => page.id !== "home")
+    .map((page) => ({
+      params: { path: page.path.slice(1, -1) },
+      props: { pageId: page.id },
+    }))) satisfies GetStaticPaths;
+const { pageId } = Astro.props;
+---
+
+<MarketingPage pageId={pageId} locale="en" />

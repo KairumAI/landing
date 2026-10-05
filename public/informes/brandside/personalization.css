@@ -1,0 +1,37 @@
+/* Recipient identity: official Brandside wordmark and observed website blue.
+   KAIRUM remains author; its yellow is retained for actions and proposals. */
+:root{--brandside-blue:#2b13ff;--brandside-soft:#f0edff;--subject-primary:var(--brandside-blue);--subject-soft:var(--brandside-soft)}
+.author-brand{position:relative;flex-direction:column;justify-content:center;padding-bottom:12px}
+.author-caption{display:block;margin-top:-19px;font-size:9px;letter-spacing:.06em;line-height:1.2;color:var(--muted);white-space:nowrap}
+.recipient-heading{display:flex;justify-content:space-between;align-items:center;gap:40px;padding:0 0 30px;margin-bottom:28px;border-bottom:2px solid var(--brandside-blue)}
+.recipient-signature{display:flex;flex-direction:column;gap:12px;min-width:0}
+.recipient-eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--brandside-blue)}
+.recipient-logo{width:440px;height:auto;max-width:100%}
+.edition-label{display:flex;flex-direction:column;gap:6px;text-align:right;flex-shrink:0}
+.edition-label strong{font-size:14px;font-weight:550;color:var(--ink)}
+.edition-label span{font-size:12px;color:var(--muted)}
+.hero{padding-top:32px;background:linear-gradient(180deg,#fff 65%,#faf9ff 100%)}
+.hero-meta{padding-bottom:24px}
+.hero-meta .eyebrow{color:var(--brandside-blue)}
+.hero-grid{grid-template-columns:1.35fr .9fr;gap:56px}
+.hero h1{font-size:clamp(2.25rem,4.1vw,3.65rem);line-height:1.07}
+.focus-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.focus-tags span{border:1px solid #d7d1ff;border-radius:999px;padding:5px 11px;font-size:11px;line-height:1.4;color:#2516a6;background:#fff}
+.hero .lede{font-size:16px;line-height:1.7;margin-top:18px}
+.primary-metric{background:var(--brandside-blue);min-height:250px;padding-top:24px;color:#fff}
+.primary-metric p{color:#fff}
+.primary-metric .signal-icon{display:none}
+.metric-eyebrow{display:block;margin-bottom:auto;padding-bottom:28px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:550;color:#fff}
+.primary-metric > strong{color:#fff;font-size:clamp(3.8rem,5.5vw,5rem)}
+.headline-metric:not(.primary-metric){background:#fff}
+.headline-metric:not(.primary-metric)>strong{color:var(--brandside-blue);white-space:nowrap}
+.executive-note{margin-top:32px}
+.competitive-bar.subject{border:1px solid #d7d1ff}
+.competitive-bar.subject > i > span,.theme-cell.subject b{background:var(--brandside-blue)}
+.competitive-bar.subject > strong,.theme-cell.subject strong{color:var(--brandside-blue)}
+.theme-header .subject{color:var(--brandside-blue)}
+@media(max-width:850px){.recipient-heading{gap:24px}.recipient-logo{width:340px}.edition-label{max-width:230px;flex-shrink:1}.hero-grid{gap:28px}.author-caption{font-size:8px;margin-top:-16px}}
+@media(max-width:600px){.recipient-heading{align-items:flex-start;flex-direction:column;gap:20px;padding-bottom:22px;margin-bottom:22px}.recipient-logo{width:100%;max-width:360px}.recipient-signature{width:100%}.edition-label{text-align:left;max-width:none}.edition-label strong{font-size:13px}.hero{padding-top:24px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:36px}.hero-meta{gap:12px;padding-bottom:24px}.focus-tags{margin-top:20px}.primary-metric{min-height:220px}.author-caption{margin-top:-15px}.headline-metric:not(.primary-metric)>strong{font-size:34px}}
+@media print{.hero{background:white}.recipient-heading{padding-bottom:18px;margin-bottom:18px;gap:28px}.recipient-logo{width:340px}.recipient-signature{gap:6px}.recipient-eyebrow{font-size:9px}.edition-label strong{font-size:12px}.edition-label span{font-size:10px}.hero h1{font-size:36px}.hero-meta{padding-bottom:16px}.focus-tags{margin-top:16px}.hero .lede{font-size:14px;line-height:1.55;margin-top:14px}.primary-metric{min-height:220px}.metric-eyebrow{padding-bottom:20px}.author-caption{font-size:8px}.executive-note{margin-top:22px}}
+.author-brand img{flex:0 0 auto}
+@media(max-width:850px){[id]{scroll-margin-top:170px}}

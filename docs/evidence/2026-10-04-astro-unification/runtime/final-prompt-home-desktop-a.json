@@ -1,0 +1,458 @@
+{
+  "name": "final-prompt-home-desktop-a",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:43:29.706Z",
+  "sha256": "6b3b9e89541d99c79a57d82c5cf67637361f1f553ee534e56123244108017f2c",
+  "activeElement": {
+    "label": "Inteligencia para la búsqueda con IATu marca, visibleenPreguntas, visibilidad, contenido y tráfico. Con contexto.Explorar plataformaConversemos\n      ",
+    "tag": "MAIN"
+  },
+  "charts": [
+    {
+      "chartAmbient": "paused",
+      "chartAnimation": "complete",
+      "chartPhase": "0.127",
+      "chartRatio": "0.000",
+      "chartReady": "true",
+      "chartVisible": "false"
+    },
+    {
+      "chartAmbient": "paused",
+      "chartAnimation": "complete",
+      "chartRatio": "0.000",
+      "chartReady": "true",
+      "chartVisible": "false"
+    }
+  ],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "es-AR",
+  "menus": [
+    {
+      "name": "Productos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 365.03125,
+        "right": 481.125,
+        "top": 0,
+        "width": 116.09375,
+        "x": 365.03125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluciones",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 530.078125,
+        "right": 652.109375,
+        "top": 0,
+        "width": 122.03125,
+        "x": 530.078125,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 701.0625,
+        "right": 810.5625,
+        "top": 0,
+        "width": 109.5,
+        "x": 701.0625,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 87,
+        "height": 87,
+        "left": 859.515625,
+        "right": 964.46875,
+        "top": 0,
+        "width": 104.953125,
+        "x": 859.515625,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "full",
+  "preference": false,
+  "rotator": "paused",
+  "scenes": [
+    {
+      "ambient": "playing",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "answer-glass",
+          "playState": "running",
+          "rect": {
+            "bottom": 29.557708740234375,
+            "height": 329.46484375,
+            "left": 233.82015991210935,
+            "right": 840.5374450683594,
+            "top": -299.9071350097656,
+            "width": 606.71728515625,
+            "x": 233.82015991210935,
+            "y": -299.9071350097656
+          },
+          "translate": "0px -4.4428px"
+        },
+        {
+          "animation": "cinematic-float",
+          "class": "glass-source",
+          "playState": "running",
+          "rect": {
+            "bottom": 26.618499755859375,
+            "height": 173.9540252685547,
+            "left": 885.0756225585938,
+            "right": 1187.063232421875,
+            "top": -147.3355255126953,
+            "width": 301.98760986328125,
+            "x": 885.0756225585938,
+            "y": -147.3355255126953
+          },
+          "translate": "0px -6.12498px"
+        }
+      ],
+      "kind": "answer",
+      "labels": [],
+      "progress": "1",
+      "rect": {
+        "bottom": 108.171875,
+        "height": 445.59375,
+        "left": 64,
+        "right": 1361,
+        "top": -337.421875,
+        "width": 1297,
+        "x": 64,
+        "y": -337.421875
+      }
+    },
+    {
+      "ambient": "playing",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "prompt-discovery-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": 726.7610168457031,
+            "height": 517.265625,
+            "left": 64,
+            "right": 839.90625,
+            "top": 209.49539184570312,
+            "width": 775.90625,
+            "x": 64,
+            "y": 209.49539184570312
+          },
+          "translate": "0px -6.67649px"
+        }
+      ],
+      "kind": "prompts",
+      "labels": [
+        {
+          "class": "prompt-featured-query",
+          "rect": {
+            "bottom": 363.6203918457031,
+            "height": 154.125,
+            "left": 141.578125,
+            "right": 762.328125,
+            "top": 209.49539184570312,
+            "width": 620.75,
+            "x": 141.578125,
+            "y": 209.49539184570312
+          }
+        },
+        {
+          "class": "prompt-research-plan",
+          "rect": {
+            "bottom": 938.21875,
+            "height": 212.78125,
+            "left": 110.546875,
+            "right": 793.359375,
+            "top": 725.4375,
+            "width": 682.8125,
+            "x": 110.546875,
+            "y": 725.4375
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 938.21875,
+        "height": 722.046875,
+        "left": 64,
+        "right": 839.90625,
+        "top": 216.171875,
+        "width": 775.90625,
+        "x": 64,
+        "y": 216.171875
+      }
+    },
+    {
+      "ambient": "paused",
+      "animation": "complete",
+      "drift": [],
+      "kind": "analytics",
+      "labels": [],
+      "progress": "1",
+      "rect": {
+        "bottom": 2074.125,
+        "height": 722.28125,
+        "left": 40,
+        "right": 1385,
+        "top": 1351.84375,
+        "width": 1345,
+        "x": 40,
+        "y": 1351.84375
+      }
+    },
+    {
+      "ambient": "paused",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "agent-paper",
+          "playState": "paused",
+          "rect": {
+            "bottom": 2521.6611328125,
+            "height": 150.4189453125,
+            "left": 596.0285034179688,
+            "right": 804.340576171875,
+            "top": 2371.2421875,
+            "width": 208.31207275390625,
+            "x": 596.0285034179688,
+            "y": 2371.2421875
+          },
+          "translate": "0px -6.86016px"
+        },
+        {
+          "animation": "cinematic-float",
+          "class": "agent-paper",
+          "playState": "paused",
+          "rect": {
+            "bottom": 2690.000244140625,
+            "height": 152.764892578125,
+            "left": 591.891845703125,
+            "right": 801.91552734375,
+            "top": 2537.2353515625,
+            "width": 210.023681640625,
+            "x": 591.891845703125,
+            "y": 2537.2353515625
+          },
+          "translate": "0px -6.86016px"
+        },
+        {
+          "animation": "cinematic-float",
+          "class": "agent-paper agent-draft",
+          "playState": "paused",
+          "rect": {
+            "bottom": 2660.63671875,
+            "height": 249.047607421875,
+            "left": 844.4053955078125,
+            "right": 1080.6053466796875,
+            "top": 2411.589111328125,
+            "width": 236.199951171875,
+            "x": 844.4053955078125,
+            "y": 2411.589111328125
+          },
+          "translate": "0px -0.780409px"
+        },
+        {
+          "animation": "cinematic-float",
+          "class": "agent-paper agent-review",
+          "playState": "paused",
+          "rect": {
+            "bottom": 2660.882080078125,
+            "height": 253.459228515625,
+            "left": 1125.8809814453125,
+            "right": 1370.787353515625,
+            "top": 2407.4228515625,
+            "width": 244.9063720703125,
+            "x": 1125.8809814453125,
+            "y": 2407.4228515625
+          },
+          "translate": "0px -2.7118px"
+        }
+      ],
+      "kind": "agents",
+      "labels": [],
+      "progress": "1",
+      "rect": {
+        "bottom": 2701.125,
+        "height": 330,
+        "left": 585.078125,
+        "right": 1361,
+        "top": 2371.125,
+        "width": 775.921875,
+        "x": 585.078125,
+        "y": 2371.125
+      }
+    },
+    {
+      "ambient": "paused",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "traffic-observation-art",
+          "playState": "paused",
+          "rect": {
+            "bottom": 3513.505859375,
+            "height": 517.265869140625,
+            "left": 64,
+            "right": 839.90625,
+            "top": 2996.239990234375,
+            "width": 775.90625,
+            "x": 64,
+            "y": 2996.239990234375
+          },
+          "translate": "0px -5.88489px"
+        }
+      ],
+      "kind": "traffic",
+      "labels": [
+        {
+          "class": "traffic-observation-head",
+          "rect": {
+            "bottom": 2986.125,
+            "height": 68,
+            "left": 64,
+            "right": 839.90625,
+            "top": 2918.125,
+            "width": 775.90625,
+            "x": 64,
+            "y": 2918.125
+          }
+        },
+        {
+          "class": "traffic-observation-details",
+          "rect": {
+            "bottom": 3614.390625,
+            "height": 95,
+            "left": 64,
+            "right": 839.90625,
+            "top": 3519.390625,
+            "width": 775.90625,
+            "x": 64,
+            "y": 3519.390625
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 3656.390625,
+        "height": 738.265625,
+        "left": 64,
+        "right": 839.90625,
+        "top": 2918.125,
+        "width": 775.90625,
+        "x": 64,
+        "y": 2918.125
+      }
+    },
+    {
+      "ambient": "paused",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "archive-stage",
+          "playState": "paused",
+          "rect": {
+            "bottom": 4269.60595703125,
+            "height": 432.968505859375,
+            "left": 551.53125,
+            "right": 1201,
+            "top": 3836.637451171875,
+            "width": 649.46875,
+            "x": 551.53125,
+            "y": 3836.637451171875
+          },
+          "translate": "0px -5.37662px"
+        }
+      ],
+      "kind": "archive",
+      "labels": [
+        {
+          "class": "archive-labels",
+          "rect": {
+            "bottom": 4269.60595703125,
+            "height": 432.968505859375,
+            "left": 551.53125,
+            "right": 1201,
+            "top": 3836.637451171875,
+            "width": 649.46875,
+            "x": 551.53125,
+            "y": 3836.637451171875
+          }
+        },
+        {
+          "class": "archive-destinations",
+          "rect": {
+            "bottom": 4181.875,
+            "height": 236,
+            "left": 1201,
+            "right": 1361,
+            "top": 3945.875,
+            "width": 160,
+            "x": 1201,
+            "y": 3945.875
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 4280.359375,
+        "height": 432.96875,
+        "left": 551.53125,
+        "right": 1361,
+        "top": 3847.390625,
+        "width": 809.46875,
+        "x": 551.53125,
+        "y": 3847.390625
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "KAIRUM — Visibilidad de marca en IA",
+  "url": "http://127.0.0.1:4328/",
+  "viewport": {
+    "clientWidth": 1425,
+    "dpr": 1,
+    "height": 1000,
+    "scrollWidth": 1425,
+    "scrollY": 858,
+    "width": 1440
+  },
+  "screenshot": {
+    "file": "final-prompt-home-desktop-a.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 1425,
+    "pixel_height": 990,
+    "bytes": 83616,
+    "sha256": "6b3b9e89541d99c79a57d82c5cf67637361f1f553ee534e56123244108017f2c",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}

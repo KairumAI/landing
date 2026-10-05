@@ -1,0 +1,4 @@
+# Published reports are a byte-for-byte snapshot; their manifest protects them.
+public/informes/
+public/licenses/OFL-*.txt
+build/

@@ -1,0 +1,457 @@
+{
+  "name": "final-prompt-pt-320-playing-a",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:54:07.713Z",
+  "sha256": "b0bf176b99b51a29b370bb985aeaf4a694199eeef46ab31114437d5ff396f4b5",
+  "activeElement": {
+    "label": "Inteligência para a busca com IASua marca, visívelnoPerguntas, visibilidade, conteúdo e tráfego. Com contexto.Explorar plataformaVamos conversar\n     ",
+    "tag": "MAIN"
+  },
+  "charts": [
+    {
+      "chartAmbient": "paused",
+      "chartAnimation": "paused",
+      "chartRatio": "0.000",
+      "chartReady": "true",
+      "chartVisible": "false"
+    },
+    {
+      "chartAmbient": "paused",
+      "chartAnimation": "paused",
+      "chartRatio": "0.000",
+      "chartReady": "true",
+      "chartVisible": "false"
+    }
+  ],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "pt-BR",
+  "menus": [
+    {
+      "name": "Produtos",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluções",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "full",
+  "preference": false,
+  "rotator": "paused",
+  "scenes": [
+    {
+      "ambient": "waiting",
+      "animation": "paused",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "answer-glass",
+          "playState": "running",
+          "rect": {
+            "bottom": -420.03277587890625,
+            "height": 327.0706787109375,
+            "left": 19.445615768432617,
+            "right": 285.5543804168701,
+            "top": -747.1034545898438,
+            "width": 266.1087646484375,
+            "x": 19.445615768432617,
+            "y": -747.1034545898438
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "glass-source",
+          "playState": "running",
+          "rect": {
+            "bottom": -234.65625,
+            "height": 153.84375,
+            "left": 42,
+            "right": 285,
+            "top": -388.5,
+            "width": 243,
+            "x": 42,
+            "y": -388.5
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "answer",
+      "labels": [],
+      "progress": "0.085",
+      "rect": {
+        "bottom": -218.65625,
+        "height": 571.84375,
+        "left": 20,
+        "right": 285,
+        "top": -790.5,
+        "width": 265,
+        "x": 20,
+        "y": -790.5
+      }
+    },
+    {
+      "ambient": "playing",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "prompt-discovery-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": 522.7877197265625,
+            "height": 346.5468444824219,
+            "left": 20,
+            "right": 285,
+            "top": 176.24087524414062,
+            "width": 265,
+            "x": 20,
+            "y": 176.24087524414062
+          },
+          "translate": "0px -6.49351px"
+        }
+      ],
+      "kind": "prompts",
+      "labels": [
+        {
+          "class": "prompt-featured-query",
+          "rect": {
+            "bottom": 358.1315002441406,
+            "height": 181.890625,
+            "left": 30.59375,
+            "right": 274.40625,
+            "top": 176.24087524414062,
+            "width": 243.8125,
+            "x": 30.59375,
+            "y": 176.24087524414062
+          }
+        },
+        {
+          "class": "prompt-research-plan",
+          "rect": {
+            "bottom": 808.40625,
+            "height": 289.125,
+            "left": 20,
+            "right": 285,
+            "top": 519.28125,
+            "width": 265,
+            "x": 20,
+            "y": 519.28125
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 808.40625,
+        "height": 625.671875,
+        "left": 20,
+        "right": 285,
+        "top": 182.734375,
+        "width": 265,
+        "x": 20,
+        "y": 182.734375
+      }
+    },
+    {
+      "ambient": "waiting",
+      "animation": "paused",
+      "drift": [],
+      "kind": "analytics",
+      "labels": [],
+      "progress": null,
+      "rect": {
+        "bottom": 2127.21875,
+        "height": 997.078125,
+        "left": 16,
+        "right": 289,
+        "top": 1130.140625,
+        "width": 273,
+        "x": 16,
+        "y": 1130.140625
+      }
+    },
+    {
+      "ambient": "waiting",
+      "animation": "paused",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "agent-paper",
+          "playState": "running",
+          "rect": {
+            "bottom": 2879.515625,
+            "height": 188.875,
+            "left": 20,
+            "right": 144.5,
+            "top": 2690.640625,
+            "width": 124.5,
+            "x": 20,
+            "y": 2690.640625
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "agent-paper",
+          "playState": "running",
+          "rect": {
+            "bottom": 2879.515625,
+            "height": 188.875,
+            "left": 160.5,
+            "right": 285,
+            "top": 2690.640625,
+            "width": 124.5,
+            "x": 160.5,
+            "y": 2690.640625
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "agent-paper agent-draft",
+          "playState": "running",
+          "rect": {
+            "bottom": 3173.109375,
+            "height": 237.59375,
+            "left": 20,
+            "right": 285,
+            "top": 2935.515625,
+            "width": 265,
+            "x": 20,
+            "y": 2935.515625
+          },
+          "translate": "none"
+        },
+        {
+          "animation": "none",
+          "class": "agent-paper agent-review",
+          "playState": "running",
+          "rect": {
+            "bottom": 3460.703125,
+            "height": 231.59375,
+            "left": 20,
+            "right": 285,
+            "top": 3229.109375,
+            "width": 265,
+            "x": 20,
+            "y": 3229.109375
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "agents",
+      "labels": [],
+      "progress": null,
+      "rect": {
+        "bottom": 3460.703125,
+        "height": 770.0625,
+        "left": 20,
+        "right": 285,
+        "top": 2690.640625,
+        "width": 265,
+        "x": 20,
+        "y": 2690.640625
+      }
+    },
+    {
+      "ambient": "waiting",
+      "animation": "paused",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "traffic-observation-art",
+          "playState": "running",
+          "rect": {
+            "bottom": 4115.78125,
+            "height": 176.65625,
+            "left": 20,
+            "right": 285,
+            "top": 3939.125,
+            "width": 265,
+            "x": 20,
+            "y": 3939.125
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "traffic",
+      "labels": [
+        {
+          "class": "traffic-observation-head",
+          "rect": {
+            "bottom": 3927.125,
+            "height": 75,
+            "left": 20,
+            "right": 285,
+            "top": 3852.125,
+            "width": 265,
+            "x": 20,
+            "y": 3852.125
+          }
+        },
+        {
+          "class": "traffic-observation-details",
+          "rect": {
+            "bottom": 4252.78125,
+            "height": 137,
+            "left": 20,
+            "right": 285,
+            "top": 4115.78125,
+            "width": 265,
+            "x": 20,
+            "y": 4115.78125
+          }
+        }
+      ],
+      "progress": null,
+      "rect": {
+        "bottom": 4308.78125,
+        "height": 456.65625,
+        "left": 20,
+        "right": 285,
+        "top": 3852.125,
+        "width": 265,
+        "x": 20,
+        "y": 3852.125
+      }
+    },
+    {
+      "ambient": "waiting",
+      "animation": "paused",
+      "drift": [
+        {
+          "animation": "none",
+          "class": "archive-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": 4910.390625,
+            "height": 176.65625,
+            "left": 20,
+            "right": 285,
+            "top": 4733.734375,
+            "width": 265,
+            "x": 20,
+            "y": 4733.734375
+          },
+          "translate": "none"
+        }
+      ],
+      "kind": "archive",
+      "labels": [
+        {
+          "class": "archive-labels",
+          "rect": {
+            "bottom": 4910.390625,
+            "height": 176.65625,
+            "left": 20,
+            "right": 285,
+            "top": 4733.734375,
+            "width": 265,
+            "x": 20,
+            "y": 4733.734375
+          }
+        },
+        {
+          "class": "archive-destinations",
+          "rect": {
+            "bottom": 5024.390625,
+            "height": 96,
+            "left": 20,
+            "right": 285,
+            "top": 4928.390625,
+            "width": 265,
+            "x": 20,
+            "y": 4928.390625
+          }
+        }
+      ],
+      "progress": null,
+      "rect": {
+        "bottom": 5024.390625,
+        "height": 290.65625,
+        "left": 20,
+        "right": 285,
+        "top": 4733.734375,
+        "width": 265,
+        "x": 20,
+        "y": 4733.734375
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "KAIRUM — Visibilidade de marca em IA",
+  "url": "http://127.0.0.1:4328/pt-br/#contenido",
+  "viewport": {
+    "clientWidth": 305,
+    "dpr": 1,
+    "height": 900,
+    "scrollWidth": 305,
+    "scrollY": 1351,
+    "width": 320
+  },
+  "screenshot": {
+    "file": "final-prompt-pt-320-playing-a.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 305,
+    "pixel_height": 858,
+    "bytes": 27746,
+    "sha256": "b0bf176b99b51a29b370bb985aeaf4a694199eeef46ab31114437d5ff396f4b5",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}

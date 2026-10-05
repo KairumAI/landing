@@ -1,0 +1,165 @@
+{
+  "name": "final-product-prompt-pt-320-playing",
+  "tab_id": "13",
+  "captured_at": "2026-10-05T01:54:23.764Z",
+  "sha256": "0140c8a0230a7b3d2d659de4b0410755b964cc47db6d57279b62d6b98d8875cf",
+  "activeElement": {
+    "label": "Prompt IntelligenceExplorarComo funcionaCapacidadesFAQ\n    KAIRUM Prompt IntelligenceAs perguntas certas mudam o ponto de partida.Organize perguntas p",
+    "tag": "MAIN"
+  },
+  "charts": [],
+  "enhanced": "true",
+  "hidden": false,
+  "locale": "pt-BR",
+  "menus": [
+    {
+      "name": "Produtos",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Soluções",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Recursos",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Empresa",
+      "open": false,
+      "rect": {
+        "bottom": 0,
+        "height": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "motion": "full",
+  "preference": false,
+  "scenes": [
+    {
+      "ambient": "playing",
+      "animation": "complete",
+      "drift": [
+        {
+          "animation": "cinematic-float",
+          "class": "prompt-discovery-stage",
+          "playState": "running",
+          "rect": {
+            "bottom": 532.5161285400391,
+            "height": 351.890625,
+            "left": 16,
+            "right": 289,
+            "top": 180.62550354003903,
+            "width": 273,
+            "x": 16,
+            "y": 180.62550354003903
+          },
+          "translate": "0px -0.0151275px"
+        }
+      ],
+      "kind": "prompts",
+      "labels": [
+        {
+          "class": "prompt-featured-query",
+          "rect": {
+            "bottom": 362.51611328125,
+            "height": 181.89060974121097,
+            "left": 26.90625,
+            "right": 278.09375,
+            "top": 180.62550354003903,
+            "width": 251.1875,
+            "x": 26.90625,
+            "y": 180.62550354003903
+          }
+        },
+        {
+          "class": "prompt-research-plan",
+          "rect": {
+            "bottom": 811.65625,
+            "height": 289.125,
+            "left": 16,
+            "right": 289,
+            "top": 522.53125,
+            "width": 273,
+            "x": 16,
+            "y": 522.53125
+          }
+        }
+      ],
+      "progress": "1",
+      "rect": {
+        "bottom": 811.65625,
+        "height": 631.015625,
+        "left": 16,
+        "right": 289,
+        "top": 180.640625,
+        "width": 273,
+        "x": 16,
+        "y": 180.640625
+      }
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:4328/_astro/MarketingPage.astro_astro_type_script_index_0_lang.if6kbVjU.js"
+  ],
+  "styles": [
+    "http://127.0.0.1:4328/_astro/Base.c8SDbHOt.css",
+    "http://127.0.0.1:4328/_astro/MarketingPage.CVQ4vvm7.css"
+  ],
+  "title": "Prompt Intelligence — KAIRUM",
+  "url": "http://127.0.0.1:4328/pt-br/productos/prompt-intelligence/",
+  "viewport": {
+    "clientWidth": 305,
+    "dpr": 1,
+    "height": 900,
+    "scrollWidth": 305,
+    "scrollY": 459,
+    "width": 320
+  },
+  "screenshot": {
+    "file": "final-product-prompt-pt-320-playing.jpg",
+    "mime_type": "image/jpeg",
+    "pixel_width": 305,
+    "pixel_height": 858,
+    "bytes": 29337,
+    "sha256": "0140c8a0230a7b3d2d659de4b0410755b964cc47db6d57279b62d6b98d8875cf",
+    "native_bytes_unmodified": true
+  },
+  "captured_candidate_version": "596cdb6215c7"
+}
