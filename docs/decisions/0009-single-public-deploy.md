@@ -51,6 +51,13 @@ completo y aprobarlo en `production`. Los tags previos a esta migración no
 incluyen informes y no deben publicarse sobre `kairum`. Mantener el writer anterior
 retirado incluso durante un rollback. No reactivar el viejo CD como recuperación.
 
+Para el primer release, antes de publicar se registra el deployment de producción
+exitoso anterior de Pages `kairum`. Si todavía no existe un tag Astro completo
+previo y el nuevo paquete falla, Bruno puede restaurar ese deployment desde Pages.
+Se conservan el proyecto y el writer retirado. Reintentar el mismo tag sirve para
+un fallo transitorio del upload; no equivale a revertir un paquete defectuoso.
+El procedimiento detalla la recuperación inicial y la comprobación de informes.
+
 ## Validación y límites
 
 Se comprobarán hashes de los 2.959 archivos conservados, enlaces y recursos,

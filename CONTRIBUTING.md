@@ -60,8 +60,10 @@ gh release create v0.2.0 --target main --generate-notes
 
 `--generate-notes` arma las notas con los títulos de los PRs incluidos. También se puede crear desde **Releases → Draft a new release**, que no publica nada hasta apretar **Publish release**.
 
-Al publicar el release arranca el workflow **Deploy**, que espera la aprobación de Bruno en **Actions → Deploy → Review deployments**. Si se publica otro release antes de la aprobación, reemplaza al anterior. Un tag que no apunta a un commit de `main` falla antes de publicar.
+Al publicar el release arranca el workflow **Deploy**, que verifica primero el paquete completo y después espera la aprobación de Bruno en **Actions → Deploy → Review deployments**. Las ejecuciones se serializan y no cancelan una publicación en curso. Un tag que no apunta a un commit de `main` falla antes de publicar.
+
+El destino es el proyecto existente Pages `kairum`, con landing e informes en el mismo paquete. Seguir [el procedimiento de publicación](docs/operations/public-deployment.md) antes del primer release; el CD de geo-product debe permanecer retirado.
 
 ## Volver atrás
 
-Para volver a una versión anterior: **Actions → Deploy → Run workflow**, elegir el tag de esa versión y aprobar. Después revertir el PR que causó el problema y publicar un release nuevo, para que la próxima versión no traiga el error de vuelta.
+Para volver a una versión Astro completa anterior: **Actions → Deploy → Run workflow**, elegir el tag de esa versión y aprobar. Los tags anteriores al snapshot de informes no sirven para recuperar `kairum`. Durante el primer release, usar el deployment anterior de Pages según [el procedimiento](docs/operations/public-deployment.md#volver-atrás), sin reactivar geo-product. Después revertir el PR que causó el problema y publicar un release completo nuevo.

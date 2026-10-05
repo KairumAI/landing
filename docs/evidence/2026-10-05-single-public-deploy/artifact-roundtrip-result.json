@@ -1,0 +1,6 @@
+{
+  "valid_complete_artifact": "passed",
+  "tampered_report_artifact": "rejected",
+  "committed_report_files_verified": 2959,
+  "synthetic_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+}

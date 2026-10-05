@@ -29,10 +29,14 @@ Rama: `codex/astro-approved-landing-seo-20261004`.
 - Formato correcto, ver `format.log`. Actionlint 1.7.12 sin errores en CI y Deploy.
 - Build completo aprobado. La navegación, búsqueda y acceso a PDF/lectores se
   ejercitan en el navegador con la CSP de la landing.
+- La ronda final de navegador aprobó las 28 pruebas; ver `e2e-final.log`.
 - La primera ronda de navegador pasó 27 tests y falló una expectativa nueva que
   suponía un meta robots en todos los informes. El circuito heredado usa la
   cabecera noindex de Pages. Se corrigió la expectativa sin cambiar los informes;
-  se conserva `e2e.log` como evidencia de esa ronda y la final en `e2e-final.log`.
+  se conserva `e2e.log` como evidencia histórica de esa ronda.
+- Roundtrip del artifact completo por el mismo CLI del deploy aprobado; una
+  alteración de un informe es rechazada. Los 2.959 blobs commiteados conservan
+  los hashes fuente. Ver `artifact-roundtrip-result.json`.
 - `public-snapshot.json` registra cuatro recursos públicos de producción con
   status 200, noindex y hashes idénticos al artifact fuente.
 
@@ -47,6 +51,10 @@ Writer antiguo comprobado en GitHub: `disabled_manually`, environment limitado
 únicamente a `kairum-publication-paused`, sin ejecuciones antiguas pendientes.
 Reviewer y tags del environment nuevo permanecen intactos.
 
-Esta entrega todavía no fue integrada ni publicada. La revisión independiente
-se registrará aquí antes de subir los cambios. Las comprobaciones locales no
-validan el valor secreto ni las cabeceras de un deploy que todavía no existe.
+Deployment Pages anterior identificado en una consulta de sólo lectura:
+`783b90f8-e7b1-44e4-81a9-984c4fe708c5`, origen `3209371`. El procedimiento
+conserva ese destino para la recuperación inicial; no se ejecutó un rollback.
+
+[Revisión independiente](review.md): lista para PR, sin hallazgos pendientes.
+Esta entrega todavía no fue integrada ni publicada. Las comprobaciones locales
+no validan el valor secreto ni las cabeceras de un deploy que todavía no existe.

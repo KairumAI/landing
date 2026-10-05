@@ -15,6 +15,15 @@ Decisión: [ADR-0009](../decisions/0009-single-public-deploy.md).
    de `KairumAI/landing`: `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID`.
    No poner valores en código, documentos, logs ni secretos de repo generales.
 4. No modificar el reviewer Bruno ni la restricción de tags `v*` de `production`.
+5. En Pages `kairum` → **Deployments**, identificar y registrar el deployment de
+   producción exitoso que sirve la versión anterior con los 26 informes. Su
+   commit de origen es `32093714116cfcd5cf44927dfe95e1cae289f58b`. Conservarlo
+   como destino de recuperación del primer release; no borrar ese deployment.
+
+La consulta de sólo lectura del 2026-10-05 identificó el deployment de producción
+`783b90f8-e7b1-44e4-81a9-984c4fe708c5`, origen `3209371`, en el proyecto existente.
+Antes de publicar, confirmar que ese destino sigue disponible y conserva los
+informes; esta preparación no ejecuta un rollback.
 
 ## Publicar una versión
 
@@ -75,6 +84,22 @@ Nunca copiar directamente carpetas de investigación ni bajar una fuente mutable
 en el paso de despliegue. Cada actualización requiere revisión del alcance público.
 
 ## Volver atrás
+
+Si el primer release introduce un problema, todavía no habrá un tag Astro
+completo anterior. Bruno puede restaurar el deployment de producción exitoso
+registrado antes de publicar: **Pages `kairum` → Deployments → All deployments →
+menú del deployment anterior → Rollback to this deployment**, y confirmar la
+restauración. Esto recupera la landing anterior y sus informes en el mismo
+proyecto, sin ejecutar el workflow retirado. Las previews no son destinos válidos.
+Comprobar después la Home, `/informes/`, un PDF y un lector, y conservar el CD
+de geo-product deshabilitado. Ver el
+[procedimiento oficial de Cloudflare](https://developers.cloudflare.com/pages/configuration/rollbacks/).
+
+Un fallo transitorio del upload puede resolverse reintentando el mismo tag
+verificado, con nueva aprobación de Bruno. Ese reintento no revierte un defecto
+del paquete; para un defecto, restaurar el deployment anterior y corregir por PR.
+
+Cuando ya exista un release Astro completo conocido:
 
 En **Actions → Deploy → Run workflow**, elegir un tag de una versión completa
 de esta migración o posterior y aprobarlo en `production`. La compilación falla
