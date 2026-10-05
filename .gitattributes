@@ -1,2 +1,3 @@
-# Preserve this approved vendor logo byte-for-byte; check:reference verifies it.
-public/kairum/assets/models/claude.svg -whitespace
+# Preserve the exact bytes checked by the public snapshot manifest on every OS.
+public/informes/** -text
+public/licenses/OFL-*.txt -text

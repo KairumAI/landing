@@ -1,0 +1,48 @@
+$ playwright test "--workers=2"
+[WebServer] $ bun scripts/verify-public-delivery.ts public && astro build && bun scripts/verify-public-delivery.ts dist
+[WebServer] (node:361883) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `bun --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:361897) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:361882) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `bun --trace-warnings ...` to show where the warning was created)
+[WebServer] $ astro preview --host 127.0.0.1 --port "4336" --ignore-lock
+[WebServer] (node:362221) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 28 tests using 2 workers
+
+(node:362328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:362329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/landing.spec.ts:18:2 › es: Home loads local assets, keeps R05 and reflows without errors (4.8s)
+  ✓   2 tests/e2e/landing.spec.ts:86:2 › es: all 13 pages have equivalent metadata, real destinations and working scripts (7.1s)
+  ✓   3 tests/e2e/landing.spec.ts:202:2 › es: desktop product menu uses keyboard, closes with Escape and reaches a product (2.3s)
+  ✓   4 tests/e2e/landing.spec.ts:18:2 › en: Home loads local assets, keeps R05 and reflows without errors (4.4s)
+  ✓   5 tests/e2e/landing.spec.ts:86:2 › en: all 13 pages have equivalent metadata, real destinations and working scripts (6.9s)
+  ✓   6 tests/e2e/landing.spec.ts:202:2 › en: desktop product menu uses keyboard, closes with Escape and reaches a product (2.7s)
+  ✓   7 tests/e2e/landing.spec.ts:18:2 › pt-br: Home loads local assets, keeps R05 and reflows without errors (4.6s)
+  ✓   8 tests/e2e/landing.spec.ts:86:2 › pt-br: all 13 pages have equivalent metadata, real destinations and working scripts (6.4s)
+  ✓   9 tests/e2e/landing.spec.ts:202:2 › pt-br: desktop product menu uses keyboard, closes with Escape and reaches a product (2.4s)
+  ✓  10 tests/e2e/landing.spec.ts:230:0 › language selector preserves the product and section; dynamic menu labels are translated (1.2s)
+  ✓  12 tests/e2e/landing.spec.ts:275:0 › four cinematic openers share the approved scenes; charts stay schematic (1.7s)
+  ✓  13 tests/e2e/landing.spec.ts:305:0 › product FAQ works with keyboard and reacts to reduced motion (602ms)
+  ✓  11 tests/e2e/landing.spec.ts:251:0 › compact menus remain reversible and link to real pages (3.3s)
+  ✓  15 tests/e2e/landing.spec.ts:358:2 › es: Analytics draws both charts with full motion and loads menu masks (5.8s)
+  ✓  14 tests/e2e/landing.spec.ts:321:0 › ambient motion continues after entry and reduced preference settles all scenes (7.0s)
+  ✓  16 tests/e2e/landing.spec.ts:358:2 › en: Analytics draws both charts with full motion and loads menu masks (5.4s)
+  ✓  18 tests/e2e/landing.spec.ts:424:0 › product anchors prefer their own section and preserve keyboard focus (935ms)
+  ✓  17 tests/e2e/landing.spec.ts:358:2 › pt-br: Analytics draws both charts with full motion and loads menu masks (6.0s)
+  ✓  20 tests/e2e/landing.spec.ts:488:0 › sitemap covers the 36 indexable equivalent pages and robots/llms describe current content (59ms)
+  ✓  19 tests/e2e/landing.spec.ts:456:0 › NoJS keeps content, native product FAQ and booking links at 320px (1.8s)
+  ✓  21 tests/e2e/landing.spec.ts:518:0 › JSON-LD FAQ answers match the visible product copy, without ratings or offers (1.1s)
+  ✓  23 tests/e2e/landing.spec.ts:587:2 › es: custom 404 file has its translated recovery link and noindex (502ms)
+  ✓  24 tests/e2e/landing.spec.ts:587:2 › en: custom 404 file has its translated recovery link and noindex (303ms)
+  ✓  22 tests/e2e/landing.spec.ts:546:0 › self-only CSP permits the actual bundle and lazy charts with no policy violations (1.2s)
+  ✓  25 tests/e2e/landing.spec.ts:587:2 › pt-br: custom 404 file has its translated recovery link and noindex (281ms)
+  ✓  26 tests/e2e/landing.spec.ts:606:0 › unknown URL returns 404 instead of a marketing page (329ms)
+  ✓  28 tests/e2e/reports.spec.ts:66:0 › each preserved report keeps its exact HTML; the library retains noindex headers (189ms)
+  ✓  27 tests/e2e/reports.spec.ts:12:0 › preserved public library searches, opens reports and returns to the new Home under CSP (1.6s)
+
+  28 passed (44.8s)

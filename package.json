@@ -9,13 +9,15 @@
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
-    "build": "astro build",
+    "build": "bun scripts/verify-public-delivery.ts public && astro build && bun scripts/verify-public-delivery.ts dist",
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "check:reference": "bun scripts/verify-approved-reference.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "playwright test",
+    "test:delivery": "playwright test --config playwright.delivery.config.ts",
+    "check:delivery:live": "bun scripts/check-public-delivery-live.ts",
     "astro": "astro"
   },
   "dependencies": {

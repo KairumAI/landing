@@ -17,5 +17,16 @@ Diseño: R05 `477f1e2338d2` aprobado en geo-product.
 Los checks y la evaluación independiente de esta entrega se registran en
 [evidencia de unificación](../evidence/2026-10-04-astro-unification/README.md).
 Candidato `7207357b71e1`: 26/26 pruebas, tipos sin errores y crítico final
-≥9 por eje, cero bloqueantes. Publicar el
-sitio, mover `kairum.com.ar` y migrar los informes son pasos separados.
+≥9 por eje, cero bloqueantes. Las pruebas visuales se refieren al diseño R05;
+la entrega de producción tiene una validación separada.
+
+## Entrega pública unificada · 2026-10-05
+
+| ID             | Entrega              | Alcance                                                                                                                                                                      | Estado                                         |
+| -------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| WEB-PUBLISH-02 | Un único writer      | Landing publica en Pages `kairum`, release `v*` de `main` y gate `production` de Bruno. Paquete verificado antes y después de descargar el artifact; chequeo HTTP posterior. | Implementado; pendiente de integrar y publicar |
+| WEB-REPORTS-02 | Preservar biblioteca | 26 informes, 2.959 archivos y licencias de la versión ya publicada, hashes y URLs conservados; sin propuestas ni JSON privados.                                              | Implementado; pendiente de integrar y publicar |
+
+[ADR-0009](../decisions/0009-single-public-deploy.md),
+[procedimiento](../operations/public-deployment.md) y
+[evidencia de esta entrega](../evidence/2026-10-05-single-public-deploy/README.md).

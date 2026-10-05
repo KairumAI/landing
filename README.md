@@ -59,6 +59,8 @@ SIL OFL 1.1 y Phosphor, Chart.js y Three bajo sus licencias MIT; GSAP conserva
 su aviso y enlace a la licencia estándar. Los logos de terceros identifican
 productos y no implican integración, asociación ni aval. No se copian informes,
 respuestas privadas ni secretos de geo-product a este repositorio público.
+ADR-0009 incorpora únicamente los archivos de los 26 informes ya públicos,
+con sus hashes y licencias. No se importan los documentos de trabajo.
 
 ## Cabeceras
 
@@ -80,24 +82,37 @@ nuevo por sí sola.
 
 ## Publicación
 
-Cloudflare Pages sirve la salida estática `dist/` en el proyecto `kairum-landing` (`kairum-landing.pages.dev`). El dominio `kairum.com.ar` sigue en el proyecto `kairum`, que publica `geo-product` con los informes; moverlo es una decisión aparte.
+Cloudflare Pages sirve el paquete completo `dist/` en el proyecto existente
+`kairum` y el dominio `kairum.com.ar`. Landing es el único writer; geo-product
+conserva la generación y validación de informes, con su CD público retirado.
+La decisión y los pasos de publicación y rollback están en
+[ADR-0009](docs/decisions/0009-single-public-deploy.md) y
+[el procedimiento](docs/operations/public-deployment.md).
 
 El flujo de trabajo y las convenciones están en [CONTRIBUTING.md](CONTRIBUTING.md).
 
 - **CI** (`.github/workflows/ci.yml`): corre en cada PR. Verifica formato, tipos y compilación, y corre los tests en el Chrome que trae el runner. Es el check `verify` que exige el ruleset de `main`.
 - **Deploy** (`.github/workflows/deploy.yml`): corre solo al publicar un release con tag `v*` sobre `main`; un merge no publica nada. El environment `production` solo admite tags `v*` y retiene el deploy hasta que Bruno lo aprueba en **Actions → Deploy → Review deployments**. **Run workflow** sobre un tag existente lo vuelve a publicar, por ejemplo para volver atrás. Los tags `v*` no se pueden mover ni borrar.
 
-### Activación (una sola vez)
+### Activación y biblioteca
 
-El workflow queda listo, pero falla en el paso de publicación hasta completar esto con la cuenta de Cloudflare dueña de `kairum`:
+Los secretos se configuran en `KairumAI/landing → production`. El reviewer Bruno
+y la restricción de tags `v*` se conservan. No crear otro proyecto ni mover el
+dominio. Un release inicia validación; la publicación exige aprobación de Bruno.
 
-1. Crear el proyecto: `bunx wrangler@4.147.0 pages project create kairum-landing --production-branch main`.
-2. Crear un API token con el permiso **Account → Cloudflare Pages → Edit**, limitado a esa cuenta.
-3. Cargar los secretos en el environment, no en el repo:
+```sh
+gh secret set CLOUDFLARE_API_TOKEN --env production --repo KairumAI/landing
+gh secret set CLOUDFLARE_ACCOUNT_ID --env production --repo KairumAI/landing
+```
 
-   ```sh
-   gh secret set CLOUDFLARE_API_TOKEN --env production --repo KairumAI/landing
-   gh secret set CLOUDFLARE_ACCOUNT_ID --env production --repo KairumAI/landing
-   ```
+`public/informes/` conserva la biblioteca publicada y sus licencias. Build
+comprueba cada archivo contra `publishing/reports-manifest.json`, rechaza extras,
+valida sus enlaces y crea `build/public-delivery-manifest.json` fuera de `dist/`.
+`bun run test:delivery` ejercita errores de empaquetado, tags y entrega HTTP.
+El deploy publica el artifact comprobado; no recompila después de la aprobación.
 
-4. Publicar el primer release (`gh release create v0.1.0 --target main --generate-notes`) y aprobar el deploy.
+Antes de activar este writer, mantener CD de geo-product deshabilitado y su
+environment `kairum-production` restringido a la rama reservada inexistente.
+Los tags previos a esta migración no sirven para volver atrás porque no contienen
+el paquete completo de informes. Para nuevos informes, revisar e incorporar
+otro snapshot público mediante PR, sin copiar carpetas del repo privado.

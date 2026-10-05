@@ -20,10 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
       - run: bun install --frozen-lockfile
       - run: bun format:check
       - run: bun run check:reference
       - run: bun check
+      - run: bun run test:delivery
       # Builds the site, serves it and runs the browser tests against the runner's Chrome.
       - run: bun run test
       - uses: actions/upload-artifact@v7
