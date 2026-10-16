@@ -1,0 +1,135 @@
+{
+  "baseCommit": "ffee7fa887268a18b1d0a00875f07fa4630afc55",
+  "baseRef": "feat/recursos-blog",
+  "basePullRequest": 4,
+  "branch": "feat/contact-formspark",
+  "state": "stacked-review-candidate",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "42cfc92ba757a5bcffcfa4da27151212a72f7d53d43272b179c74a2a27eef311"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "1ad30f897779ef1b2df6583f58d96b5976f6194c50bca55288f502782c4cf3e2"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "sha256": "38b6231d5dcefd7fe752dd6ab7db84444c80486c077b53b3b31f58cc7967d1bc"
+    },
+    {
+      "path": ".prettierignore",
+      "sha256": "d2f117ae8fc944c9ff37ab0c0be84810d6ce4b6b98ca610ed0ed30f3b579f0f1"
+    },
+    {
+      "path": "docs/decisions/0011-contact-form.md",
+      "sha256": "40a31fb2b095f8ada9812dbbaffef8a4118dec7199b45fc18de93447b36ae801"
+    },
+    {
+      "path": "docs/operations/contact-form.md",
+      "sha256": "74517b085288a9a9ccc5d026302c5b494c1218be0712d409539c0e284360a425"
+    },
+    {
+      "path": "docs/product/feature-register.md",
+      "sha256": "09f9874d678d9aeecdc0ab1b6d44179b1bf52306e0ba83cfcf548f3d260e8eb4"
+    },
+    {
+      "path": "public/_headers",
+      "sha256": "327fa4e9cea97e7843c714f518c0791aaa1a7e51ca74e17ba6e62db3ef63c818"
+    },
+    {
+      "path": "scripts/verify-approved-reference.ts",
+      "sha256": "2bbdf726d4cda9abd5d072c917705e04ccf8eac858ee75a5a600844b2c36f318"
+    },
+    {
+      "path": "scripts/verify-public-delivery.ts",
+      "sha256": "2e3386a4927220b9e8241d395cae6038e0dea945a948605d0af54cb5e3f9398f"
+    },
+    {
+      "path": "src/components/kairum/contact-form.ts",
+      "sha256": "67a91a708605bdc35dd8399d14cf45cf9e037fe639e8f0577936a25b0193105e"
+    },
+    {
+      "path": "src/components/kairum/marketing-html.ts",
+      "sha256": "dc26a21979716bcc7ff927a73d0b4d64c9481c2f939feb68bb6e5c097901a7bf"
+    },
+    {
+      "path": "src/components/MarketingPage.astro",
+      "sha256": "df5cd08343864ef75e37133344fbffadbf01df59435d3e130426c4076128082a"
+    },
+    {
+      "path": "src/i18n/contact.ts",
+      "sha256": "f97a3ac97c793198657881cfc8afeaff7425816e99da3c4fee80946356e00136"
+    },
+    {
+      "path": "src/lib/contact-config.ts",
+      "sha256": "42d3ae7e0d7a3437309242e4e474ffde5628c7e856cbb6781c3c83179407eaff"
+    },
+    {
+      "path": "src/lib/routes.ts",
+      "sha256": "cbba56682be31369d1aac4f02cd0baa26aa45723f3e5fc8bcb9944b5e5a8d749"
+    },
+    {
+      "path": "src/scripts/contact-form.ts",
+      "sha256": "04f781e77d68b61053f22079a6b41ba2bcd81cd3d1948685ca5d2fc75c48c0a2"
+    },
+    {
+      "path": "src/styles/kairum-contact.css",
+      "sha256": "9329267d986e9d42955c8240f8e3cccc0eb31d6282a964a8c58ed8b3c4f9a304"
+    },
+    {
+      "path": "tests/delivery/public-delivery.spec.ts",
+      "sha256": "5227c49fd8f758511140693614129a4dd6cef62a9b077a7fbc9d9cb12f7d1583"
+    },
+    {
+      "path": "tests/e2e/contact.spec.ts",
+      "sha256": "5bbe20c105599d62f844dd287cc3ce4ecaf2db4834ae1ec29269db678badee6d"
+    }
+  ],
+  "captures": [
+    {
+      "path": "runtime/configured-contact-320.png",
+      "sha256": "a9ba3b8218bf9fbeed6c387bacba02216e0dda3ea464ca4cee1162bf74a2615b"
+    },
+    {
+      "path": "runtime/configured-contact-desktop.png",
+      "sha256": "d8802e991da6d28ec3af7fb5f4a338685996b6b70456c4476764f6c5d32a4450"
+    },
+    {
+      "path": "runtime/en-contact-320.png",
+      "sha256": "393d594d753010a11e562d1152bbad0beea87e9dfaf84c7fe56969c7c37177b5"
+    },
+    {
+      "path": "runtime/en-contact-desktop.png",
+      "sha256": "900088e7b85040fdae254ebafd66e8212c19a4a035d1aa2dcb847cc3cefa462b"
+    },
+    {
+      "path": "runtime/en-home-contact.png",
+      "sha256": "80df65932692ed90be3614fb73e598d53e6217ef584bb1399dd4980c603eac2e"
+    },
+    {
+      "path": "runtime/es-contact-320.png",
+      "sha256": "a9ba3b8218bf9fbeed6c387bacba02216e0dda3ea464ca4cee1162bf74a2615b"
+    },
+    {
+      "path": "runtime/es-contact-desktop.png",
+      "sha256": "fc6e6a07cc716ea5a54134c49e6ca6929276800b4165bdb319142e53753b96c0"
+    },
+    {
+      "path": "runtime/es-home-contact.png",
+      "sha256": "1503dccfa15574b946918fd3ac45fb6ab7bcda1457579f35ca62d737ac6b3659"
+    },
+    {
+      "path": "runtime/pt-br-contact-320.png",
+      "sha256": "6c9831639ff77492b32fdeffa65cc96a0796fdd7cfb8a71e06c2eb5e913d08e2"
+    },
+    {
+      "path": "runtime/pt-br-contact-desktop.png",
+      "sha256": "a9d5f7661aa75017b7ef8f5d7cdaa4e51c811e5980e581150ee56ac9c291bd66"
+    },
+    {
+      "path": "runtime/pt-br-home-contact.png",
+      "sha256": "12e5214574c5fec95180bd1c9d523ac8062cbdbf060443d3a19617fef532ff20"
+    }
+  ]
+}

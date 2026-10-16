@@ -70,3 +70,16 @@ La evaluación de WEB-CONTENT-04 corresponde a su versión anterior. Esta revisi
 cuenta con evidencia propia y aprobación independiente sobre `ee5edb78987fc8d9`
 (usabilidad 9.3, estilo 9.4, fidelidad 9.4; cero bloqueantes). No acredita indexación,
 tracción o mejora de SEO/GEO/AEO; prepara contenido y descubrimiento para medirlos.
+
+## Contacto sin reunión · 2026-10-16
+
+| ID             | Entrega                  | Alcance y evidencia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Estado                                                             |
+| -------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| WEB-CONTACT-04 | Consultas por formulario | Formulario horizontal oscuro en Home y panel claro en Contacto, ES/EN/PT-BR; título, agenda y enlace originales conservados. Envío y Turnstile en una tercera columna al costado de los campos en escritorio; móvil en una columna. Placeholders localizados en los cuatro campos; nota de procesamiento retirada por pedido del usuario. Formspark Free + Turnstile, sin SMTP; desafío cargado al acercarse al formulario. Configuración pública de build preparada; candidato sincronizado con el blog: 53/53 E2E (15 de contacto) y 44/44 de entrega; crítico 9,3/9,3/9,3, cero bloqueantes. | Verificado local; pendiente de merge, publicación y recepción real |
+
+[ADR-0011](../decisions/0011-contact-form.md),
+[runbook](../operations/contact-form.md) y
+[evidencia inicial](../evidence/2026-10-16-contact-form/README.md) y
+[formulario en Home: capturas, revisión y límites](../evidence/2026-10-16-home-contact-form/README.md).
+El usuario confirmó la activación de Turnstile en Formspark; los mocks locales
+no prueban entrega a Gmail. No se realizó envío real ni publicación.

@@ -6,12 +6,23 @@ import { toLocale } from "../i18n";
 import { localeMeta, type Locale } from "../i18n/locales";
 import { translator } from "../i18n/marketing";
 import { seo } from "../i18n/marketing/seo";
+import { contactConfig } from "../lib/contact-config";
+import { createContactSlots } from "./kairum/contact-form";
+import "../styles/kairum-contact.css";
 interface Props {
   pageId?: PageId;
   locale?: Locale;
 }
 const { pageId = "home", locale = toLocale(Astro.currentLocale) } = Astro.props;
-const { html } = pageContent(pageId, locale);
+const config = contactConfig(
+  import.meta.env.PUBLIC_FORMSPARK_FORM_ID,
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY,
+);
+const { html } = pageContent(
+  pageId,
+  locale,
+  createContactSlots(locale, config),
+);
 const meta = metadata(pageId, locale, Astro.site!);
 const t = translator(locale);
 const clientCopy = {
@@ -52,6 +63,7 @@ const serialize = (value: unknown) =>
     set:html={serialize(clientCopy)}
   />
   <script>
+    import "../scripts/contact-form";
     import "../scripts/cinematic/app.ts";
     document
       .querySelectorAll<HTMLAnchorElement>("[data-language-link]")

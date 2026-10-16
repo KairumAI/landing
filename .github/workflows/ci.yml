@@ -17,6 +17,9 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      PUBLIC_FORMSPARK_FORM_ID: ${{ vars.FORMSPARK_FORM_ID }}
+      PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY }}
     steps:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2

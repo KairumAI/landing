@@ -200,7 +200,10 @@ export async function verifyDelivery(root: string, manifest: ReportsManifest) {
   }
   const headers = await readFile(join(root, "_headers"), "utf8");
   assert.match(headers, /\/informes\/\*\s+X-Robots-Tag: noindex, nofollow/);
-  assert.match(headers, /script-src 'self';/);
+  assert.match(
+    headers,
+    /script-src 'self'(?: https:\/\/challenges\.cloudflare\.com)?;/,
+  );
   const reportLinks = await verifyReportLinks(root, manifest);
   return {
     files,
