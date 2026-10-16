@@ -13,6 +13,23 @@ const titles = {
 const navNames = { es: "Productos", en: "Products", "pt-br": "Produtos" };
 const languageNames = { es: "Idioma", en: "Language", "pt-br": "Idioma" };
 const seoOrigin = "https://kairum.com.ar";
+const turnstileScript =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+
+test.beforeEach(async ({ page }) => {
+  await page.route("https://submit-form.com/**", (route) => route.abort());
+  await page.route(
+    (url) => url.href === turnstileScript,
+    (route) =>
+      route.fulfill({
+        contentType: "application/javascript",
+        body: `window.turnstile = {
+        render(_container, options) { options.callback('synthetic-turnstile-token'); return 'offline-widget'; },
+        reset() {}
+      };`,
+      }),
+  );
+});
 
 for (const locale of locales) {
   test(`${locale}: Home loads local assets, keeps R05 and reflows without errors`, async ({
@@ -28,7 +45,10 @@ for (const locale of locales) {
         errors.push(`${response.status()} ${response.url()}`);
     });
     page.on("request", (request) => {
-      if (new URL(request.url()).origin !== new URL(baseURL!).origin)
+      if (
+        new URL(request.url()).origin !== new URL(baseURL!).origin &&
+        request.url() !== turnstileScript
+      )
         external.push(request.url());
     });
     await page.emulateMedia({ reducedMotion: "reduce" });

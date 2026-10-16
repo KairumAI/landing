@@ -70,7 +70,9 @@ for (const locale of locales) {
             ? "</div></section>\n    </main>"
             : '<div class="info-context">';
         const fragment = localizeLinks(
-          page.id === "home" ? slots.homeAction : slots.contactPanel,
+          page.id === "home"
+            ? slots.homeAction + slots.contactPanel
+            : slots.contactPanel,
           locale,
         );
         if (!fragment || base.split(anchor).length !== 2) {

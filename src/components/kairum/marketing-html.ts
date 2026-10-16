@@ -424,7 +424,7 @@ export function createMarketingRenderer(t: Translate, contact?: ContactSlots) {
           `<a class="resource-book" href="${destination}" data-reveal><div class="resource-book-cover" data-home-drift style="--float-delay:-${index * 2}s"><img src="/kairum/assets/home-resource-${asset}.png" width="1122" height="1402" alt="" loading="lazy"><div class="resource-book-title"><h3>${title}</h3><p>${subtitle}</p></div></div><span class="book-link">${h("explorar")} ${title.toLowerCase()}${icon("ArrowUpRight")}</span></a>`,
       )
       .join("")}</div></section>
-    <section class="home-contact" id="contacto" data-home-showcase><div class="wrap"><div>${label(t("hablemos_de_tu_marca"))}<h2>${h("la_proxima_conversacion")}<br>${h("puede_empezar_aca")}</h2></div>${button(t("agendar_una_conversacion"), bookUrl)}${contact?.homeAction ?? ""}</div></section>
+    <section class="home-contact" id="contacto" data-home-showcase><div class="wrap"><div>${label(t("hablemos_de_tu_marca"))}<h2>${h("la_proxima_conversacion")}<br>${h("puede_empezar_aca")}</h2></div>${button(t("agendar_una_conversacion"), bookUrl)}${contact?.homeAction ?? ""}${contact?.contactPanel ?? ""}</div></section>
     </main>${marketingFooter()}`;
   }
   function evidenceScene() {

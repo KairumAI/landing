@@ -117,48 +117,66 @@ function enhanceContactForm(form: HTMLFormElement) {
   fields.disabled = false;
   message("checking", copy.checking);
 
-  const script = document.createElement("script");
-  script.src =
-    "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-  script.async = true;
-  const challengeTimeout = setTimeout(() => {
-    message("captcha-error", copy.captchaError);
-  }, 15_000);
-  script.onerror = () => {
-    clearTimeout(challengeTimeout);
-    message("captcha-error", copy.captchaError);
-  };
-  script.onload = () => {
-    clearTimeout(challengeTimeout);
-    if (!window.turnstile) return message("captcha-error", copy.captchaError);
-    try {
-      widget = window.turnstile.render(challenge, {
-        sitekey: form.dataset.sitekey!,
-        theme: "light",
-        size: "compact",
-        callback: (value) => {
-          token = value;
-          submit.disabled = pending || accepted;
-          if (
-            ["checking", "captcha-error"].includes(status.dataset.state ?? "")
-          )
-            message("ready", "");
-        },
-        "expired-callback": () => {
-          token = "";
-          submit.disabled = true;
-          if (!pending && !accepted) message("checking", copy.checking);
-        },
-        "error-callback": () => {
-          token = "";
-          submit.disabled = true;
-          if (!pending && !accepted)
-            message("captcha-error", copy.captchaError);
-        },
-      });
-    } catch {
+  let challengeStarted = false;
+  const loadChallenge = () => {
+    if (challengeStarted) return;
+    challengeStarted = true;
+    const script = document.createElement("script");
+    script.src =
+      "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    script.async = true;
+    const challengeTimeout = setTimeout(() => {
       message("captcha-error", copy.captchaError);
-    }
+    }, 15_000);
+    script.onerror = () => {
+      clearTimeout(challengeTimeout);
+      message("captcha-error", copy.captchaError);
+    };
+    script.onload = () => {
+      clearTimeout(challengeTimeout);
+      if (!window.turnstile) return message("captcha-error", copy.captchaError);
+      try {
+        widget = window.turnstile.render(challenge, {
+          sitekey: form.dataset.sitekey!,
+          theme: form.closest(".home-contact") ? "dark" : "light",
+          size: "compact",
+          callback: (value) => {
+            token = value;
+            submit.disabled = pending || accepted;
+            if (
+              ["checking", "captcha-error"].includes(status.dataset.state ?? "")
+            )
+              message("ready", "");
+          },
+          "expired-callback": () => {
+            token = "";
+            submit.disabled = true;
+            if (!pending && !accepted) message("checking", copy.checking);
+          },
+          "error-callback": () => {
+            token = "";
+            submit.disabled = true;
+            if (!pending && !accepted)
+              message("captcha-error", copy.captchaError);
+          },
+        });
+      } catch {
+        message("captcha-error", copy.captchaError);
+      }
+    };
+    document.head.append(script);
   };
-  document.head.append(script);
+
+  // Home's form sits below the fold: request the third-party script only nearby.
+  if (typeof IntersectionObserver === "undefined") return loadChallenge();
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        loadChallenge();
+      }
+    },
+    { rootMargin: "300px" },
+  );
+  observer.observe(form);
 }

@@ -6,9 +6,10 @@ acredita la entrega real de correo ni autoriza publicar.
 
 ## Contexto
 
-La Home necesita una entrada secundaria «Quiero más información» y `/contacto/`
-necesita recibir consultas dentro del sitio, en español, inglés y portugués
-(Brasil). La landing sigue siendo estática: alojar un backend propio, guardar
+La Home necesita recibir consultas en su cierre «Hablemos de tu marca», además
+de conservar la entrada secundaria «Quiero más información» y el formulario de
+`/contacto/`, en español, inglés y portugués (Brasil). La landing sigue siendo
+estática: alojar un backend propio, guardar
 credenciales de Gmail o contratar un servicio amplía innecesariamente este alcance.
 
 ## Decisión
@@ -18,9 +19,22 @@ credenciales de Gmail o contratar un servicio amplía innecesariamente este alca
   la UI KAIRUM. Turnstile aporta el desafío antispam y Formspark valida el token
   en su servicio mediante `cf-turnstile-response`. Ver la
   [integración oficial](https://documentation.formspark.io/setup/spam-protection.html#turnstile).
-- Pedir nombre y email; empresa y mensaje son opcionales. Mostrar un aviso
-  traducido de que los datos se usan para responder la consulta y se procesan
-  mediante Formspark. No incorporar una suscripción de marketing ni adjuntos.
+- Pedir nombre y email; empresa y mensaje son opcionales. Por pedido del usuario
+  se retira la nota de procesamiento del formulario en los tres idiomas. No
+  incorporar una suscripción de marketing ni adjuntos.
+- Mostrar ejemplos traducidos como placeholders en los cuatro campos, manteniendo
+  sus etiquetas visibles. Son pistas de formato, no valores precargados ni datos
+  que se envíen al receptor.
+- Reutilizar el mismo panel y contrato de envío en Home y Contacto, con un solo
+  formulario por página. En Home se añade debajo del cierre existente, conservando
+  título, agenda y enlace de información. Su variante oscura aprovecha dos
+  columnas de campos en escritorio: nombre/email a la izquierda y empresa/mensaje
+  al centro. Una tercera columna sitúa desafío y envío al costado derecho de esos
+  campos. Si falta ancho,
+  desafío y envío pasan debajo; en móvil se apilan. Contacto conserva su panel
+  claro. Cargar Turnstile cuando el formulario
+  se acerque al viewport (margen de 300 px); el timeout comienza entonces. Si el
+  navegador no ofrece `IntersectionObserver`, cargarlo directamente.
 - Formspark conserva el historial; puede exportarse como CSV o JSON desde su
   dashboard. Gmail es sólo el buzón receptor de notificaciones: no se integra
   con la API de Gmail ni necesita contraseñas, OAuth o credenciales del buzón

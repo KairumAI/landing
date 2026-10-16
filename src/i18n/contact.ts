@@ -20,7 +20,12 @@ export interface ContactCopy {
   email: string;
   company: string;
   message: string;
-  privacy: string;
+  placeholders: {
+    name: string;
+    email: string;
+    company: string;
+    message: string;
+  };
   noScript: string;
   messages: ContactMessages;
 }
@@ -35,8 +40,12 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     email: "Email (obligatorio)",
     company: "Empresa o web (opcional)",
     message: "Mensaje (opcional)",
-    privacy:
-      "Usamos tus datos para responder esta consulta. El formulario se procesa mediante Formspark.",
+    placeholders: {
+      name: "Tu nombre",
+      email: "nombre@empresa.com",
+      company: "Tu empresa o sitio web",
+      message: "Contanos qué tenés en mente",
+    },
     noScript:
       "Activá JavaScript para usar el formulario. También podés agendar una conversación con el enlace de esta página.",
     messages: {
@@ -63,8 +72,12 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     email: "Email (required)",
     company: "Company or website (optional)",
     message: "Message (optional)",
-    privacy:
-      "We use your details to respond to this inquiry. The form is processed through Formspark.",
+    placeholders: {
+      name: "Your name",
+      email: "name@company.com",
+      company: "Your company or website",
+      message: "Tell us what you have in mind",
+    },
     noScript:
       "Enable JavaScript to use the form. You can also schedule a conversation using the link on this page.",
     messages: {
@@ -91,8 +104,12 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     email: "Email (obrigatório)",
     company: "Empresa ou site (opcional)",
     message: "Mensagem (opcional)",
-    privacy:
-      "Usamos seus dados para responder a esta consulta. O formulário é processado pelo Formspark.",
+    placeholders: {
+      name: "Seu nome",
+      email: "nome@empresa.com",
+      company: "Sua empresa ou site",
+      message: "Conte o que você tem em mente",
+    },
     noScript:
       "Ative o JavaScript para usar o formulário. Você também pode agendar uma conversa pelo link nesta página.",
     messages: {

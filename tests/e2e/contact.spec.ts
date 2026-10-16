@@ -17,12 +17,30 @@ async function capture(page: Page, name: string, selector: string) {
   const folder = process.env.CONTACT_SCREENSHOTS;
   if (!folder) return;
   await mkdir(folder, { recursive: true });
-  await page
-    .locator(selector)
-    .screenshot({ path: join(folder, `${name}.png`) });
+  const form = page.locator(selector).locator("[data-contact-form]");
+  if (await form.count()) {
+    await form.scrollIntoViewIfNeeded();
+    if ((await form.getAttribute("data-configured")) === "true")
+      await expect(form.locator("[data-contact-submit]")).toBeEnabled();
+  }
+  // Capture from the top so sticky navigation is not composited over long crops.
+  await page.evaluate(async () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    await new Promise<void>((resolve) =>
+      requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+    );
+  });
+  const clip = await page.locator(selector).boundingBox();
+  if (!clip) throw new Error(`Missing capture region: ${selector}`);
+  await page.screenshot({
+    path: join(folder, `${name}.png`),
+    fullPage: true,
+    clip,
+  });
 }
 const providerScript = `window.turnstile = {
   render(container, options) {
+    container.setAttribute('data-test-challenge', 'rendered');
     window.addEventListener('test:challenge-expired', options['expired-callback']);
     window.addEventListener('test:challenge-ready', () => options.callback('synthetic-turnstile-token'));
     options.callback('synthetic-turnstile-token');
@@ -44,7 +62,11 @@ test.beforeEach(async ({ page }) => {
 
 // Use the actual renderer with public fixture configuration, while keeping the
 // built site's scripts/CSS. Only the two external services are substituted.
-async function openConfigured(page: Page, ready = true) {
+async function openConfigured(
+  page: Page,
+  ready = true,
+  path: "/contacto/" | "/" = "/contacto/",
+) {
   await page.route("https://challenges.cloudflare.com/**", (route) =>
     route.fulfill({
       contentType: "application/javascript",
@@ -56,10 +78,10 @@ async function openConfigured(page: Page, ready = true) {
           ),
     }),
   );
-  await page.route("**/contacto/", async (route) => {
+  await page.route(`**${path}`, async (route) => {
     const response = await route.fetch();
     const main = pageContent(
-      "contacto",
+      path === "/" ? "home" : "contacto",
       "es",
       createContactSlots("es", configured),
     ).html.match(/<main\b[\s\S]*?<\/main>/)![0];
@@ -69,8 +91,13 @@ async function openConfigured(page: Page, ready = true) {
       body: (await response.text()).replace(/<main\b[\s\S]*?<\/main>/, main),
     });
   });
-  await page.goto("/contacto/");
+  await page.goto(path);
   await expect(page.locator('[name="name"]')).toBeEnabled();
+  if (path !== "/")
+    await expect(page.locator("[data-contact-challenge]")).toHaveAttribute(
+      "data-test-challenge",
+      "rendered",
+    );
 }
 
 async function fillContact(page: Page) {
@@ -91,7 +118,26 @@ for (const [prefix, label] of [
     page,
   }) => {
     await page.goto(`${prefix}/`);
+    const closing = page.locator("#contacto");
+    await expect(closing.locator("form")).toBeVisible();
+    await expect(
+      closing.locator(":scope > .wrap > div:first-child h2"),
+    ).toBeVisible();
+    await expect(closing.locator(":scope > .wrap > a.button")).toHaveAttribute(
+      "href",
+      /calendly\.com/,
+    );
     await capture(page, `${prefix.slice(1) || "es"}-home-contact`, "#contacto");
+    await page.setViewportSize({ width: 320, height: 900 });
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+    ).toBeLessThanOrEqual(320);
+    await capture(
+      page,
+      `${prefix.slice(1) || "es"}-home-contact-320`,
+      "#contacto",
+    );
+    await page.setViewportSize({ width: 1440, height: 1000 });
     await page
       .locator("#contacto")
       .getByRole("link", { name: label, exact: true })
@@ -144,63 +190,89 @@ test("missing, partial or invalid configuration never enables a receiver", () =>
   });
 });
 
-test("an accepted query sends the documented fields once and shows confirmation", async ({
+for (const path of ["/contacto/", "/"] as const) {
+  test(`${path}: an accepted query sends the documented fields once and shows confirmation`, async ({
+    page,
+  }) => {
+    let posts = 0;
+    let payload: Record<string, unknown> = {};
+    let release!: () => void;
+    const held = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    await page.route("https://submit-form.com/**", async (route) => {
+      if (route.request().method() === "OPTIONS")
+        return route.fulfill({
+          status: 204,
+          headers: {
+            "access-control-allow-origin": "*",
+            "access-control-allow-headers": "content-type",
+            "access-control-allow-methods": "POST",
+          },
+        });
+      posts++;
+      payload = route.request().postDataJSON();
+      await held;
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        headers: { "access-control-allow-origin": "*" },
+        body: JSON.stringify(payload),
+      });
+    });
+    await openConfigured(page, true, path);
+    if (path !== "/")
+      await capture(page, "configured-contact-desktop", ".info-hero");
+    await page.setViewportSize({ width: 320, height: 900 });
+    if (path !== "/")
+      await capture(page, "configured-contact-320", ".info-hero");
+    await fillContact(page);
+    await page
+      .getByRole("button", { name: "Enviar consulta", exact: true })
+      .click();
+    await expect(page.locator("form")).toHaveAttribute("aria-busy", "true");
+    await page
+      .locator("form")
+      .evaluate((form) =>
+        form.dispatchEvent(new Event("submit", { cancelable: true })),
+      );
+    await expect.poll(() => posts).toBe(1);
+    release();
+    await expect(page.getByRole("status")).toContainText(
+      "Recibimos tu consulta",
+    );
+    await expect(page.locator("[data-contact-fields]")).toBeHidden();
+    expect(payload).toEqual({
+      name: "Consulta sintética",
+      email: "test@example.com",
+      company: "",
+      message: "",
+      _honeypot: "",
+      "cf-turnstile-response": "synthetic-turnstile-token",
+      _email: { subject: "Nueva consulta desde KAIRUM" },
+    });
+    expect(posts).toBe(1);
+  });
+}
+
+test("Home loads Turnstile only when the form approaches the viewport", async ({
   page,
 }) => {
-  let posts = 0;
-  let payload: Record<string, unknown> = {};
-  let release!: () => void;
-  const held = new Promise<void>((resolve) => {
-    release = resolve;
-  });
-  await page.route("https://submit-form.com/**", async (route) => {
-    if (route.request().method() === "OPTIONS")
-      return route.fulfill({
-        status: 204,
-        headers: {
-          "access-control-allow-origin": "*",
-          "access-control-allow-headers": "content-type",
-          "access-control-allow-methods": "POST",
-        },
-      });
-    posts++;
-    payload = route.request().postDataJSON();
-    await held;
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      headers: { "access-control-allow-origin": "*" },
-      body: JSON.stringify(payload),
+  let challengeRequests = 0;
+  await openConfigured(page, true, "/");
+  // Override the fixture for the next navigation to count actual script requests.
+  await page.route("https://challenges.cloudflare.com/**", (route) => {
+    challengeRequests++;
+    return route.fulfill({
+      contentType: "application/javascript",
+      body: providerScript,
     });
   });
-  await openConfigured(page);
-  await capture(page, "configured-contact-desktop", ".info-hero");
-  await page.setViewportSize({ width: 320, height: 900 });
-  await capture(page, "configured-contact-320", ".info-hero");
-  await fillContact(page);
-  await page
-    .getByRole("button", { name: "Enviar consulta", exact: true })
-    .click();
-  await expect(page.locator("form")).toHaveAttribute("aria-busy", "true");
-  await page
-    .locator("form")
-    .evaluate((form) =>
-      form.dispatchEvent(new Event("submit", { cancelable: true })),
-    );
-  await expect.poll(() => posts).toBe(1);
-  release();
-  await expect(page.getByRole("status")).toContainText("Recibimos tu consulta");
-  await expect(page.locator("[data-contact-fields]")).toBeHidden();
-  expect(payload).toEqual({
-    name: "Consulta sintética",
-    email: "test@example.com",
-    company: "",
-    message: "",
-    _honeypot: "",
-    "cf-turnstile-response": "synthetic-turnstile-token",
-    _email: { subject: "Nueva consulta desde KAIRUM" },
-  });
-  expect(posts).toBe(1);
+  await page.reload();
+  expect(challengeRequests).toBe(0);
+  await page.locator("[data-contact-form]").scrollIntoViewIfNeeded();
+  await expect.poll(() => challengeRequests).toBe(1);
+  await expect(page.locator("[data-contact-submit]")).toBeEnabled();
 });
 
 for (const status of [402, 403, 500]) {
@@ -310,15 +382,24 @@ test("a whitespace-only name is rejected before contacting the provider", async 
   expect(posts).toBe(0);
 });
 
-test("the contact form is accessible under the deployed CSP", async ({
-  page,
-}) => {
-  const errors: string[] = [];
-  page.on("pageerror", (error) => errors.push(error.message));
-  await openConfigured(page);
-  const audit = await new AxeBuilder({ page })
-    .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
-    .analyze();
-  expect(audit.violations).toEqual([]);
-  expect(errors).toEqual([]);
-});
+for (const path of ["/contacto/", "/"] as const) {
+  test(`${path}: the contact form is accessible under the deployed CSP`, async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    await openConfigured(page, true, path);
+    await page.locator("[data-contact-form]").scrollIntoViewIfNeeded();
+    await expect(page.locator("[data-contact-submit]")).toBeEnabled();
+    const builder = new AxeBuilder({ page }).withTags([
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa",
+      "wcag22aa",
+    ]);
+    if (path === "/") builder.include("#contacto");
+    const audit = await builder.analyze();
+    expect(audit.violations).toEqual([]);
+    expect(errors).toEqual([]);
+  });
+}
