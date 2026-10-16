@@ -91,3 +91,19 @@ Las nuevas páginas son legibles sin scripts; reutilizan el menú y el selector
 de idioma existentes. La [evidencia actual](../evidence/2026-10-16-resources-blog/README.md)
 identifica la versión evaluada, las rondas y el dictamen, sin extender los
 puntajes de la entrega original al trabajo nuevo.
+
+## Calidad editorial e ilustraciones · 2026-10-16
+
+La revisión incorpora una serie propia de papel, tinta y amarillo, con una
+portada distinta para la guía y cada artículo. El índice de Blog usa una apertura
+más compacta en dos columnas en escritorio y un destacado con imagen; las
+lecturas incluyen portada, tres aprendizajes, índice, caso desarrollado, figura
+HTML y referencias junto al contenido pertinente. Se conserva el ritmo R05 de
+Inter, tamaños grandes, espacio, fondo cálido y acentos amarillos.
+
+`src/lib/editorial-media.ts` conecta los doce derivados locales con sus rutas.
+Las miniaturas usan carga diferida y las portadas tienen dimensiones y `srcset`;
+Open Graph, Twitter y Article/BlogPosting apuntan a la imagen de cada lectura.
+No se suman scripts editoriales ni se rasterizan las etiquetas de los diagramas.
+[Dirección y prompts](editorial-illustrations.md) y
+[evidencia de la revisión](../evidence/2026-10-16-editorial-quality/README.md).

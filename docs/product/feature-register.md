@@ -56,5 +56,17 @@ La [evidencia de esta versión](../evidence/2026-10-16-resources-blog/README.md)
 registra la composición, las capturas a 1440/768/390/320 px y los resultados.
 Los 26 informes conservan sus bytes y `noindex`; no se convierten en estudios
 editoriales indexables por esta entrega. Privacidad y términos quedan como
-borradores internos porque faltan datos del responsable. El alias de contacto
-elegido todavía requiere configurar y verificar su reenvío.
+borradores internos porque faltan datos del responsable. El alias público de
+contacto se configuró por separado en Cloudflare; esa operación no agrega un
+servicio de envío saliente ni integra el formulario de esta landing.
+
+## Calidad del blog e imágenes · 2026-10-16
+
+| ID               | Entrega                          | Alcance y evidencia                                                                                                                                                                                                                                                                                                                        | Estado                             |
+| ---------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
+| WEB-EDITORIAL-05 | Lecturas elaboradas e ilustradas | Una guía y tres artículos ampliados con casos, preguntas reutilizables, cálculos explícitos, tres aprendizajes y una figura HTML por lectura. Cuatro portadas originales, doce derivados locales y previews sociales por artículo. ES/EN/PT-BR, sin JavaScript editorial. [Evidencia](../evidence/2026-10-16-editorial-quality/README.md). | Verificado local; crítico aprobado |
+
+La evaluación de WEB-CONTENT-04 corresponde a su versión anterior. Esta revisión
+cuenta con evidencia propia y aprobación independiente sobre `ee5edb78987fc8d9`
+(usabilidad 9.3, estilo 9.4, fidelidad 9.4; cero bloqueantes). No acredita indexación,
+tracción o mejora de SEO/GEO/AEO; prepara contenido y descubrimiento para medirlos.

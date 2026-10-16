@@ -32,6 +32,12 @@ export type Section = {
   items?: string[];
   table?: { columns: string[]; rows: string[][] };
   example?: { label: string; text: string };
+  figure?: {
+    title: string;
+    caption: string;
+    steps: { label: string; detail: string; value?: string }[];
+  };
+  references?: Source[];
 };
 export type Source = { title: string; url: string };
 export type EditorialPage = {
@@ -43,6 +49,8 @@ export type EditorialPage = {
   sources: Source[];
   related: EditorialPageId[];
   product: "report" | "analytics" | "prompt-intelligence";
+  cover?: { alt: string; caption: string };
+  takeaways?: string[];
 };
 export type EditorialCopy = {
   ui: {
@@ -89,6 +97,8 @@ export type EditorialCopy = {
     guideAction: string;
     browseBlog: string;
     synthetic: string;
+    takeaways: string;
+    reference: string;
   };
   commercial: Record<
     "report" | "analytics" | "agencias",

@@ -1,0 +1,89 @@
+{
+  "files": [
+    {
+      "file": "public/editorial/choosing-questions-1280.webp",
+      "width": 1280,
+      "height": 853,
+      "bytes": 123422,
+      "sha256": "df0be5a300d1151660b0a18810d54021015d8b9b91ad83f5bac3fa3cc1c547e4"
+    },
+    {
+      "file": "public/editorial/choosing-questions-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 22272,
+      "sha256": "e96e15188a49b2fbc49d2f48c933954fd58e684a70691fe66109464052f5aa2d"
+    },
+    {
+      "file": "public/editorial/choosing-questions-social.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 189471,
+      "sha256": "82ed56b713fecda9e74d497f007b4e28af69d557ccb843e800e533c5831d0dc2"
+    },
+    {
+      "file": "public/editorial/interpreting-results-1280.webp",
+      "width": 1280,
+      "height": 853,
+      "bytes": 142840,
+      "sha256": "343c00f7fbdfe22d0e0efb8fdfb672f627f9fa519ed0ac9536eda8f430776e54"
+    },
+    {
+      "file": "public/editorial/interpreting-results-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 31390,
+      "sha256": "361a1287157ebad6e63868c81a535881e6d49e3a969672969f35b8848bcf6c2e"
+    },
+    {
+      "file": "public/editorial/interpreting-results-social.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 210391,
+      "sha256": "dae5ee53a9bbefb6eaaca82598ef41a021ba973cfc4f55ed8cb84bb27c54a76e"
+    },
+    {
+      "file": "public/editorial/mentions-citations-visits-1280.webp",
+      "width": 1280,
+      "height": 853,
+      "bytes": 95870,
+      "sha256": "7e77aef042de9d5a4a6fef32de00d22be6c659c10c6e701a9b264a3ba86dc7dd"
+    },
+    {
+      "file": "public/editorial/mentions-citations-visits-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 22064,
+      "sha256": "2dc1cc50b0c62c78ca7c24611ee4517fe3b9174d971ac1c4e04d0588a7db52fd"
+    },
+    {
+      "file": "public/editorial/mentions-citations-visits-social.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 169675,
+      "sha256": "7349163592474fb0945a30247057a4154440ddc8eeb89af6697ab6a458babac6"
+    },
+    {
+      "file": "public/editorial/visibility-guide-1280.webp",
+      "width": 1280,
+      "height": 853,
+      "bytes": 156238,
+      "sha256": "4e467b526d7e7bbdac4525936a6884ad16a53416fdfb6f679ce2ae49ef05dcd1"
+    },
+    {
+      "file": "public/editorial/visibility-guide-640.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 44762,
+      "sha256": "1048226d7301a8cac671cd67f63c76f2ed367987cfa54bad2a76ce6af0627135"
+    },
+    {
+      "file": "public/editorial/visibility-guide-social.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 223479,
+      "sha256": "291b58d158e1d0490ac8fa72d7d8f0bff93166640015c596d1d4e21d66be991d"
+    }
+  ],
+  "total_bytes": 1431874
+}

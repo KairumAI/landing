@@ -145,7 +145,15 @@ for (const locale of locales) {
       );
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         "content",
-        `${seoOrigin}${localeMeta[locale].ogImage}`,
+        (await page.locator(".editorial-cover").count())
+          ? `${seoOrigin}/editorial/${entry.id}-social.jpg`
+          : `${seoOrigin}${localeMeta[locale].ogImage}`,
+      );
+      await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
+        "content",
+        (await page
+          .locator('meta[property="og:image"]')
+          .getAttribute("content"))!,
       );
       await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute(
         "content",

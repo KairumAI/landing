@@ -1,22 +1,5 @@
 import type { EditorialCopy } from "./schema";
 
-const google = {
-  title: "Google Search Central: funciones de IA y tu sitio web",
-  url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
-};
-const search = {
-  title: "Google Search Central: cómo funciona la Búsqueda",
-  url: "https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es",
-};
-const bots = {
-  title: "OpenAI: rastreadores y agentes de búsqueda",
-  url: "https://platform.openai.com/docs/bots",
-};
-const analytics = {
-  title: "Cloudflare Web Analytics: qué mide la analítica web",
-  url: "https://developers.cloudflare.com/web-analytics/about/",
-};
-
 export const es: EditorialCopy = {
   ui: {
     resources: "Recursos",
@@ -40,7 +23,7 @@ export const es: EditorialCopy = {
     read: "Leer artículo",
     editorialNote: "Criterio editorial",
     editorialPolicy:
-      "Contenido preparado con asistencia de IA y contraste de fuentes públicas. Los ejemplos esquemáticos están identificados. Las guías explican un método de trabajo; no acreditan resultados de clientes ni garantizan posicionamiento.",
+      "Textos e ilustraciones preparados con asistencia de IA y revisión de fuentes públicas. Los ejercicios son construcciones educativas identificadas, sin datos de clientes. La metodología y las propuestas de trabajo son de KAIRUM; las referencias documentan el funcionamiento de cada plataforma. No garantizamos posicionamiento.",
     reports: "Informes exploratorios",
     reportsNote:
       "Estudios prospectivos con sus fechas, preguntas y límites originales. Las organizaciones incluidas no son clientes por figurar en la biblioteca.",
@@ -61,12 +44,14 @@ export const es: EditorialCopy = {
     heroTitle: "Entender la búsqueda con IA.\nCon evidencia.",
     heroIntro:
       "Guías, ideas y un método de trabajo para entender cómo aparece tu marca en respuestas de IA y decidir qué investigar después.",
-    blogTitle: "Ideas para preguntar mejor.\nY decidir con criterio.",
+    blogTitle: "La búsqueda cambió.\nAprendamos a leerla.",
     blogIntro:
-      "Lecturas prácticas sobre preguntas, menciones, fuentes y medición. Un tema a la vez, con ejemplos y referencias.",
+      "Preguntas que importan, señales que se pueden revisar y decisiones con contexto. Un espacio para pensar la visibilidad en IA más allá del número.",
     guideAction: "Leer la guía",
     browseBlog: "Explorar el blog",
     synthetic: "Esquema educativo · sin mediciones de una empresa",
+    takeaways: "Qué te llevás de esta lectura",
+    reference: "Para contrastar",
   },
   commercial: {
     report: {
@@ -166,14 +151,14 @@ export const es: EditorialCopy = {
       description:
         "Aprendé a definir preguntas, registrar menciones y citas e interpretar una muestra de respuestas de IA con condiciones comparables y límites explícitos.",
       summary:
-        "Medir visibilidad consiste en observar una muestra definida de respuestas, registrar cómo aparece una marca y conservar el contexto suficiente para revisar lo observado. El primer paso es decidir qué pregunta de negocio queremos responder.",
+        "¿Tu marca aparece cuando una persona pregunta por tu categoría? Para investigarlo hace falta algo más que probar su nombre en un chat. Esta guía propone un recorrido: elegir una decisión, observar respuestas y convertir la evidencia en una próxima acción.",
       sections: [
         {
           id: "objetivo",
           title: "1. Definí qué querés entender",
           paragraphs: [
-            "Una marca puede querer saber si aparece cuando alguien descubre una categoría, compara alternativas o evalúa una capacidad. Son decisiones diferentes: conviene formular un objetivo concreto antes de reunir preguntas.",
-            "Por ejemplo, KAIRUM puede investigar qué fuentes se citan al explicar cómo medir visibilidad en IA. Ese objetivo no equivale a estimar todas las conversaciones de marketing que ocurren en internet.",
+            "Imaginá que tu equipo publica una guía y quiere entender si ayuda a explicar su propuesta en la búsqueda con IA. Una captura aislada puede ser interesante, pero no permite saber qué pasa con otras preguntas, qué fuentes intervienen o cómo se repite la observación.",
+            "Empezá por una decisión de negocio: entender qué información encuentra una agencia antes de evaluar un diagnóstico, por ejemplo. Para KAIRUM, ese recorte permite investigar una necesidad concreta sin tratar de representar todas las conversaciones de marketing de internet.",
           ],
           example: {
             label: "Ejemplo de planificación · todavía no es una medición",
@@ -234,6 +219,30 @@ export const es: EditorialCopy = {
               ],
             ],
           },
+          figure: {
+            title: "Tres preguntas. Tres registros.",
+            caption:
+              "Esquema de trabajo de KAIRUM. Las señales se revisan por separado y no describen una conversión automática.",
+            steps: [
+              {
+                label: "¿Aparece la marca?",
+                detail:
+                  "Leer la respuesta completa y el contexto de la mención.",
+                value: "01",
+              },
+              {
+                label: "¿Qué página se cita?",
+                detail: "Conservar la URL y revisar qué afirmación respalda.",
+                value: "02",
+              },
+              {
+                label: "¿Llegó alguien al sitio?",
+                detail:
+                  "Consultar analítica autorizada y su atribución disponible.",
+                value: "03",
+              },
+            ],
+          },
         },
         {
           id: "interpretacion",
@@ -262,22 +271,83 @@ export const es: EditorialCopy = {
             "Qué condiciones conservar para volver a observar.",
           ],
         },
+        {
+          id: "ficha",
+          title: "7. Armá una ficha que otra persona pueda revisar",
+          paragraphs: [
+            "La diferencia entre una impresión y un diagnóstico útil está en poder volver al material. Conservá una fila por respuesta, con un identificador que conecte el texto exacto de la pregunta, las condiciones, la respuesta completa y las URLs citadas. Un resumen ejecutivo no reemplaza ese archivo de evidencia.",
+            "Para un primer ejercicio sobre KAIRUM, elegí una decisión de una agencia y escribí cuatro preguntas abiertas y dos dirigidas. Es una propuesta de inicio, no un tamaño de muestra universal. Revisá si cubren decisiones diferentes antes de invertir en más ejecuciones. La nota sobre elección de preguntas desarrolla ese ejemplo.",
+          ],
+          table: {
+            columns: ["Campo", "Qué conservar"],
+            rows: [
+              ["Pregunta", "Texto exacto, intención y versión del conjunto."],
+              [
+                "Observación",
+                "Fecha, superficie, idioma, respuesta y estado de ejecución.",
+              ],
+              ["Señales", "Mención con contexto y cada cita con su URL."],
+              [
+                "Lectura",
+                "Qué observamos, qué falta contrastar y qué decisión abre.",
+              ],
+            ],
+          },
+        },
+        {
+          id: "revisar",
+          title: "8. Revisá antes de ampliar",
+          paragraphs: [
+            "Pedile a otra persona que tome dos filas y trate de reconstruir tu conclusión. Si no encuentra la respuesta, no entiende el denominador o confunde un ejemplo con un resultado, hay que mejorar el registro antes de aumentar la muestra.",
+            "Después elegí una acción pequeña: aclarar una definición en una página, documentar mejor el alcance de un producto o investigar una fuente externa. Anotá qué esperás observar y cómo lo revisarías. Google mantiene los fundamentos de SEO para sus funciones de IA: contenido útil, acceso técnico y enlaces internos siguen siendo parte del trabajo.",
+            "El entregable final puede ser una página: objetivo, muestra y cobertura; dos hallazgos con evidencia; una limitación que cambie la lectura; y una prioridad con responsable. Un diagnóstico sirve cuando ayuda a elegir el próximo paso y permite discutir por qué.",
+          ],
+          references: [
+            {
+              title: "Google Search Central: funciones de IA y tu sitio web",
+              url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+            },
+          ],
+        },
       ],
-      sources: [google, bots, analytics],
+      sources: [
+        {
+          title: "Google Search Central: funciones de IA y tu sitio web",
+          url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+        },
+        {
+          title: "OpenAI: rastreadores y agentes de búsqueda",
+          url: "https://platform.openai.com/docs/bots",
+        },
+        {
+          title: "Cloudflare Web Analytics: qué mide la analítica web",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+      ],
       related: [
         "mentions-citations-visits",
         "choosing-questions",
         "interpreting-results",
       ],
       product: "report",
+      cover: {
+        alt: "Una cinta amarilla atraviesa tres ventanas de papel: seguir una pregunta hasta su evidencia.",
+        caption:
+          "Ilustración editorial de KAIRUM · seguir el hilo entre una pregunta y su evidencia.",
+      },
+      takeaways: [
+        "Definir una muestra antes de mirar las respuestas.",
+        "Registrar menciones, citas y visitas por separado.",
+        "Cerrar el diagnóstico con una decisión que se pueda revisar.",
+      ],
     },
     "mentions-citations-visits": {
-      title: "Menciones, citas y visitas: tres señales diferentes",
+      title: "Menciones, citas y visitas: aparecer no es lo mismo que atraer",
       category: "Conceptos",
       description:
         "Una mención de marca, una cita a su sitio y una visita referida desde IA describen hechos distintos. Entendé qué medir y qué no concluir de cada señal.",
       summary:
-        "Una mención indica que aparece tu marca. Una cita identifica una fuente utilizada en la respuesta. Una visita ocurre cuando alguien llega a tu sitio. Separarlas evita leer una señal como si demostrara las otras.",
+        "Tu marca aparece en una respuesta de IA. Es una observación útil, pero todavía quedan preguntas: qué dice sobre ella, qué fuente respalda la información y si alguien llegó al sitio. Seguir esas pistas cambia la conversación con tu equipo.",
       sections: [
         {
           id: "mencion",
@@ -299,6 +369,12 @@ export const es: EditorialCopy = {
             "Las fuentes que un sistema recuperó durante una búsqueda y las citas visibles en su respuesta son registros distintos. Conviene conservar ambas cuando la superficie permite observarlas y nombrar cada una con precisión.",
             "Una fuente citada no implica que la marca sea recomendada, ni que cada afirmación cercana esté respaldada por esa página. La relación requiere revisión.",
           ],
+          references: [
+            {
+              title: "Google Search Central: funciones de IA y tu sitio web",
+              url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+            },
+          ],
         },
         {
           id: "visita",
@@ -308,6 +384,47 @@ export const es: EditorialCopy = {
             "Un crawler que solicita una página no es una visita humana. Sus solicitudes se analizan en registros del servidor y no acreditan por sí solas una cita.",
             "La consulta comercial es otra instancia. Un clic en Agendar, una reserva confirmada y una reunión realizada son eventos diferentes.",
           ],
+          references: [
+            {
+              title: "OpenAI: rastreadores y agentes de búsqueda",
+              url: "https://platform.openai.com/docs/bots",
+            },
+          ],
+          figure: {
+            title: "Aparecer, respaldar, llegar",
+            caption:
+              "Diagrama conceptual: estos registros pueden coexistir o faltar. Ninguno demuestra automáticamente el siguiente.",
+            steps: [
+              {
+                label: "Mención",
+                detail: "El nombre aparece en una respuesta que conservamos.",
+                value: "Texto",
+              },
+              {
+                label: "Cita",
+                detail: "Una afirmación tiene una fuente identificable.",
+                value: "URL",
+              },
+              {
+                label: "Visita",
+                detail: "La analítica registra una llegada al sitio.",
+                value: "Sesión",
+              },
+            ],
+          },
+        },
+        {
+          id: "caso",
+          title: "Un caso trabajado: qué pasó y qué sigue abierto",
+          paragraphs: [
+            "Construyamos tres observaciones educativas alrededor de KAIRUM. En la primera, una respuesta enumera a la marca al hablar de diagnósticos y enlaza únicamente una documentación técnica externa. Podemos registrar la mención y la cita externa. No podemos registrar una cita a KAIRUM sólo porque la marca está cerca del enlace.",
+            "En la segunda, otra respuesta enlaza la guía de medición de kairum.com.ar para explicar una definición, sin recomendar contratar nada. Hay una cita al sitio. La intención comercial y el tono de la recomendación requieren una lectura distinta: no se deducen del dominio citado.",
+            "En la tercera, la analítica del sitio muestra una visita con referido identificable desde un asistente. Eso permite investigar una llegada. Si no tenemos un vínculo entre esa sesión y una respuesta específica, no corresponde asignarla a la pregunta del primer ejemplo.",
+          ],
+          example: {
+            label: "Caso construido · tres observaciones, sin datos medidos",
+            text: "Registro A: mención + cita externa. Registro B: cita a la guía. Registro C: visita referida. No sumamos los tres como «tres conversiones» ni asumimos que pertenecen a una misma persona.",
+          },
         },
         {
           id: "registro",
@@ -335,18 +452,50 @@ export const es: EditorialCopy = {
             ],
           },
         },
+        {
+          id: "accion",
+          title: "Qué revisar según la señal que falta",
+          paragraphs: [
+            "La separación sirve para decidir. Si aparece la marca con una descripción desactualizada, revisá la afirmación y la fuente que la sostiene antes de publicar más contenido. Si se cita una página correcta pero difícil de leer, trabajá su claridad y el siguiente paso que ofrece. Si llegan visitas y no hay consultas, revisá la página de destino y comprobá primero que la medición de contactos funcione.",
+            "También puede haber una cita útil sin mención de marca, por ejemplo cuando una guía respalda una explicación general. Esa observación merece su propio registro: visibilidad del contenido y reconocimiento de marca pueden evolucionar de maneras diferentes.",
+            "Para aplicarlo hoy, tomá tres respuestas completas. Marcá la frase donde aparece la marca, abrí cada fuente y anotá qué respalda. Después consultá la analítica por separado. El resultado es un mapa de evidencia y preguntas pendientes que tu equipo puede discutir, sin convertir cada señal en una promesa comercial.",
+          ],
+        },
       ],
-      sources: [google, analytics, bots],
+      sources: [
+        {
+          title: "Google Search Central: funciones de IA y tu sitio web",
+          url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+        },
+        {
+          title: "Cloudflare Web Analytics: qué mide la analítica web",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+        {
+          title: "OpenAI: rastreadores y agentes de búsqueda",
+          url: "https://platform.openai.com/docs/bots",
+        },
+      ],
       related: ["visibility-guide", "interpreting-results"],
       product: "analytics",
+      cover: {
+        alt: "Una burbuja de conversación, un eslabón y una puerta de papel representan tres señales distintas.",
+        caption:
+          "Ilustración editorial de KAIRUM · aparecer, ser citado y recibir una visita son hechos distintos.",
+      },
+      takeaways: [
+        "Una mención describe presencia; hay que leer su contexto.",
+        "Una cita permite revisar una fuente, aunque nadie abra el enlace.",
+        "El tráfico y los contactos requieren registros propios.",
+      ],
     },
     "choosing-questions": {
-      title: "Cómo elegir preguntas para medir visibilidad en IA",
+      title: "Antes de medir: cómo elegir preguntas que importan a tu negocio",
       category: "Planificación",
       description:
         "Diseñá un conjunto de preguntas de descubrimiento, comparación y evaluación, separá consultas dirigidas y abiertas y documentá el alcance antes de medir.",
       summary:
-        "Un conjunto útil de preguntas parte de decisiones de una audiencia y un objetivo de negocio. Conviene cubrir distintas intenciones, separar consultas abiertas y dirigidas, y fijar el alcance antes de observar las respuestas.",
+        "Una lista de cincuenta versiones de «mejores herramientas» puede dejar afuera lo que tu audiencia necesita resolver. Diseñar preguntas es decidir qué parte de la conversación vas a investigar. Acá trabajamos una muestra inicial para KAIRUM y una forma de revisarla.",
       sections: [
         {
           id: "audiencia",
@@ -355,6 +504,30 @@ export const es: EditorialCopy = {
             "Una palabra clave puede orientar una investigación, pero una pregunta agrega contexto: quién consulta, qué necesita entender y qué condición importa para elegir.",
             "Para KAIRUM, una agencia que prepara un diagnóstico para un cliente y una marca que investiga sus fuentes pueden formular preguntas diferentes. Documentá esa audiencia sin inventar volúmenes de demanda.",
           ],
+          figure: {
+            title: "De una necesidad a una pregunta",
+            caption:
+              "Ejemplo de planificación para KAIRUM. No representa demanda medida ni consultas ejecutadas.",
+            steps: [
+              {
+                label: "Audiencia",
+                detail:
+                  "Una agencia que prepara un diagnóstico para una marca.",
+                value: "Quién",
+              },
+              {
+                label: "Decisión",
+                detail: "Qué evidencia pedir antes de acordar un piloto.",
+                value: "Para qué",
+              },
+              {
+                label: "Pregunta",
+                detail:
+                  "¿Qué debería incluir un diagnóstico de visibilidad en IA?",
+                value: "Qué preguntar",
+              },
+            ],
+          },
         },
         {
           id: "intencion",
@@ -394,6 +567,43 @@ export const es: EditorialCopy = {
           },
         },
         {
+          id: "muestra",
+          title: "Una muestra de seis preguntas, con un propósito por fila",
+          paragraphs: [
+            "Para una primera revisión editorial de KAIRUM, proponemos las siguientes preguntas. Las primeras cuatro exploran la categoría sin nombrar la marca; las dos últimas examinan cómo se describe KAIRUM. Las mantenemos en grupos separados. No son consultas reales de clientes ni una estimación de su frecuencia.",
+            "El valor está en que cada pregunta cambia la decisión que investigamos. Una definición ayuda a descubrir el problema; un criterio de comparación ayuda a evaluar alternativas. Repetir la misma pregunta con diez sinónimos daría menos cobertura de esas decisiones.",
+          ],
+          table: {
+            columns: ["Pregunta propuesta", "Para qué incluirla"],
+            rows: [
+              [
+                "¿Cómo saber si una marca aparece en respuestas de IA?",
+                "Descubrir el problema. Abierta.",
+              ],
+              [
+                "¿Qué diferencia hay entre una mención y una cita?",
+                "Entender una señal. Abierta.",
+              ],
+              [
+                "¿Cómo comparar diagnósticos de visibilidad de marca en IA?",
+                "Explorar criterios. Abierta.",
+              ],
+              [
+                "¿Qué evidencia pedir antes de contratar un diagnóstico?",
+                "Evaluar un entregable. Abierta.",
+              ],
+              [
+                "¿Qué metodología publica KAIRUM?",
+                "Revisar la explicación de marca. Dirigida.",
+              ],
+              [
+                "¿Qué información de KAIRUM falta para evaluar un piloto?",
+                "Detectar vacíos de información. Dirigida.",
+              ],
+            ],
+          },
+        },
+        {
           id: "prioridad",
           title: "Elegí cobertura antes que variaciones repetidas",
           paragraphs: [
@@ -416,18 +626,48 @@ export const es: EditorialCopy = {
             "Superficie, repeticiones previstas y criterio de cobertura.",
           ],
         },
+        {
+          id: "editar",
+          title: "Cómo mejorar una pregunta antes de ejecutarla",
+          paragraphs: [
+            "Leé cada fila en voz alta. «¿Por qué KAIRUM es la mejor opción?» ya introduce una conclusión. «¿Qué información publica KAIRUM sobre su método?» permite investigar algo comprobable. La diferencia importa: una pregunta sesgada puede producir una respuesta atractiva y aportar poco al diagnóstico.",
+            "Si la formulación es demasiado amplia, agregá una condición que la audiencia realmente usaría: idioma, tipo de equipo o necesidad. No agregues el nombre de la marca para conseguir que aparezca. Tampoco combines precio, integraciones, metodología y soporte en una sola pregunta si después no vas a poder atribuir el hallazgo a una necesidad concreta.",
+            "Antes de ampliar, pedí a una persona del equipo que explique qué decisión podría cambiar con cada respuesta. Si dos filas tienen el mismo propósito, elegí una como núcleo y guardá la otra para explorar variación. Al incorporar evidencia de conversaciones o consultas reales, registrá el origen y evitá incluir información privada en los textos de prueba.",
+            "Para repetir la medición, conservá ese núcleo y sus condiciones. Las preguntas nuevas pueden entrar en un bloque exploratorio. Así podés aprender sin presentar un cambio de composición como una mejora de presencia.",
+          ],
+        },
       ],
-      sources: [google, search],
+      sources: [
+        {
+          title: "Google Search Central: funciones de IA y tu sitio web",
+          url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+        },
+        {
+          title: "Google Search Central: cómo funciona la Búsqueda",
+          url: "https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es",
+        },
+      ],
       related: ["visibility-guide", "interpreting-results"],
       product: "prompt-intelligence",
+      cover: {
+        alt: "Una cinta amarilla elige un recorrido entre tarjetas y caminos de tinta.",
+        caption:
+          "Ilustración editorial de KAIRUM · elegir preguntas también es decidir qué dejar fuera.",
+      },
+      takeaways: [
+        "Partir de una decisión de la audiencia, con lenguaje concreto.",
+        "Separar el descubrimiento abierto de la evaluación de una marca.",
+        "Mantener un núcleo de preguntas estable para poder comparar.",
+      ],
     },
     "interpreting-results": {
-      title: "Cómo interpretar una medición de visibilidad en IA",
+      title:
+        "Visibilidad en IA: cómo leer un resultado sin engañarte con el porcentaje",
       category: "Medición",
       description:
         "Leé presencia, cobertura y cambios dentro de una muestra de respuestas de IA. Aprendé a distinguir una observación, una hipótesis y una conclusión causal.",
       summary:
-        "Un resultado describe lo observado bajo ciertas condiciones. Para interpretarlo hay que revisar la muestra, su cobertura, las respuestas y la comparabilidad. Una variación por sí sola no demuestra el efecto de una acción.",
+        "Un 60 % puede contar una historia menos sólida que un 30 %. La diferencia puede estar en las respuestas que faltan. Con un caso numérico construido, veamos qué mirar antes de celebrar una mejora o convertirla en una prioridad.",
       sections: [
         {
           id: "alcance",
@@ -444,9 +684,37 @@ export const es: EditorialCopy = {
             "Un porcentaje de presencia necesita una definición de respuesta válida y una cantidad explícita de observaciones. Los fallos de ejecución o respuestas incompletas deben acompañar el resultado como cobertura.",
             "Cambiar el denominador puede modificar el porcentaje aunque la cantidad de menciones sea la misma. Documentá siempre ambos valores.",
           ],
+          figure: {
+            title: "El doble de porcentaje. Las mismas seis menciones.",
+            caption:
+              "Ejercicio sintético, no resultados de KAIRUM. La cobertura cae de 20 a 10 respuestas válidas sobre 25 previstas; los fallos no se cuentan como ausencia de marca.",
+            steps: [
+              {
+                label: "Observación A",
+                detail:
+                  "6 menciones en 20 respuestas válidas. Cobertura: 20/25.",
+                value: "30 %",
+              },
+              {
+                label: "Observación B",
+                detail:
+                  "6 menciones en 10 respuestas válidas. Cobertura: 10/25.",
+                value: "60 %",
+              },
+            ],
+          },
+        },
+        {
+          id: "caso",
+          title: "El caso: 30 % y 60 % pueden describir el mismo recuento",
+          paragraphs: [
+            "En el ejercicio de la figura se planifican 25 observaciones en cada período. En A se obtienen 20 respuestas válidas y la marca aparece en 6: 6 ÷ 20 = 30 %. En B se obtienen sólo 10 válidas y también hay 6 menciones: 6 ÷ 10 = 60 %. El porcentaje se duplicó; el recuento de menciones se mantuvo.",
+            "La cobertura pasó del 80 % al 40 %. No sabemos qué habrían dicho las respuestas faltantes. Contarlas como respuestas sin mención escondería el fallo; descartarlas sin mostrar cobertura escondería otra parte del problema. Antes de interpretar el cambio, hay que investigar los errores y el conjunto de preguntas que sí respondió.",
+            "El siguiente paso es volver a las filas: ¿fallaron las mismas intenciones?, ¿se conservó la superficie?, ¿qué preguntas tienen respuesta en ambos períodos? Un subconjunto común puede ayudar a comparar, siempre que se muestre su tamaño y qué quedó fuera.",
+          ],
           example: {
-            label: "Ejemplo sintético · no es una medición de una empresa",
-            text: "Una marca aparece en 8 de 20 respuestas válidas: 40% de presencia en esa muestra. Si se planificaron 24 consultas, hubo 20 de 24 con respuesta válida. No corresponde ocultar las cuatro restantes.",
+            label: "Cálculo educativo · no describe una medición real",
+            text: "Presencia A: 6/20 = 30 %. Cobertura A: 20/25 = 80 %. Presencia B: 6/10 = 60 %. Cobertura B: 10/25 = 40 %. Cada porcentaje responde una pregunta distinta.",
           },
         },
         {
@@ -462,6 +730,20 @@ export const es: EditorialCopy = {
             "Superficie y modelo identificados cuando sea posible.",
             "Cobertura, errores y reglas de cálculo visibles.",
             "Respuestas y fuentes consultables para revisar el resumen.",
+          ],
+          references: [
+            {
+              title: "Google Search Central: funciones de IA y tu sitio web",
+              url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+            },
+          ],
+        },
+        {
+          id: "cambio",
+          title: "Cuando la comparación sí conserva la muestra",
+          paragraphs: [
+            "Supongamos ahora otro ejercicio con condiciones compatibles y 20 respuestas válidas en ambos períodos: la marca pasa de aparecer en 6 a aparecer en 9. La presencia va del 30 % al 45 %. Son 15 puntos porcentuales de diferencia, o un aumento relativo del 50 %. Ambas expresiones son aritméticamente correctas, pero necesitan el recuento al lado para interpretarse.",
+            "Tampoco esa diferencia demuestra por sí sola el efecto de una intervención. Las respuestas pueden variar entre ejecuciones. Registrá las repeticiones previstas y evitá tratar reformulaciones similares como si representaran personas independientes. Esta muestra no mide cuota de mercado ni la frecuencia de todas las conversaciones.",
           ],
         },
         {
@@ -480,10 +762,47 @@ export const es: EditorialCopy = {
             "Separá los resultados de visibilidad de las visitas y de los contactos comerciales. La cadena completa merece observaciones diferentes y no se da por demostrada con una mención.",
           ],
         },
+        {
+          id: "nota",
+          title: "Una nota de decisión que se pueda discutir",
+          paragraphs: [
+            "Probá escribir cuatro líneas: qué observamos, con qué evidencia, qué explicación estamos considerando y qué vamos a revisar. Por ejemplo: «En la muestra comparable hay tres respuestas adicionales con mención. Revisaremos sus fuentes y la descripción de la marca antes de proponer cambios». Esa nota admite revisión y evita convertir una asociación en una causa.",
+            "Si la pregunta es si llegaron visitas o contactos, abrí ese análisis en sus fuentes correspondientes. Google explica que el tráfico de sus funciones de IA se incluye en el rendimiento general de búsqueda Web en Search Console. Ese informe y un registro de respuestas observadas describen poblaciones distintas; no hay que presentar uno como validación automática del otro.",
+          ],
+          references: [
+            {
+              title: "Google Search Central: funciones de IA y tu sitio web",
+              url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+            },
+          ],
+        },
       ],
-      sources: [google, search, bots],
+      sources: [
+        {
+          title: "Google Search Central: funciones de IA y tu sitio web",
+          url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+        },
+        {
+          title: "Google Search Central: cómo funciona la Búsqueda",
+          url: "https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es",
+        },
+        {
+          title: "OpenAI: rastreadores y agentes de búsqueda",
+          url: "https://platform.openai.com/docs/bots",
+        },
+      ],
       related: ["visibility-guide", "mentions-citations-visits"],
       product: "analytics",
+      cover: {
+        alt: "Dos discos amarillos iguales dentro de marcos negros de diferente tamaño.",
+        caption:
+          "Ilustración editorial de KAIRUM · la misma observación cambia de sentido cuando cambia el marco.",
+      },
+      takeaways: [
+        "Leer el recuento y la cobertura junto con el porcentaje.",
+        "Comparar condiciones y preguntas compatibles.",
+        "Convertir cada hallazgo en una hipótesis y un próximo paso.",
+      ],
     },
     glossary: {
       title: "Glosario de GEO, AEO y visibilidad de marca en IA",
@@ -551,7 +870,20 @@ export const es: EditorialCopy = {
           ],
         },
       ],
-      sources: [google, bots, analytics],
+      sources: [
+        {
+          title: "Google Search Central: funciones de IA y tu sitio web",
+          url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+        },
+        {
+          title: "OpenAI: rastreadores y agentes de búsqueda",
+          url: "https://platform.openai.com/docs/bots",
+        },
+        {
+          title: "Cloudflare Web Analytics: qué mide la analítica web",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+      ],
       related: ["visibility-guide", "mentions-citations-visits"],
       product: "report",
     },
@@ -612,7 +944,20 @@ export const es: EditorialCopy = {
           ],
         },
       ],
-      sources: [google, bots, analytics],
+      sources: [
+        {
+          title: "Google Search Central: funciones de IA y tu sitio web",
+          url: "https://developers.google.com/search/docs/appearance/ai-features?hl=es",
+        },
+        {
+          title: "OpenAI: rastreadores y agentes de búsqueda",
+          url: "https://platform.openai.com/docs/bots",
+        },
+        {
+          title: "Cloudflare Web Analytics: qué mide la analítica web",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+      ],
       related: ["visibility-guide", "interpreting-results"],
       product: "report",
     },

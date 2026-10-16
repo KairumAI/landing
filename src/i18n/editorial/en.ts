@@ -1,20 +1,5 @@
 import type { EditorialCopy } from "./schema";
-const google = {
-  title: "Google Search Central: AI features and your website",
-  url: "https://developers.google.com/search/docs/appearance/ai-features",
-};
-const search = {
-  title: "Google Search Central: how Search works",
-  url: "https://developers.google.com/search/docs/fundamentals/how-search-works",
-};
-const bots = {
-  title: "OpenAI: crawlers and search agents",
-  url: "https://platform.openai.com/docs/bots",
-};
-const analytics = {
-  title: "Cloudflare Web Analytics: what web analytics measures",
-  url: "https://developers.cloudflare.com/web-analytics/about/",
-};
+
 export const en: EditorialCopy = {
   ui: {
     resources: "Resources",
@@ -38,7 +23,7 @@ export const en: EditorialCopy = {
     read: "Read article",
     editorialNote: "Editorial approach",
     editorialPolicy:
-      "Content prepared with AI assistance and checks against public sources. Schematic examples are identified. These guides explain a working method; they do not establish client results or guarantee rankings.",
+      "Text and illustrations prepared with AI assistance and a review of public sources. Exercises are clearly identified educational constructions without client data. The methodology and working proposals are KAIRUM’s; references document how each platform works. We do not guarantee rankings.",
     reports: "Exploratory reports",
     reportsNote:
       "Prospective studies retain their original dates, questions and limitations. Organizations do not become clients by appearing in the library.",
@@ -59,12 +44,14 @@ export const en: EditorialCopy = {
     heroTitle: "Understand AI search.\nWith evidence.",
     heroIntro:
       "Guides, ideas and a working method to understand how your brand appears in AI answers and decide what to investigate next.",
-    blogTitle: "Ideas for better questions.\nAnd informed decisions.",
+    blogTitle: "Search has changed.\nLet’s learn to read it.",
     blogIntro:
-      "Practical reading on questions, mentions, sources and measurement. One topic at a time, with examples and references.",
+      "Questions that matter, signals you can inspect and decisions with context. A place to think about AI visibility beyond the headline number.",
     guideAction: "Read the guide",
     browseBlog: "Explore the blog",
     synthetic: "Educational diagram · no company measurements",
+    takeaways: "What you will take away",
+    reference: "Check the source",
   },
   commercial: {
     report: {
@@ -163,14 +150,14 @@ export const en: EditorialCopy = {
       description:
         "Learn to define questions, record mentions and citations, and interpret a sample of AI answers with comparable conditions and explicit limitations.",
       summary:
-        "Measuring visibility means observing a defined sample of answers, recording how a brand appears, and retaining enough context to review the findings. Start by deciding which business question you want to answer.",
+        "Does your brand appear when someone asks about your category? Investigating that takes more than typing its name into a chat. This guide proposes a sequence: choose a decision, observe answers and turn evidence into a next action.",
       sections: [
         {
           id: "objetivo",
           title: "1. Define what you want to understand",
           paragraphs: [
-            "A brand may want to know whether it appears when someone discovers a category, compares alternatives or evaluates a capability. These are different decisions: define a specific objective before collecting questions.",
-            "KAIRUM could investigate which sources are cited when explaining how to measure AI visibility. That objective does not estimate every marketing conversation happening online.",
+            "Imagine your team publishes a guide and wants to understand whether it helps explain its offering in AI search. An isolated screenshot may be interesting, but it cannot tell you what happens with other questions, which sources matter or whether the observation repeats.",
+            "Start with a business decision: understanding what information an agency encounters before evaluating a diagnosis, for instance. For KAIRUM, that scope makes a specific need researchable without claiming to represent every marketing conversation on the internet.",
           ],
           example: {
             label: "Planning example · not a measurement",
@@ -231,6 +218,30 @@ export const en: EditorialCopy = {
               ],
             ],
           },
+          figure: {
+            title: "Three questions. Three records.",
+            caption:
+              "KAIRUM working diagram. Signals are inspected separately and do not describe an automatic conversion.",
+            steps: [
+              {
+                label: "Does the brand appear?",
+                detail:
+                  "Read the complete answer and the context of the mention.",
+                value: "01",
+              },
+              {
+                label: "Which page is cited?",
+                detail: "Keep the URL and check which statement it supports.",
+                value: "02",
+              },
+              {
+                label: "Did anyone reach the site?",
+                detail:
+                  "Consult authorised analytics and the attribution it actually provides.",
+                value: "03",
+              },
+            ],
+          },
         },
         {
           id: "interpretacion",
@@ -259,22 +270,87 @@ export const en: EditorialCopy = {
             "Which conditions to retain for the next observation.",
           ],
         },
+        {
+          id: "ficha",
+          title: "7. Build a record someone else can review",
+          paragraphs: [
+            "The difference between an impression and a useful diagnosis is the ability to return to the material. Keep one row per answer, with an identifier connecting the exact question, conditions, complete answer and cited URLs. An executive summary does not replace that evidence archive.",
+            "For a first exercise about KAIRUM, choose an agency decision and write four open questions and two directed ones. This is a starting proposal, not a universal sample size. Check whether they cover different decisions before investing in more runs. The question selection article develops this example.",
+          ],
+          table: {
+            columns: ["Field", "What to preserve"],
+            rows: [
+              ["Question", "Exact wording, intent and question-set version."],
+              [
+                "Observation",
+                "Date, surface, language, answer and execution status.",
+              ],
+              [
+                "Signals",
+                "Mention with context and each citation with its URL.",
+              ],
+              [
+                "Interpretation",
+                "What we observed, what needs checking and the decision it opens.",
+              ],
+            ],
+          },
+        },
+        {
+          id: "revisar",
+          title: "8. Review before expanding",
+          paragraphs: [
+            "Ask another person to take two rows and reconstruct your conclusion. If they cannot find the answer, understand the denominator or tell an example from a result, improve the record before increasing the sample.",
+            "Then choose a small action: clarify a definition on a page, better document a product’s scope or investigate an external source. Record what you expect to observe and how you would review it. Google retains SEO fundamentals for its AI features: useful content, technical accessibility and internal links remain part of the work.",
+            "The final deliverable can be one page: objective, sample and coverage; two findings with evidence; one limitation that changes the interpretation; and one priority with an owner. A diagnosis is useful when it helps choose the next step and allows a discussion of why.",
+          ],
+          references: [
+            {
+              title: "Google Search Central: AI features and your website",
+              url: "https://developers.google.com/search/docs/appearance/ai-features",
+            },
+          ],
+        },
       ],
-      sources: [google, bots, analytics],
+      sources: [
+        {
+          title: "Google Search Central: AI features and your website",
+          url: "https://developers.google.com/search/docs/appearance/ai-features",
+        },
+        {
+          title: "OpenAI: crawlers and search agents",
+          url: "https://platform.openai.com/docs/bots",
+        },
+        {
+          title: "Cloudflare Web Analytics: what web analytics measures",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+      ],
       related: [
         "mentions-citations-visits",
         "choosing-questions",
         "interpreting-results",
       ],
       product: "report",
+      cover: {
+        alt: "A yellow ribbon passes through three paper windows, following a question to its evidence.",
+        caption:
+          "KAIRUM editorial illustration · following the thread from a question to its evidence.",
+      },
+      takeaways: [
+        "Define a sample before looking at the answers.",
+        "Record mentions, citations and visits separately.",
+        "Close the diagnosis with a decision someone else can review.",
+      ],
     },
     "mentions-citations-visits": {
-      title: "Mentions, citations and visits: three different signals",
+      title:
+        "Mentions, citations and visits: appearing is not the same as attracting",
       category: "Concepts",
       description:
         "A brand mention, a citation of its website and an AI referral visit describe different events. Understand what to measure and what each signal cannot establish.",
       summary:
-        "A mention indicates that your brand appears. A citation identifies a source used in the answer. A visit happens when someone reaches your website. Separating them prevents treating one as proof of the others.",
+        "Your brand appears in an AI answer. That is a useful observation, but questions remain: what does it say about the brand, which source supports it and did anyone reach the site? Following those clues changes the conversation with your team.",
       sections: [
         {
           id: "mencion",
@@ -296,6 +372,12 @@ export const en: EditorialCopy = {
             "Sources retrieved during search and citations visible in the answer are different records. Retain both when observable and label them precisely.",
             "A cited source does not mean the brand is recommended or that every nearby claim is supported by the page. Review the relationship.",
           ],
+          references: [
+            {
+              title: "Google Search Central: AI features and your website",
+              url: "https://developers.google.com/search/docs/appearance/ai-features",
+            },
+          ],
         },
         {
           id: "visita",
@@ -305,6 +387,47 @@ export const en: EditorialCopy = {
             "A crawler request is not a human visit. Server logs describe those requests; they do not by themselves establish a citation.",
             "A commercial inquiry is another step. Clicking Schedule, completing a booking and attending a meeting are different events.",
           ],
+          references: [
+            {
+              title: "OpenAI: crawlers and search agents",
+              url: "https://platform.openai.com/docs/bots",
+            },
+          ],
+          figure: {
+            title: "Appearing, supporting, arriving",
+            caption:
+              "Conceptual diagram: these records may coexist or be absent. None automatically proves the next.",
+            steps: [
+              {
+                label: "Mention",
+                detail: "The name appears in an answer we have preserved.",
+                value: "Text",
+              },
+              {
+                label: "Citation",
+                detail: "A statement has an identifiable source.",
+                value: "URL",
+              },
+              {
+                label: "Visit",
+                detail: "Analytics records an arrival at the site.",
+                value: "Session",
+              },
+            ],
+          },
+        },
+        {
+          id: "caso",
+          title: "A worked case: what happened and what remains open",
+          paragraphs: [
+            "Let’s construct three educational observations around KAIRUM. In the first, an answer lists the brand when discussing diagnoses and links only to external technical documentation. We can record the mention and the external citation. We cannot record a KAIRUM citation simply because its name is near the link.",
+            "In the second, another answer links to the measurement guide on kairum.com.ar to explain a definition, without recommending a purchase. There is a citation to the site. Commercial intent and the tone of a recommendation require a different reading: they do not follow from the cited domain.",
+            "In the third, site analytics shows a visit with an identifiable assistant referral. That supports investigating an arrival. Unless we can connect that session to a specific answer, we should not attribute it to the question in the first example.",
+          ],
+          example: {
+            label: "Constructed case · three observations, no measured data",
+            text: "Record A: mention + external citation. Record B: citation to the guide. Record C: referred visit. We do not count them as “three conversions” or assume they belong to the same person.",
+          },
         },
         {
           id: "registro",
@@ -326,18 +449,50 @@ export const en: EditorialCopy = {
             ],
           },
         },
+        {
+          id: "accion",
+          title: "What to inspect when a signal is missing",
+          paragraphs: [
+            "Keeping signals separate helps you decide. If the brand appears with an outdated description, inspect the statement and its source before publishing more content. If an accurate but difficult page gets cited, work on its clarity and the next step it offers. If visits arrive without enquiries, inspect the destination page and first check whether contact measurement actually works.",
+            "A useful citation can also appear without a brand mention, for instance when a guide supports a general explanation. That observation deserves its own record: content visibility and brand recognition can evolve differently.",
+            "To apply this today, take three complete answers. Mark the phrase mentioning the brand, open every source and note what each one supports. Then consult analytics separately. You get a map of evidence and open questions your team can discuss, without turning each signal into a commercial promise.",
+          ],
+        },
       ],
-      sources: [google, analytics, bots],
+      sources: [
+        {
+          title: "Google Search Central: AI features and your website",
+          url: "https://developers.google.com/search/docs/appearance/ai-features",
+        },
+        {
+          title: "Cloudflare Web Analytics: what web analytics measures",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+        {
+          title: "OpenAI: crawlers and search agents",
+          url: "https://platform.openai.com/docs/bots",
+        },
+      ],
       related: ["visibility-guide", "interpreting-results"],
       product: "analytics",
+      cover: {
+        alt: "A paper speech bubble, chain link and doorway represent three distinct signals.",
+        caption:
+          "KAIRUM editorial illustration · appearing, being cited and receiving a visit are different events.",
+      },
+      takeaways: [
+        "A mention describes presence; its context still needs reading.",
+        "A citation lets you inspect a source, even if nobody opens it.",
+        "Traffic and enquiries need their own records.",
+      ],
     },
     "choosing-questions": {
-      title: "How to choose questions for AI visibility measurement",
+      title: "Before measuring: choose questions that matter to your business",
       category: "Planning",
       description:
         "Design discovery, comparison and evaluation questions, distinguish open and brand-specific queries, and document the scope before measuring.",
       summary:
-        "A useful question set starts with an audience's decisions and a business objective. Cover different intents, separate open and brand-specific queries, and fix the scope before observing answers.",
+        "Fifty variations of “best tools” can still miss what your audience needs to resolve. Designing questions means deciding which part of the conversation to investigate. Here is an initial sample for KAIRUM and a way to refine it.",
       sections: [
         {
           id: "audiencia",
@@ -346,6 +501,28 @@ export const en: EditorialCopy = {
             "A keyword can guide research, but a question adds context: who is asking, what they need to understand and which condition matters to their choice.",
             "For KAIRUM, an agency preparing a client diagnosis and a brand investigating its sources may ask different questions. Document the audience without inventing demand volumes.",
           ],
+          figure: {
+            title: "From a need to a question",
+            caption:
+              "Planning example for KAIRUM. It represents neither measured demand nor executed queries.",
+            steps: [
+              {
+                label: "Audience",
+                detail: "An agency preparing a diagnosis for a brand.",
+                value: "Who",
+              },
+              {
+                label: "Decision",
+                detail: "What evidence to request before agreeing on a pilot.",
+                value: "Why",
+              },
+              {
+                label: "Question",
+                detail: "What should an AI visibility diagnosis include?",
+                value: "What to ask",
+              },
+            ],
+          },
         },
         {
           id: "intencion",
@@ -379,6 +556,43 @@ export const en: EditorialCopy = {
           },
         },
         {
+          id: "muestra",
+          title: "Six questions, with a purpose for each row",
+          paragraphs: [
+            "For a first editorial review of KAIRUM, we propose the questions below. The first four explore the category without naming the brand; the last two examine how KAIRUM is described. Keep them in separate groups. These are neither real customer queries nor estimates of their frequency.",
+            "Their value is that each question changes the decision being investigated. A definition helps someone discover the problem; a comparison criterion helps evaluate alternatives. Repeating the same question with ten synonyms would cover fewer of those decisions.",
+          ],
+          table: {
+            columns: ["Proposed question", "Why include it"],
+            rows: [
+              [
+                "How can I tell whether a brand appears in AI answers?",
+                "Discover the problem. Open.",
+              ],
+              [
+                "What is the difference between a mention and a citation?",
+                "Understand a signal. Open.",
+              ],
+              [
+                "How should I compare brand visibility diagnoses for AI?",
+                "Explore criteria. Open.",
+              ],
+              [
+                "What evidence should I request before buying a diagnosis?",
+                "Evaluate a deliverable. Open.",
+              ],
+              [
+                "What methodology does KAIRUM publish?",
+                "Review the brand explanation. Directed.",
+              ],
+              [
+                "What information about KAIRUM is missing to evaluate a pilot?",
+                "Identify information gaps. Directed.",
+              ],
+            ],
+          },
+        },
+        {
           id: "prioridad",
           title: "Choose coverage over repeated variations",
           paragraphs: [
@@ -401,18 +615,48 @@ export const en: EditorialCopy = {
             "Environment, planned repetitions and coverage criteria.",
           ],
         },
+        {
+          id: "editar",
+          title: "How to improve a question before running it",
+          paragraphs: [
+            "Read every row aloud. “Why is KAIRUM the best option?” already introduces a conclusion. “What does KAIRUM publish about its method?” lets you investigate something verifiable. A biased question can produce an appealing answer while contributing little to the diagnosis.",
+            "If the wording is too broad, add a condition the audience would actually use: language, team type or need. Do not add the brand name to make it appear. Avoid combining price, integrations, methodology and support in one question if you will not be able to connect the finding to a specific need.",
+            "Before expanding, ask someone on the team to explain which decision each answer could change. If two rows have the same purpose, choose one for the core and keep the other to explore variation. When you incorporate evidence from real conversations or queries, record its origin and avoid putting private information into test questions.",
+            "For a repeat measurement, preserve that core and its conditions. New questions can enter an exploratory block. This lets you learn without presenting a change in sample composition as improved presence.",
+          ],
+        },
       ],
-      sources: [google, search],
+      sources: [
+        {
+          title: "Google Search Central: AI features and your website",
+          url: "https://developers.google.com/search/docs/appearance/ai-features",
+        },
+        {
+          title: "Google Search Central: how Search works",
+          url: "https://developers.google.com/search/docs/fundamentals/how-search-works",
+        },
+      ],
       related: ["visibility-guide", "interpreting-results"],
       product: "prompt-intelligence",
+      cover: {
+        alt: "A yellow ribbon chooses a route between paper cards and ink paths.",
+        caption:
+          "KAIRUM editorial illustration · choosing questions also means deciding what to leave out.",
+      },
+      takeaways: [
+        "Start with an audience decision, using concrete language.",
+        "Separate open discovery from an evaluation of a named brand.",
+        "Keep a stable core of questions so comparisons remain useful.",
+      ],
     },
     "interpreting-results": {
-      title: "How to interpret an AI visibility measurement",
+      title:
+        "AI visibility: how to read a result without being misled by the percentage",
       category: "Measurement",
       description:
         "Read presence, coverage and change within a sample of AI answers. Distinguish an observation, a hypothesis and a causal conclusion.",
       summary:
-        "A result describes observations made under certain conditions. Interpret it by reviewing the sample, coverage, answers and comparability. A difference alone does not establish an action's effect.",
+        "A 60% result can tell a less robust story than a 30% result. The difference may lie in the answers that are missing. A constructed numerical case shows what to inspect before celebrating an improvement or making it a priority.",
       sections: [
         {
           id: "alcance",
@@ -429,9 +673,35 @@ export const en: EditorialCopy = {
             "A presence percentage needs a definition of valid answers and an explicit observation count. Execution failures and incomplete answers belong in the coverage record.",
             "Changing a denominator can change the percentage even if mention counts stay the same. Document both values.",
           ],
+          figure: {
+            title: "Twice the percentage. The same six mentions.",
+            caption:
+              "Synthetic exercise, not KAIRUM results. Coverage falls from 20 to 10 valid answers out of 25 planned; failures are not counted as brand absence.",
+            steps: [
+              {
+                label: "Observation A",
+                detail: "6 mentions in 20 valid answers. Coverage: 20/25.",
+                value: "30%",
+              },
+              {
+                label: "Observation B",
+                detail: "6 mentions in 10 valid answers. Coverage: 10/25.",
+                value: "60%",
+              },
+            ],
+          },
+        },
+        {
+          id: "caso",
+          title: "The case: 30% and 60% can describe the same count",
+          paragraphs: [
+            "In the figure’s exercise, 25 observations are planned for each period. A produces 20 valid answers and the brand appears in 6: 6 ÷ 20 = 30%. B produces only 10 valid answers, also with 6 mentions: 6 ÷ 10 = 60%. The percentage doubled; the mention count stayed the same.",
+            "Coverage dropped from 80% to 40%. We do not know what the missing answers would have said. Counting them as answers without a mention would hide the failure; dropping them without showing coverage would hide another part of the problem. Before interpreting the change, investigate the errors and the questions that actually received answers.",
+            "Return to the rows: did the same intents fail, was the surface preserved and which questions have an answer in both periods? A common subset may help the comparison, provided its size and exclusions are visible.",
+          ],
           example: {
-            label: "Synthetic example · not a company measurement",
-            text: "A brand appears in 8 of 20 valid answers: 40% presence in that sample. If 24 queries were planned, 20 of 24 had valid answers. The other four remain visible.",
+            label: "Educational calculation · not a real measurement",
+            text: "Presence A: 6/20 = 30%. Coverage A: 20/25 = 80%. Presence B: 6/10 = 60%. Coverage B: 10/25 = 40%. Each percentage answers a different question.",
           },
         },
         {
@@ -447,6 +717,20 @@ export const en: EditorialCopy = {
             "Identified environment and model where possible.",
             "Visible coverage, errors and calculation rules.",
             "Reviewable answers and sources behind the summary.",
+          ],
+          references: [
+            {
+              title: "Google Search Central: AI features and your website",
+              url: "https://developers.google.com/search/docs/appearance/ai-features",
+            },
+          ],
+        },
+        {
+          id: "cambio",
+          title: "When the comparison does preserve the sample",
+          paragraphs: [
+            "Now suppose another exercise with compatible conditions and 20 valid answers in both periods: the brand goes from appearing in 6 to appearing in 9. Presence moves from 30% to 45%. That is a difference of 15 percentage points, or a relative increase of 50%. Both are arithmetically correct, but need the count beside them to be interpretable.",
+            "Even that difference does not prove an intervention caused it. Answers can vary between runs. Record the planned repetitions and avoid treating similar rewordings as independent people. This sample measures neither market share nor the frequency of all conversations.",
           ],
         },
         {
@@ -465,10 +749,47 @@ export const en: EditorialCopy = {
             "Keep visibility outcomes separate from visits and commercial inquiries. The full chain needs different observations and is not established by a mention.",
           ],
         },
+        {
+          id: "nota",
+          title: "A decision note your team can discuss",
+          paragraphs: [
+            "Try four lines: what we observed, the evidence, the explanation we are considering and what we will inspect. For example: “In the comparable sample, three additional answers mention the brand. We will review their sources and brand descriptions before proposing changes.” That note can be challenged and avoids turning an association into a cause.",
+            "If the question is whether visits or enquiries arrived, open that analysis in its corresponding sources. Google explains that traffic from its AI features is included in overall Web search performance in Search Console. That report and a record of observed answers describe different populations; one does not automatically validate the other.",
+          ],
+          references: [
+            {
+              title: "Google Search Central: AI features and your website",
+              url: "https://developers.google.com/search/docs/appearance/ai-features",
+            },
+          ],
+        },
       ],
-      sources: [google, search, bots],
+      sources: [
+        {
+          title: "Google Search Central: AI features and your website",
+          url: "https://developers.google.com/search/docs/appearance/ai-features",
+        },
+        {
+          title: "Google Search Central: how Search works",
+          url: "https://developers.google.com/search/docs/fundamentals/how-search-works",
+        },
+        {
+          title: "OpenAI: crawlers and search agents",
+          url: "https://platform.openai.com/docs/bots",
+        },
+      ],
       related: ["visibility-guide", "mentions-citations-visits"],
       product: "analytics",
+      cover: {
+        alt: "Two equally sized yellow disks sit inside black frames of different sizes.",
+        caption:
+          "KAIRUM editorial illustration · the same observation changes meaning when its frame changes.",
+      },
+      takeaways: [
+        "Read counts and coverage alongside the percentage.",
+        "Compare compatible conditions and questions.",
+        "Turn each finding into a hypothesis and a next step.",
+      ],
     },
     glossary: {
       title: "GEO, AEO and AI brand visibility glossary",
@@ -536,7 +857,20 @@ export const en: EditorialCopy = {
           ],
         },
       ],
-      sources: [google, bots, analytics],
+      sources: [
+        {
+          title: "Google Search Central: AI features and your website",
+          url: "https://developers.google.com/search/docs/appearance/ai-features",
+        },
+        {
+          title: "OpenAI: crawlers and search agents",
+          url: "https://platform.openai.com/docs/bots",
+        },
+        {
+          title: "Cloudflare Web Analytics: what web analytics measures",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+      ],
       related: ["visibility-guide", "mentions-citations-visits"],
       product: "report",
     },
@@ -597,7 +931,20 @@ export const en: EditorialCopy = {
           ],
         },
       ],
-      sources: [google, bots, analytics],
+      sources: [
+        {
+          title: "Google Search Central: AI features and your website",
+          url: "https://developers.google.com/search/docs/appearance/ai-features",
+        },
+        {
+          title: "OpenAI: crawlers and search agents",
+          url: "https://platform.openai.com/docs/bots",
+        },
+        {
+          title: "Cloudflare Web Analytics: what web analytics measures",
+          url: "https://developers.cloudflare.com/web-analytics/about/",
+        },
+      ],
       related: ["visibility-guide", "interpreting-results"],
       product: "report",
     },
