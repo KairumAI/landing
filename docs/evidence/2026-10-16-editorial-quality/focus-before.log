@@ -1,0 +1,51 @@
+$ playwright test "tests/e2e/editorial.spec.ts" --grep "keyboard focus stays" "--workers=1"
+[WebServer] $ bun scripts/verify-public-delivery.ts public && astro build && bun scripts/verify-public-delivery.ts dist
+[WebServer] (node:499100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `bun --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:499143) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:499099) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `bun --trace-warnings ...` to show where the warning was created)
+[WebServer] $ astro preview --host 127.0.0.1 --port "4391" --ignore-lock
+[WebServer] (node:499585) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:499870) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/e2e/editorial.spec.ts:15:0 › keyboard focus stays visible outside the clipped illustration cards (1.5s)
+
+
+  1) tests/e2e/editorial.spec.ts:15:0 › keyboard focus stays visible outside the clipped illustration cards
+
+    Error: expect(received).not.toBe(expected) // Object.is equality
+
+    Expected: not "none"
+
+      24 |       return {style:style.outlineStyle, width:parseFloat(style.outlineWidth)};
+      25 |     });
+    > 26 |     expect(indicator.style).not.toBe("none");
+         |                                ^
+      27 |     expect(indicator.width).toBeGreaterThanOrEqual(3);
+      28 |   }
+      29 | });
+        at /home/bruno/Documents/UDESA/kairum-landing-worktrees/recursos-blog-20261016/tests/e2e/editorial.spec.ts:26:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/editorial-keyboard-focus-s-d79fb--clipped-illustration-cards/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/editorial-keyboard-focus-s-d79fb--clipped-illustration-cards/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/editorial-keyboard-focus-s-d79fb--clipped-illustration-cards/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/editorial-keyboard-focus-s-d79fb--clipped-illustration-cards/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/e2e/editorial.spec.ts:15:0 › keyboard focus stays visible outside the clipped illustration cards
+error: script "test" exited with code 1

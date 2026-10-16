@@ -4,7 +4,7 @@ export const seo = {
   es: {
     homeTitle: "KAIRUM — Visibilidad de marca en IA",
     homeDescription:
-      "Preguntas, visibilidad, contenido y tráfico con contexto. Conocé Prompt Intelligence, Analytics, Agents y Traffic, y los servicios Report y Consulting.",
+      "Preguntas, visibilidad, contenido y tráfico con contexto. Conocé Prompt Intelligence, Analytics, Agents y Traffic, y los servicios AI Report y Consulting.",
     catalogTitle: "Productos GEO y AEO — KAIRUM",
     catalogDescription:
       "De las preguntas a la evidencia, el contenido y las señales de tu web. Explorá los productos y servicios de KAIRUM para trabajar la presencia de tu marca en IA.",
@@ -18,7 +18,7 @@ export const seo = {
   en: {
     homeTitle: "KAIRUM — AI Brand Visibility",
     homeDescription:
-      "Questions, visibility, content and traffic in context. Explore Prompt Intelligence, Analytics, Agents and Traffic, plus Report and Consulting services.",
+      "Questions, visibility, content and traffic in context. Explore Prompt Intelligence, Analytics, Agents and Traffic, plus AI Report and Consulting services.",
     catalogTitle: "GEO and AEO Products — KAIRUM",
     catalogDescription:
       "From questions to evidence, content and signals from your website. Explore KAIRUM products and services to work on your brand presence in AI.",
@@ -32,7 +32,7 @@ export const seo = {
   "pt-br": {
     homeTitle: "KAIRUM — Visibilidade de marca em IA",
     homeDescription:
-      "Perguntas, visibilidade, conteúdo e tráfego com contexto. Conheça Prompt Intelligence, Analytics, Agents e Traffic, e os serviços Report e Consulting.",
+      "Perguntas, visibilidade, conteúdo e tráfego com contexto. Conheça Prompt Intelligence, Analytics, Agents e Traffic, e os serviços AI Report e Consulting.",
     catalogTitle: "Produtos GEO e AEO — KAIRUM",
     catalogDescription:
       "Das perguntas às evidências, ao conteúdo e aos sinais do seu site. Conheça os produtos e serviços KAIRUM para trabalhar a presença da sua marca em IA.",

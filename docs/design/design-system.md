@@ -55,3 +55,55 @@ Bruno retiró del diseño aprobado.
 - `bun run check:reference` comprueba la referencia aprobada. Un cambio legítimo
   del diseño requiere nueva aprobación y evidencia; actualizar el fingerprint
   por sí solo no constituye aprobación.
+
+## Extensión editorial · 2026-10-16
+
+Bruno pidió incorporar Recursos y blog y desarrollar las páginas comerciales
+de Analytics, AI Report y Agencias. La [especificación](../superpowers/specs/2026-10-16-resources-blog-design.md)
+registra ese alcance. La composición utiliza Inter, los tokens KAIRUM, el
+contraste negro/amarillo, superficies cálidas y la navegación compartida de R05.
+
+Recursos abre con una pregunta editorial y una guía destacada, seguida por tres
+lecturas prácticas y accesos al glosario, metodología e informes. Los artículos
+usan título y resumen, autoría KAIRUM, revisión fechada y tiempo estimado de
+lectura; el cuerpo limita el ancho de línea y acompaña el texto con un índice
+lateral en escritorio. En móvil, el índice precede al contenido y las tablas
+mantienen encabezados y caption accesible. Fuentes y lecturas relacionadas
+cierran el recorrido antes del CTA de AI Report.
+
+| Parte                               | Fuente                                              |
+| ----------------------------------- | --------------------------------------------------- |
+| Modelo, copy y política editorial   | `src/i18n/editorial/`                               |
+| Composición HTML estática           | `src/components/kairum/editorial-html.ts`           |
+| Estilos acotados al nuevo contenido | `src/styles/kairum-editorial.css`                   |
+| Integración explícita sobre R05     | `src/lib/editorial-integration.ts`                  |
+| Capturas y revisión independiente   | `docs/evidence/2026-10-16-resources-blog/README.md` |
+
+Los cinco CSS y assets de R05 se conservan. El gate de referencia revierte
+únicamente el renombre visible AI Report, los enlaces editoriales de menú,
+footer y tarjetas existentes de Home y los tres bloques comerciales añadidos.
+Después compara el HTML restaurado con los fingerprints originales inmutables.
+Los tests de entrega verifican que una mutación de escena o de navegación
+fuera de esos deltas siga fallando. Esta excepción no habilita cambios de
+composición, animación, métricas ni rutas históricas.
+
+Las nuevas páginas son legibles sin scripts; reutilizan el menú y el selector
+de idioma existentes. La [evidencia actual](../evidence/2026-10-16-resources-blog/README.md)
+identifica la versión evaluada, las rondas y el dictamen, sin extender los
+puntajes de la entrega original al trabajo nuevo.
+
+## Calidad editorial e ilustraciones · 2026-10-16
+
+La revisión incorpora una serie propia de papel, tinta y amarillo, con una
+portada distinta para la guía y cada artículo. El índice de Blog usa una apertura
+más compacta en dos columnas en escritorio y un destacado con imagen; las
+lecturas incluyen portada, tres aprendizajes, índice, caso desarrollado, figura
+HTML y referencias junto al contenido pertinente. Se conserva el ritmo R05 de
+Inter, tamaños grandes, espacio, fondo cálido y acentos amarillos.
+
+`src/lib/editorial-media.ts` conecta los doce derivados locales con sus rutas.
+Las miniaturas usan carga diferida y las portadas tienen dimensiones y `srcset`;
+Open Graph, Twitter y Article/BlogPosting apuntan a la imagen de cada lectura.
+No se suman scripts editoriales ni se rasterizan las etiquetas de los diagramas.
+[Dirección y prompts](editorial-illustrations.md) y
+[evidencia de la revisión](../evidence/2026-10-16-editorial-quality/README.md).

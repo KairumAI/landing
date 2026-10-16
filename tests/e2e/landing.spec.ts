@@ -13,6 +13,23 @@ const titles = {
 const navNames = { es: "Productos", en: "Products", "pt-br": "Produtos" };
 const languageNames = { es: "Idioma", en: "Language", "pt-br": "Idioma" };
 const seoOrigin = "https://kairum.com.ar";
+const turnstileScript =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+
+test.beforeEach(async ({ page }) => {
+  await page.route("https://submit-form.com/**", (route) => route.abort());
+  await page.route(
+    (url) => url.href === turnstileScript,
+    (route) =>
+      route.fulfill({
+        contentType: "application/javascript",
+        body: `window.turnstile = {
+        render(_container, options) { options.callback('synthetic-turnstile-token'); return 'offline-widget'; },
+        reset() {}
+      };`,
+      }),
+  );
+});
 
 for (const locale of locales) {
   test(`${locale}: Home loads local assets, keeps R05 and reflows without errors`, async ({
@@ -28,7 +45,10 @@ for (const locale of locales) {
         errors.push(`${response.status()} ${response.url()}`);
     });
     page.on("request", (request) => {
-      if (new URL(request.url()).origin !== new URL(baseURL!).origin)
+      if (
+        new URL(request.url()).origin !== new URL(baseURL!).origin &&
+        request.url() !== turnstileScript
+      )
         external.push(request.url());
     });
     await page.emulateMedia({ reducedMotion: "reduce" });
@@ -83,7 +103,7 @@ for (const locale of locales) {
     expect(external).toEqual([]);
   });
 
-  test(`${locale}: all 13 pages have equivalent metadata, real destinations and working scripts`, async ({
+  test(`${locale}: all marketing and editorial pages have equivalent metadata, real destinations and working scripts`, async ({
     page,
     request,
   }) => {
@@ -145,7 +165,15 @@ for (const locale of locales) {
       );
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         "content",
-        `${seoOrigin}${localeMeta[locale].ogImage}`,
+        (await page.locator(".editorial-cover").count())
+          ? `${seoOrigin}/editorial/${entry.id}-social.jpg`
+          : `${seoOrigin}${localeMeta[locale].ogImage}`,
+      );
+      await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
+        "content",
+        (await page
+          .locator('meta[property="og:image"]')
+          .getAttribute("content"))!,
       );
       await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute(
         "content",
@@ -485,13 +513,13 @@ test("NoJS keeps content, native product FAQ and booking links at 320px", async 
   await context.close();
 });
 
-test("sitemap covers the 36 indexable equivalent pages and robots/llms describe current content", async ({
+test("sitemap covers the 60 indexable equivalent pages and robots/llms describe current content", async ({
   request,
 }) => {
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
   const xml = await sitemap.text();
-  expect(xml.match(/<loc>/g)).toHaveLength(36);
+  expect(xml.match(/<loc>/g)).toHaveLength(60);
   for (const page of pages)
     for (const locale of locales) {
       const url = `${seoOrigin}${localizedPath(page.path, locale)}`;

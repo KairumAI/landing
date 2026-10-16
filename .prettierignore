@@ -2,3 +2,5 @@
 public/informes/
 public/licenses/OFL-*.txt
 build/
+# CLAUDE.md aliases AGENTS.md; Windows may check it out as a link-target stub.
+CLAUDE.md

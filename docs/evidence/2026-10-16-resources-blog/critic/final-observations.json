@@ -1,0 +1,17 @@
+{
+  "loadMs": 237.36512700000003,
+  "sourceVisible": true,
+  "scrollWidth": 320,
+  "captionStyle": {
+    "text": "Cómo llevarlas a un mismo registro sin mezclarlas",
+    "clipPath": "inset(50%)",
+    "width": "1px",
+    "hiddenAttr": false,
+    "ariaHidden": null
+  },
+  "english": {
+    "url": "http://127.0.0.1:4391/en/blog/menciones-citas-visitas/",
+    "lang": "en",
+    "readingVisible": true
+  }
+}

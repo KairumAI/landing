@@ -2,7 +2,8 @@ import type { Translate } from "../../i18n/marketing/index";
 import { escapeHtml } from "../../lib/escape";
 import { createProducts, type Product, type ProductId } from "./products";
 import { createHomeScenes } from "./home-scenes";
-export function createMarketingRenderer(t: Translate) {
+import type { ContactSlots } from "./contact-form";
+export function createMarketingRenderer(t: Translate, contact?: ContactSlots) {
   const { products, productPath, findProduct } = createProducts(t);
   const {
     homeAnswerScene,
@@ -423,7 +424,7 @@ export function createMarketingRenderer(t: Translate) {
           `<a class="resource-book" href="${destination}" data-reveal><div class="resource-book-cover" data-home-drift style="--float-delay:-${index * 2}s"><img src="/kairum/assets/home-resource-${asset}.png" width="1122" height="1402" alt="" loading="lazy"><div class="resource-book-title"><h3>${title}</h3><p>${subtitle}</p></div></div><span class="book-link">${h("explorar")} ${title.toLowerCase()}${icon("ArrowUpRight")}</span></a>`,
       )
       .join("")}</div></section>
-    <section class="home-contact" id="contacto" data-home-showcase><div class="wrap"><div>${label(t("hablemos_de_tu_marca"))}<h2>${h("la_proxima_conversacion")}<br>${h("puede_empezar_aca")}</h2></div>${button(t("agendar_una_conversacion"), bookUrl)}</div></section>
+    <section class="home-contact" id="contacto" data-home-showcase><div class="wrap"><div>${label(t("hablemos_de_tu_marca"))}<h2>${h("la_proxima_conversacion")}<br>${h("puede_empezar_aca")}</h2></div>${button(t("agendar_una_conversacion"), bookUrl)}${contact?.homeAction ?? ""}${contact?.contactPanel ?? ""}</div></section>
     </main>${marketingFooter()}`;
   }
   function evidenceScene() {
@@ -464,7 +465,7 @@ export function createMarketingRenderer(t: Translate) {
         ids: ["report", "consulting"] as ProductId[],
       },
     }[id];
-    return `${marketingHeader()}<main id="contenido" tabindex="-1" class="info-page"><section class="wrap info-hero">${label(content.tag)}<h1>${content.title.split("\n").map(e).join("<br>")}</h1><p>${content.text}</p>${button(t("agendar_una_conversacion"), bookUrl)}<div class="info-context">${evidenceScene()}</div></section><section class="wrap section"><div class="section-heading">${label(id === "contacto" ? t("antes_de_conversar") : t("donde_empezar"))}<h2>${id === "nosotros" ? t("una_direccion_clara_un_paso_concreto") : t("elegi_tu_punto_de_partida_2")}</h2></div><div class="related-grid">${content.ids.map((pid, i) => card(findProduct(pid), i)).join("")}</div></section></main>${marketingFooter()}`;
+    return `${marketingHeader()}<main id="contenido" tabindex="-1" class="info-page"><section class="wrap info-hero">${label(content.tag)}<h1>${content.title.split("\n").map(e).join("<br>")}</h1><p>${content.text}</p>${button(t("agendar_una_conversacion"), bookUrl)}${id === "contacto" ? (contact?.contactPanel ?? "") : ""}<div class="info-context">${evidenceScene()}</div></section><section class="wrap section"><div class="section-heading">${label(id === "contacto" ? t("antes_de_conversar") : t("donde_empezar"))}<h2>${id === "nosotros" ? t("una_direccion_clara_un_paso_concreto") : t("elegi_tu_punto_de_partida_2")}</h2></div><div class="related-grid">${content.ids.map((pid, i) => card(findProduct(pid), i)).join("")}</div></section></main>${marketingFooter()}`;
   }
 
   return {

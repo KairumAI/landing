@@ -1,0 +1,82 @@
+[
+  {
+    "name": "resources",
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Entender la búsqueda con IA.\nCon evidencia."
+  },
+  {
+    "name": "blog",
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Ideas para preguntar mejor.\nY decidir con criterio."
+  },
+  {
+    "name": "guide",
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Cómo medir la visibilidad de tu marca en respuestas de IA"
+  },
+  {
+    "name": "article",
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Menciones, citas y visitas: tres señales diferentes"
+  },
+  {
+    "name": "agencies",
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Una mejor conversación\ncon cada marca."
+  },
+  {
+    "keyboardMenuOpen": "",
+    "links": [
+      "RecursosGuías y evidencia para hacer mejores preguntas.",
+      "BlogLecturas prácticas sobre visibilidad de marca en IA.",
+      "GlosarioConceptos claros, con ejemplos y límites.",
+      "MetodologíaEvidencia que podés revisar"
+    ]
+  },
+  {
+    "focusedAfterTab": {
+      "tag": "A",
+      "href": "/recursos/",
+      "outline": "rgb(112, 86, 0) solid 3px"
+    }
+  },
+  {
+    "closedAfterEscape": true,
+    "focusAfterEscape": "menu-resources"
+  },
+  {
+    "tocTarget": {
+      "hash": "#senales",
+      "top": 266.1875,
+      "focus": "senales"
+    }
+  },
+  {
+    "nojs": {
+      "sources": "Fuentes y referencias\nGoogle Search Central: funciones de IA y tu sitio web\nCloudflare Web Analytics: qué mide la analítica web\nOpenAI: rastreadores y agentes de búsqueda",
+      "scrollWidth": 320,
+      "links": 1
+    }
+  },
+  {
+    "nojsEnglishUrl": "http://127.0.0.1:4391/en/blog/menciones-citas-visitas/",
+    "lang": "en"
+  },
+  {
+    "path": "/en/recursos/",
+    "h1": "Understand AI search.\nWith evidence.",
+    "canonical": "https://kairum.com.ar/en/recursos/",
+    "lang": "en"
+  },
+  {
+    "path": "/pt-br/recursos/",
+    "h1": "Entenda a busca com IA.\nCom evidências.",
+    "canonical": "https://kairum.com.ar/pt-br/recursos/",
+    "lang": "pt-BR"
+  }
+]

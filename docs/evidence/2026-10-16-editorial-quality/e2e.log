@@ -1,0 +1,58 @@
+$ playwright test "--workers=2"
+[WebServer] $ bun scripts/verify-public-delivery.ts public && astro build && bun scripts/verify-public-delivery.ts dist
+[WebServer] (node:507823) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `bun --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:507858) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:507822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `bun --trace-warnings ...` to show where the warning was created)
+[WebServer] $ astro preview --host 127.0.0.1 --port "4391" --ignore-lock
+[WebServer] (node:508308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 38 tests using 2 workers
+
+(node:508410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(node:508412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/editorial.spec.ts:15:0 › keyboard focus stays visible outside the clipped illustration cards (1.4s)
+  ✓   3 tests/e2e/editorial.spec.ts:94:2 › es: editorial destinations are indexable and expose sources and language equivalents (314ms)
+  ✓   4 tests/e2e/editorial.spec.ts:94:2 › /en: editorial destinations are indexable and expose sources and language equivalents (324ms)
+  ✓   5 tests/e2e/editorial.spec.ts:94:2 › /pt-br: editorial destinations are indexable and expose sources and language equivalents (255ms)
+  ✓   6 tests/e2e/editorial.spec.ts:125:0 › Home resources lead to the real hub, blog and guide, with reversible keyboard navigation (4.3s)
+  ✓   7 tests/e2e/editorial.spec.ts:155:0 › NoJS articles keep sources readable and support keyboard language switching (1.6s)
+  ✓   2 tests/e2e/editorial.spec.ts:36:0 › illustrated readings deliver responsive local covers, useful figures and matching social previews in every language (10.7s)
+  ✓   9 tests/e2e/editorial.spec.ts:213:0 › commercial pages explain their scope, identify AI Report and link to the guide (3.1s)
+  ✓  10 tests/e2e/editorial.spec.ts:236:0 › new pages are discoverable in sitemap and text readers, with no unfinished legal routes (116ms)
+  ✓  11 tests/e2e/landing.spec.ts:18:2 › es: Home loads local assets, keeps R05 and reflows without errors (7.1s)
+  ✓   8 tests/e2e/editorial.spec.ts:181:0 › new editorial pages reflow, have no accessibility blockers and report no script errors (18.0s)
+  ✓  13 tests/e2e/landing.spec.ts:210:2 › es: desktop product menu uses keyboard, closes with Escape and reaches a product (3.4s)
+  ✓  14 tests/e2e/landing.spec.ts:18:2 › en: Home loads local assets, keeps R05 and reflows without errors (7.9s)
+  ✓  12 tests/e2e/landing.spec.ts:86:2 › es: all marketing and editorial pages have equivalent metadata, real destinations and working scripts (22.8s)
+  ✓  16 tests/e2e/landing.spec.ts:210:2 › en: desktop product menu uses keyboard, closes with Escape and reaches a product (3.0s)
+  ✓  17 tests/e2e/landing.spec.ts:18:2 › pt-br: Home loads local assets, keeps R05 and reflows without errors (5.3s)
+  ✓  15 tests/e2e/landing.spec.ts:86:2 › en: all marketing and editorial pages have equivalent metadata, real destinations and working scripts (16.1s)
+  ✓  19 tests/e2e/landing.spec.ts:210:2 › pt-br: desktop product menu uses keyboard, closes with Escape and reaches a product (2.8s)
+  ✓  20 tests/e2e/landing.spec.ts:238:0 › language selector preserves the product and section; dynamic menu labels are translated (2.2s)
+  ✓  21 tests/e2e/landing.spec.ts:259:0 › compact menus remain reversible and link to real pages (4.2s)
+  ✓  22 tests/e2e/landing.spec.ts:283:0 › four cinematic openers share the approved scenes; charts stay schematic (2.4s)
+  ✓  23 tests/e2e/landing.spec.ts:313:0 › product FAQ works with keyboard and reacts to reduced motion (1.0s)
+  ✓  18 tests/e2e/landing.spec.ts:86:2 › pt-br: all marketing and editorial pages have equivalent metadata, real destinations and working scripts (15.5s)
+  ✓  24 tests/e2e/landing.spec.ts:329:0 › ambient motion continues after entry and reduced preference settles all scenes (6.7s)
+  ✓  25 tests/e2e/landing.spec.ts:366:2 › es: Analytics draws both charts with full motion and loads menu masks (5.6s)
+  ✓  26 tests/e2e/landing.spec.ts:366:2 › en: Analytics draws both charts with full motion and loads menu masks (6.0s)
+  ✓  27 tests/e2e/landing.spec.ts:366:2 › pt-br: Analytics draws both charts with full motion and loads menu masks (6.2s)
+  ✓  28 tests/e2e/landing.spec.ts:432:0 › product anchors prefer their own section and preserve keyboard focus (2.0s)
+  ✓  30 tests/e2e/landing.spec.ts:496:0 › sitemap covers the 60 indexable equivalent pages and robots/llms describe current content (61ms)
+  ✓  29 tests/e2e/landing.spec.ts:464:0 › NoJS keeps content, native product FAQ and booking links at 320px (2.6s)
+  ✓  31 tests/e2e/landing.spec.ts:526:0 › JSON-LD FAQ answers match the visible product copy, without ratings or offers (880ms)
+  ✓  33 tests/e2e/landing.spec.ts:595:2 › es: custom 404 file has its translated recovery link and noindex (745ms)
+  ✓  34 tests/e2e/landing.spec.ts:595:2 › en: custom 404 file has its translated recovery link and noindex (379ms)
+  ✓  32 tests/e2e/landing.spec.ts:554:0 › self-only CSP permits the actual bundle and lazy charts with no policy violations (1.4s)
+  ✓  35 tests/e2e/landing.spec.ts:595:2 › pt-br: custom 404 file has its translated recovery link and noindex (310ms)
+  ✓  36 tests/e2e/landing.spec.ts:614:0 › unknown URL returns 404 instead of a marketing page (287ms)
+  ✓  38 tests/e2e/reports.spec.ts:66:0 › each preserved report keeps its exact HTML; the library retains noindex headers (155ms)
+  ✓  37 tests/e2e/reports.spec.ts:12:0 › preserved public library searches, opens reports and returns to the new Home under CSP (1.6s)
+
+  38 passed (1.6m)
