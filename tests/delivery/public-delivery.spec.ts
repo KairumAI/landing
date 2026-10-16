@@ -82,6 +82,27 @@ test("complete package preserves report checksums and resolves its assets and li
   }
 });
 
+test("package permits only the approved Turnstile script exception", async () => {
+  const item = await fixture();
+  try {
+    await writeFile(
+      join(item.root, "_headers"),
+      "/*\n  Content-Security-Policy: script-src 'self' https://challenges.cloudflare.com;\n\n/informes/*\n  X-Robots-Tag: noindex, nofollow\n",
+    );
+    await expect(verifyDelivery(item.root, manifest)).resolves.toHaveProperty(
+      "stats.reports",
+      1,
+    );
+    await writeFile(
+      join(item.root, "_headers"),
+      "/*\n  Content-Security-Policy: script-src 'self' https://other.example;\n\n/informes/*\n  X-Robots-Tag: noindex, nofollow\n",
+    );
+    await expect(verifyDelivery(item.root, manifest)).rejects.toThrow();
+  } finally {
+    await item.dispose();
+  }
+});
+
 for (const scenario of ["changed", "missing", "extra", "symlink"] as const) {
   test(`rejects a ${scenario} report file`, async () => {
     const item = await fixture();
@@ -96,7 +117,14 @@ for (const scenario of ["changed", "missing", "extra", "symlink"] as const) {
         );
       if (scenario === "symlink") {
         await rm(path);
-        await symlink(join(item.root, "index.html"), path);
+        // Junctions exercise the same no-links guard without Windows admin rights.
+        await symlink(
+          process.platform === "win32"
+            ? item.root
+            : join(item.root, "index.html"),
+          path,
+          process.platform === "win32" ? "junction" : "file",
+        );
       }
       await expect(verifyReports(item.root, manifest)).rejects.toThrow();
     } finally {

@@ -58,3 +58,15 @@ Los 26 informes conservan sus bytes y `noindex`; no se convierten en estudios
 editoriales indexables por esta entrega. Privacidad y términos quedan como
 borradores internos porque faltan datos del responsable. El alias de contacto
 elegido todavía requiere configurar y verificar su reenvío.
+
+## Contacto sin reunión · 2026-10-16
+
+| ID             | Entrega                  | Alcance y evidencia                                                                                                                                                                                                                          | Estado                                                      |
+| -------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| WEB-CONTACT-04 | Consultas por formulario | Entrada secundaria en Home y formulario propio en contacto, ES/EN/PT-BR; Formspark Free + Turnstile, sin SMTP. Configuración pública de build preparada; 48/48 E2E (12 de contacto) y 44/44 de entrega; crítico 9,2/9/9,2, cero bloqueantes. | Verificado local; pendiente de publicación y recepción real |
+
+[ADR-0011](../decisions/0011-contact-form.md),
+[runbook](../operations/contact-form.md) y
+[capturas, revisión y límites](../evidence/2026-10-16-contact-form/README.md).
+El usuario confirmó la activación de Turnstile en Formspark; los mocks locales
+no prueban entrega a Gmail. No se realizó envío real ni publicación.

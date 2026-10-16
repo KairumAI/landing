@@ -5,6 +5,7 @@ import { locales, type Locale } from "../i18n/locales";
 import { translator } from "../i18n/marketing";
 import { createProducts, type ProductId } from "../components/kairum/products";
 import { createMarketingRenderer } from "../components/kairum/marketing-html";
+import type { ContactSlots } from "../components/kairum/contact-form";
 
 export const productIds = [
   "report",
@@ -62,9 +63,13 @@ export function localizeLinks(html: string, locale: Locale): string {
     return `href="${localizedPath(path, locale)}"`;
   });
 }
-export function baselinePageContent(id: MarketingPageId, locale: Locale) {
+function marketingPageContent(
+  id: MarketingPageId,
+  locale: Locale,
+  contact?: ContactSlots,
+) {
   const t = translator(locale);
-  const renderer = createMarketingRenderer(t);
+  const renderer = createMarketingRenderer(t, contact);
   const { products } = createProducts(t);
   const product = products.find((product) => product.id === id);
   let html: string;
@@ -75,10 +80,18 @@ export function baselinePageContent(id: MarketingPageId, locale: Locale) {
   return { html: localizeLinks(html, locale), product };
 }
 
-export function pageContent(id: PageId, locale: Locale) {
+export function baselinePageContent(id: MarketingPageId, locale: Locale) {
+  return marketingPageContent(id, locale);
+}
+
+export function pageContent(
+  id: PageId,
+  locale: Locale,
+  contact?: ContactSlots,
+) {
   const editorial = editorialEntries.find((entry) => entry.id === id);
   const html = editorial
     ? localizeLinks(renderEditorialPage(editorial.id, locale), locale)
-    : baselinePageContent(id as MarketingPageId, locale).html;
+    : marketingPageContent(id as MarketingPageId, locale, contact).html;
   return { html: integrateEditorialContent(html, id, locale) };
 }
