@@ -1,3 +1,6 @@
+import { editorialEntries, type EditorialPageId } from "../i18n/editorial";
+import { renderEditorialPage } from "../components/kairum/editorial-html";
+import { integrateEditorialContent } from "./editorial-integration";
 import { locales, type Locale } from "../i18n/locales";
 import { translator } from "../i18n/marketing";
 import { createProducts, type ProductId } from "../components/kairum/products";
@@ -18,7 +21,9 @@ export const infoIds = [
   "contacto",
   "acceso",
 ] as const;
-export type PageId = "home" | "catalog" | ProductId | (typeof infoIds)[number];
+export type MarketingPageId =
+  "home" | "catalog" | ProductId | (typeof infoIds)[number];
+export type PageId = MarketingPageId | EditorialPageId;
 export const pages: readonly {
   id: PageId;
   path: string;
@@ -31,6 +36,7 @@ export const pages: readonly {
     path: `/productos/${id}/`,
     indexable: true,
   })),
+  ...editorialEntries.map(({ id, path }) => ({ id, path, indexable: true })),
   ...infoIds.map((id) => ({
     id,
     path: `/${id === "marcas" || id === "agencias" ? "soluciones/" : ""}${id}/`,
@@ -56,7 +62,7 @@ export function localizeLinks(html: string, locale: Locale): string {
     return `href="${localizedPath(path, locale)}"`;
   });
 }
-export function pageContent(id: PageId, locale: Locale) {
+export function baselinePageContent(id: MarketingPageId, locale: Locale) {
   const t = translator(locale);
   const renderer = createMarketingRenderer(t);
   const { products } = createProducts(t);
@@ -67,4 +73,12 @@ export function pageContent(id: PageId, locale: Locale) {
   else if (product) html = renderer.marketingProductPage(product);
   else html = renderer.marketingInfoPage(id as (typeof infoIds)[number]);
   return { html: localizeLinks(html, locale), product };
+}
+
+export function pageContent(id: PageId, locale: Locale) {
+  const editorial = editorialEntries.find((entry) => entry.id === id);
+  const html = editorial
+    ? localizeLinks(renderEditorialPage(editorial.id, locale), locale)
+    : baselinePageContent(id as MarketingPageId, locale).html;
+  return { html: integrateEditorialContent(html, id, locale) };
 }

@@ -83,7 +83,7 @@ for (const locale of locales) {
     expect(external).toEqual([]);
   });
 
-  test(`${locale}: all 13 pages have equivalent metadata, real destinations and working scripts`, async ({
+  test(`${locale}: all marketing and editorial pages have equivalent metadata, real destinations and working scripts`, async ({
     page,
     request,
   }) => {
@@ -485,13 +485,13 @@ test("NoJS keeps content, native product FAQ and booking links at 320px", async 
   await context.close();
 });
 
-test("sitemap covers the 36 indexable equivalent pages and robots/llms describe current content", async ({
+test("sitemap covers the 60 indexable equivalent pages and robots/llms describe current content", async ({
   request,
 }) => {
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
   const xml = await sitemap.text();
-  expect(xml.match(/<loc>/g)).toHaveLength(36);
+  expect(xml.match(/<loc>/g)).toHaveLength(60);
   for (const page of pages)
     for (const locale of locales) {
       const url = `${seoOrigin}${localizedPath(page.path, locale)}`;

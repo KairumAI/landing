@@ -1,0 +1,105 @@
+export const editorialEntries = [
+  { id: "resources", path: "/recursos/", kind: "hub" },
+  { id: "blog", path: "/blog/", kind: "blog" },
+  {
+    id: "visibility-guide",
+    path: "/recursos/como-medir-visibilidad-ia/",
+    kind: "guide",
+  },
+  {
+    id: "mentions-citations-visits",
+    path: "/blog/menciones-citas-visitas/",
+    kind: "article",
+  },
+  {
+    id: "choosing-questions",
+    path: "/blog/como-elegir-preguntas/",
+    kind: "article",
+  },
+  {
+    id: "interpreting-results",
+    path: "/blog/como-interpretar-resultados/",
+    kind: "article",
+  },
+  { id: "glossary", path: "/glosario/", kind: "reference" },
+  { id: "methodology", path: "/metodologia/", kind: "reference" },
+] as const;
+export type EditorialPageId = (typeof editorialEntries)[number]["id"];
+export type Section = {
+  id: string;
+  title: string;
+  paragraphs: string[];
+  items?: string[];
+  table?: { columns: string[]; rows: string[][] };
+  example?: { label: string; text: string };
+};
+export type Source = { title: string; url: string };
+export type EditorialPage = {
+  title: string;
+  description: string;
+  category: string;
+  summary: string;
+  sections: Section[];
+  sources: Source[];
+  related: EditorialPageId[];
+  product: "report" | "analytics" | "prompt-intelligence";
+};
+export type EditorialCopy = {
+  ui: {
+    resources: string;
+    blog: string;
+    glossary: string;
+    methodology: string;
+    resourcesDescription: string;
+    blogDescription: string;
+    glossaryDescription: string;
+    explore: string;
+    featured: string;
+    guide: string;
+    articles: string;
+    onThisPage: string;
+    sources: string;
+    related: string;
+    author: string;
+    reviewed: string;
+    date: string;
+    minutes: string;
+    read: string;
+    editorialNote: string;
+    editorialPolicy: string;
+    reports: string;
+    reportsNote: string;
+    reportsAction: string;
+    back: string;
+    nextStep: string;
+    ctaTitle: string;
+    ctaText: string;
+    ctaAction: string;
+    question: string;
+    answer: string;
+    source: string;
+    evidence: string;
+    homeQuestions: string;
+    homeSources: string;
+    homeFindings: string;
+    heroTitle: string;
+    heroIntro: string;
+    blogTitle: string;
+    blogIntro: string;
+    guideAction: string;
+    browseBlog: string;
+    synthetic: string;
+  };
+  commercial: Record<
+    "report" | "analytics" | "agencias",
+    {
+      title: string;
+      description: string;
+      heading: string;
+      intro: string;
+      items: { title: string; text: string }[];
+    }
+  >;
+  pages: Record<EditorialPageId, EditorialPage>;
+};
+export const reviewedDate = "2026-10-16";

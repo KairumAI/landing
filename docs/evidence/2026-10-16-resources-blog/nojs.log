@@ -1,0 +1,15 @@
+$ playwright test "tests/e2e/editorial.spec.ts" --grep "NoJS articles" "--repeat-each=3" "--workers=1"
+
+Running 3 tests using 1 worker
+
+(node:243733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/e2e/editorial.spec.ts:77:0 › NoJS articles keep sources readable and support keyboard language switching (1.5s)
+(node:243942) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✓  2 tests/e2e/editorial.spec.ts:77:0 › NoJS articles keep sources readable and support keyboard language switching (1.4s)
+(node:244450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+  ✓  3 tests/e2e/editorial.spec.ts:77:0 › NoJS articles keep sources readable and support keyboard language switching (1.8s)
+
+  3 passed (9.5s)

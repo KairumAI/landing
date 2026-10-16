@@ -39,3 +39,22 @@ la entrega de producción tiene una validación separada.
 
 [ADR-0010](../decisions/0010-automatic-main-publication.md) y
 [evidencia](../evidence/2026-10-05-automatic-main/README.md).
+
+## Recursos, blog y desarrollo comercial · 2026-10-16
+
+Esta extensión aplica el contenido y la navegación pedidos por Bruno sobre R05.
+Las cifras de las entregas anteriores describen sus versiones históricas.
+
+| ID                | Entrega                         | Alcance y evidencia                                                                                                                                                                                     | Estado                             |
+| ----------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| WEB-CONTENT-04    | Recursos y blog                 | Hub, blog, guía, tres artículos, glosario y metodología en ES/EN/PT-BR. Autoría editorial, fecha de revisión, fuentes, ejemplos rotulados y enlaces a productos. Contenido completo sin JavaScript.     | Verificado local; crítico aprobado |
+| WEB-SEO-04        | Descubrimiento editorial        | 24 rutas nuevas localizadas; sitemap de 60 rutas indexables, canonical y hreflang recíprocos, Article/BlogPosting coherentes con el texto visible. No acredita indexación ni mejora de posicionamiento. | Verificado local; crítico aprobado |
+| WEB-COMMERCIAL-04 | Contexto para evaluar la oferta | AI Report, Analytics y Agencias amplían problemas, alcance, entregables y límites. Títulos descriptivos y conexión a la guía. Nombre visible AI Report con IDs y rutas anteriores conservados.          | Verificado local; crítico aprobado |
+| WEB-REFERENCE-04  | Extensión acotada de R05        | Sin regenerar fingerprints: reversión exacta de los deltas editoriales declarados antes de comparar las 13 páginas originales; pruebas rechazan mutaciones ajenas. 51 assets y cinco CSS intactos.      | Verificado local; crítico aprobado |
+
+La [evidencia de esta versión](../evidence/2026-10-16-resources-blog/README.md)
+registra la composición, las capturas a 1440/768/390/320 px y los resultados.
+Los 26 informes conservan sus bytes y `noindex`; no se convierten en estudios
+editoriales indexables por esta entrega. Privacidad y términos quedan como
+borradores internos porque faltan datos del responsable. El alias de contacto
+elegido todavía requiere configurar y verificar su reenvío.

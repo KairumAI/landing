@@ -1,0 +1,13 @@
+{
+  "before": {
+    "elapsed": 462.9160869999996,
+    "scrollBehavior": "smooth"
+  },
+  "after": {
+    "clickMs": 30012.06705,
+    "url": "http://127.0.0.1:4391/en/blog/menciones-citas-visitas/",
+    "lang": "en",
+    "readable": true,
+    "scrollWidth": 320
+  }
+}

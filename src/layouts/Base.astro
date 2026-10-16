@@ -8,6 +8,7 @@ import "../styles/kairum-styles.css";
 import "../styles/kairum-brand.css";
 import "../styles/kairum-home.css";
 import "../styles/kairum-cinematic.css";
+import "../styles/kairum-editorial.css";
 interface Props {
   pageId?: PageId;
   locale?: Locale;
@@ -54,7 +55,7 @@ const ogImage = new URL(localeMeta[locale].ogImage, Astro.site).href;
         />
       </>
     )}
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={meta.isArticle ? "article" : "website"} />
     <meta property="og:site_name" content="KAIRUM" />
     <meta property="og:locale" content={localeMeta[locale].ogLocale} />
     {locales
