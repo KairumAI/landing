@@ -1,0 +1,7 @@
+$ astro check
+18:41:41 [types] Generated 39ms
+18:41:41 [check] Getting diagnostics for Astro files in /home/bruno/Documents/UDESA/kairum-landing-worktrees/recursos-blog-20261016...
+Result (100 files):
+- 0 errors
+- 0 warnings
+- 0 hints

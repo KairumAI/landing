@@ -1,0 +1,101 @@
+$ bun scripts/verify-public-delivery.ts public && astro build && bun scripts/verify-public-delivery.ts dist
+{"source":{"reports":26,"files":2959}}
+18:43:52 [types] Generated 38ms
+18:43:52 [build] output: "static"
+18:43:52 [build] mode: "static"
+18:43:52 [build] directory: /home/bruno/Documents/UDESA/kairum-landing-worktrees/recursos-blog-20261016/dist/
+18:43:52 [build] Collecting build info...
+18:43:52 [build] ✓ Completed in 64ms.
+18:43:52 [build] Building static entrypoints...
+18:43:53 [vite] ✓ built in 502ms
+18:43:54 [WARN] [vite] [plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+18:43:54 [vite] ✓ built in 613ms
+18:43:54 [build] Rearranging server assets...
+
+ generating static routes
+18:43:54   ├─ /404.html (+20ms)
+18:43:54   ├─ /en/404.html (+3ms)
+18:43:54   ├─ /en/llms-full.txt (+26ms)
+18:43:54   ├─ /en/index.html (+5ms)
+18:43:54   ├─ /en/productos/index.html (+4ms)
+18:43:54   ├─ /en/productos/report/index.html (+3ms)
+18:43:54   ├─ /en/productos/analytics/index.html (+2ms)
+18:43:54   ├─ /en/productos/agents/index.html (+3ms)
+18:43:54   ├─ /en/productos/prompt-intelligence/index.html (+2ms)
+18:43:54   ├─ /en/productos/traffic/index.html (+2ms)
+18:43:54   ├─ /en/productos/consulting/index.html (+2ms)
+18:43:54   ├─ /en/recursos/index.html (+2ms)
+18:43:54   ├─ /en/blog/index.html (+2ms)
+18:43:54   ├─ /en/recursos/como-medir-visibilidad-ia/index.html (+3ms)
+18:43:54   ├─ /en/blog/menciones-citas-visitas/index.html (+7ms)
+18:43:54   ├─ /en/blog/como-elegir-preguntas/index.html (+2ms)
+18:43:54   ├─ /en/blog/como-interpretar-resultados/index.html (+2ms)
+18:43:54   ├─ /en/glosario/index.html (+2ms)
+18:43:54   ├─ /en/metodologia/index.html (+2ms)
+18:43:54   ├─ /en/soluciones/marcas/index.html (+1ms)
+18:43:54   ├─ /en/soluciones/agencias/index.html (+1ms)
+18:43:54   ├─ /en/nosotros/index.html (+1ms)
+18:43:54   ├─ /en/contacto/index.html (+1ms)
+18:43:54   ├─ /en/acceso/index.html (+1ms)
+18:43:54   ├─ /llms-full.txt (+10ms)
+18:43:54   ├─ /llms.txt (+2ms)
+18:43:54   ├─ /pt-br/404.html (+3ms)
+18:43:54   ├─ /pt-br/llms-full.txt (+13ms)
+18:43:54   ├─ /pt-br/index.html (+2ms)
+18:43:54   ├─ /pt-br/productos/index.html (+1ms)
+18:43:54   ├─ /pt-br/productos/report/index.html (+1ms)
+18:43:54   ├─ /pt-br/productos/analytics/index.html (+1ms)
+18:43:54   ├─ /pt-br/productos/agents/index.html (+1ms)
+18:43:54   ├─ /pt-br/productos/prompt-intelligence/index.html (+1ms)
+18:43:54   ├─ /pt-br/productos/traffic/index.html (+1ms)
+18:43:54   ├─ /pt-br/productos/consulting/index.html (+1ms)
+18:43:54   ├─ /pt-br/recursos/index.html (+1ms)
+18:43:54   ├─ /pt-br/blog/index.html (+2ms)
+18:43:54   ├─ /pt-br/recursos/como-medir-visibilidad-ia/index.html (+2ms)
+18:43:54   ├─ /pt-br/blog/menciones-citas-visitas/index.html (+2ms)
+18:43:54   ├─ /pt-br/blog/como-elegir-preguntas/index.html (+2ms)
+18:43:54   ├─ /pt-br/blog/como-interpretar-resultados/index.html (+1ms)
+18:43:54   ├─ /pt-br/glosario/index.html (+1ms)
+18:43:54   ├─ /pt-br/metodologia/index.html (+1ms)
+18:43:54   ├─ /pt-br/soluciones/marcas/index.html (+1ms)
+18:43:54   ├─ /pt-br/soluciones/agencias/index.html (+1ms)
+18:43:54   ├─ /pt-br/nosotros/index.html (+1ms)
+18:43:54   ├─ /pt-br/contacto/index.html (+1ms)
+18:43:54   ├─ /pt-br/acceso/index.html (+1ms)
+18:43:54   ├─ /robots.txt (+1ms)
+18:43:54   ├─ /sitemap.xml (+1ms)
+18:43:54   ├─ /index.html (+2ms)
+18:43:54   ├─ /productos/index.html (+1ms)
+18:43:54   ├─ /productos/report/index.html (+2ms)
+18:43:54   ├─ /productos/analytics/index.html (+2ms)
+18:43:54   ├─ /productos/agents/index.html (+2ms)
+18:43:54   ├─ /productos/prompt-intelligence/index.html (+2ms)
+18:43:54   ├─ /productos/traffic/index.html (+2ms)
+18:43:54   ├─ /productos/consulting/index.html (+1ms)
+18:43:54   ├─ /recursos/index.html (+1ms)
+18:43:54   ├─ /blog/index.html (+2ms)
+18:43:54   ├─ /recursos/como-medir-visibilidad-ia/index.html (+1ms)
+18:43:54   ├─ /blog/menciones-citas-visitas/index.html (+2ms)
+18:43:54   ├─ /blog/como-elegir-preguntas/index.html (+2ms)
+18:43:54   ├─ /blog/como-interpretar-resultados/index.html (+2ms)
+18:43:54   ├─ /glosario/index.html (+1ms)
+18:43:54   ├─ /metodologia/index.html (+1ms)
+18:43:54   ├─ /soluciones/marcas/index.html (+1ms)
+18:43:54   ├─ /soluciones/agencias/index.html (+1ms)
+18:43:54   ├─ /nosotros/index.html (+1ms)
+18:43:54   ├─ /contacto/index.html (+1ms)
+18:43:54   ├─ /acceso/index.html (+1ms)
+18:43:54 ✓ Completed in 245ms.
+
+ generating optimized images
+18:43:54   ▶ /_astro/convergencia-lockup.C2_C3mli_Z1ejH4L.webp (reused cache entry) (+0ms) (1/1)
+18:43:54 ✓ Completed in 1ms.
+
+18:43:54 [build] ✓ Completed in 1.41s.
+18:43:54 [build] 66 page(s) built in 1.53s
+18:43:54 [build] Complete!
+{"reports":26,"files":2959,"public_files":3122,"bytes":61159020,"report_links":34541}

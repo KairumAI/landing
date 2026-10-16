@@ -1,0 +1,33 @@
+[
+  {
+    "width": 1440,
+    "href": "/blog/menciones-citas-visitas/",
+    "outerOutline": "rgb(112, 86, 0) solid 3px",
+    "outerOffset": "4px",
+    "scrollWidth": 1440
+  },
+  {
+    "width": 320,
+    "href": "/blog/menciones-citas-visitas/",
+    "outerOutline": "rgb(112, 86, 0) solid 3px",
+    "outerOffset": "4px",
+    "scrollWidth": 320
+  },
+  {
+    "nojs": {
+      "coverAlt": "Dos discos amarillos iguales dentro de marcos negros de diferente tamaño.",
+      "cover": {
+        "complete": true,
+        "naturalWidth": 288
+      },
+      "takeaways": 3,
+      "figure": "El doble de porcentaje. Las mismas seis menciones.\n30 %\nObservación A\n\n6 menciones en 20 respuestas válidas. Cobertura: 20/25.\n\n60 %\nObservación B\n\n6 menciones en 10 respuestas válidas. Cobertura: 10/25.\n\nEjercicio sintético, no resultados de KAIRUM. La cobertura cae de 20 a 10 respuestas válidas sobre 25 previstas; los fallos no se cuentan como ausencia de marca.",
+      "width": 320
+    }
+  },
+  {
+    "nojsLanguage": "http://127.0.0.1:4391/en/blog/como-interpretar-resultados/",
+    "lang": "en",
+    "figure": "Twice the percentage. The same six mentions."
+  }
+]

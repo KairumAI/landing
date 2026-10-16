@@ -1,9 +1,10 @@
 # Formulario en el cierre de Home · 2026-10-16
 
-Ampliación local de `feat/contact-formspark` sobre el commit
-`09e4e46d7f4f9171b5f8ac9567009ce535cfa956` de la
-[PR draft #5](https://github.com/KairumAI/landing/pull/5), apilada sobre la
-[PR #4](https://github.com/KairumAI/landing/pull/4).
+Candidato integrado de `feat/contact-formspark`,
+[PR #5](https://github.com/KairumAI/landing/pull/5), apilada sobre la
+[PR #4](https://github.com/KairumAI/landing/pull/4). La revisión de Home publicada
+en `c75547938c992e0138057e144e716ba6e0d3c8e7` se sincronizó con
+`feat/recursos-blog` en `1a4afb328011f90aa0dec7681f77b6ef68c4f38e`.
 [candidate.json](candidate.json) identifica los archivos de esta revisión y sus
 capturas mediante SHA-256 para la actualización autorizada de la PR #5.
 
@@ -46,17 +47,17 @@ Ver [ADR-0011](../../decisions/0011-contact-form.md),
 
 | Comprobación                           | Resultado                                                                 |
 | -------------------------------------- | ------------------------------------------------------------------------- |
-| Navegador completo sobre build/preview | 51/51, incluidos 15 casos de contacto                                     |
+| Navegador completo sobre build/preview | 53/53, incluidos 15 casos de contacto                                     |
 | Integridad y publicación               | 44/44                                                                     |
-| Tipos                                  | 104 archivos; cero errores, warnings o hints                              |
+| Tipos                                  | 105 archivos; cero errores, warnings o hints                              |
 | Referencia R05                         | 51 assets, 5 CSS y 13 HTML ES base conservados; 126 variantes verificadas |
 | Build                                  | Paquete público y salida `dist` verificados                               |
 | Formato                                | Prettier completo y `git diff --check`                                    |
 
 Entorno: Windows 11 ARM64, Bun 1.4.0 nativo y Playwright con Edge instalado.
 Los servidores escucharon únicamente en `127.0.0.1`. La suite final utilizó
-`test-results/home-contact-placeholders-final`; entrega utilizó un directorio distinto,
-`test-results/home-contact-placeholders-delivery`. La suite de navegador reutilizó la preview
+`test-results/contact-stack-integrated-final`; entrega utilizó un directorio distinto,
+`test-results/contact-stack-integrated-delivery`. La suite de navegador reutilizó la preview
 local actualizada tras el build, sin crear un segundo servidor.
 
 Antes de implementar, las tres variantes de idioma fallaron por ausencia del
@@ -93,7 +94,7 @@ La última revisión incorpora la retirada de la nota solicitada por el usuario,
 sin dejar referencias ARIA ni áreas vacías del grid, y los placeholders de los
 cuatro campos en los tres idiomas.
 
-Veredicto final sobre el diff y las 14 capturas automatizadas: **aprobado localmente, cero
+Veredicto final sobre el candidato sincronizado y sus 14 capturas automatizadas actuales: **aprobado localmente, cero
 bloqueantes**. Usabilidad **9,3/10**, estilo **9,3/10** y fidelidad KAIRUM **9,3/10**.
 Se comprobaron la conservación de los elementos originales, la ausencia de
 desbordamientos a 320 px y la integración en los tres idiomas.
@@ -111,12 +112,22 @@ También se conserva el formulario configurado en
 reales con servicios externos simulados. El espacio reservado al widget no
 acredita un desafío remoto real.
 
-Como comprobación adicional se abrió la Home en Chrome: el widget real con tema
+Como comprobación adicional anterior a la sincronización, sobre `c755479`, se abrió la Home en Chrome: el widget real con tema
 oscuro apareció en la columna lateral, sobre el botón, sin recortes ni
 superposición con los campos. Completó la verificación y habilitó el botón; se
 conserva una [captura adicional del widget real](runtime/es-home-contact-real.png).
+El código del formulario permanece idéntico en el candidato sincronizado.
 No se interactuó con el desafío ni se envió el formulario. Esta observación no
 acredita recepción por Formspark o Gmail.
+
+## Sincronización del stack
+
+Se integró el avance de la rama base sin reescribir los commits publicados. El
+único conflicto estaba en el registro de funcionalidades: se conservaron tanto
+WEB-EDITORIAL-05 como WEB-CONTACT-04. La prueba de Home combina las expectativas
+editoriales actuales con la excepción exacta para Turnstile. No hubo cambios en
+el código del formulario durante esta sincronización. Las comprobaciones y las
+14 capturas automatizadas de esta revisión corresponden al conjunto integrado.
 
 ## Estado y pendientes
 
@@ -124,6 +135,7 @@ La Home está disponible en la preview local de esta rama para la prueba manual
 solicitada por el usuario. La aceptación por Formspark y la llegada a Gmail
 siguen pendientes de una consulta real y su comprobación por separado.
 
-El usuario autorizó el commit y push de esta revisión el 2026-10-16. Quedan
-pendientes el merge, la publicación y la recepción real. No se envió ninguna
-consulta real ni se realizó una compra.
+El usuario autorizó el commit y push, y luego la sincronización y el merge de
+la PR #5 a `feat/recursos-blog`, el 2026-10-16. Esta evidencia registra el candidato
+validado antes de ese merge. La PR #4 hacia `main`, la publicación y la recepción
+real siguen pendientes. No se envió ninguna consulta real ni se realizó una compra.

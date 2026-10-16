@@ -1,0 +1,266 @@
+[
+  {
+    "path": "/recursos/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/recursos/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/recursos/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/recursos/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/blog/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/blog/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/blog/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/blog/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/recursos/como-medir-visibilidad-ia/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/recursos/como-medir-visibilidad-ia/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/recursos/como-medir-visibilidad-ia/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/recursos/como-medir-visibilidad-ia/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/blog/menciones-citas-visitas/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/blog/menciones-citas-visitas/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/blog/menciones-citas-visitas/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/blog/menciones-citas-visitas/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/blog/como-elegir-preguntas/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/blog/como-elegir-preguntas/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/blog/como-elegir-preguntas/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/blog/como-elegir-preguntas/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/blog/como-interpretar-resultados/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/blog/como-interpretar-resultados/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/blog/como-interpretar-resultados/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/blog/como-interpretar-resultados/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/glosario/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/glosario/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/glosario/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/glosario/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/metodologia/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/metodologia/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/metodologia/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/metodologia/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/soluciones/agencias/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/soluciones/agencias/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/soluciones/agencias/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/soluciones/agencias/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/productos/analytics/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/productos/analytics/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/productos/analytics/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/productos/analytics/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  },
+  {
+    "path": "/productos/report/",
+    "width": 1440,
+    "status": 200,
+    "scrollWidth": 1440
+  },
+  {
+    "path": "/productos/report/",
+    "width": 768,
+    "status": 200,
+    "scrollWidth": 768
+  },
+  {
+    "path": "/productos/report/",
+    "width": 390,
+    "status": 200,
+    "scrollWidth": 390
+  },
+  {
+    "path": "/productos/report/",
+    "width": 320,
+    "status": 200,
+    "scrollWidth": 320
+  }
+]

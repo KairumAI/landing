@@ -8,6 +8,7 @@ import { translator } from "../i18n/marketing";
 import { localeMeta, locales, type Locale } from "../i18n/locales";
 import { createProducts } from "../components/kairum/products";
 import { pages, localizedPath, type PageId } from "./routes";
+import { editorialMedia } from "./editorial-media";
 
 export function metadata(id: PageId, locale: Locale, site: URL) {
   const baseTranslate = translator(locale);
@@ -50,6 +51,8 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
   };
   const entry = editorialEntries.find((entry) => entry.id === id);
   const editorial = entry ? editorialCopy(locale).pages[entry.id] : undefined;
+  const media = editorialMedia(id);
+  const socialImage = media?.social ?? localeMeta[locale].ogImage;
   const commercial =
     id === "report" || id === "analytics" || id === "agencias"
       ? editorialCopy(locale).commercial[id]
@@ -107,7 +110,7 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
       inLanguage: localeMeta[locale].htmlLang,
       isPartOf: { "@id": `${home}#website` },
       about: { "@id": `${home}#organization` },
-      primaryImageOfPage: new URL(localeMeta[locale].ogImage, site).href,
+      primaryImageOfPage: new URL(socialImage, site).href,
     },
   ];
   const isArticle = entry?.kind === "article" || entry?.kind === "guide";
@@ -128,7 +131,7 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
       dateModified: reviewedDate,
       inLanguage: localeMeta[locale].htmlLang,
       citation: editorial.sources.map((source) => source.url),
-      image: new URL(localeMeta[locale].ogImage, site).href,
+      image: new URL(socialImage, site).href,
     });
   if (id !== "home")
     graph.push({
@@ -185,6 +188,10 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
     title,
     description,
     isArticle,
+    socialImage,
+    socialWidth: media?.socialWidth ?? 1200,
+    socialHeight: media?.socialHeight ?? 630,
+    socialAlt: editorial?.cover?.alt ?? "KAIRUM",
     noindex: !page.indexable,
     structuredData: { "@context": "https://schema.org", "@graph": graph },
   };

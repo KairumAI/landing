@@ -12,6 +12,84 @@ const paths = [
   "/metodologia/",
 ];
 
+test("keyboard focus stays visible outside the clipped illustration cards", async ({
+  page,
+}) => {
+  await page.goto("/blog/");
+  for (const width of [1440, 320]) {
+    await page.setViewportSize({ width, height: 1000 });
+    const card = page.locator(".editorial-card").first();
+    await card.locator("a").focus();
+    await expect(card.locator("a")).toBeFocused();
+    const indicator = await card.evaluate((element) => {
+      const style = getComputedStyle(element);
+      return {
+        style: style.outlineStyle,
+        width: parseFloat(style.outlineWidth),
+      };
+    });
+    expect(indicator.style).not.toBe("none");
+    expect(indicator.width).toBeGreaterThanOrEqual(3);
+  }
+});
+
+test("illustrated readings deliver responsive local covers, useful figures and matching social previews in every language", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/blog/");
+  const illustrations = page.locator(".editorial-card-image img");
+  await expect(illustrations).toHaveCount(3);
+  for (const illustration of await illustrations.all()) {
+    await illustration.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        illustration.evaluate(
+          (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
+  }
+  for (const prefix of ["", "/en", "/pt-br"]) {
+    for (const path of paths.slice(2, 6)) {
+      await page.goto(`${prefix}${path}`);
+      const cover = page.locator(".editorial-cover img");
+      await expect(cover).toBeVisible();
+      await expect(cover).toHaveAttribute("alt", /.+/);
+      await expect(cover).toHaveAttribute("srcset", /640w.*1280w/);
+      await expect
+        .poll(() =>
+          cover.evaluate(
+            (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
+          ),
+        )
+        .toBe(true);
+      const image = await page
+        .locator('meta[property="og:image"]')
+        .getAttribute("content");
+      expect(image).toMatch(/\/editorial\/.*-social\.jpg$/);
+      expect((await request.get(new URL(image!).pathname)).status()).toBe(200);
+      const graph = JSON.parse(
+        (await page
+          .locator('script[type="application/ld+json"]')
+          .textContent())!,
+      )["@graph"];
+      expect(
+        graph.find((node: { "@type": string }) =>
+          ["Article", "BlogPosting"].includes(node["@type"]),
+        ).image,
+      ).toBe(image);
+      await expect(page.locator(".editorial-takeaways li")).toHaveCount(3);
+      await expect(
+        page.locator(".editorial-explainer figcaption"),
+      ).toBeVisible();
+      await expect(page.locator(".editorial-cover figcaption")).toContainText(
+        /KAIRUM/,
+      );
+    }
+  }
+});
+
 for (const prefix of ["", "/en", "/pt-br"]) {
   test(`${prefix || "es"}: editorial destinations are indexable and expose sources and language equivalents`, async ({
     request,

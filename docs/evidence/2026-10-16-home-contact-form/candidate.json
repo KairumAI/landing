@@ -1,20 +1,55 @@
 {
-  "baseCommit": "09e4e46d7f4f9171b5f8ac9567009ce535cfa956",
+  "baseCommit": "1a4afb328011f90aa0dec7681f77b6ef68c4f38e",
+  "baseRef": "feat/recursos-blog",
+  "basePullRequest": 4,
+  "contactCommit": "c75547938c992e0138057e144e716ba6e0d3c8e7",
   "branch": "feat/contact-formspark",
   "pullRequest": 5,
-  "state": "reviewed-home-contact-update",
+  "state": "integrated-reviewed-candidate",
   "files": [
+    {
+      "path": ".env.example",
+      "sha256": "42cfc92ba757a5bcffcfa4da27151212a72f7d53d43272b179c74a2a27eef311"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "1ad30f897779ef1b2df6583f58d96b5976f6194c50bca55288f502782c4cf3e2"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "sha256": "38b6231d5dcefd7fe752dd6ab7db84444c80486c077b53b3b31f58cc7967d1bc"
+    },
+    {
+      "path": ".prettierignore",
+      "sha256": "d2f117ae8fc944c9ff37ab0c0be84810d6ce4b6b98ca610ed0ed30f3b579f0f1"
+    },
     {
       "path": "docs/decisions/0011-contact-form.md",
       "sha256": "4fbe6bac20be457797771a8b3a094830a314aa17140df09c58797f24a11e62df"
     },
     {
+      "path": "docs/operations/contact-form.md",
+      "sha256": "74517b085288a9a9ccc5d026302c5b494c1218be0712d409539c0e284360a425"
+    },
+    {
       "path": "docs/product/feature-register.md",
-      "sha256": "8b464f33c99e9b326ff54bc58a8fae3c372068ce7bcb047f5aeac073ab6ff75e"
+      "sha256": "ba0969f052e5f6b4450c901d417975cf57edd9e4ad3cf94cb934332d7a8d9592"
+    },
+    {
+      "path": "public/_headers",
+      "sha256": "327fa4e9cea97e7843c714f518c0791aaa1a7e51ca74e17ba6e62db3ef63c818"
     },
     {
       "path": "scripts/verify-approved-reference.ts",
       "sha256": "8f6af984c62923d4eb93cb8efef0706d9926d4a07263b0b6bea8545f497b2bc8"
+    },
+    {
+      "path": "scripts/verify-public-delivery.ts",
+      "sha256": "2e3386a4927220b9e8241d395cae6038e0dea945a948605d0af54cb5e3f9398f"
+    },
+    {
+      "path": "src/components/MarketingPage.astro",
+      "sha256": "df5cd08343864ef75e37133344fbffadbf01df59435d3e130426c4076128082a"
     },
     {
       "path": "src/components/kairum/contact-form.ts",
@@ -29,6 +64,14 @@
       "sha256": "55199270b31681d86c08b1351a216bf08dccc14808b2fb762d933c629c532953"
     },
     {
+      "path": "src/lib/contact-config.ts",
+      "sha256": "42d3ae7e0d7a3437309242e4e474ffde5628c7e856cbb6781c3c83179407eaff"
+    },
+    {
+      "path": "src/lib/routes.ts",
+      "sha256": "cbba56682be31369d1aac4f02cd0baa26aa45723f3e5fc8bcb9944b5e5a8d749"
+    },
+    {
       "path": "src/scripts/contact-form.ts",
       "sha256": "34e28d1bfac3d790cdb74e89b31acd7dc3d9b857a40c2db686eaa270948a2584"
     },
@@ -37,12 +80,16 @@
       "sha256": "e97f4ecf0a05b58b9bc912c28cd54ec5211b9a64da2ab993794304a8e534dd33"
     },
     {
+      "path": "tests/delivery/public-delivery.spec.ts",
+      "sha256": "5227c49fd8f758511140693614129a4dd6cef62a9b077a7fbc9d9cb12f7d1583"
+    },
+    {
       "path": "tests/e2e/contact.spec.ts",
       "sha256": "225763c4c8a2ae45e3043677a00b9a1cca5e47aacb7e43c300fa456e89cf4746"
     },
     {
       "path": "tests/e2e/landing.spec.ts",
-      "sha256": "4ca6693706168073116b007f06fb47fb585c4af399fdd295422de984f3e0b8da"
+      "sha256": "09d789bb6538c6ecc64c843395a406c9aae94f79b7146444146345a9e39c5986"
     }
   ],
   "captures": [
@@ -64,11 +111,11 @@
     },
     {
       "path": "runtime/en-home-contact-320.png",
-      "sha256": "e8b6a1371ec0a861651815c01d6b982abe8ca0a37803a6c1d47dc5322957700b"
+      "sha256": "fd7d4e5d771e796429f0b89061237403a968ff937c061d055b63c4922e6a18cb"
     },
     {
       "path": "runtime/en-home-contact.png",
-      "sha256": "2ce3b5d94a02c1539623dace72e6b6ac861871d8724deed70870f8390d00304b"
+      "sha256": "d16691df999806682340082fca3ea702f83067d62c6048fbe685a25b30b9f409"
     },
     {
       "path": "runtime/es-contact-320.png",
@@ -80,7 +127,7 @@
     },
     {
       "path": "runtime/es-home-contact-320.png",
-      "sha256": "d4ead4d5ff2c96a513d011724bffbd3aaf503253c5066934a7e7e161869eebd1"
+      "sha256": "4da983423f6442d4a2bd7015d461c6fb43b726dbc560a6b1d21ee86eda2f22d8"
     },
     {
       "path": "runtime/es-home-contact-real.png",
@@ -88,7 +135,7 @@
     },
     {
       "path": "runtime/es-home-contact.png",
-      "sha256": "8215668a05f16c5eee8c13040fc6188ce2f490f35a066d5e249310acbb5f419d"
+      "sha256": "96168f87190967fa1ca09f481550ad0f7b22846f45aa862870514643106e32d6"
     },
     {
       "path": "runtime/pt-br-contact-320.png",
@@ -100,11 +147,18 @@
     },
     {
       "path": "runtime/pt-br-home-contact-320.png",
-      "sha256": "688d579aa4c325287997bf2c19074167a7d35ef7bf4882eb5cdefb3d1f3a17fc"
+      "sha256": "9e6036319febb7ebe7406e824f6331ccc156d234ceeb17b224f2cb4862ab30bf"
     },
     {
       "path": "runtime/pt-br-home-contact.png",
-      "sha256": "f8ed0caa70a1ee4d977f463355c6fca1ecc72cc9b0251295ddf2e338901ad5d3"
+      "sha256": "b9e10ae8c1b88686cacf3fc844da189f59ae2e9725eeb13ff8efe6d12a32d503"
+    }
+  ],
+  "historicalCaptures": [
+    {
+      "path": "runtime/es-home-contact-real.png",
+      "commit": "c75547938c992e0138057e144e716ba6e0d3c8e7",
+      "observation": "Real widget before base synchronization; no form submission."
     }
   ]
 }
