@@ -83,3 +83,21 @@ tracción o mejora de SEO/GEO/AEO; prepara contenido y descubrimiento para medir
 [formulario en Home: capturas, revisión y límites](../evidence/2026-10-16-home-contact-form/README.md).
 El usuario confirmó la activación de Turnstile en Formspark; los mocks locales
 no prueban entrega a Gmail. No se realizó envío real ni publicación.
+
+## Revisión de interacción y cierres · 2026-10-17
+
+| ID        | Entrega                               | Alcance y evidencia                                                                                                                                                                                                                                                                                                                                                         | Estado                                           |
+| --------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| WEB-UX-06 | Ajustes por comentarios de navegación | Continuidad del hover y entradas, máscara mínima de bordes claros, anotación decorativa retirada, formularios en los siete cierres adicionales, Turnstile horizontal y selector de idioma en el footer. 85/85 E2E, 44/44 entrega, tipos sin diagnósticos y crítico 9,3/9,2/9,3, cero bloqueantes. [Evidencia y límites](../evidence/2026-10-17-landing-feedback/README.md). | Verificado local; crítico aprobado; sin publicar |
+
+WEB-UX-06 registra la primera ronda, antes de aprobar los rediseños.
+
+## Analytics y páginas por audiencia · 2026-10-17
+
+| ID        | Entrega                                  | Alcance y evidencia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Estado                                            |
+| --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| WEB-UX-07 | Analytics legible y recorridos distintos | Home compara dos lecturas; Analytics tiene tabs locales de comparación, alternativas y fuentes, sin pedestal. Marcas abre con respuesta anotada; Agencias con entregable y responsabilidades; Nosotros con propósito y método. ES/EN/PT-BR, sin datos personales del equipo por decisión del usuario. Formulario compartido en los tres cierres nuevos. Crítico independiente 9,3/9,2/9,3, cero bloqueantes. [Capturas, límites y verificación](../evidence/2026-10-17-landing-feedback/README.md). | Verificado local; crítico aprobado; listo para PR |
+
+El hero y las pestañas de AI Report se conservan. Los ejemplos son ilustrativos
+y los estados de producto siguen el catálogo. Esta entrega no acredita merge,
+publicación ni recepción real en Formspark o Gmail.

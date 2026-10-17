@@ -251,7 +251,9 @@ for (const locale of locales) {
     await expect(page).toHaveURL(
       new RegExp(`${localizedPath("/productos/analytics/", locale)}$`),
     );
-    await expect(page.locator('[data-home-scene="analytics"]')).toHaveCount(1);
+    await expect(
+      page.locator('[data-analytics-preview="product"]'),
+    ).toHaveCount(1);
   });
 }
 
@@ -300,13 +302,12 @@ test("compact menus remain reversible and link to real pages", async ({
   }
 });
 
-test("four cinematic openers share the approved scenes; charts stay schematic", async ({
+test("product openers preserve approved scenes and Analytics uses the illustrative comparison", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   const scenes = {
     "prompt-intelligence": "prompts",
-    analytics: "analytics",
     agents: "agents",
     traffic: "traffic",
   };
@@ -317,17 +318,16 @@ test("four cinematic openers share the approved scenes; charts stay schematic", 
     await expect(page.locator("main")).not.toContainText(
       /Prendo|Norte|Planificado/,
     );
-    if (scene === "analytics") {
-      await page.locator(".scene-analytics").scrollIntoViewIfNeeded();
-      await expect(
-        page.locator('.study-graph[data-chart-ready="true"]'),
-      ).toHaveCount(2);
-      await expect(page.locator(".analytics-schematic")).toHaveText("Esquema");
-      await expect(page.locator(".analytics-legend")).toContainText(
-        "Competidor A",
-      );
-    }
   }
+  await page.goto("/productos/analytics/");
+  await expect(
+    page.locator('[data-analytics-preview="product"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator(
+      ".analytics-sidebar,.analytics-plinth,canvas[data-study-chart]",
+    ),
+  ).toHaveCount(0);
 });
 
 test("product FAQ works with keyboard and reacts to reduced motion", async ({
@@ -383,7 +383,7 @@ test("ambient motion continues after entry and reduced preference settles all sc
 });
 
 for (const locale of locales) {
-  test(`${locale}: Analytics draws both charts with full motion and loads menu masks`, async ({
+  test(`${locale}: Analytics comparison stays readable with full motion and loads menu masks`, async ({
     page,
   }) => {
     const failures: string[] = [];
@@ -412,39 +412,13 @@ for (const locale of locales) {
       ).toContain(`${name}.svg`);
     }
     await menu.locator("summary").press("Escape");
-    const scene = page.locator(".scene-analytics");
+    const scene = page.locator('[data-analytics-preview="home"]');
     await scene.scrollIntoViewIfNeeded();
-    await expect(scene).toHaveAttribute("data-charts", "ready");
-    await expect(scene).toHaveAttribute("data-animation", "complete", {
-      timeout: 12000,
-    });
-    await expect(page.locator(".graph-trend")).toHaveAttribute(
-      "data-chart-ambient",
-      "playing",
-    );
-    for (const canvas of await scene.locator("canvas").all()) {
-      await expect(canvas).toBeVisible();
-      await expect
-        .poll(() =>
-          canvas.evaluate((element) => {
-            const canvas = element as HTMLCanvasElement;
-            const pixels = canvas
-              .getContext("2d")!
-              .getImageData(0, 0, canvas.width, canvas.height).data;
-            let painted = 0;
-            for (let offset = 3; offset < pixels.length; offset += 4)
-              if (pixels[offset] > 0) painted++;
-            return painted;
-          }),
-        )
-        .toBeGreaterThan(100);
-    }
-    const phase = await page
-      .locator(".graph-trend")
-      .getAttribute("data-chart-phase");
-    await expect
-      .poll(() => page.locator(".graph-trend").getAttribute("data-chart-phase"))
-      .not.toBe(phase);
+    await expect(scene).toBeVisible();
+    await expect(
+      scene.locator("[data-tabs],.analytics-sidebar,.analytics-plinth,canvas"),
+    ).toHaveCount(0);
+    expect((await scene.innerText()).length).toBeGreaterThan(120);
     expect(failures).toEqual([]);
   });
 }
@@ -497,7 +471,10 @@ test("NoJS keeps content, native product FAQ and booking links at 320px", async 
   await expect(page.locator(".traffic-observation-note")).toContainText(
     "no demuestra",
   );
-  await expect(page.locator(".chart-fallback")).toHaveCount(2);
+  await expect(page.locator('[data-analytics-preview="home"]')).toBeVisible();
+  await expect(page.locator('[data-analytics-preview="home"]')).toContainText(
+    "Tu marca",
+  );
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(320);
@@ -571,7 +548,7 @@ test("JSON-LD FAQ answers match the visible product copy, without ratings or off
   }
 });
 
-test("self-only CSP permits the actual bundle and lazy charts with no policy violations", async ({
+test("self-only CSP permits the actual bundle and local tabs with no policy violations", async ({
   browser,
   baseURL,
 }) => {
@@ -602,10 +579,16 @@ test("self-only CSP permits the actual bundle and lazy charts with no policy vio
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/productos/analytics/");
   await expect(page.locator("body")).toHaveAttribute("data-enhanced", "true");
-  await page.locator(".scene-analytics").scrollIntoViewIfNeeded();
+  await page
+    .locator('[data-analytics-preview="product"]')
+    .scrollIntoViewIfNeeded();
+  await page
+    .locator('[data-analytics-preview="product"] [data-tab]')
+    .nth(2)
+    .click();
   await expect(
-    page.locator('.study-graph[data-chart-ready="true"]'),
-  ).toHaveCount(2);
+    page.locator('[data-analytics-preview="product"] [data-tab-panel]:visible'),
+  ).toHaveCount(1);
   expect(violations).toEqual([]);
   expect(errors).toEqual([]);
   await context.close();

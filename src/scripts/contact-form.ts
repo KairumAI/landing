@@ -139,7 +139,7 @@ function enhanceContactForm(form: HTMLFormElement) {
         widget = window.turnstile.render(challenge, {
           sitekey: form.dataset.sitekey!,
           theme: form.closest(".home-contact") ? "dark" : "light",
-          size: "compact",
+          size: "normal",
           callback: (value) => {
             token = value;
             submit.disabled = pending || accepted;
@@ -167,7 +167,7 @@ function enhanceContactForm(form: HTMLFormElement) {
     document.head.append(script);
   };
 
-  // Home's form sits below the fold: request the third-party script only nearby.
+  // Closing forms sit below the fold: request the third-party script only nearby.
   if (typeof IntersectionObserver === "undefined") return loadChallenge();
   const observer = new IntersectionObserver(
     (entries) => {

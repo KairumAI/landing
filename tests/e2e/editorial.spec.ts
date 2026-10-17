@@ -220,7 +220,11 @@ test("commercial pages explain their scope, identify AI Report and link to the g
   ]) {
     await page.goto(path);
     await expect(
-      page.locator("main [data-editorial-commercial]"),
+      page.locator(
+        path === "/soluciones/agencias/"
+          ? '[data-audience-page="agencias"]'
+          : "main [data-editorial-commercial]",
+      ),
     ).toBeVisible();
     await expect(
       page

@@ -26,16 +26,19 @@ integración con la base Astro de Joaquín.
 Home presenta logos desde el inicio, rotor de modelos, respuesta y fuente sobre
 un escenario oscuro; continúa con Prompt Intelligence, Analytics, Agents,
 Traffic, Brand Hub, servicios, recursos y cierre. Las composiciones alternan
-posición y ancho según su contenido. Analytics mantiene el dashboard, una curva
-de menciones y barras comparativas esquemáticas. Traffic separa visitas humanas
+posición y ancho según su contenido. R05 originalmente usaba un dashboard de
+Analytics con curvas y barras esquemáticas; la revisión aprobada del 17 de
+octubre lo reemplaza por lecturas comparables y tabs reales (ver abajo).
+Traffic separa visitas humanas
 de solicitudes de crawlers; una solicitud no demuestra una cita ni una visita.
 Brand Hub es el contexto compartido de los cuatro productos, no una quinta
 herramienta independiente.
 
-Las cuatro aperturas de producto reutilizan estas mismas escenas. El movimiento
+Prompt Intelligence, Agents y Traffic reutilizan sus escenas de Home; Analytics
+comparte el ejemplo de lectura y amplía sus tres vistas en producto. El movimiento
 ambiental continúa después de la entrada y se pausa fuera del viewport o cuando
 la pestaña está oculta. `prefers-reduced-motion` desactiva entradas y movimiento
-continuo. Sin JavaScript siguen visibles texto, imágenes, fallback del gráfico,
+continuo. Sin JavaScript siguen visibles texto, imágenes y las vistas de Analytics,
 enlaces y FAQ nativas. No añadir hilos decorativos ni controles de pausa que
 Bruno retiró del diseño aprobado.
 
@@ -107,3 +110,37 @@ Open Graph, Twitter y Article/BlogPosting apuntan a la imagen de cada lectura.
 No se suman scripts editoriales ni se rasterizan las etiquetas de los diagramas.
 [Dirección y prompts](editorial-illustrations.md) y
 [evidencia de la revisión](../evidence/2026-10-16-editorial-quality/README.md).
+
+## Ajustes solicitados en revisión visual · 2026-10-17
+
+El usuario pidió corregir el retorno del hover y las entradas repetidas al
+navegar entre páginas, retirar la anotación decorativa de la respuesta y
+desvanecer apenas los bordes de las ilustraciones de fondo claro. La máscara
+aditiva ocupa sólo los 4–12 px exteriores; el centro conserva su opacidad y los
+assets originales no se editan.
+
+Los cierres existentes del catálogo y los seis productos reutilizan el mismo
+formulario de Home, manteniendo títulos, agenda y fondo amarillo. Turnstile usa
+su tamaño horizontal oficial, sin transformaciones ni recortes. El selector de
+idioma pasa a la derecha de la fila inferior del footer, con reflow móvil.
+
+Estos cambios quedan registrados en la
+[evidencia de los comentarios](../evidence/2026-10-17-landing-feedback/README.md).
+Las cinco hojas originales y los fingerprints de R05 permanecen intactos; el
+gate permite las inserciones exactas del formulario en los siete cierres
+adicionales. Después el usuario aprobó implementar la propuesta de Analytics y
+la diferenciación de Marcas, Agencias y Nosotros, y abrir una PR.
+
+Analytics reemplaza el dashboard y pedestal por una pregunta, dos lecturas y
+un cambio explicado. Home ofrece la muestra breve; producto reutiliza el
+contrato de tabs accesibles para comparación, alternativas y fuentes, con
+contenido legible sin JS. Marcas abre con una respuesta anotada; Agencias,
+con un entregable y el reparto de responsabilidades; Nosotros, con propósito
+y método editorial. La información personal del equipo queda para después
+por decisión del usuario. Las tres páginas comparten el cierre y formulario
+amarillo existente, sin reemplazar la navegación ni el hero de AI Report.
+
+Los [conceptos](../evidence/2026-10-17-landing-feedback/concepts/README.md)
+registran la composición y sus desviaciones intencionales. Los reemplazos
+exactos se declaran en editorial-integration y se revierten antes de comprobar
+R05; no se regeneran fingerprints ni se modifican sus cinco hojas originales.

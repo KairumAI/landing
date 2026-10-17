@@ -2,9 +2,22 @@ import { escapeHtml as e } from "./escape";
 import { editorialCopy } from "../i18n/editorial";
 import { translator } from "../i18n/marketing";
 import { localeMeta, type Locale } from "../i18n/locales";
+import { createHomeScenes } from "../components/kairum/home-scenes";
+import { createMarketingRenderer } from "../components/kairum/marketing-html";
+import { renderAnalyticsPreview } from "../components/kairum/analytics-preview";
+import {
+  renderAudienceBody,
+  type AudiencePageId,
+} from "../components/kairum/audience-pages";
+import type { ContactSlots } from "../components/kairum/contact-form";
 
 type Edit = { from: string; to: string };
-function editorialEdits(baseline: string, id: string, locale: Locale) {
+function editorialEdits(
+  baseline: string,
+  id: string,
+  locale: Locale,
+  contact?: ContactSlots,
+) {
   let html = baseline;
   const edits: Edit[] = [];
   const ui = editorialCopy(locale).ui;
@@ -88,15 +101,40 @@ function editorialEdits(baseline: string, id: string, locale: Locale) {
     if (!anchor) throw new Error(`Missing commercial section anchor: ${id}`);
     edit(anchor, `${block}${anchor}`);
   }
+  // User-approved visual feedback, 2026-10-17. Preserve R05 source bytes and
+  // reverse these exact rendered replacements before checking its fingerprints.
+  const localize = (fragment: string) =>
+    fragment.replace(
+      /href="(\/[^\"]*)"/g,
+      (_original, path: string) =>
+        `href="${path.startsWith("/informes/") ? `https://kairum.com.ar${path}` : l(path)}"`,
+    );
+  if (id === "home" || id === "analytics") {
+    const mode = id === "home" ? "home" : "product";
+    const original = createHomeScenes(t).homeAnalyticsScene(
+      id === "home" ? "home" : "analytics-product",
+    );
+    edit(localize(original), localize(renderAnalyticsPreview(locale, mode)));
+  }
+  if (id === "marcas" || id === "agencias" || id === "nosotros") {
+    const body = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+    if (!body) throw new Error(`Missing audience main: ${id}`);
+    const closing = createMarketingRenderer(t, contact).marketingClosing();
+    edit(
+      body,
+      localize(renderAudienceBody(id as AudiencePageId, locale, closing)),
+    );
+  }
   return { html, edits };
 }
 export const integrateEditorialContent = (
   html: string,
   id: string,
   locale: Locale,
-) => editorialEdits(html, id, locale).html;
+  contact?: ContactSlots,
+) => editorialEdits(html, id, locale, contact).html;
 
-/** Undo only the explicit user-approved editorial deltas; all remaining bytes must still match R05. */
+/** Undo only explicit user-approved deltas; all remaining bytes must match R05. */
 export function restoreR05Content(
   rendered: string,
   baseline: string,
