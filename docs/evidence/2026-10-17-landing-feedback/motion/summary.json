@@ -1,0 +1,18 @@
+{
+  "hyperlink-reveal-frames.json": {
+    "hiddenAfterFirstPaint": 0,
+    "samples": 134
+  },
+  "agents-return-frames.json": {
+    "maxLateStep": 0.083984375,
+    "samples": 61
+  },
+  "answer-return-frames.json": {
+    "maxLateStep": 0.05029296875,
+    "samples": 61
+  },
+  "archive-return-frames.json": {
+    "maxLateStep": 0.06427001953125,
+    "samples": 61
+  }
+}

@@ -1,0 +1,544 @@
+{
+  "baseCommit": "be9383149d79f6ae9991ea75af02f747875a4b30",
+  "branch": "feat/landing-visual-feedback",
+  "state": "verified-local-candidate-for-pull-request",
+  "environment": {
+    "os": "Windows 11 ARM64",
+    "runtime": "Bun 1.4.0",
+    "browser": "installed Microsoft Edge via Playwright"
+  },
+  "verification": {
+    "e2e": 113,
+    "delivery": 46,
+    "astroFiles": 112,
+    "referenceVariants": 126,
+    "critic": {
+      "usability": 9.3,
+      "style": 9.2,
+      "fidelity": 9.3,
+      "blockers": 0
+    }
+  },
+  "files": [
+    {
+      "path": "docs/design/design-system.md",
+      "sha256": "aa66d59b83ff18abb12c5af74462530cad21631f894ffb54c025ecbae422516e"
+    },
+    {
+      "path": "docs/product/feature-register.md",
+      "sha256": "bb56f7e01cf9ab2a962d09b6c7f2f343a875b0f7b30c51f4d7f049fc4d2863d9"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-17-visual-feedback.md",
+      "sha256": "c05a41b5402408d68d0d914259455907f72e7fe914799b9c558510df7b95aac5"
+    },
+    {
+      "path": "scripts/verify-approved-reference.ts",
+      "sha256": "43304ad042e3ad8184fda20a1ef3a31343a0535adcd8f3a24508e066949c301b"
+    },
+    {
+      "path": "src/components/kairum/analytics-preview.ts",
+      "sha256": "0da3f4074ecf72e0bd349252091aad11284c48b0cc10f0c705c87516e8ff8278"
+    },
+    {
+      "path": "src/components/kairum/audience-pages.ts",
+      "sha256": "07811ed989134c4e477f64885dede4124897b06fbf0b8bb51597836e109afa74"
+    },
+    {
+      "path": "src/components/kairum/marketing-html.ts",
+      "sha256": "0e0fc5f5461d2f701ce6b322a4d8958767ef78c94fdf8402593a59fd56fef425"
+    },
+    {
+      "path": "src/components/MarketingPage.astro",
+      "sha256": "b76141ca9feb6fb040860ca7805e92d3bd33e58dcf3ebe433cc574e0025d03e3"
+    },
+    {
+      "path": "src/i18n/analytics-preview.ts",
+      "sha256": "26c3487105fc6c086075ca103350c2b8b1514d71eef95e0c63defccfb86cf43a"
+    },
+    {
+      "path": "src/i18n/audience-pages.ts",
+      "sha256": "2e85587e00edda66915f5c480ceb259dc2e9ec2bd0c855fe7566bd5ef2b23e54"
+    },
+    {
+      "path": "src/layouts/Base.astro",
+      "sha256": "a7361e7d102037a4e2c12b6d6a31743d29dd103ad654be1e9a080ce529bb3f55"
+    },
+    {
+      "path": "src/lib/editorial-integration.ts",
+      "sha256": "9d00737c327068a5b90a4b784559838a48ef9b8abac0b78988d49a12abe86784"
+    },
+    {
+      "path": "src/lib/routes.ts",
+      "sha256": "ab5f11245af94ca4b6c9b194b855bf612ababeb8a16d556d9e517c791ae85ef8"
+    },
+    {
+      "path": "src/scripts/cinematic/app.ts",
+      "sha256": "1e9b4691e5aac8bab3d2c4456b1c75db2c840a3268f780a500194bf4497f5ef3"
+    },
+    {
+      "path": "src/scripts/cinematic/home-motion.ts",
+      "sha256": "cfb7ebdc1e1b8b066363d0078b7bb1d29edbbd290a3da996e5253f243547df55"
+    },
+    {
+      "path": "src/scripts/contact-form.ts",
+      "sha256": "0344d10ae59fe6270dfacdb7334247b8b05db7ccca578528a6aaa6d4f7c0646b"
+    },
+    {
+      "path": "src/styles/analytics-preview.css",
+      "sha256": "b22363b08218bc226cee9e44a58f31b53860498f22995c81a21cca8856a3fe6b"
+    },
+    {
+      "path": "src/styles/kairum-audiences.css",
+      "sha256": "eb1c6e49df84f98462c46e36fc3947b8db96eae4392c3f024732ca5caa796c90"
+    },
+    {
+      "path": "src/styles/kairum-contact.css",
+      "sha256": "668b8bb31e51f09e4edb0311b07dabffbacaaecca2b954e54f6a9cc0ff0c944d"
+    },
+    {
+      "path": "src/styles/kairum-refinements.css",
+      "sha256": "c01aa9e14be572ad359aee4d2381d2ea8ed167a2acb0226a6c4f475ce6034781"
+    },
+    {
+      "path": "tests/delivery/editorial-reference.spec.ts",
+      "sha256": "25eef83feaea15acfdc9b84e0f6a9708a12c3995b00798d6078679e14035abc3"
+    },
+    {
+      "path": "tests/e2e/analytics-preview.spec.ts",
+      "sha256": "e094b8ed8b5764d1902a612da83e9496241bd444d1f762758ff4a194520f389d"
+    },
+    {
+      "path": "tests/e2e/audience-pages.spec.ts",
+      "sha256": "a17ad3f25e057c24d81d7266bfbba58012a4e3221cb96385367248dc4475e3e5"
+    },
+    {
+      "path": "tests/e2e/contact.spec.ts",
+      "sha256": "f2b0f37928ab27a46574769274dbe1639fea0102e814e59f603be712e18c20d4"
+    },
+    {
+      "path": "tests/e2e/editorial.spec.ts",
+      "sha256": "98f9c93b71318d10909adbbbaaf17638c18b62c5141a4437871add06b6f55a79"
+    },
+    {
+      "path": "tests/e2e/landing.spec.ts",
+      "sha256": "4721fcc4fc1a9f02eac4fe0ee13790fb1c35068b7dd6745ab5f48a908d16bcef"
+    },
+    {
+      "path": "tests/e2e/motion-feedback.spec.ts",
+      "sha256": "a20d0b021dd3bd0f03aa5adf1d020127cca7f21932f4f0d5b27e54e1bf60ff78"
+    }
+  ],
+  "captures": [
+    {
+      "path": "runtime/analytics/en-alternatives-1440.png",
+      "sha256": "5915842be0b72ee6f245e4101b1f0145e4b936deeb0e359390b73134ec543e92"
+    },
+    {
+      "path": "runtime/analytics/en-alternatives-320.png",
+      "sha256": "ff745994e2e3008e48829b8394fbc447db5fc160533d4e1a0eb747184c45d12a"
+    },
+    {
+      "path": "runtime/analytics/en-comparison-1440.png",
+      "sha256": "bba4ee390e091579ca939a1deb6a6c717d14f26e85f842a76ea99907deb65311"
+    },
+    {
+      "path": "runtime/analytics/en-comparison-320.png",
+      "sha256": "ee590ea213601475e9c9300cd2ab75778309876555dd2bfc5701e491ae43281f"
+    },
+    {
+      "path": "runtime/analytics/en-home-1440.png",
+      "sha256": "b7db057bf9fc0f2b643362b8c80e046905fe06cb4de66ea3beb713a3621461e6"
+    },
+    {
+      "path": "runtime/analytics/en-home-320.png",
+      "sha256": "b695e954606611a19e90d7c742ad0cd4faf5fe61a5862685f0e0d9d7a2584e95"
+    },
+    {
+      "path": "runtime/analytics/en-sources-1440.png",
+      "sha256": "94bc05bf125b25d2227b9229df667a5a758002cb295cbd27800d6391f0d38f62"
+    },
+    {
+      "path": "runtime/analytics/en-sources-320.png",
+      "sha256": "0993824ed7ea1bd09a920d74102047388ac334619bb342224fd2010c0ef1e362"
+    },
+    {
+      "path": "runtime/analytics/es-alternatives-1440.png",
+      "sha256": "91f0ed26c8624723cf946337a903227ad199ce5a9c63719ce40de468f883e3dd"
+    },
+    {
+      "path": "runtime/analytics/es-alternatives-320.png",
+      "sha256": "62f39482af6983ab84e6fd5dd1279f5d609370d15ff6bb91bb15e711bd99aa8b"
+    },
+    {
+      "path": "runtime/analytics/es-comparison-1440.png",
+      "sha256": "fa6104d5e899aee4eca384e0cdaed216ca6798a02dd653724f9cbe774a062db2"
+    },
+    {
+      "path": "runtime/analytics/es-comparison-320.png",
+      "sha256": "d66a5bec5951b47827627a30df713e06b17d0590235b389d621fff2bf92b88f8"
+    },
+    {
+      "path": "runtime/analytics/es-home-1440.png",
+      "sha256": "3a5b7dfbf7f31019d983cdd5ee61107e92e7079c7f9ee336380f5ca6b8e699cf"
+    },
+    {
+      "path": "runtime/analytics/es-home-320.png",
+      "sha256": "2215ca8acac6476fb077b3137deffd8036fab8c5363a0912eb5bc20ebc7a311c"
+    },
+    {
+      "path": "runtime/analytics/es-sources-1440.png",
+      "sha256": "f55da3c96b0b8e2e69fb17d04d73c44a5db971b794f2c7ea66846a0bba16dad6"
+    },
+    {
+      "path": "runtime/analytics/es-sources-320.png",
+      "sha256": "e9efa0485e2d7af69a18631f9674264c9468d958c6221c1a4609d3d55ab36520"
+    },
+    {
+      "path": "runtime/analytics/pt-br-alternatives-1440.png",
+      "sha256": "97e790859d5229800ccdb2337fd52da897b7c887d924aafff2d507d7335f9cee"
+    },
+    {
+      "path": "runtime/analytics/pt-br-alternatives-320.png",
+      "sha256": "6051c66941fe53fd4e916f25a41c8a9589c9adc2be1483cf4d942fae995a0f84"
+    },
+    {
+      "path": "runtime/analytics/pt-br-comparison-1440.png",
+      "sha256": "805e868f4a011f53ad521092a335c03b100e4f2b2945e646a50de8d163c91ba2"
+    },
+    {
+      "path": "runtime/analytics/pt-br-comparison-320.png",
+      "sha256": "14552d102c2f8230a228b14faeec393cb7f6826aea3183ea1138a92982152c2d"
+    },
+    {
+      "path": "runtime/analytics/pt-br-home-1440.png",
+      "sha256": "de540aaa18b90172295604117141371c7e112d3d9e2ffab776793c28ab258a3d"
+    },
+    {
+      "path": "runtime/analytics/pt-br-home-320.png",
+      "sha256": "bd29257a38675cdba8d70a2ef9749b6c294b07f1f8830544e261a07907ff9c19"
+    },
+    {
+      "path": "runtime/analytics/pt-br-sources-1440.png",
+      "sha256": "2ccb14c4fa33df3f44d2abe8d301d22257b6cb77c28e76885d1ddf45735f5d71"
+    },
+    {
+      "path": "runtime/analytics/pt-br-sources-320.png",
+      "sha256": "86c4103c3e7d1bb73f01a8869182efb3269850fb6f91a0f38e5a2d6310b1b7e9"
+    },
+    {
+      "path": "runtime/audiences/en-agencias-1440.png",
+      "sha256": "dd0c44fa7f93eae033d523c4711d4ff780ad76f3bebe59395e95a51c9e428121"
+    },
+    {
+      "path": "runtime/audiences/en-agencias-320.png",
+      "sha256": "db2f3bbb0f73b71e2bf76598a8cfc09256cf628735c5202b56839502515bff21"
+    },
+    {
+      "path": "runtime/audiences/en-marcas-1440.png",
+      "sha256": "db6558c79fae7d357888fff2b4f0abd015ffa6578276b3f41df4d88a5ddfe0a0"
+    },
+    {
+      "path": "runtime/audiences/en-marcas-320.png",
+      "sha256": "9c6cc83c14ca6a46038e20b7582d093a03c30654444ec67503a7d73c182ea89e"
+    },
+    {
+      "path": "runtime/audiences/en-nosotros-1440.png",
+      "sha256": "f26cb800011efcf6a3d10031c85c07df42bad63c64f6ca306a3b24c4af6c0cd2"
+    },
+    {
+      "path": "runtime/audiences/en-nosotros-320.png",
+      "sha256": "d092b894d7310610e166dbc154ac17d5d480cab4c0d7dbfde6cfde6821cab075"
+    },
+    {
+      "path": "runtime/audiences/es-agencias-1440.png",
+      "sha256": "5c3af92db20016e25a67fe9d94dd830ce6f5a203359cfcd19393999ee54e288f"
+    },
+    {
+      "path": "runtime/audiences/es-agencias-320.png",
+      "sha256": "b9b5146a3831020333fac6b9a5070082f00427add072302cd0d18a7940be6b9a"
+    },
+    {
+      "path": "runtime/audiences/es-marcas-1440.png",
+      "sha256": "02cc8af16f0fcfe8ba6131082b19a01675d3f7e971b14c72e25c1b5dbdff2690"
+    },
+    {
+      "path": "runtime/audiences/es-marcas-320.png",
+      "sha256": "393282b4f7888b4c62ff60d19f545a7c1720c7d850ccb2681190b97288692954"
+    },
+    {
+      "path": "runtime/audiences/es-nosotros-1440.png",
+      "sha256": "8e5140516abdd57769f8dcfe421400b199f98bb6666b56c809e64599ef623f98"
+    },
+    {
+      "path": "runtime/audiences/es-nosotros-320.png",
+      "sha256": "b63a43062ec1121147adb3daa023a1dfee7090e83d8ace91fef827928ffe5181"
+    },
+    {
+      "path": "runtime/audiences/pt-br-agencias-1440.png",
+      "sha256": "ae143968bfb809c11d16b880562af862f8fe2a498af9bd9fbe50114c479d8350"
+    },
+    {
+      "path": "runtime/audiences/pt-br-agencias-320.png",
+      "sha256": "dba4303d055fa10d899d336c0c3b9b0f30d5c70cb943ea23969a5d3d638c7575"
+    },
+    {
+      "path": "runtime/audiences/pt-br-marcas-1440.png",
+      "sha256": "0e15ff58de31604e7482f48ca84f376ea05ed13a2fa55fb0bb4aecb1c9e2598e"
+    },
+    {
+      "path": "runtime/audiences/pt-br-marcas-320.png",
+      "sha256": "78d06f3664272b5aa5cb2f0a69ace48c4f504210038f5df263206f5a0e3d1107"
+    },
+    {
+      "path": "runtime/audiences/pt-br-nosotros-1440.png",
+      "sha256": "1ae7e57364bb03fbf5bba2f70c1cc7b9aa98e63bf02fa1555a518ab919d80d44"
+    },
+    {
+      "path": "runtime/audiences/pt-br-nosotros-320.png",
+      "sha256": "6487cb5078130b522b89cf1096da370eb064f823f17e59247183a3c26e6c683e"
+    },
+    {
+      "path": "runtime/candidate-contacto-horizontal-real.png",
+      "sha256": "c8d0ae714695b422c60cd4312ed4723a7e51db2ed9414f9772c7e604e21e3cbf"
+    },
+    {
+      "path": "runtime/candidate-footer-real.png",
+      "sha256": "88e7e8e0c6e7ac38c63d0690555c3f8526e380fe919e77b3efd5ec57201e746d"
+    },
+    {
+      "path": "runtime/candidate-prompt-feather-real.png",
+      "sha256": "816d931ce7b4f0a03a20119eb711fe0e3e8c20ab07806e305272d407b022e73b"
+    },
+    {
+      "path": "runtime/candidate-report-yellow-ready-real.png",
+      "sha256": "f9db10b3fc6c8d01b50509a57a0d8312eebd09d9a1cd1f83a82de362130176cf"
+    },
+    {
+      "path": "runtime/candidate-resources-feather-real.png",
+      "sha256": "645b864af2a5bfb4662f146d5652b752b9ec421745669405e0d8b1a5c078aba4"
+    },
+    {
+      "path": "runtime/candidate-traffic-feather-real.png",
+      "sha256": "77195ddc07f1a9a6a309fda27681d85aeac75c4f21e29d615de829bbeb0f176e"
+    },
+    {
+      "path": "runtime/en-catalog-closing-320.png",
+      "sha256": "075616a8af578be7389f94fc339e2ba23a6dcd2e29b81eacb51b2e2403e0cb79"
+    },
+    {
+      "path": "runtime/en-catalog-closing.png",
+      "sha256": "207254aa1cab5fdb92c17ba847cfb1aaee532edf73ad3d85534c5198e1222660"
+    },
+    {
+      "path": "runtime/en-contact-320.png",
+      "sha256": "06d422ab1a8f20beda6aeb22d754f83f5a56810c9f87b64114e31f197804f17d"
+    },
+    {
+      "path": "runtime/en-contact-desktop.png",
+      "sha256": "29eb68ae48ed42652f740d4b196b01ce74732169aa2332ba64bc7771816c2206"
+    },
+    {
+      "path": "runtime/en-footer-languages-320.png",
+      "sha256": "c5b32ee728e518b587077152774d4e9e048f83eaaef3ea54f18041480369c35a"
+    },
+    {
+      "path": "runtime/en-footer-languages.png",
+      "sha256": "bd4f8904cc8443bf847266ee6ea4ddf3d530bf82b2afc20bced96e2da609f699"
+    },
+    {
+      "path": "runtime/en-home-closing-320.png",
+      "sha256": "7257cfa94c9a44bc73f80b334492f5ac10795fcb18981b615f6648d35df68e60"
+    },
+    {
+      "path": "runtime/en-home-closing.png",
+      "sha256": "4a9981140dd1409bfdea977e92c44505caf62db524036b2d711d355970fa5b6b"
+    },
+    {
+      "path": "runtime/en-report-closing-320.png",
+      "sha256": "0834c6314f9c3a1045e1bf3434a800695a4727e37975437a82f627d28e1ff058"
+    },
+    {
+      "path": "runtime/en-report-closing.png",
+      "sha256": "9d8e9eb5d93c3f66e652f73702db4ccf8a5224908c2df5f846829f7d2d5d151c"
+    },
+    {
+      "path": "runtime/es-agencias-closing-320.png",
+      "sha256": "8f81e6916e0eb5a7aa91b844d1e5117aa90042fbe1f83c609a82e16fd5a97dac"
+    },
+    {
+      "path": "runtime/es-agencias-closing.png",
+      "sha256": "7706ab58c5ec96a565aed8bf4bf1ecace08aa0465e2a00b215edfab940552f58"
+    },
+    {
+      "path": "runtime/es-catalog-closing-320.png",
+      "sha256": "8f81e6916e0eb5a7aa91b844d1e5117aa90042fbe1f83c609a82e16fd5a97dac"
+    },
+    {
+      "path": "runtime/es-catalog-closing.png",
+      "sha256": "7706ab58c5ec96a565aed8bf4bf1ecace08aa0465e2a00b215edfab940552f58"
+    },
+    {
+      "path": "runtime/es-contact-320.png",
+      "sha256": "7789de8b33f53d2cc06490de9e088a8e3f9acc0f3a7d6d6ddfa98902b0090c81"
+    },
+    {
+      "path": "runtime/es-contact-desktop.png",
+      "sha256": "22e385e887b4de0f4443afe71c25293f6c2af8674776a49d9bd6ca6150a4d2b1"
+    },
+    {
+      "path": "runtime/es-footer-languages-320.png",
+      "sha256": "d7b8028bcad8a124dfc8efdea95fd9c4e63d100b73255a350e20bff057e8784d"
+    },
+    {
+      "path": "runtime/es-footer-languages.png",
+      "sha256": "d1e7313d35b5b681456cf7d50d9251b09dfac94fd10427f62f30a4ef4d830f3c"
+    },
+    {
+      "path": "runtime/es-home-closing-320.png",
+      "sha256": "dedd505aba7d2a568a0729b8edf9c163d6f945155147a0baca81dd6745af6a9d"
+    },
+    {
+      "path": "runtime/es-home-closing.png",
+      "sha256": "d624f69617b2b2b0d959a899d9723cf217da6351ed0e7a6c35c429d787523334"
+    },
+    {
+      "path": "runtime/es-marcas-closing-320.png",
+      "sha256": "8f81e6916e0eb5a7aa91b844d1e5117aa90042fbe1f83c609a82e16fd5a97dac"
+    },
+    {
+      "path": "runtime/es-marcas-closing.png",
+      "sha256": "094dc3fb1f1b4ffbfd1ce6b7b5c755b3a4ad774ec46723cbdc0cc2acb6e73e59"
+    },
+    {
+      "path": "runtime/es-nosotros-closing-320.png",
+      "sha256": "60daf23958ba3b1fe561f3a664f4c0b425eae27f773ae1e261c66b8d93a88bfa"
+    },
+    {
+      "path": "runtime/es-nosotros-closing.png",
+      "sha256": "cdc77b4ed24f1e7c9865163734ecfa8b14cde57e0ea1c9554e1c174ae254130e"
+    },
+    {
+      "path": "runtime/es-report-closing-320.png",
+      "sha256": "fa80b3173c0abd4134f2ec5124080084b6592830cdd02372b7739070fda6538d"
+    },
+    {
+      "path": "runtime/es-report-closing.png",
+      "sha256": "aff304949ffeaa598a279f73e22be379a6256a8a617a3b6e3ad8fd2285afca1b"
+    },
+    {
+      "path": "runtime/pt-br-catalog-closing-320.png",
+      "sha256": "5096acf19883aaec212b1f6ee099a4832355523eb31983fe67cb5326cdf41283"
+    },
+    {
+      "path": "runtime/pt-br-catalog-closing.png",
+      "sha256": "06601129aa8ee9c13a40839d7d9dc64e0f4c8462c00d629c8751c852df04631e"
+    },
+    {
+      "path": "runtime/pt-br-contact-320.png",
+      "sha256": "a858ab3244bf93c8272ae2f66501955120eed04d30ccae18ce9299cfdb3c0699"
+    },
+    {
+      "path": "runtime/pt-br-contact-desktop.png",
+      "sha256": "265c3bf461ec13e76af804811a82a001bdc7b0592b6a97e76c2309716a4463f6"
+    },
+    {
+      "path": "runtime/pt-br-footer-languages-320.png",
+      "sha256": "28c9a561e14d77985a1955195be7f57175e8dc06c3d186efca39584a23f019ad"
+    },
+    {
+      "path": "runtime/pt-br-footer-languages.png",
+      "sha256": "3579926fa514fdbcbfcf9e4a836187c459fba407dc5be31be054230a008b25fb"
+    },
+    {
+      "path": "runtime/pt-br-home-closing-320.png",
+      "sha256": "10e09110399d39ebb8d52b2f539332994a4a4ce25afae1dee5e39d3c2d2cf0ff"
+    },
+    {
+      "path": "runtime/pt-br-home-closing.png",
+      "sha256": "38d645d7bb1848c3cb8b40db55240a4e2b525d9f3d531380b7893fa13c6187f8"
+    },
+    {
+      "path": "runtime/pt-br-report-closing-320.png",
+      "sha256": "2f9154305c13bf0af8bc5e3ac1d29fd09be66375cb7549ae2ea48918fadbe597"
+    },
+    {
+      "path": "runtime/pt-br-report-closing.png",
+      "sha256": "31a93bb69e0ff84029e0f9af54f77315e83d83268ab46936974cff3bb9aff89f"
+    },
+    {
+      "path": "runtime/report-art-no-feather-real.png",
+      "sha256": "2d4c27f291ee7b4cb53ec93c88ca2fde4644cccd8719c9ff40d5c8b54f9d9666"
+    },
+    {
+      "path": "runtime/wide/agencias-2244.png",
+      "sha256": "773a2e063c4df2317578f951761a90f8293af6d137a523ae8495d4a11b017860"
+    },
+    {
+      "path": "runtime/wide/analytics-2244.png",
+      "sha256": "634c596124b4e7a6bc7250db4dc6638354d4c7d9bdb153c3b2f785a44e1cdb67"
+    },
+    {
+      "path": "runtime/wide/marcas-2244.png",
+      "sha256": "c64f3e2500a2633d82bc5bcf9941c3607eba51ad4db9312af634a4f0ad2a86d9"
+    },
+    {
+      "path": "runtime/wide/nosotros-2244.png",
+      "sha256": "6fbfec5e14f71367bd52ee4ad8cea84cbe08fbee38dbef660922e74863c63969"
+    }
+  ],
+  "concepts": [
+    {
+      "path": "concepts/agencias.png",
+      "sha256": "b696566b8de519dee43c069cbf61b7181b3454406b7684ed9eb3b0e199c0c48a"
+    },
+    {
+      "path": "concepts/analytics.png",
+      "sha256": "18b99727f751f2232c37a6de104d0a968fe7baab6f2913c00f3f877d33dd6e4b"
+    },
+    {
+      "path": "concepts/marcas.png",
+      "sha256": "68f7edd095784501486ee0e3673f6d1e1a32162746826f263bc7b442cc593cdc"
+    },
+    {
+      "path": "concepts/nosotros.png",
+      "sha256": "1dd53633cca25470f2f46bfca30df650714d9d1fe075bdac52996e6d5f0599d5"
+    }
+  ],
+  "metrics": [
+    {
+      "path": "motion/agents-return-frames.json",
+      "sha256": "96740c2d561cb076c51bf1c0a9fded33c8eb66155aea352a570c7779b2ef2f57"
+    },
+    {
+      "path": "motion/answer-return-frames.json",
+      "sha256": "904c5bb220982b000a5a41a9bd8bcde01d94e71ff607cf4ca72b5a018f529edc"
+    },
+    {
+      "path": "motion/archive-return-frames.json",
+      "sha256": "68a197dfeae62e82f8878339b98424efd5794cf2088a668c09e88e547cb79b15"
+    },
+    {
+      "path": "motion/baseline.json",
+      "sha256": "3c7e803525da6e3ee992b2d41bf2aaa4e853da1342c4e36e22db3556983befef"
+    },
+    {
+      "path": "motion/hyperlink-reveal-frames.json",
+      "sha256": "a75fc9d013ae6b3e921bf016c0eafff8633ba9483474248ff7b48af598317afa"
+    },
+    {
+      "path": "motion/summary.json",
+      "sha256": "00c318d3a823aa631c6afff988b1428ce2049e346ec0d65caf5223ec7435e726"
+    }
+  ],
+  "evidenceDocs": [
+    {
+      "path": "concepts/README.md",
+      "sha256": "e5e57d4d2d5b1323a73954cf91557c8f4e968d94c8629610cd44ebdc090b8635"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e73e5d12af16d9b4e06e37a6cfb09e1543a5a6e539acc172c6caec9ddc5a18be"
+    }
+  ]
+}

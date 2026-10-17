@@ -1,0 +1,33 @@
+/* Only feather the outer background; the artwork remains fully opaque inside. */
+:is(
+  .prompt-discovery-stage > img,
+  .traffic-observation-art > img,
+  .resource-book-cover > img,
+  .service-card-art,
+  .editorial-art:not([src$="/home-reports.webp"]),
+  .context-art
+) {
+  --art-edge-feather: clamp(4px, 0.8vw, 12px);
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      #000 var(--art-edge-feather),
+      #000 calc(100% - var(--art-edge-feather)),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      transparent,
+      #000 var(--art-edge-feather),
+      #000 calc(100% - var(--art-edge-feather)),
+      transparent
+    );
+  mask-composite: intersect;
+  mask-repeat: no-repeat;
+}
+
+/* The scene already explains this relationship through its visible content. */
+.scene-answer .scene-annotation {
+  display: none;
+}

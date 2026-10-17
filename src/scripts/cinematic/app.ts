@@ -43,6 +43,10 @@ all("[data-tabs]").forEach((group) => {
   const panels = tabs.map((tab) => document.getElementById(tab.dataset.tab!)!);
   list.setAttribute("role", "tablist");
   function select(index: number, focus = false) {
+    if (tabs[index].getAttribute("aria-selected") === "true") {
+      if (focus) tabs[index].focus();
+      return;
+    }
     tabs.forEach((tab, i) => {
       tab.setAttribute("aria-selected", String(i === index));
       tab.tabIndex = i === index ? 0 : -1;
@@ -149,7 +153,7 @@ window.addEventListener("hashchange", () => revealHash(true));
 window.addEventListener("popstate", () => revealHash(true));
 const initialHash = location.hash;
 let initialHashPending = Boolean(initialHash);
-for (const event of ["wheel", "touchmove", "keydown"])
+for (const event of ["wheel", "touchmove", "keydown", "pointerdown"])
   window.addEventListener(
     event,
     () => {
@@ -358,12 +362,20 @@ function setupScenes() {
   gsap.registerPlugin(ScrollTrigger);
   sceneContext = gsap.context(() => {
     all('[data-reveal]:not([data-revealed="true"])').forEach((element) => {
+      // On a cold hyperlink navigation the static page may paint before this
+      // module arrives. Never hide content already in view to replay an entry.
+      if (element.getBoundingClientRect().top < innerHeight) {
+        element.dataset.revealed = "true";
+        return;
+      }
       gsap.from(element, {
         y: 8,
         opacity: 0,
         duration: 0.7,
         ease: "power2.out",
-        immediateRender: false,
+        // Only offscreen content is prepared; it cannot flash visible -> hidden
+        // when ScrollTrigger begins the one-shot reveal.
+        immediateRender: true,
         scrollTrigger: { trigger: element, start: "top 92%", once: true },
         onComplete: () => {
           element.dataset.revealed = "true";

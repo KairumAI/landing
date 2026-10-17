@@ -8,6 +8,7 @@ import { translator } from "../i18n/marketing";
 import { seo } from "../i18n/marketing/seo";
 import { contactConfig } from "../lib/contact-config";
 import { createContactSlots } from "./kairum/contact-form";
+import { escapeHtml } from "../lib/escape";
 import "../styles/kairum-contact.css";
 interface Props {
   pageId?: PageId;
@@ -18,11 +19,24 @@ const config = contactConfig(
   import.meta.env.PUBLIC_FORMSPARK_FORM_ID,
   import.meta.env.PUBLIC_TURNSTILE_SITE_KEY,
 );
-const { html } = pageContent(
+const { html: contentHtml } = pageContent(
   pageId,
   locale,
   createContactSlots(locale, config),
 );
+const languageNav = `<nav class="footer-languages" aria-label="${escapeHtml(seo[locale].language)}">${equivalentPaths(
+  pageId,
+)
+  .map(
+    ({ locale: code, path }) =>
+      `<a href="${escapeHtml(path)}" lang="${localeMeta[code].htmlLang}" hreflang="${localeMeta[code].hreflang}" data-language-link${locale === code ? ' aria-current="page"' : ""}>${escapeHtml(localeMeta[code].name)}</a>`,
+  )
+  .join("")}</nav>`;
+// Add the same selector to the shared footer of marketing and editorial pages.
+const footerEnd = "</div></div></footer>";
+if (contentHtml.split(footerEnd).length !== 2)
+  throw new Error(`Missing unique footer language anchor: ${pageId}`);
+const html = contentHtml.replace(footerEnd, `${languageNav}${footerEnd}`);
 const meta = metadata(pageId, locale, Astro.site!);
 const t = translator(locale);
 const clientCopy = {
@@ -41,21 +55,6 @@ const serialize = (value: unknown) =>
     set:html={serialize(meta.structuredData)}
   />
   <Fragment set:html={html} />
-  <div class="locale-strip">
-    <nav class="wrap" aria-label={seo[locale].language}>
-      {equivalentPaths(pageId).map(({ locale: code, path }) => (
-        <a
-          href={path}
-          lang={localeMeta[code].htmlLang}
-          hreflang={localeMeta[code].hreflang}
-          data-language-link
-          aria-current={locale === code ? "page" : undefined}
-        >
-          {localeMeta[code].name}
-        </a>
-      ))}
-    </nav>
-  </div>
   <script
     is:inline
     type="application/json"
@@ -74,30 +73,3 @@ const serialize = (value: unknown) =>
       );
   </script>
 </Base>
-<style>
-  .locale-strip {
-    background: var(--kairum-white);
-    border-top: 1px solid var(--kairum-line);
-  }
-  .locale-strip nav {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    min-height: 64px;
-    flex-wrap: wrap;
-    padding-block: 12px;
-  }
-  .locale-strip a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    font-size: 14px;
-    text-decoration: none;
-    color: var(--kairum-muted);
-  }
-  .locale-strip a[aria-current="page"] {
-    color: var(--kairum-ink);
-    text-decoration: underline;
-    text-underline-offset: 6px;
-  }
-</style>

@@ -93,5 +93,5 @@ export function pageContent(
   const html = editorial
     ? localizeLinks(renderEditorialPage(editorial.id, locale), locale)
     : marketingPageContent(id as MarketingPageId, locale, contact).html;
-  return { html: integrateEditorialContent(html, id, locale) };
+  return { html: integrateEditorialContent(html, id, locale, contact) };
 }

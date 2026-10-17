@@ -3,9 +3,11 @@ import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
 import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
-import { pageContent } from "../../src/lib/routes";
+import { pageContent, pages, localizedPath } from "../../src/lib/routes";
 import { contactConfig } from "../../src/lib/contact-config";
 import { createContactSlots } from "../../src/components/kairum/contact-form";
+import { contactCopy } from "../../src/i18n/contact";
+import { locales, localeMeta, type Locale } from "../../src/i18n/locales";
 
 const csp = readFileSync("public/_headers", "utf8")
   .split("\n")
@@ -41,6 +43,15 @@ async function capture(page: Page, name: string, selector: string) {
 const providerScript = `window.turnstile = {
   render(container, options) {
     container.setAttribute('data-test-challenge', 'rendered');
+    container.setAttribute('data-test-challenge-size', options.size);
+    container.setAttribute('data-test-challenge-theme', options.theme);
+    const frame = document.createElement('iframe');
+    frame.title = 'Synthetic Turnstile verification';
+    frame.width = '300';
+    frame.height = '65';
+    frame.style.cssText = 'display:block;border:0';
+    frame.srcdoc = '<body style="margin:0;display:grid;place-items:center;box-sizing:border-box;width:300px;height:65px;border:1px solid #85857c;background:#fafaf7;color:#181818;font:12px sans-serif">Turnstile — offline fixture</body>';
+    container.replaceChildren(frame);
     window.addEventListener('test:challenge-expired', options['expired-callback']);
     window.addEventListener('test:challenge-ready', () => options.callback('synthetic-turnstile-token'));
     options.callback('synthetic-turnstile-token');
@@ -65,8 +76,11 @@ test.beforeEach(async ({ page }) => {
 async function openConfigured(
   page: Page,
   ready = true,
-  path: "/contacto/" | "/" = "/contacto/",
+  path = "/contacto/",
+  locale: Locale = "es",
 ) {
+  const definition = pages.find((entry) => entry.path === path)!;
+  const target = localizedPath(path, locale);
   await page.route("https://challenges.cloudflare.com/**", (route) =>
     route.fulfill({
       contentType: "application/javascript",
@@ -78,35 +92,35 @@ async function openConfigured(
           ),
     }),
   );
-  await page.route(`**${path}`, async (route) => {
-    const response = await route.fetch();
-    const main = pageContent(
-      path === "/" ? "home" : "contacto",
-      "es",
-      createContactSlots("es", configured),
-    ).html.match(/<main\b[\s\S]*?<\/main>/)![0];
-    await route.fulfill({
-      response,
-      headers: { ...response.headers(), "content-security-policy": csp },
-      body: (await response.text()).replace(/<main\b[\s\S]*?<\/main>/, main),
-    });
-  });
-  await page.goto(path);
+  await page.route(
+    (url) => url.pathname === target,
+    async (route) => {
+      const response = await route.fetch();
+      const main = pageContent(
+        definition.id,
+        locale,
+        createContactSlots(locale, configured),
+      ).html.match(/<main\b[\s\S]*?<\/main>/)![0];
+      await route.fulfill({
+        response,
+        headers: { ...response.headers(), "content-security-policy": csp },
+        body: (await response.text()).replace(/<main\b[\s\S]*?<\/main>/, main),
+      });
+    },
+  );
+  await page.goto(target);
   await expect(page.locator('[name="name"]')).toBeEnabled();
-  if (path !== "/")
+  if (path === "/contacto/")
     await expect(page.locator("[data-contact-challenge]")).toHaveAttribute(
       "data-test-challenge",
       "rendered",
     );
 }
 
-async function fillContact(page: Page) {
-  await page
-    .getByLabel("Nombre (obligatorio)", { exact: true })
-    .fill("Consulta sintética");
-  await page
-    .getByLabel("Email (obligatorio)", { exact: true })
-    .fill("test@example.com");
+async function fillContact(page: Page, locale: Locale = "es") {
+  const copy = contactCopy[locale];
+  await page.getByLabel(copy.name, { exact: true }).fill("Consulta sintética");
+  await page.getByLabel(copy.email, { exact: true }).fill("test@example.com");
 }
 
 for (const [prefix, label] of [
@@ -252,6 +266,146 @@ for (const path of ["/contacto/", "/"] as const) {
       _email: { subject: "Nueva consulta desde KAIRUM" },
     });
     expect(posts).toBe(1);
+  });
+}
+
+const closingPages = pages.filter(
+  (entry) =>
+    entry.id === "home" ||
+    entry.path.startsWith("/productos/") ||
+    ["marcas", "agencias", "nosotros"].includes(entry.id),
+);
+for (const locale of locales) {
+  for (const entry of closingPages) {
+    test(`${locale}${entry.path}: closing keeps its booking CTA and receives one localized inquiry`, async ({
+      page,
+    }) => {
+      let posts = 0;
+      await page.route("https://submit-form.com/**", (route) => {
+        if (route.request().method() === "OPTIONS")
+          return route.fulfill({
+            status: 204,
+            headers: {
+              "access-control-allow-origin": "*",
+              "access-control-allow-headers": "content-type",
+              "access-control-allow-methods": "POST",
+            },
+          });
+        posts++;
+        return route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          headers: { "access-control-allow-origin": "*" },
+          body: "{}",
+        });
+      });
+      await openConfigured(page, true, entry.path, locale);
+      const closing = page.locator(
+        entry.id === "home" ? ".home-contact" : ".closing-section",
+      );
+      const form = closing.locator("[data-contact-form]");
+      await expect(page.locator("[data-contact-form]")).toHaveCount(1);
+      await expect(
+        closing.locator(":scope > .wrap > div:first-child h2"),
+      ).toBeVisible();
+      await expect(
+        closing.locator(":scope > .wrap > a.button"),
+      ).toHaveAttribute("href", /calendly\.com/);
+      if (entry.id !== "home") {
+        expect(
+          await closing.evaluate(
+            (element) => getComputedStyle(element).backgroundColor,
+          ),
+        ).toBe("rgb(255, 196, 0)");
+        expect(
+          await closing
+            .locator(".contact-panel")
+            .evaluate((element) => getComputedStyle(element).backgroundColor),
+        ).toBe("rgba(0, 0, 0, 0)");
+      }
+      await form.scrollIntoViewIfNeeded();
+      const challenge = form.locator("[data-contact-challenge]");
+      await expect(challenge).toHaveAttribute(
+        "data-test-challenge-size",
+        "normal",
+      );
+      await expect(challenge).toHaveAttribute(
+        "data-test-challenge-theme",
+        entry.id === "home" ? "dark" : "light",
+      );
+      await expect(form.locator("[data-contact-submit]")).toBeEnabled();
+      await capture(
+        page,
+        `${locale}-${entry.id}-closing`,
+        entry.id === "home" ? ".home-contact" : ".closing-section",
+      );
+      await page.setViewportSize({ width: 320, height: 900 });
+      const widget = challenge.locator("iframe");
+      const widgetBox = await widget.boundingBox();
+      expect(widgetBox?.width).toBe(300);
+      expect(widgetBox?.height).toBe(65);
+      expect(widgetBox!.x).toBeGreaterThanOrEqual(0);
+      expect(widgetBox!.x + widgetBox!.width).toBeLessThanOrEqual(320);
+      expect(
+        await widget.evaluate((element) => getComputedStyle(element).transform),
+      ).toBe("none");
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth),
+      ).toBeLessThanOrEqual(320);
+      await capture(
+        page,
+        `${locale}-${entry.id}-closing-320`,
+        entry.id === "home" ? ".home-contact" : ".closing-section",
+      );
+      await fillContact(page, locale);
+      await form
+        .getByRole("button", {
+          name: contactCopy[locale].messages.submit,
+          exact: true,
+        })
+        .click();
+      await expect(form.locator("[data-contact-status]")).toHaveText(
+        contactCopy[locale].messages.success,
+      );
+      expect(posts).toBe(1);
+    });
+  }
+}
+
+for (const [index, locale] of locales.entries()) {
+  test(`${locale}: footer language links share the existing footer and retain the current anchor`, async ({
+    page,
+  }) => {
+    const path = ["/", "/productos/report/", "/blog/"][index];
+    await page.goto(`${localizedPath(path, locale)}#contenido`);
+    const nav = page.locator(".footer-bottom > .footer-languages");
+    await expect(nav).toBeVisible();
+    await expect(page.locator("[data-language-link]")).toHaveCount(3);
+    await expect(page.locator(".locale-strip")).toHaveCount(0);
+    for (const code of locales) {
+      const link = nav.getByRole("link", {
+        name: localeMeta[code].name,
+        exact: true,
+      });
+      await expect(link).toHaveAttribute("href", localizedPath(path, code));
+      await expect(link).toHaveAttribute("hreflang", localeMeta[code].hreflang);
+    }
+    await expect(nav.locator('[aria-current="page"]')).toHaveText(
+      localeMeta[locale].name,
+    );
+    await capture(page, `${locale}-footer-languages`, ".site-footer");
+    await page.setViewportSize({ width: 320, height: 900 });
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+    ).toBeLessThanOrEqual(320);
+    await capture(page, `${locale}-footer-languages-320`, ".site-footer");
+    const next = locales[(index + 1) % locales.length];
+    await nav
+      .getByRole("link", { name: localeMeta[next].name, exact: true })
+      .click();
+    await expect(page).toHaveURL(
+      new RegExp(`${localizedPath(path, next)}#contenido$`),
+    );
   });
 }
 
