@@ -12,6 +12,35 @@ interface HeroCopy {
   title: string;
   intro: string;
 }
+type TeammateId = "bruno-de-cruz" | "joaquin-cadeiras" | "joaquin-alderete";
+interface Teammate {
+  id: TeammateId;
+  name: string;
+  role: string;
+  organization: string;
+}
+
+// Names and professional experience supplied in the user's pitch, slide 11.
+const teammates: Teammate[] = [
+  {
+    id: "bruno-de-cruz",
+    name: "Bruno De Cruz",
+    role: "Data Scientist",
+    organization: "Mercado Libre",
+  },
+  {
+    id: "joaquin-cadeiras",
+    name: "Joaquín Cadeiras",
+    role: "Founder",
+    organization: "Alveo",
+  },
+  {
+    id: "joaquin-alderete",
+    name: "Joaquín Alderete",
+    role: "Lead Engineer",
+    organization: "ViewX",
+  },
+];
 interface AudienceDetails {
   brands: {
     example: {
@@ -44,6 +73,12 @@ interface AudienceDetails {
     highlight: string;
     convictionLabel: string;
     conviction: string;
+    team: {
+      eyebrow: string;
+      title: string;
+      experienceLabel: string;
+      members: Teammate[];
+    };
     why: HeroCopy & { items: Point[] };
     method: { eyebrow: string; title: string; items: Point[] };
   };
@@ -58,7 +93,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
   es: {
     brands: {
       example: {
-        label: "Ejemplo ilustrativo",
+        label: "Ejemplo de consulta a una IA",
         question: "¿Qué software sirve para coordinar un equipo de diseño?",
         answer:
           "Tu marca reúne briefs y comentarios para coordinar el trabajo de diseño.",
@@ -67,7 +102,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
         sourcePath: "tu-marca.example/equipo",
         annotation:
           "La fuente habla de revisiones. La respuesta del ejemplo no las menciona.",
-        note: "Esquema ilustrativo: no es una medición ni una respuesta real de un proveedor.",
+        note: "Una persona podría hacer esta consulta en ChatGPT u otro asistente. La respuesta y la fuente son ilustrativas; no son una medición ni una respuesta real de un proveedor.",
       },
       reading: {
         eyebrow: "Del análisis a la acción",
@@ -193,6 +228,12 @@ const dictionaries: Record<Locale, AudienceDetails> = {
     },
     about: {
       highlight: "evidencia.",
+      team: {
+        eyebrow: "Quiénes somos",
+        title: "El equipo de KAIRUM.",
+        experienceLabel: "Experiencia",
+        members: teammates,
+      },
       convictionLabel: "Nuestra convicción",
       conviction:
         "Una respuesta no alcanza. Hay que poder leer de dónde viene.",
@@ -239,7 +280,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
   en: {
     brands: {
       example: {
-        label: "Illustrative example",
+        label: "Example query to an AI assistant",
         question: "What software helps coordinate a design team?",
         answer:
           "Your brand brings briefs and feedback together to coordinate design work.",
@@ -247,7 +288,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
         sourcePath: "your-brand.example/team",
         annotation:
           "The source mentions reviews. The example answer leaves them out.",
-        note: "Illustrative diagram: this is neither a measurement nor a real provider response.",
+        note: "Someone might ask this in ChatGPT or another assistant. The answer and source are illustrative; they are neither a measurement nor a real provider response.",
       },
       reading: {
         eyebrow: "From analysis to action",
@@ -373,6 +414,12 @@ const dictionaries: Record<Locale, AudienceDetails> = {
     },
     about: {
       highlight: "evidence.",
+      team: {
+        eyebrow: "Who we are",
+        title: "The KAIRUM team.",
+        experienceLabel: "Experience",
+        members: teammates,
+      },
       convictionLabel: "Our conviction",
       conviction:
         "An answer isn't enough. You need to be able to see where it comes from.",
@@ -419,7 +466,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
   "pt-br": {
     brands: {
       example: {
-        label: "Exemplo ilustrativo",
+        label: "Exemplo de consulta a uma IA",
         question: "Qual software ajuda a coordenar uma equipe de design?",
         answer:
           "Sua marca reúne briefs e comentários para coordenar o trabalho de design.",
@@ -427,7 +474,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
         sourcePath: "sua-marca.example/equipe",
         annotation:
           "A fonte menciona revisões. A resposta do exemplo não fala delas.",
-        note: "Esquema ilustrativo: não é uma medição nem uma resposta real de um provedor.",
+        note: "Uma pessoa poderia fazer esta consulta no ChatGPT ou em outro assistente. A resposta e a fonte são ilustrativas; não são uma medição nem uma resposta real de um provedor.",
       },
       reading: {
         eyebrow: "Da análise à ação",
@@ -553,6 +600,12 @@ const dictionaries: Record<Locale, AudienceDetails> = {
     },
     about: {
       highlight: "evidências.",
+      team: {
+        eyebrow: "Quem somos",
+        title: "A equipe KAIRUM.",
+        experienceLabel: "Experiência",
+        members: teammates,
+      },
       convictionLabel: "Nossa convicção",
       conviction:
         "Uma resposta não basta. É preciso poder ver de onde ela vem.",

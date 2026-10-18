@@ -8,6 +8,8 @@ export interface AnalyticsPreviewCopy {
   tabsLabel: string;
   tabs: Record<AnalyticsPreviewTab, string>;
   comparisonTitle: string;
+  queryLabel: string;
+  queryContext: string;
   question: string;
   conditions: string;
   readings: readonly [
@@ -48,16 +50,19 @@ export const analyticsPreviewCopy: Record<Locale, AnalyticsPreviewCopy> = {
       sources: "Fuentes",
     },
     comparisonTitle: "Una misma pregunta. Dos lecturas.",
+    queryLabel: "Ejemplo de consulta a una IA",
+    queryContext:
+      "Una persona podría escribir esto en ChatGPT u otro asistente. Las respuestas de abajo son ilustrativas.",
     question: "¿Qué software sirve para coordinar un equipo de diseño?",
     conditions:
       "Misma pregunta y mismas condiciones de consulta para comparar las dos lecturas.",
     readings: [
       {
-        label: "Lectura inicial",
+        label: "Respuesta de ejemplo · inicial",
         text: "Tu marca reúne briefs y comentarios para coordinar el trabajo de diseño.",
       },
       {
-        label: "Nueva lectura",
+        label: "Respuesta de ejemplo · nueva",
         text: "Tu marca reúne briefs, comentarios y revisiones por proyecto.",
       },
     ],
@@ -117,16 +122,19 @@ export const analyticsPreviewCopy: Record<Locale, AnalyticsPreviewCopy> = {
       sources: "Sources",
     },
     comparisonTitle: "The same question. Two readings.",
+    queryLabel: "Example question for an AI assistant",
+    queryContext:
+      "Someone could type this into ChatGPT or another assistant. The responses below are illustrative.",
     question: "What software helps coordinate a design team?",
     conditions:
       "The same question and query conditions make the two readings comparable.",
     readings: [
       {
-        label: "Initial reading",
+        label: "Example response · initial",
         text: "Your brand brings briefs and comments together to coordinate design work.",
       },
       {
-        label: "New reading",
+        label: "Example response · new",
         text: "Your brand brings briefs, comments and reviews together for each project.",
       },
     ],
@@ -186,16 +194,19 @@ export const analyticsPreviewCopy: Record<Locale, AnalyticsPreviewCopy> = {
       sources: "Fontes",
     },
     comparisonTitle: "A mesma pergunta. Duas leituras.",
+    queryLabel: "Exemplo de consulta a uma IA",
+    queryContext:
+      "Uma pessoa poderia escrever isso no ChatGPT ou em outro assistente. As respostas abaixo são ilustrativas.",
     question: "Qual software ajuda a coordenar uma equipe de design?",
     conditions:
       "Mesma pergunta e mesmas condições de consulta para comparar as duas leituras.",
     readings: [
       {
-        label: "Leitura inicial",
+        label: "Resposta de exemplo · inicial",
         text: "Sua marca reúne briefs e comentários para coordenar o trabalho de design.",
       },
       {
-        label: "Nova leitura",
+        label: "Resposta de exemplo · nova",
         text: "Sua marca reúne briefs, comentários e revisões por projeto.",
       },
     ],

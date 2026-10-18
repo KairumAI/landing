@@ -1,5 +1,6 @@
 import { escapeHtml as e } from "./escape";
 import { editorialCopy } from "../i18n/editorial";
+import { exampleContextCopy } from "../i18n/example-context";
 import { translator } from "../i18n/marketing";
 import { localeMeta, type Locale } from "../i18n/locales";
 import { createHomeScenes } from "../components/kairum/home-scenes";
@@ -115,6 +116,37 @@ function editorialEdits(
       id === "home" ? "home" : "analytics-product",
     );
     edit(localize(original), localize(renderAnalyticsPreview(locale, mode)));
+  }
+  // Keep reused questions clearly illustrative without editing the R05 renderers.
+  const example = exampleContextCopy(locale);
+  if (id === "home") {
+    const question = `${e(t("que_software_sirve_para_coordinar"))}<br> ${e(t("un_equipo_de_diseno"))}`;
+    const original = `<div class="glass-question" data-home-enter>${icon("MagnifyingGlass")}<span>${question}</span></div>`;
+    edit(
+      original,
+      `<div class="glass-question" data-home-enter>${icon("MagnifyingGlass")}<div><div><small data-example-context="ai-query">${e(example.homeQueryLabel)}</small></div><span>${question}</span></div></div>`,
+    );
+  }
+  if (id === "home" || id === "prompt-intelligence") {
+    const original = `<article class="prompt-featured-query" data-home-enter><div>${icon("MagnifyingGlass")}<span>${e(t("pregunta_de_tu_equipo"))}</span></div>`;
+    edit(
+      original,
+      `<article class="prompt-featured-query" data-home-enter><div>${icon("MagnifyingGlass")}<span data-example-context="ai-question">${e(example.promptQuestionLabel)}</span></div>`,
+    );
+  }
+  if (id === "report") {
+    const original = `<div id="report-hero-0" data-tab-panel><span class="eyebrow">${e(t("descubrimiento"))}</span>`;
+    edit(
+      original,
+      `${original}<p class="mini-label" data-example-context="report-query">${e(example.reportQueryContext)}</p>`,
+    );
+  }
+  if (id === "analytics") {
+    const original = `<div class="sheet-context">${e(t("mismo_pack_misma_superficie_cobertura_comparable"))}</div>`;
+    edit(
+      original,
+      `<div class="sheet-context">${e(t("mismo_pack_misma_superficie_cobertura_comparable"))}<br><span data-example-context="analytics-comparison">${e(example.analyticsComparisonContext)}</span></div>`,
+    );
   }
   if (id === "marcas" || id === "agencias" || id === "nosotros") {
     const body = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];

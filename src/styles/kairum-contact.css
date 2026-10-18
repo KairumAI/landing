@@ -298,9 +298,11 @@
 }
 
 .contact-status:empty {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  /* Keep the preparation row's geometry when verification clears its text.
+     Collapsing it at the bottom of the page also clamps the scroll position. */
+  min-height: calc(1.6em + 2 * var(--kairum-space-3) + 2px);
+  border-color: transparent;
+  background: transparent;
 }
 
 .contact-status[data-state="success"] {

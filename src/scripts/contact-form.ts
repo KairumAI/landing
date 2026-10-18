@@ -39,6 +39,9 @@ function enhanceContactForm(form: HTMLFormElement) {
   let widget: string | undefined;
 
   const message = (state: string, text: string) => {
+    // A recovered challenge error may wrap onto extra lines on mobile.
+    if (!text && status.dataset.state === "captcha-error")
+      status.style.minHeight = `${status.getBoundingClientRect().height}px`;
     status.dataset.state = state;
     status.textContent = text;
   };

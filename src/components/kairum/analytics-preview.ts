@@ -13,7 +13,9 @@ export function renderAnalyticsPreview(
   const id = `analytics-preview-${mode}`;
   const readingHeading = mode === "home" ? "h4" : "h3";
   const comparison = `${mode === "product" ? `<h2 class="analytics-preview-title">${e(copy.comparisonTitle)}</h2>` : ""}
+    <p class="analytics-preview-query-label mini-label" data-analytics-query-label><strong>${e(copy.queryLabel)}</strong></p>
     <${mode === "home" ? "h3" : "p"} class="analytics-preview-question">${e(copy.question)}</${mode === "home" ? "h3" : "p"}>
+    <p class="analytics-preview-intro analytics-preview-query-context" data-analytics-query-context>${e(copy.queryContext)}</p>
     <p class="analytics-preview-conditions">${e(copy.conditions)}</p>
     <div class="analytics-preview-readings">${copy.readings.map((reading, index) => `<article class="analytics-preview-reading" data-analytics-reading="${index === 0 ? "initial" : "new"}"><${readingHeading}>${e(reading.label)}</${readingHeading}><p>${e(reading.text)}</p></article>`).join("")}</div>
     <div class="analytics-preview-change"><strong>${e(copy.changeLabel)}</strong><p>${e(copy.change)}</p></div>`;

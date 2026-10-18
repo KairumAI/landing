@@ -144,3 +144,38 @@ Los [conceptos](../evidence/2026-10-17-landing-feedback/concepts/README.md)
 registran la composición y sus desviaciones intencionales. Los reemplazos
 exactos se declaran en editorial-integration y se revierten antes de comprobar
 R05; no se regeneran fingerprints ni se modifican sus cinco hojas originales.
+
+## Bordes y selección nativa · 2026-10-18
+
+Las tarjetas de AI Report y Consulting ajustan la caja de imagen al bitmap
+3:2 para que la máscara exterior existente actúe sobre sus bordes reales.
+Los encabezados estrechos usan interlineado `calc(1.22em + 1px)`: el fondo de selección nativo
+ya no invade los descendentes de la línea anterior, conservando exactamente
+los colores originales. Los enlaces de Productos tienen padding interior
+también durante hover y foco.
+
+Las consultas de las escenas se rotulan como ejemplos dirigidos a una IA;
+Analytics explica que alguien podría escribirlas en ChatGPT u otro asistente
+y que las respuestas son ilustrativas. El contexto se localiza en ES/EN/PT-BR,
+sin acreditar mediciones ni integraciones. Ver la
+[evidencia de estos ajustes](../evidence/2026-10-18-landing-polish/README.md).
+
+## Equipo y continuidad de la escena · 2026-10-18
+
+El usuario aportó después la diapositiva 11 de su pitch para incorporar el
+equipo a Nosotros. La sección usa sólo a las tres personas de la izquierda,
+en su orden original: Bruno De Cruz, Joaquín Cadeiras y Joaquín Alderete.
+Sus fotos se extraen intactas del archivo y se encuadran con CSS; los nombres,
+roles y organizaciones conservan el contenido de la diapositiva. La etiqueta
+«Experiencia» distingue esas credenciales de cargos internos en KAIRUM.
+No se añaden biografías, perfiles, logos de empresas ni una cuarta persona.
+
+La composición mantiene el hero editorial y coloca el equipo antes de propósito
+y método: tres columnas en escritorio y una en móvil, con copy ES/EN/PT-BR.
+La [evidencia de fuente y runtime](../evidence/2026-10-18-about-team/README.md)
+registra los assets y la revisión independiente.
+
+La tarjeta Fuente de Home entra hacia su perspectiva CSS y empieza la flotación
+desde su pose de reposo. Ambas tarjetas de la escena responden al puntero y
+regresan a sus respectivas perspectivas, manteniendo reduced motion y las
+pausas por visibilidad. La corrección es aditiva y conserva los CSS de R05.

@@ -15,7 +15,10 @@ export function enhanceHomeScenes(
       const objects = [
         ...root.querySelectorAll<HTMLElement>("[data-home-enter]"),
       ];
-      const object = root.querySelector<HTMLElement>("[data-home-object]");
+      const sceneObjects = [
+        ...root.querySelectorAll<HTMLElement>("[data-home-object]"),
+      ];
+      const object = sceneObjects[0];
       const canvas = root.querySelector<HTMLCanvasElement>("[data-home-depth]");
       let inView = false,
         complete = false,
@@ -24,7 +27,7 @@ export function enhanceHomeScenes(
       let timeline: ReturnType<typeof gsap.timeline> | null = null;
       let ambientTween: ReturnType<typeof gsap.to> | null = null;
       let pointerTween: ReturnType<typeof gsap.to> | null = null;
-      let pointerBase: string | null = null;
+      const pointerBases = new Map<HTMLElement, string>();
       const pointer = { x: 0, y: 0 };
       const ambient = { value: 0 };
       let lastRender = 0;
@@ -35,9 +38,10 @@ export function enhanceHomeScenes(
       function clearPointer() {
         pointerTween?.kill();
         pointerTween = null;
-        pointerBase = null;
+        for (const target of pointerBases.keys())
+          target.style.removeProperty("transform");
+        pointerBases.clear();
         pointer.x = pointer.y = 0;
-        object?.style.removeProperty("transform");
       }
       async function loadDepth() {
         if (
@@ -70,8 +74,10 @@ export function enhanceHomeScenes(
         ambientTween = null;
         complete = true;
         phase.value = 1;
-        if (typeof gsap !== "undefined" && objects.length > 0)
-          gsap.set(objects, { clearProps: "opacity,transform" });
+        if (typeof gsap !== "undefined")
+          gsap.set([...new Set([...objects, ...sceneObjects])], {
+            clearProps: "opacity,transform",
+          });
         depth?.dispose();
         depth = undefined;
         root.dataset.animation = "complete";
@@ -169,12 +175,27 @@ export function enhanceHomeScenes(
             },
             0.85,
           );
+        } else if (kind === "answer") {
+          // End at each card's authored CSS perspective before clearing styles.
+          timeline.from(
+            objects,
+            {
+              opacity: 0.2,
+              y: 28,
+              rotationY: 0,
+              duration: 1.2,
+              stagger: 0.5,
+              ease: "power3.out",
+              clearProps: "opacity,transform",
+            },
+            0,
+          );
         } else if (objects.length) {
           timeline.fromTo(
             objects,
             {
               opacity: 0.2,
-              y: kind === "answer" ? 28 : 35,
+              y: 35,
               rotationY: kind === "prompts" ? -12 : 0,
             },
             {
@@ -267,9 +288,11 @@ export function enhanceHomeScenes(
           // CSS owns the authored pose and ambient translate. Tweening the DOM
           // transform through CSSPlugin would absorb that live translate into
           // GSAP's cache, then snap when clearProps restores the CSS animation.
-          if (pointerBase === null) {
-            const transform = getComputedStyle(object!).transform;
-            pointerBase = transform === "none" ? "" : transform;
+          if (pointerBases.size === 0) {
+            for (const target of sceneObjects) {
+              const transform = getComputedStyle(target).transform;
+              pointerBases.set(target, transform === "none" ? "" : transform);
+            }
           }
           pointerTween?.kill();
           pointerTween = gsap.to(pointer, {
@@ -277,7 +300,8 @@ export function enhanceHomeScenes(
             y,
             duration: returning ? 0.7 : 0.6,
             onUpdate: () => {
-              object!.style.transform = `${pointerBase} rotateY(${pointer.y}deg) rotateX(${pointer.x}deg)`;
+              for (const [target, base] of pointerBases)
+                target.style.transform = `${base} rotateY(${pointer.y}deg) rotateX(${pointer.x}deg)`;
             },
             onComplete: returning ? clearPointer : undefined,
           });
@@ -303,7 +327,7 @@ export function enhanceHomeScenes(
           );
         });
         root.addEventListener("pointerleave", () => {
-          if (pointerBase !== null && motionAllowed()) tilt(0, 0, true);
+          if (pointerBases.size > 0 && motionAllowed()) tilt(0, 0, true);
         });
         listeners.push(() => {
           if (!motionAllowed()) clearPointer();

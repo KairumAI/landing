@@ -564,6 +564,89 @@
   gap: 80px;
 }
 
+.audience-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.audience-team-grid > li {
+  min-width: 0;
+  text-align: center;
+}
+
+.audience-team-portrait {
+  position: relative;
+  width: min(100%, 260px);
+  aspect-ratio: 1;
+  margin: 0 auto 28px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--kairum-white);
+}
+
+.audience-team-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audience-team-portrait-bruno-de-cruz img {
+  position: absolute;
+  top: -2%;
+  left: -15%;
+  width: 130%;
+  max-width: none;
+  height: 130%;
+}
+
+/* The supplied original contains a circular photo inside a screenshot.
+   Frame that circle without changing the original portrait's pixels. */
+.audience-team-portrait-joaquin-alderete img {
+  position: absolute;
+  top: -31.818182%;
+  left: -93.181818%;
+  width: 298.636364%;
+  max-width: none;
+  height: auto;
+}
+
+.audience-team-grid h3 {
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 550;
+  line-height: 1.3;
+}
+
+.audience-team-experience {
+  display: block;
+  margin: 24px 0 8px;
+  color: var(--kairum-muted);
+  font-size: 11px;
+  font-weight: 550;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.audience-team-role {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.audience-team-organization {
+  margin-top: 4px;
+  color: var(--kairum-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.audience-team + .audience-why {
+  padding-top: 0;
+}
+
 .audience-why > div > p {
   margin-top: 28px;
   color: var(--kairum-muted);
@@ -616,6 +699,9 @@
 }
 
 @media (max-width: 960px) {
+  .audience-team-grid {
+    gap: 24px;
+  }
   .audience-hero-grid,
   .audience-why {
     grid-template-columns: minmax(0, 1fr);
@@ -676,6 +762,19 @@
 }
 
 @media (max-width: 650px) {
+  .audience-team-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .audience-team-portrait {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .audience-team-experience {
+    margin-top: 16px;
+  }
   .audience-hero,
   .audience-about-hero {
     padding: 48px 0 56px;

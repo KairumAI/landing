@@ -31,3 +31,106 @@
 .scene-answer .scene-annotation {
   display: none;
 }
+
+/* Native selection includes the font's full ascenders and descenders. Tight
+   display leading lets the next line's highlight paint over those glyphs.
+   One extra pixel covers rounded font metrics at small viewport sizes. */
+h1,
+h2,
+h3,
+h4,
+.product-hero h1,
+.home-cinematic h1,
+.home-cinematic h2,
+.menu-intro h2,
+.menu-grid strong,
+.capability h3,
+.plan-objective h3,
+.scene-sidebar > strong,
+.editorial-hero h1,
+.editorial-article-hero h1,
+.editorial-feature h2,
+.editorial-section-heading h2,
+.editorial-cta h2,
+.editorial-commercial h2,
+.editorial-explainer-value,
+.audience-hero h1,
+.audience-about-hero h1,
+.audience-section-heading h2,
+.audience-split-heading h2,
+.audience-why h2,
+.audience-method h2,
+.audience-deliverable h2,
+.audience-reading-steps h3,
+.contact-panel-header h2,
+.home-contact .contact-panel-header h2,
+.closing-section .contact-panel-header h2 {
+  line-height: calc(1.22em + 1px);
+}
+
+/* Feather the bitmap itself, rather than the empty space of a contain box.
+   The image keeps the same centre and rendered size as the original frame. */
+.cinema-start-option > .service-card-art {
+  height: auto;
+  top: 54%;
+  aspect-ratio: 3 / 2;
+  transform: translateY(-50%);
+}
+
+.menu-products .menu-grid > a {
+  padding: 16px;
+  gap: 14px;
+}
+
+.menu-products .menu-grid > a > span {
+  min-width: 0;
+}
+
+.menu-products .menu-grid > a > i {
+  flex-shrink: 0;
+}
+
+.analytics-preview .analytics-preview-query-label {
+  margin: 0 0 8px;
+  color: var(--kairum-muted);
+  font-size: var(--kairum-text-xs);
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.analytics-preview-title + .analytics-preview-query-label {
+  margin-top: 14px;
+}
+
+.analytics-preview .analytics-preview-query-context {
+  max-width: 80ch;
+  margin-top: 10px;
+  color: var(--kairum-muted);
+  font-size: var(--kairum-text-sm);
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .menu-products .menu-grid > a {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .cinema-start-option > .service-card-art {
+    top: 60%;
+  }
+}
+
+@media (max-width: 650px) {
+  .cinema-start-option > .service-card-art {
+    /* The original mobile frame is 46% of the card's 420px minimum height. */
+    width: min(100%, 290px);
+    right: 50%;
+    top: 75%;
+    transform: translate(50%, -50%);
+  }
+}
+/* Begin the source card's drift at its resting pose after the entrance. */
+.scene-answer[data-home-scene] > .glass-source {
+  animation-delay: 0s;
+}

@@ -139,3 +139,16 @@ seleccionar registros y usar **Export → CSV/JSON**, o **Exports** para un per�
 Guardar la copia en un destino privado aprobado, nunca en el repo; los exports
 de Inbox no incluyen spam ni registros eliminados. Ver
 [exportación](https://documentation.formspark.io/dashboard/exporting-submissions.html).
+
+## Carga durante el desplazamiento · 2026-10-18
+
+Al acercarse al formulario se carga el script async de Turnstile y se renderiza
+en su callback de carga. El usuario pidió retirar la espera por scroll/idle
+evaluada durante el diagnóstico. El desafío sigue siendo obligatorio; no se
+habilita el envío hasta recibir el token.
+
+Al quedar listo, se conserva el espacio de la fila de estado para evitar un
+salto de la página. En un diagnóstico, distinguir tareas del documento,
+trabajo del iframe de Cloudflare y cambios de altura/scroll; un mock sólo prueba
+nuestro contrato, no la latencia de una verificación real. Ver
+[la evidencia local](../evidence/2026-10-18-navigation-performance/README.md).

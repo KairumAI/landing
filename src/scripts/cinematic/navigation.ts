@@ -124,7 +124,14 @@ export function enhanceNavigation(
       ].map((item, index) =>
         item.animate(
           [
-            { opacity: 0, transform: "translateY(6px)" },
+            {
+              opacity: 0,
+              // The full-height intro must stay inside the scrolling panel.
+              // Its fade and the panel's own movement still animate normally.
+              transform: item.matches(".menu-intro")
+                ? "none"
+                : "translateY(6px)",
+            },
             { opacity: 1, transform: "translateY(0)" },
           ],
           {
