@@ -5,7 +5,7 @@ import { translator } from "../i18n/marketing";
 import { localeMeta, type Locale } from "../i18n/locales";
 import { createHomeScenes } from "../components/kairum/home-scenes";
 import { createMarketingRenderer } from "../components/kairum/marketing-html";
-import { renderAnalyticsPreview } from "../components/kairum/analytics-preview";
+import { renderAnalyticsPreview } from "../components/kairum/analytics-story";
 import {
   renderAudienceBody,
   type AudiencePageId,

@@ -1,6 +1,9 @@
 import { expect, test } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { pageContent } from "../../src/lib/routes";
+import { contactConfig } from "../../src/lib/contact-config";
+import { createContactSlots } from "../../src/components/kairum/contact-form";
 
 for (const width of [1440, 390]) {
   for (const state of ["checking", "captcha-error"]) {
@@ -19,6 +22,29 @@ for (const width of [1440, 390]) {
         return 'layout-widget';
       }, reset() {} };`,
         }),
+      );
+      // Exercise the actual Home renderer with offline public fixture IDs;
+      // this check must not depend on production configuration or real services.
+      await page.route(
+        (url) => url.pathname === "/",
+        async (route) => {
+          const response = await route.fetch();
+          const main = pageContent(
+            "home",
+            "es",
+            createContactSlots(
+              "es",
+              contactConfig("offline-contract", "offline-site-key"),
+            ),
+          ).html.match(/<main\b[\s\S]*?<\/main>/)![0];
+          await route.fulfill({
+            response,
+            body: (await response.text()).replace(
+              /<main\b[\s\S]*?<\/main>/,
+              main,
+            ),
+          });
+        },
       );
       await page.goto("/");
       await expect(page.locator("[data-contact-form]")).toHaveAttribute(

@@ -1,5 +1,6 @@
 import { enhanceNavigation } from "./navigation.js";
 import { enhanceHomeScenes } from "./home-motion.js";
+import { enhanceAnalyticsStory } from "./analytics-story.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -112,6 +113,7 @@ all("[data-tabs]").forEach((group) => {
 
 enhanceNavigation(motionAllowed, motionListeners, icons);
 enhanceHomeScenes(motionAllowed, motionListeners);
+enhanceAnalyticsStory(motionAllowed);
 
 const legacyHashes: Record<string, string> = {
   "product-prompts": "product-prompt-intelligence",

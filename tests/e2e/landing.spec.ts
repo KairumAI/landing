@@ -383,7 +383,7 @@ test("ambient motion continues after entry and reduced preference settles all sc
 });
 
 for (const locale of locales) {
-  test(`${locale}: Analytics comparison stays readable with full motion and loads menu masks`, async ({
+  test(`${locale}: all three Analytics scenes stay readable with full motion and load menu masks`, async ({
     page,
   }) => {
     const failures: string[] = [];
@@ -416,8 +416,13 @@ for (const locale of locales) {
     await scene.scrollIntoViewIfNeeded();
     await expect(scene).toBeVisible();
     await expect(
-      scene.locator("[data-tabs],.analytics-sidebar,.analytics-plinth,canvas"),
+      scene.locator(
+        ".analytics-sidebar,.analytics-plinth,canvas[data-study-chart]",
+      ),
     ).toHaveCount(0);
+    await expect(scene.locator(".as-story-section")).toHaveCount(3);
+    await expect(scene).toHaveAttribute("data-chart-ready", "true");
+    await expect(scene.locator("canvas")).toHaveCount(2);
     expect((await scene.innerText()).length).toBeGreaterThan(120);
     expect(failures).toEqual([]);
   });
@@ -584,7 +589,7 @@ test("self-only CSP permits the actual bundle and local tabs with no policy viol
     .scrollIntoViewIfNeeded();
   await page
     .locator('[data-analytics-preview="product"] [data-tab]')
-    .nth(2)
+    .last()
     .click();
   await expect(
     page.locator('[data-analytics-preview="product"] [data-tab-panel]:visible'),
