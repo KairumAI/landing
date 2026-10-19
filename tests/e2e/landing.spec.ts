@@ -587,12 +587,15 @@ test("self-only CSP permits the actual bundle and local tabs with no policy viol
   await page
     .locator('[data-analytics-preview="product"]')
     .scrollIntoViewIfNeeded();
+  await page.locator("#analytics-preview-product-sources-tab").click();
   await page
     .locator('[data-analytics-preview="product"] [data-tab]')
     .last()
     .click();
   await expect(
-    page.locator('[data-analytics-preview="product"] [data-tab-panel]:visible'),
+    page.locator(
+      '[data-analytics-preview="product"] > [data-tab-panel]:visible',
+    ),
   ).toHaveCount(1);
   expect(violations).toEqual([]);
   expect(errors).toEqual([]);

@@ -2,6 +2,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import { localizedPath } from "../../src/lib/routes";
 import { analyticsStoryCopy } from "../../src/i18n/analytics-story";
+import { analyticsProductCopy } from "../../src/i18n/analytics-product";
 
 for (const locale of ["es", "en", "pt-br"] as const) {
   test(`${locale}: Home shows one Analytics sample and leads to the full product`, async ({
@@ -64,7 +65,9 @@ for (const locale of ["es", "en", "pt-br"] as const) {
       page.locator('[data-analytics-preview="product"] .as-story-section'),
     ).toHaveCount(3);
     await expect(
-      page.getByRole("heading", { name: copy.headings[1], exact: true }),
+      page
+        .locator("#analytics-preview-product-alternatives .as-toolbar")
+        .getByRole("heading", { name: copy.views[1], exact: true }),
     ).toBeInViewport();
   });
 
@@ -80,11 +83,23 @@ for (const locale of ["es", "en", "pt-br"] as const) {
     );
     const story = page.locator('[data-analytics-preview="product"]');
     await expect(story.locator(".as-story-section")).toHaveCount(3);
-    await expect(story.locator(".as-disclosure")).toHaveCount(3);
-    for (const heading of copy.headings)
+    await expect(story.locator(".as-disclosure")).toHaveCount(1);
+    const viewTabs = story.locator(".as-story-index");
+    for (const name of copy.actions)
       await expect(
-        story.getByRole("heading", { name: heading, exact: true }),
+        viewTabs.getByRole("tab", { name, exact: true }),
       ).toBeVisible();
+    await expect(story.locator(".as-story-section:visible")).toHaveCount(1);
+    await expect(page.locator("main h1")).toHaveText(
+      analyticsProductCopy[locale].title,
+    );
+    await expect(page.locator(".ap-benefit-grid article")).toHaveCount(6);
+    await expect(page.locator(".ap-workflow-steps article")).toHaveCount(4);
+    await expect(story.locator(".as-topic-table tbody tr")).toHaveCount(5);
+    for (const paragraph of await page
+      .locator("[data-analytics-editorial] article p")
+      .allTextContents())
+      expect(paragraph.trim().split(/\s+/).length).toBeGreaterThan(15);
     await expect(story).toHaveAttribute("data-chart-ready", "true");
     await story
       .getByRole("radio", { name: copy.periods[1], exact: true })
@@ -102,10 +117,24 @@ for (const locale of ["es", "en", "pt-br"] as const) {
     await expect(story.locator(".as-series-1")).toBeHidden();
     await story.getByRole("checkbox", { name: copy.comparison }).check();
     await expect(story.locator(".as-series-1")).toBeVisible();
+    await viewTabs
+      .getByRole("tab", { name: copy.actions[1], exact: true })
+      .click();
+    await expect(story.locator(".as-story-section:visible")).toHaveCount(1);
+    await expect
+      .poll(() =>
+        story
+          .locator("[data-as-sentiment-chart]")
+          .evaluate((el: HTMLCanvasElement) => el.width),
+      )
+      .toBeGreaterThan(0);
     const narrative = story.locator(".as-narratives details").nth(1);
     await narrative.locator("summary").click();
     await expect(narrative).toHaveAttribute("open", "");
     await expect(narrative).toContainText(copy.topics[1].response);
+    await viewTabs
+      .getByRole("tab", { name: copy.actions[2], exact: true })
+      .click();
     const sources = story.locator(".as-source-tabs");
     await sources
       .getByRole("tab", { name: copy.sourceViews[1], exact: true })
@@ -127,17 +156,25 @@ for (const locale of ["es", "en", "pt-br"] as const) {
     await expect(story.locator('a[href*=".example"]')).toHaveCount(0);
     for (const width of [1440, 768, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
-      expect(
-        await page.evaluate(() => document.documentElement.scrollWidth),
-        `${locale} / ${width}`,
-      ).toBeLessThanOrEqual(width);
-      for (const panel of await story.locator(".as-workspace").all()) {
-        const box = (await panel.boundingBox())!;
+      for (const name of copy.actions) {
+        await viewTabs.getByRole("tab", { name, exact: true }).click();
+        await expect(
+          viewTabs.getByRole("tab", { name, exact: true }),
+        ).toHaveAttribute("aria-selected", "true");
+        expect(
+          await page.evaluate(() => document.documentElement.scrollWidth),
+          `${locale} / ${width} / ${name}`,
+        ).toBeLessThanOrEqual(width);
+        const box = (await story
+          .locator(".as-workspace:visible")
+          .boundingBox())!;
         expect(box.x).toBeGreaterThanOrEqual(0);
         expect(box.x + box.width).toBeLessThanOrEqual(width);
       }
       for (const summary of await story
-        .locator(".as-chart-data > summary, .as-sentiment-data > summary")
+        .locator(
+          ".as-chart-data > summary:visible, .as-sentiment-data > summary:visible",
+        )
         .all()) {
         expect((await summary.boundingBox())!.height).toBeGreaterThanOrEqual(
           44,
@@ -145,7 +182,7 @@ for (const locale of ["es", "en", "pt-br"] as const) {
       }
     }
     const audit = await new AxeBuilder({ page })
-      .include("[data-analytics-story]")
+      .include("main")
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
     expect(audit.violations).toEqual([]);
@@ -180,6 +217,24 @@ for (const locale of ["es", "en", "pt-br"] as const) {
     await expect(domains).toHaveAttribute("aria-selected", "true");
     await domains.press("End");
     await expect(ownPages).toBeFocused();
+    const presenceTab = story
+      .locator(".as-story-index")
+      .getByRole("tab", { name: copy.actions[0], exact: true });
+    await presenceTab.focus();
+    await presenceTab.press("ArrowRight");
+    await expect(
+      story
+        .locator(".as-story-index")
+        .getByRole("tab", { name: copy.actions[1], exact: true }),
+    ).toBeFocused();
+    await presenceTab.focus();
+    await presenceTab.press("End");
+    await expect(
+      story
+        .locator(".as-story-index")
+        .getByRole("tab", { name: copy.actions[2], exact: true }),
+    ).toBeFocused();
+    await expect(ownPages).toHaveAttribute("aria-selected", "true");
     const background = await page
       .locator(".product-hero")
       .evaluate((el) => getComputedStyle(el).backgroundColor);

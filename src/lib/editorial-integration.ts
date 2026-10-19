@@ -6,6 +6,11 @@ import { localeMeta, type Locale } from "../i18n/locales";
 import { createHomeScenes } from "../components/kairum/home-scenes";
 import { createMarketingRenderer } from "../components/kairum/marketing-html";
 import { renderAnalyticsPreview } from "../components/kairum/analytics-story";
+import { analyticsProductCopy } from "../i18n/analytics-product";
+import {
+  renderAnalyticsBenefits,
+  renderAnalyticsWorkflow,
+} from "../components/kairum/analytics-product";
 import {
   renderAudienceBody,
   type AudiencePageId,
@@ -117,6 +122,20 @@ function editorialEdits(
     );
     edit(localize(original), localize(renderAnalyticsPreview(locale, mode)));
   }
+  if (id === "analytics") {
+    const c = analyticsProductCopy[locale];
+    const hero = html.match(
+      /<div class="product-hero-copy"[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+    )?.[0];
+    if (!hero) throw new Error("Missing Analytics product introduction");
+    edit(
+      hero,
+      hero.replace(
+        /<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+        `<h1>${e(c.title)}</h1><p>${e(c.description)}</p>`,
+      ),
+    );
+  }
   // Keep reused questions clearly illustrative without editing the R05 renderers.
   const example = exampleContextCopy(locale);
   if (id === "home") {
@@ -147,6 +166,16 @@ function editorialEdits(
       original,
       `<div class="sheet-context">${e(t("mismo_pack_misma_superficie_cobertura_comparable"))}<br><span data-example-context="analytics-comparison">${e(example.analyticsComparisonContext)}</span></div>`,
     );
+    const workflow = html.match(
+      /<section class="section story-section" id="como-funciona">[\s\S]*?<\/section>/,
+    )?.[0];
+    const capabilities = html.match(
+      /<section class="section wrap" id="capacidades">[\s\S]*?<\/section>/,
+    )?.[0];
+    if (!workflow || !capabilities)
+      throw new Error("Missing Analytics editorial sections");
+    edit(workflow, renderAnalyticsBenefits(locale));
+    edit(capabilities, renderAnalyticsWorkflow(locale));
   }
   if (id === "marcas" || id === "agencias" || id === "nosotros") {
     const body = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];

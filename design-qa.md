@@ -1,66 +1,59 @@
-# Design QA — Analytics en tres momentos
+# Design QA — Analytics con referencia Profound
 
 final result: passed
 
-## Ajuste vigente de distribución
+## Versión y dirección
 
-Tras la precisión de Bruno, Home conserva sólo un workspace de Presencia y el
-CTA al producto. La página de Analytics contiene los tres capítulos completos.
-Capturas actuales en `docs/evidence/2026-10-18-analytics-story/home-product-distribution/`:
-Home 1440/768/390/320 y detalle de producto en escritorio/móvil. Cero desbordes;
-los enlaces localizados de la muestra abren las secciones correspondientes.
-Crítica independiente: 9,3 usabilidad, 9,4 estilo, 9,5 fidelidad; cero bloqueantes.
-El nivel de los títulos de Home se corrigió sin cambiar su estilo. Pruebas de
-esta corrección: 36/36 Analytics y landing. Las rondas anteriores siguen abajo
-como evidencia histórica de la implementación completa.
+Base `13b2ff7`, rama `feat/analytics-visual-story`. Fuente pública capturada:
+https://www.tryprofound.com/features/answer-engine-insights.
+La corrección explícita de Bruno pide la misma organización comercial, con
+identidad clara KAIRUM. Home tiene una sola muestra; producto concentra el detalle.
 
-## Fuente y runtime
+Se compararon en el mismo pase las capturas de la referencia y del runtime:
+hero a la izquierda, descripción y CTA, selectores por beneficio, demo central,
+seis capacidades, metodología y continuidad de contacto. KAIRUM conserva Inter,
+Phosphor, marfil/blanco/gris y amarillo. No se incorporan assets de Profound al sitio.
 
-- Fuente: `docs/evidence/2026-10-18-analytics-story/source-light-story.png`,
-  906 × 1736 px, tres escenas refinadas por Astra en una composición clara.
-- Runtime: `http://127.0.0.1:4418/#product-analytics` y
-  `http://127.0.0.1:4418/productos/analytics/`.
-- Home: viewport CSS 1440/768/390/320 × 1000, densidad 1. Capturas directas
-  `round-3-viewport-{ancho}-{presence,sentiment,citations}.png` en la misma
-  carpeta de evidencia. Los PNG tienen 15 px menos de ancho por el scrollbar.
-- Producto: `round-3-product-{1440,320}-{hero,presence}.png`.
-- La comparación conjunta normaliza el ancho conservando la proporción; las
-  capturas de viewport finales resuelven los límites del recorte full-page.
+## Dictamen independiente
 
-## Superficies de fidelidad
+Agente `landing_editorial_critic`, sólo lectura:
 
-- **Tipografía:** Inter local, titulares de escena y datos con jerarquías
-  diferentes. La escala de 12–14 px dentro del producto conserva densidad;
-  el texto explicativo y las cabeceras son mayores. No se rasteriza texto de UI.
-- **Espaciado:** tres capítulos abiertos, paneles amplios y sidebar compartido.
-  Móvil convierte la navegación en fila y lleva el ranking bajo la curva.
-  Se preserva el encabezado existente R05 y se evitan heros duplicados.
-- **Color:** marfil/blanco y amarillo KAIRUM por corrección expresa de Bruno.
-  Semántica de sentimiento con verde, gris y rojo; texto y nombres complementan
-  el color. No se conserva el fondo negro de la primera referencia.
-- **Assets:** logo y Phosphor locales ya aprobados. Canvas Chart.js y medidores
-  representan los datos nativos de la demo, no reemplazos de imágenes de marca.
-  No se agregan fotografías, proveedores ni iconos dibujados a mano.
-- **Contenido:** tres vistas presentes, denominadores y datos sintéticos
-  explícitos, marcas genéricas y `.example` no navegable. Las cifras del boceto
-  se reemplazan por un ejemplo internamente consistente, con las mismas
-  definiciones en sus tres traducciones.
+| Criterio                                       | Nota   |
+| ---------------------------------------------- | ------ |
+| Usabilidad                                     | 9,2/10 |
+| Estilo                                         | 9,4/10 |
+| Fidelidad a KAIRUM y al objetivo de referencia | 9,3/10 |
 
-## Historial y hallazgos
+Cero bloqueantes y cero P0/P1/P2. Hash independiente del conjunto de 13 archivos
+revisados: `332441794f488e9a441278ec9b5cd76b6ce10fc78666abf4ae03e4e4fda5733f`.
+La revisión cubre código, copy y capturas de runtime; no acredita proveedores,
+resultados comerciales ni mediciones reales.
 
-Ronda 1: se ajustaron densidad, fieldset oculto y evolución de sentimiento.
-Ronda 2: el crítico detectó un summary de 36 px. Ronda 3: mínimo 44 px y test en
-los cuatro anchos; JSON y capturas posteriores confirman la corrección.
+## Evidencia
 
-Los recortes full-page corridos no se consideraron defectos de UI: las capturas
-directas confirmaron el contenido. Se corrigió además la captura del hero móvil
-de producto tras verificar explícitamente su ancho y scroll inicial.
+Carpeta `docs/evidence/2026-10-18-analytics-editorial/`:
 
-Dictamen independiente final: usabilidad 9,3; estilo 9,4; fidelidad 9,4.
-**Cero P0/P1/P2 y cero bloqueantes pendientes.** Comparación de composición y
-revisión enfocada en los paneles, tablas, datos, tipografía, controles y móviles.
-Sin P3 que condicione esta entrega.
+- Referencia `profound-desktop-*` y `profound-mobile-*`.
+- `kairum-desktop-{top,presence,sentiment,citations,benefits,workflow}.jpg`.
+- Tablet/móvil en 768, 390 y 320 px. Presencia768 se capturó después de confirmar
+  `data-chart-ready=true`; no se usa como prueba de curva un estado de carga.
+- `final-320-{presence,sentiment,citations}-{upper,lower}.jpg` son capturas
+  directas de las tres vistas, completadas con desplazamiento nativo. El ID
+  seleccionado se registró en `mobile-panel-checks.json`.
+- `final-home-{1440,320}.jpg` muestra una sola escena de Analytics.
 
-La verificación funcional cubre filtros, comparación, details, datos accesibles,
-pestañas de fuentes con teclado y fragmentos, rutas localizadas, CSP y el camino
-sin JavaScript. La revisión no acredita backend ni servicios reales.
+Las capturas intermedias en blanco, con menú abierto, estado incorrecto o recorte
+corrido fueron descartadas. Los JPEG conservan sus píxeles originales. Las partes
+superior e inferior son vistas separadas del recorrido y no una composición única.
+
+## Pruebas y límites
+
+36/36 pruebas de Analytics y landing. Después de la última unificación de copy,
+10/10 pruebas repetidas de Analytics: cuatro anchos en ES/EN/PT-BR, selección real
+de pestañas, filtros, tablas, fuentes anidadas, enlaces, teclado, axe, fragmentos y
+camino sin JavaScript. Se corrigió la regla de contraste de la etiqueta de ventana;
+la regla decorativa ahora sólo afecta a los puntos sin texto.
+
+P3 opcional: una pista de desplazamiento horizontal en «Presencia por tema» a
+320 px haría más evidente la cuarta columna. El contenedor conserva todos los
+datos y admite scroll; no hay desborde global. No condiciona esta entrega.

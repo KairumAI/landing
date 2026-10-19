@@ -1,55 +1,54 @@
-# Analytics en tres momentos
+# Analytics: presentación comercial con referencia Profound
 
-## Dirección elegida
+## Dirección vigente
 
-Bruno eligió conservar las tres vistas de los bocetos dirigidos por Astra:
-presencia, sentimiento y citas, distribuidas en el recorrido. Su corrección
-posterior pide una identidad más liviana que el negro de Profound. La referencia
-refinada es [este boceto](../evidence/2026-10-18-analytics-story/source-light-story.png).
+Bruno pidió usar la página real de [Answer Engine Insights de Profound](https://www.tryprofound.com/features/answer-engine-insights)
+como referencia directa de estructura, jerarquía, densidad y desarrollo editorial.
+Esta decisión también está en `AGENTS.md`; reemplaza la interpretación anterior
+basada solamente en tres bocetos de paneles.
 
-- Superficies KAIRUM marfil y blancas, tinta y gris, acento amarillo.
-- Inter y los iconos Phosphor locales existentes.
-- Home muestra un único panel de Presencia, con gráfico y comparación de marcas.
-  Conserva el botón «Explorar Analytics»; los enlaces del panel también llevan
-  a las secciones de producto, respetando el idioma.
-- La página de Analytics desarrolla las tres escenas con título, explicación
-  y espacio de producto compartido. La descripción completa vive en esa página.
-- El inicio, Prompt Intelligence y las demás escenas aprobadas de R05 conservan
-  su contenido. La sustitución de Analytics se declara en la integración reversible.
+Home conserva una sola muestra de Analytics y conduce a la página del producto.
+La página de Analytics desarrolla el argumento comercial: apertura, beneficios,
+vistas de producto, capacidades, metodología, preguntas frecuentes y contacto.
+La identidad sigue siendo KAIRUM: marfil, blanco, gris y amarillo; Inter y Phosphor
+locales. No se traslada el fondo negro de la referencia.
 
-## Comportamiento
+## Composición y contenido
 
-Presencia compara tres series y cinco marcas al cierre. El selector muestra
-siete o catorce lecturas; el control de comparación oculta las dos series de
-competidores y sus leyendas. La última lectura de Tu marca es 38/100. Una
-respuesta puede mencionar varias marcas; no es una distribución de preferencia.
+- Apertura alineada a la izquierda, titular, descripción y dos acciones existentes.
+- Tres controles descriptivos sobre un único panel central. Presencia,
+  Sentimiento y Citas cambian de vista; admiten teclado y fragmentos directos.
+- Seis bloques explican qué observar y para qué sirve cada señal. Cuatro pasos
+  conectan las preguntas con la evidencia y las prioridades de contenido.
+- Los textos son de KAIRUM y corresponden a su alcance. No se trasladan FactCheck,
+  certificaciones, clientes, millones de consultas, ejecución diaria ni captura
+  desde interfaces de consumidor por aparecer en la página de Profound.
+- Las vistas tienen una sola nota discreta: cifras, marcas y fuentes ilustrativas.
+  Los controles y las tablas utilizan etiquetas normales de producto; los avisos
+  repetidos de ejemplo no dominan el recorrido.
 
-Sentimiento agrupa 100 menciones ficticias en cinco temas. Cada tema permite
-abrir una respuesta y su interpretación. Las 56 menciones positivas del cierre
-coinciden con el último punto de la curva. Neutro y negativo son categorías
-explícitas; la curva representa sólo el porcentaje positivo.
+## Datos e interacción
 
-Citas distingue dominios y páginas propias. Las seis filas distribuyen 100 citas
-ficticias; las tres páginas distribuyen las 32 citas del dominio propio. Los
-dominios `.example` son texto y nunca destinos externos. Los detalles se abren
-de forma nativa y las pestañas permiten teclado y enlaces directos.
+Presencia compara tres series y cinco marcas. Siete o catorce lecturas y la
+comparación modifican el gráfico y sus datos accesibles. La tabla por temas
+reparte 100 respuestas y 38 menciones; coincide con el 38 % del cierre.
 
-## Alcance y accesibilidad
+Sentimiento agrupa 100 menciones en cinco temas y permite abrir respuesta e
+interpretación. Las 56 positivas coinciden con el cierre de su curva. Citas
+reparte 100 referencias entre seis dominios y las 32 propias entre tres páginas.
+Los dominios `.example` son texto y no destinos externos.
 
-Es una demostración pública sin llamadas a un backend ni disponibilidad real
-implícita. Cada escena identifica sus datos sintéticos. El gráfico se carga al
-acercarse Analytics al viewport, usando Chart.js 4.5.1 ya aprobado. Si no carga
-o no hay JavaScript, las tablas conservan las observaciones, las fuentes y los
-detalles. Los controles de gráfico aparecen sólo cuando funcionan.
+Las pestañas exteriores reutilizan el comportamiento existente; las de fuentes
+se mantienen anidadas y conservan su estado. Los fragmentos revelan los paneles
+correspondientes. Sin JavaScript permanecen los tres capítulos, tablas y detalles
+nativos. Si Chart.js falla, la tabla sigue disponible. Home conserva un solo panel.
 
-Las tres escenas permanecen en el documento de producto; Home sólo incluye
-Presencia, sin índice ni capítulos adicionales. En móvil la navegación lateral
-pasa a una fila y el ranking continúa debajo del gráfico. Los controles tienen
-un mínimo de 44 px, foco visible y movimiento reducido. No se agregan paquetes,
-proveedores, nuevas rutas ni configuración privada.
+## Alcance y validación
 
-Implementación: `src/components/kairum/analytics-story.ts`, contenido en
-`src/i18n/analytics-story.ts`, datos fijos en `src/lib/analytics-story-data.ts`,
-estilo aislado y mejora progresiva en `src/scripts/cinematic/analytics-story.ts`.
+Es una presentación local del producto con datos ilustrativos. No inicia
+mediciones, integra proveedores ni publica cambios. La referencia R05 se conserva
+mediante sustituciones reversibles, sin regenerar sus fingerprints.
 
-Ver [QA y evidencia](../evidence/2026-10-18-analytics-story/README.md).
+[Capturas, revisión y pruebas de esta iteración](../evidence/2026-10-18-analytics-editorial/README.md).
+La [evidencia anterior](../evidence/2026-10-18-analytics-story/README.md) conserva
+el alcance de las entregas previas.

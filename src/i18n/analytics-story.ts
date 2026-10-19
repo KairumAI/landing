@@ -2,10 +2,10 @@ import type { Locale } from "./locales";
 
 export interface AnalyticsStoryCopy {
   name: string;
-  disclosure: string;
   scope: string;
   navigation: string;
   preview: string;
+  actions: readonly [string, string, string];
   views: readonly [string, string, string];
   headings: readonly [string, string, string];
   descriptions: readonly [string, string, string];
@@ -54,11 +54,14 @@ export interface AnalyticsStoryCopy {
 export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
   es: {
     name: "Analytics",
-    disclosure: "Ejemplo ilustrativo · datos sintéticos",
-    scope:
-      "Estas vistas ilustran el recorrido de Analytics. Los datos, las respuestas y las fuentes son ficticios; no representan resultados de clientes ni una integración activa.",
+    scope: "Vista de producto con cifras, marcas y fuentes ilustrativas.",
     navigation: "Explorar las tres vistas de Analytics",
     preview: "Vista previa de Analytics",
+    actions: [
+      "Medí tu presencia",
+      "Analizá las narrativas",
+      "Explorá las citas",
+    ],
     views: ["Presencia", "Sentimiento", "Citas"],
     headings: [
       "Conocé tu lugar en las respuestas.",
@@ -72,23 +75,21 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     ],
     brand: "Tu marca",
     competitor: "Competidor",
-    sample: "100 respuestas por lectura, en este ejemplo.",
-    readings: "Lecturas del ejemplo",
+    sample: "100 respuestas por lectura.",
+    readings: "Período de análisis",
     reading: "Lectura",
     periods: ["7 lecturas", "14 lecturas"],
     comparison: "Comparar marcas",
     chart: "Evolución ilustrativa de presencia de Tu marca y sus competidores",
-    data: "Ver los datos del ejemplo",
+    data: "Ver los datos",
     visibility: "Presencia al cierre",
     ranking: "Comparación al cierre",
-    closing:
-      "38 de 100 respuestas mencionan Tu marca en la última lectura de ejemplo.",
+    closing: "38 de 100 respuestas mencionan Tu marca en la última lectura.",
     overlap: "Una respuesta puede mencionar más de una marca.",
     sentimentTitle: "Las narrativas, en detalle",
     sentimentTrend: "Cómo evoluciona el tono",
-    sentimentTrendContext:
-      "Porcentaje de menciones positivas en siete lecturas ilustrativas de Tu marca.",
-    sentimentSample: "100 menciones ficticias, agrupadas en cinco temas.",
+    sentimentTrendContext: "Evolución de las menciones positivas de Tu marca.",
+    sentimentSample: "Distribución de 100 menciones en cinco temas.",
     topic: "Tema",
     mentions: "Menciones",
     tone: "Distribución del tono",
@@ -99,7 +100,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
         response:
           "Tu marca reúne briefs, comentarios y revisiones en un mismo lugar, con una navegación sencilla.",
         interpretation:
-          "La respuesta valora la simplicidad. Es una lectura de ejemplo, no una evaluación de calidad del producto.",
+          "La respuesta valora la simplicidad y la organización del trabajo.",
       },
       {
         name: "Configuración inicial",
@@ -125,17 +126,16 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
       {
         name: "Confianza",
         response:
-          "La página de producto describe las funciones de Tu marca, sin aportar en este ejemplo una evaluación independiente.",
+          "La página de producto describe las funciones de Tu marca sin aportar una evaluación independiente.",
         interpretation:
           "La existencia de una fuente no demuestra por sí misma confianza ni preferencia.",
       },
     ],
-    response: "Respuesta ilustrativa",
+    response: "Respuesta analizada",
     interpretation: "Cómo leerla",
-    source: "Fuente de ejemplo",
+    source: "Explorar las fuentes",
     sourcesTitle: "Las fuentes citadas",
-    sourcesSample:
-      "100 citas ficticias. Abrí un dominio para explorar su contexto.",
+    sourcesSample: "Dominios utilizados como referencia en 100 citas.",
     sourceViews: ["Dominios", "Páginas propias"],
     domain: "Dominio",
     page: "Página",
@@ -150,32 +150,29 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
       {
         domain: "tumarca.example",
         description:
-          "Página de producto ficticia: describe briefs, comentarios y revisiones por proyecto.",
+          "Página de producto: describe briefs, comentarios y revisiones por proyecto.",
       },
       {
         domain: "medio-a.example",
         description:
-          "Artículo editorial ficticio sobre herramientas de coordinación de equipos.",
+          "Artículo editorial sobre herramientas de coordinación de equipos.",
       },
       {
         domain: "comparador.example",
         description:
-          "Comparativa ficticia de alternativas. Una cita no implica recomendación.",
+          "Comparativa de alternativas. Una cita no implica recomendación.",
       },
       {
         domain: "comunidad.example",
-        description:
-          "Conversación ficticia sobre el trabajo de diseño en equipo.",
+        description: "Conversación sobre el trabajo de diseño en equipo.",
       },
       {
         domain: "medio-b.example",
-        description:
-          "Guía ficticia sobre el seguimiento de revisiones y entregables.",
+        description: "Guía sobre el seguimiento de revisiones y entregables.",
       },
       {
         domain: "competidor-a.example",
-        description:
-          "Página ficticia de otra marca que aparece en las respuestas del ejemplo.",
+        description: "Página de otra marca citada en las respuestas.",
       },
     ],
     pages: [
@@ -189,15 +186,18 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
         description: "Preguntas habituales sobre la herramienta.",
       },
     ],
-    pageSample: "Distribución de las 32 citas ficticias al dominio propio.",
+    pageSample: "Distribución de las 32 citas al dominio propio.",
   },
   en: {
     name: "Analytics",
-    disclosure: "Illustrative example · synthetic data",
-    scope:
-      "These views illustrate the Analytics journey. All data, responses and sources are fictional; they represent neither client results nor an active integration.",
+    scope: "Product view with illustrative figures, brands and sources.",
     navigation: "Explore the three Analytics views",
     preview: "Analytics preview",
+    actions: [
+      "Measure your presence",
+      "Analyze the narratives",
+      "Explore the citations",
+    ],
     views: ["Presence", "Sentiment", "Citations"],
     headings: [
       "See your place in AI answers.",
@@ -211,23 +211,21 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     ],
     brand: "Your brand",
     competitor: "Competitor",
-    sample: "100 responses per reading in this example.",
-    readings: "Example readings",
+    sample: "100 answers per reading.",
+    readings: "Analysis period",
     reading: "Reading",
     periods: ["7 readings", "14 readings"],
     comparison: "Compare brands",
     chart: "Illustrative presence trends for Your brand and its competitors",
-    data: "View the example data",
+    data: "View the data",
     visibility: "Presence at close",
     ranking: "Comparison at close",
-    closing:
-      "38 of 100 responses mention Your brand in the last example reading.",
+    closing: "38 of 100 answers mention Your brand in the latest reading.",
     overlap: "An answer can mention more than one brand.",
     sentimentTitle: "Narratives in detail",
     sentimentTrend: "How the tone evolves",
-    sentimentTrendContext:
-      "Share of positive mentions in seven illustrative readings of Your brand.",
-    sentimentSample: "100 fictional mentions, grouped into five topics.",
+    sentimentTrendContext: "How positive mentions of Your brand evolve.",
+    sentimentSample: "Distribution of 100 mentions across five topics.",
     topic: "Topic",
     mentions: "Mentions",
     tone: "Tone distribution",
@@ -237,8 +235,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
         name: "Ease of use",
         response:
           "Your brand brings briefs, comments and reviews together with straightforward navigation.",
-        interpretation:
-          "The response values simplicity. This is an example reading, not a product-quality assessment.",
+        interpretation: "The response values simplicity and work organization.",
       },
       {
         name: "Initial setup",
@@ -264,17 +261,16 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
       {
         name: "Trust",
         response:
-          "The product page describes Your brand's features without an independent assessment in this example.",
+          "The product page describes Your brand's features without an independent assessment.",
         interpretation:
           "A source's existence alone does not establish trust or preference.",
       },
     ],
-    response: "Illustrative response",
+    response: "Analyzed answer",
     interpretation: "How to read it",
-    source: "Example source",
+    source: "Explore the sources",
     sourcesTitle: "Cited sources",
-    sourcesSample:
-      "100 fictional citations. Open a domain to explore its context.",
+    sourcesSample: "Domains referenced across 100 citations.",
     sourceViews: ["Domains", "Own pages"],
     domain: "Domain",
     page: "Page",
@@ -289,29 +285,29 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
       {
         domain: "yourbrand.example",
         description:
-          "Fictional product page describing briefs, comments and project reviews.",
+          "Product page describing briefs, comments and project reviews.",
       },
       {
         domain: "media-a.example",
-        description: "Fictional editorial article on team coordination tools.",
+        description: "Editorial article on team coordination tools.",
       },
       {
         domain: "comparison.example",
         description:
-          "Fictional comparison of alternatives. A citation does not imply endorsement.",
+          "Comparison of alternatives. A citation does not imply endorsement.",
       },
       {
         domain: "community.example",
-        description: "Fictional discussion of collaborative design work.",
+        description: "Discussion of collaborative design work.",
       },
       {
         domain: "media-b.example",
-        description: "Fictional guide to tracking reviews and deliverables.",
+        description: "Guide to tracking reviews and deliverables.",
       },
       {
         domain: "competitor-a.example",
         description:
-          "Fictional page from another brand appearing in the example responses.",
+          "Page from another brand appearing in the analyzed answers.",
       },
     ],
     pages: [
@@ -322,16 +318,18 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
         description: "Common questions about the tool.",
       },
     ],
-    pageSample:
-      "Distribution of the 32 fictional citations to the owned domain.",
+    pageSample: "Distribution of the 32 citations to the owned domain.",
   },
   "pt-br": {
     name: "Analytics",
-    disclosure: "Exemplo ilustrativo · dados sintéticos",
-    scope:
-      "Estas telas ilustram o percurso do Analytics. Os dados, as respostas e as fontes são fictícios; não representam resultados de clientes nem uma integração ativa.",
+    scope: "Visão do produto com números, marcas e fontes ilustrativos.",
     navigation: "Explorar as três visões do Analytics",
     preview: "Prévia do Analytics",
+    actions: [
+      "Meça sua presença",
+      "Analise as narrativas",
+      "Explore as citações",
+    ],
     views: ["Presença", "Sentimento", "Citações"],
     headings: [
       "Conheça seu lugar nas respostas.",
@@ -345,23 +343,21 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     ],
     brand: "Sua marca",
     competitor: "Concorrente",
-    sample: "100 respostas por leitura, neste exemplo.",
-    readings: "Leituras do exemplo",
+    sample: "100 respostas por leitura.",
+    readings: "Período de análise",
     reading: "Leitura",
     periods: ["7 leituras", "14 leituras"],
     comparison: "Comparar marcas",
     chart: "Evolução ilustrativa da presença de Sua marca e seus concorrentes",
-    data: "Ver os dados do exemplo",
+    data: "Ver os dados",
     visibility: "Presença ao final",
     ranking: "Comparação ao final",
-    closing:
-      "38 de 100 respostas mencionam Sua marca na última leitura do exemplo.",
+    closing: "38 de 100 respostas mencionam Sua marca na última leitura.",
     overlap: "Uma resposta pode mencionar mais de uma marca.",
     sentimentTitle: "As narrativas em detalhe",
     sentimentTrend: "Como o tom evolui",
-    sentimentTrendContext:
-      "Percentual de menções positivas em sete leituras ilustrativas de Sua marca.",
-    sentimentSample: "100 menções fictícias, agrupadas em cinco temas.",
+    sentimentTrendContext: "Evolução das menções positivas à Sua marca.",
+    sentimentSample: "Distribuição de 100 menções em cinco temas.",
     topic: "Tema",
     mentions: "Menções",
     tone: "Distribuição do tom",
@@ -372,7 +368,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
         response:
           "Sua marca reúne briefs, comentários e revisões no mesmo lugar, com navegação simples.",
         interpretation:
-          "A resposta valoriza a simplicidade. É uma leitura de exemplo, não uma avaliação de qualidade do produto.",
+          "A resposta valoriza a simplicidade e a organização do trabalho.",
       },
       {
         name: "Configuração inicial",
@@ -398,17 +394,16 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
       {
         name: "Confiança",
         response:
-          "A página do produto descreve as funções de Sua marca, sem uma avaliação independente neste exemplo.",
+          "A página do produto descreve as funções de Sua marca, sem uma avaliação independente.",
         interpretation:
           "A existência de uma fonte, por si só, não demonstra confiança nem preferência.",
       },
     ],
-    response: "Resposta ilustrativa",
+    response: "Resposta analisada",
     interpretation: "Como interpretar",
-    source: "Fonte do exemplo",
+    source: "Explorar as fontes",
     sourcesTitle: "As fontes citadas",
-    sourcesSample:
-      "100 citações fictícias. Abra um domínio para explorar seu contexto.",
+    sourcesSample: "Domínios utilizados como referência em 100 citações.",
     sourceViews: ["Domínios", "Páginas próprias"],
     domain: "Domínio",
     page: "Página",
@@ -423,31 +418,30 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
       {
         domain: "suamarca.example",
         description:
-          "Página fictícia do produto: descreve briefs, comentários e revisões por projeto.",
+          "Página do produto: descreve briefs, comentários e revisões por projeto.",
       },
       {
         domain: "midia-a.example",
         description:
-          "Artigo editorial fictício sobre ferramentas de coordenação de equipes.",
+          "Artigo editorial sobre ferramentas de coordenação de equipes.",
       },
       {
         domain: "comparador.example",
         description:
-          "Comparação fictícia de alternativas. Uma citação não implica recomendação.",
+          "Comparação de alternativas. Uma citação não implica recomendação.",
       },
       {
         domain: "comunidade.example",
-        description: "Conversa fictícia sobre o trabalho de design em equipe.",
+        description: "Conversa sobre o trabalho de design em equipe.",
       },
       {
         domain: "midia-b.example",
-        description:
-          "Guia fictício sobre o acompanhamento de revisões e entregas.",
+        description: "Guia sobre o acompanhamento de revisões e entregas.",
       },
       {
         domain: "concorrente-a.example",
         description:
-          "Página fictícia de outra marca que aparece nas respostas do exemplo.",
+          "Página de outra marca que aparece nas respostas analisadas.",
       },
     ],
     pages: [
@@ -461,6 +455,6 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
         description: "Perguntas comuns sobre a ferramenta.",
       },
     ],
-    pageSample: "Distribuição das 32 citações fictícias ao domínio próprio.",
+    pageSample: "Distribuição das 32 citações ao domínio próprio.",
   },
 };

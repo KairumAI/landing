@@ -6,6 +6,13 @@ export const analyticsStoryData = {
     [18, 20, 24, 22, 20, 26, 24, 24, 22, 25, 26, 25, 28, 28],
   ],
   ranking: [38, 32, 28, 24, 18],
+  presenceTopics: [
+    [30, 12],
+    [24, 8],
+    [20, 9],
+    [16, 5],
+    [10, 4],
+  ],
   sentimentTrend: [44, 50, 48, 52, 58, 54, 56],
   // Positive / neutral / negative counts, each row totals its topic mentions.
   sentiment: [
