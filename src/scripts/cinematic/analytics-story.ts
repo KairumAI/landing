@@ -54,6 +54,10 @@ export function enhanceAnalyticsStory(motionAllowed: () => boolean) {
         try {
           library ??= import("chart.js/auto").then((module) => module.default);
           const Chart = await library;
+          const accent =
+            getComputedStyle(root)
+              .getPropertyValue("--product-accent")
+              .trim() || "#087f5b";
           const wrapper = canvas!.parentElement!;
           wrapper.hidden = false;
           chart = new Chart<"line", number[], string>(canvas!, {
@@ -63,8 +67,8 @@ export function enhanceAnalyticsStory(motionAllowed: () => boolean) {
               datasets: labels.map((label, i) => ({
                 label,
                 data: [],
-                borderColor: ["#a17c00", "#656a60", "#9a9d94"][i],
-                backgroundColor: i === 0 ? "#ffc40018" : "transparent",
+                borderColor: [accent, "#656a60", "#9a9d94"][i],
+                backgroundColor: i === 0 ? `${accent}18` : "transparent",
                 borderWidth: i === 0 ? 2.5 : 1.5,
                 pointRadius: 0,
                 pointHitRadius: 10,

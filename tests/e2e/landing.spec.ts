@@ -474,10 +474,15 @@ test("NoJS keeps content, native product FAQ and booking links at 320px", async 
   const page = await context.newPage();
   await page.goto("/");
   await expect(page.locator("main>section")).toHaveCount(9);
-  await expect(page.locator(".prompt-research-plan li")).toHaveCount(3);
-  await expect(page.locator(".traffic-observation-note")).toContainText(
-    "no demuestra",
+  const questions = page.locator(
+    "[data-prompt-demonstration] [data-tab-panel]:visible",
   );
+  await expect(questions).toHaveCount(3);
+  for (const question of await questions.all())
+    await expect(question.locator("h3")).toBeVisible();
+  await expect(page.locator("[data-traffic-route][open]")).toHaveCount(2);
+  await expect(page.locator("[data-traffic-route] li")).toHaveCount(6);
+  await expect(page.locator(".pd-traffic-note")).toContainText("no demuestra");
   await expect(page.locator('[data-analytics-preview="home"]')).toBeVisible();
   await expect(page.locator('[data-analytics-preview="home"]')).toContainText(
     "Tu marca",

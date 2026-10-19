@@ -6,6 +6,10 @@ import { localeMeta, type Locale } from "../i18n/locales";
 import { createHomeScenes } from "../components/kairum/home-scenes";
 import { createMarketingRenderer } from "../components/kairum/marketing-html";
 import { renderAnalyticsPreview } from "../components/kairum/analytics-story";
+import {
+  renderPromptDemonstration,
+  renderTrafficDemonstration,
+} from "../components/kairum/product-demonstrations";
 import { analyticsProductCopy } from "../i18n/analytics-product";
 import { agentsProductCopy } from "../i18n/agents-product";
 import {
@@ -121,6 +125,20 @@ function editorialEdits(
       (_original, path: string) =>
         `href="${path.startsWith("/informes/") ? `https://kairum.com.ar${path}` : l(path)}"`,
     );
+  if (id === "home" || id === "prompt-intelligence") {
+    edit(
+      localize(createHomeScenes(t).homePromptScene()),
+      localize(
+        renderPromptDemonstration(locale, id === "home" ? "home" : "product"),
+      ),
+    );
+  }
+  if (id === "home" || id === "traffic") {
+    edit(
+      localize(createHomeScenes(t).homeTrafficScene()),
+      renderTrafficDemonstration(locale),
+    );
+  }
   if (id === "home" || id === "analytics") {
     const mode = id === "home" ? "home" : "product";
     const original = createHomeScenes(t).homeAnalyticsScene(
@@ -182,13 +200,6 @@ function editorialEdits(
     edit(
       original,
       `<div class="glass-question" data-home-enter>${icon("MagnifyingGlass")}<div><div><small data-example-context="ai-query">${e(example.homeQueryLabel)}</small></div><span>${question}</span></div></div>`,
-    );
-  }
-  if (id === "home" || id === "prompt-intelligence") {
-    const original = `<article class="prompt-featured-query" data-home-enter><div>${icon("MagnifyingGlass")}<span>${e(t("pregunta_de_tu_equipo"))}</span></div>`;
-    edit(
-      original,
-      `<article class="prompt-featured-query" data-home-enter><div>${icon("MagnifyingGlass")}<span data-example-context="ai-question">${e(example.promptQuestionLabel)}</span></div>`,
     );
   }
   if (id === "report") {
