@@ -54,7 +54,7 @@ export interface AnalyticsStoryCopy {
 export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
   es: {
     name: "Analytics",
-    scope: "Vista de producto con cifras, marcas y fuentes ilustrativas.",
+    scope: "Presencia · Narrativas · Fuentes",
     navigation: "Explorar las tres vistas de Analytics",
     preview: "Vista previa de Analytics",
     actions: [
@@ -80,7 +80,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     reading: "Lectura",
     periods: ["7 lecturas", "14 lecturas"],
     comparison: "Comparar marcas",
-    chart: "Evolución ilustrativa de presencia de Tu marca y sus competidores",
+    chart: "Analytics: presencia de Tu marca y sus competidores",
     data: "Ver los datos",
     visibility: "Presencia al cierre",
     ranking: "Comparación al cierre",
@@ -190,7 +190,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
   },
   en: {
     name: "Analytics",
-    scope: "Product view with illustrative figures, brands and sources.",
+    scope: "Presence · Narratives · Sources",
     navigation: "Explore the three Analytics views",
     preview: "Analytics preview",
     actions: [
@@ -216,7 +216,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     reading: "Reading",
     periods: ["7 readings", "14 readings"],
     comparison: "Compare brands",
-    chart: "Illustrative presence trends for Your brand and its competitors",
+    chart: "Analytics: presence of Your brand and its competitors",
     data: "View the data",
     visibility: "Presence at close",
     ranking: "Comparison at close",
@@ -322,7 +322,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
   },
   "pt-br": {
     name: "Analytics",
-    scope: "Visão do produto com números, marcas e fontes ilustrativos.",
+    scope: "Presença · Narrativas · Fontes",
     navigation: "Explorar as três visões do Analytics",
     preview: "Prévia do Analytics",
     actions: [
@@ -348,7 +348,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     reading: "Leitura",
     periods: ["7 leituras", "14 leituras"],
     comparison: "Comparar marcas",
-    chart: "Evolução ilustrativa da presença de Sua marca e seus concorrentes",
+    chart: "Analytics: presença de Sua marca e seus concorrentes",
     data: "Ver os dados",
     visibility: "Presença ao final",
     ranking: "Comparação ao final",

@@ -181,3 +181,20 @@ La tarjeta Fuente de Home entra hacia su perspectiva CSS y empieza la flotación
 desde su pose de reposo. Ambas tarjetas de la escena responden al puntero y
 regresan a sus respectivas perspectivas, manteniendo reduced motion y las
 pausas por visibilidad. La corrección es aditiva y conserva los CSS de R05.
+
+## Leyendas funcionales y revisión de marca · 2026-10-19
+
+Por indicación de Bruno, las escenas comerciales usan leyendas que explican
+la tarea: Pregunta, Respuesta, Fuente, Contexto, Propuesta y Revisión. Esto
+reemplaza el criterio de rótulos ilustrativos del apartado histórico del
+2026-10-18. Home, productos, Marcas y Agencias comparten el ajuste en ES/EN/PT-BR.
+Se conservan «Tu marca», alternativas genéricas y dominios reservados, sin
+atribuir las escenas a mediciones de KAIRUM ni a resultados de clientes.
+Las fuentes, fechas y metodología de estudios publicados siguen vigentes.
+
+La [revisión general de marca](../evidence/2026-10-19-brand-audit/README.md)
+registra las 21 páginas y capturas actuales de Profound. Propone mantener el
+amarillo de KAIRUM y diferenciar Analytics con verde, Agents con violeta,
+Prompt con azul y Traffic con verde azulado. Esos acentos y las propuestas de
+composición y movimiento aún no están implementados. La aprobación independiente
+9,3/9,2/9,6 corresponde únicamente al cambio de leyendas.

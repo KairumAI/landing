@@ -9,28 +9,24 @@ interface ExampleContextCopy {
 
 const copy: Record<Locale, ExampleContextCopy> = {
   es: {
-    homeQueryLabel: "Ejemplo de consulta a una IA",
-    promptQuestionLabel: "Ejemplo de pregunta para IA",
-    reportQueryContext:
-      "Consulta de ejemplo a una IA. Vista ilustrativa del diagnóstico.",
+    homeQueryLabel: "Pregunta a la IA",
+    promptQuestionLabel: "Pregunta de tu audiencia",
+    reportQueryContext: "Pregunta de negocio · Respuesta · Evidencia",
     analyticsComparisonContext:
-      "Comparación ilustrativa de respuestas a una misma consulta a una IA.",
+      "Una misma pregunta. Respuestas y fuentes para contrastar.",
   },
   en: {
-    homeQueryLabel: "Example query to an AI assistant",
-    promptQuestionLabel: "Example question for AI",
-    reportQueryContext:
-      "Example query to an AI assistant. Illustrative diagnosis view.",
-    analyticsComparisonContext:
-      "Illustrative comparison of responses to the same AI query.",
+    homeQueryLabel: "Question for AI",
+    promptQuestionLabel: "Your audience’s question",
+    reportQueryContext: "Business question · Answer · Evidence",
+    analyticsComparisonContext: "One question. Answers and sources to compare.",
   },
   "pt-br": {
-    homeQueryLabel: "Exemplo de consulta a uma IA",
-    promptQuestionLabel: "Exemplo de pergunta para IA",
-    reportQueryContext:
-      "Consulta de exemplo a uma IA. Visão ilustrativa do diagnóstico.",
+    homeQueryLabel: "Pergunta para a IA",
+    promptQuestionLabel: "Pergunta do seu público",
+    reportQueryContext: "Pergunta de negócio · Resposta · Evidência",
     analyticsComparisonContext:
-      "Comparação ilustrativa de respostas à mesma consulta a uma IA.",
+      "Uma mesma pergunta. Respostas e fontes para comparar.",
   },
 };
 
