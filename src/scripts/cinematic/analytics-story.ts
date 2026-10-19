@@ -230,15 +230,14 @@ export function enhanceAnalyticsStory(motionAllowed: () => boolean) {
         { rootMargin: "300px" },
       );
       observer.observe(root);
-      window.addEventListener(
-        "pagehide",
-        () => {
-          observer.disconnect();
-          chart?.destroy();
-          sentimentChart?.destroy();
-        },
-        { once: true },
-      );
+      // A BFCache restoration can happen repeatedly on the same document.
+      window.addEventListener("pagehide", () => {
+        observer.disconnect();
+        chart?.destroy();
+        sentimentChart?.destroy();
+        chart = undefined;
+        sentimentChart = undefined;
+      });
       window.addEventListener("pageshow", (event) => {
         if (event.persisted) {
           chart = undefined;

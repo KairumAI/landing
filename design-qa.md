@@ -91,3 +91,7 @@ Ambos conservan el mismo alcance de producto; no impide revisar las diferencias.
 
 No quedan reparaciones P0/P1/P2 pendientes. Se mantienen el backend y los
 destinos comerciales existentes. Entrega local, sin publicar.
+
+La [revisión previa a publicación](docs/evidence/2026-10-19-publication/README.md)
+registra un P2 posterior de restauración de gráficos, ya corregido y cerrado por
+el crítico de código. No cambia esta composición visual ni sus puntajes.

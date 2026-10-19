@@ -251,6 +251,65 @@ for (const locale of ["es", "en", "pt-br"] as const) {
   });
 }
 
+for (const locale of ["es", "en", "pt-br"] as const) {
+  test(`${locale}: Analytics charts survive repeated history restorations on Home and product`, async ({
+    page,
+  }) => {
+    const copy = analyticsStoryCopy[locale];
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    for (const path of ["/", "/productos/analytics/"]) {
+      const hash =
+        path === "/"
+          ? "product-analytics"
+          : "analytics-preview-product-comparison";
+      await page.goto(`${localizedPath(path, locale)}#${hash}`);
+      const story = page.locator("[data-analytics-story]");
+      await expect(story).toHaveAttribute("data-chart-ready", "true");
+      for (let cycle = 0; cycle < 2; cycle++) {
+        const state = await page.evaluate(async () => {
+          window.dispatchEvent(
+            new PageTransitionEvent("pagehide", { persisted: true }),
+          );
+          window.dispatchEvent(
+            new PageTransitionEvent("pageshow", { persisted: true }),
+          );
+          await new Promise(requestAnimationFrame);
+          await new Promise(requestAnimationFrame);
+          return document.querySelector<HTMLElement>("[data-analytics-story]")!
+            .dataset.chartReady;
+        });
+        expect(state, `${locale} ${path} history cycle ${cycle + 1}`).toBe(
+          "true",
+        );
+        await story
+          .getByRole("radio", { name: copy.periods[1], exact: true })
+          .check();
+        await expect(
+          story.locator(".as-chart-data tbody tr:not([hidden])"),
+        ).toHaveCount(14);
+        await expect(story.locator("[data-as-chart]")).toBeVisible();
+        await story
+          .getByRole("radio", { name: copy.periods[0], exact: true })
+          .check();
+      }
+      if (path !== "/") {
+        await story
+          .locator(".as-story-index")
+          .getByRole("tab", { name: copy.actions[1], exact: true })
+          .click();
+        await expect(story.locator("[data-as-sentiment-chart]")).toBeVisible();
+        await expect
+          .poll(() =>
+            story
+              .locator("[data-as-sentiment-chart]")
+              .evaluate((canvas: HTMLCanvasElement) => canvas.width),
+          )
+          .toBeGreaterThan(0);
+      }
+    }
+  });
+}
+
 test("without JavaScript all scenes, source views and underlying observations stay reachable", async ({
   browser,
   baseURL,
