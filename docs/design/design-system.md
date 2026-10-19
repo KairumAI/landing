@@ -193,26 +193,8 @@ atribuir las escenas a mediciones de KAIRUM ni a resultados de clientes.
 Las fuentes, fechas y metodología de estudios publicados siguen vigentes.
 
 La [revisión general de marca](../evidence/2026-10-19-brand-audit/README.md)
-registra las 21 páginas y capturas de Profound. Propuso mantener el
+registra las 21 páginas y capturas actuales de Profound. Propone mantener el
 amarillo de KAIRUM y diferenciar Analytics con verde, Agents con violeta,
-Prompt con azul y Traffic con verde azulado. La aprobación independiente
-9,3/9,2/9,6 corresponde únicamente al cambio de leyendas de esa ronda.
-
-## Identidad por producto · 2026-10-19
-
-Bruno aprobó implementar esos acentos y las prioridades de composición. La
-[definición de identidad](product-identity.md) fija sus tokens, superficies y
-significados. El amarillo sigue en la marca y las acciones comerciales;
-sentimiento y revisión conservan sus colores semánticos.
-
-Analytics y Agents acercan sus demostraciones al título. Prompt Intelligence
-conecta tres intenciones con preguntas y criterios de investigación; Traffic
-distingue visitas humanas y solicitudes de crawlers con fuentes diferentes.
-Ambos reutilizan escenas entre Home y producto, con entrada finita y lectura
-estable ante el puntero. El catálogo crece con el contenido y el equipo comparte
-tratamiento monocromo sin cambiar sus fotos ni sus credenciales.
-
-La [evidencia de implementación](../evidence/2026-10-19-product-identity/README.md)
-conserva las capturas a 1440, 768, 390 y 320 px, sus hashes, las rondas de crítica
-independiente y los resultados de validación de esta versión. R05, los informes
-y sus assets originales mantienen sus bytes.
+Prompt con azul y Traffic con verde azulado. Esos acentos y las propuestas de
+composición y movimiento aún no están implementados. La aprobación independiente
+9,3/9,2/9,6 corresponde únicamente al cambio de leyendas.

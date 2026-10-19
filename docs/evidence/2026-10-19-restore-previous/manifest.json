@@ -1,0 +1,239 @@
+{
+  "created_at": "2026-10-19T18:35:18.918984+00:00",
+  "restored_source_sha": "9ef3810e3fd509a366bb064933910deab1b2c1c0",
+  "reverted_sha": "858d53765baef396e743b7af89f1bcb73cc5744d",
+  "restored_tree": "e971af434e3e803f7f557a195709786dc309b2b3",
+  "source_tree_matches_previous_before_evidence": true,
+  "production_rollback": {
+    "deployment_id": "b5a2d8cf-0ba7-4087-8fe9-8eda6dbcd67b",
+    "url": "https://b5a2d8cf.kairum.pages.dev",
+    "live_check": {
+      "passed": true,
+      "checked_files": 101,
+      "excluded_routes": 32
+    }
+  },
+  "screenshots": [
+    {
+      "page": "home",
+      "url": "https://kairum.com.ar/",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440,
+      "path": "runtime/home-restored-1440.jpg",
+      "sha256": "de3fa54782d022fbf3fab0c1f88dafa41b6e27bfec205a89ee71dab7c59e57b6",
+      "bytes": 128568
+    },
+    {
+      "page": "analytics",
+      "url": "https://kairum.com.ar/productos/analytics/",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440,
+      "path": "runtime/analytics-restored-1440.jpg",
+      "sha256": "3c653ffb58db5bf4af9cdbd7f85d130deb06f21fb4823fca8715d06d1db12ae9",
+      "bytes": 74748
+    },
+    {
+      "page": "agents",
+      "url": "https://kairum.com.ar/productos/agents/",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440,
+      "path": "runtime/agents-restored-1440.jpg",
+      "sha256": "b4276f3618788c325369bb1a23712aaf202385cf6453b46f4263d4dfd702ba30",
+      "bytes": 89066
+    },
+    {
+      "page": "home",
+      "url": "https://kairum.com.ar/",
+      "height": 1000,
+      "scrollWidth": 753,
+      "width": 768,
+      "path": "runtime/home-restored-768.jpg",
+      "sha256": "bafde78cd67821b1163a61bc4b43456051db5ee43a1e450607f273e36eea65b0",
+      "bytes": 72126
+    },
+    {
+      "page": "analytics",
+      "url": "https://kairum.com.ar/productos/analytics/",
+      "height": 1000,
+      "scrollWidth": 753,
+      "width": 768,
+      "path": "runtime/analytics-restored-768.jpg",
+      "sha256": "8393313c60a4e6bbd4347450ca236c8f0efe7ab8abb45636a2e33e25dbb26eb8",
+      "bytes": 60708
+    },
+    {
+      "page": "agents",
+      "url": "https://kairum.com.ar/productos/agents/",
+      "height": 1000,
+      "scrollWidth": 753,
+      "width": 768,
+      "path": "runtime/agents-restored-768.jpg",
+      "sha256": "ad45cb7fc3bb81fe6ed075c32acdf526bf6f082022a81c7f09326d7235c74c08",
+      "bytes": 64310
+    },
+    {
+      "page": "home",
+      "url": "https://kairum.com.ar/",
+      "height": 1000,
+      "scrollWidth": 375,
+      "width": 390,
+      "path": "runtime/home-restored-390.jpg",
+      "sha256": "d3c9a9b7166858e4ccfccf8267061fbe7aabe98a96c427634de36c6280c43131",
+      "bytes": 48115
+    },
+    {
+      "page": "analytics",
+      "url": "https://kairum.com.ar/productos/analytics/",
+      "height": 1000,
+      "scrollWidth": 375,
+      "width": 390,
+      "path": "runtime/analytics-restored-390.jpg",
+      "sha256": "14167e265d20c5d16e1f15c348a0c834b0fcb2a4e62625d338aa91b50fa07bb3",
+      "bytes": 42261
+    },
+    {
+      "page": "agents",
+      "url": "https://kairum.com.ar/productos/agents/",
+      "height": 1000,
+      "scrollWidth": 375,
+      "width": 390,
+      "path": "runtime/agents-restored-390.jpg",
+      "sha256": "9d7306c338813151cb295549cee2f2586a2950972c3a286cf6047e4f05d2737e",
+      "bytes": 39242
+    },
+    {
+      "page": "home",
+      "url": "https://kairum.com.ar/",
+      "height": 1000,
+      "scrollWidth": 305,
+      "width": 320,
+      "path": "runtime/home-restored-320.jpg",
+      "sha256": "9908d7079be92789f2ba7d34a33a404e7f7fb34881dd9b17ec557601deecc7a7",
+      "bytes": 40286
+    },
+    {
+      "page": "analytics",
+      "url": "https://kairum.com.ar/productos/analytics/",
+      "height": 1000,
+      "scrollWidth": 305,
+      "width": 320,
+      "path": "runtime/analytics-restored-320.jpg",
+      "sha256": "7bf89cfdf55949a7f8edfa25c2b90b993143a27cf38b6b7506ddeb9a87bc597d",
+      "bytes": 37081
+    },
+    {
+      "page": "agents",
+      "url": "https://kairum.com.ar/productos/agents/",
+      "height": 1000,
+      "scrollWidth": 305,
+      "width": 320,
+      "path": "runtime/agents-restored-320.jpg",
+      "sha256": "12d851f2c0fd1703cddcbc9639b20873f1b717ff245aac0fd791a80fda0a14ed",
+      "bytes": 37857
+    },
+    {
+      "page": "analytics-demo",
+      "url": "https://kairum.com.ar/productos/analytics/#explorar",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440,
+      "path": "runtime/analytics-demo-1440.jpg",
+      "sha256": "6e0c777a1f768da94630e376a5b7f9a73601abd906a644998be73bc50e27baf4",
+      "bytes": 71520
+    },
+    {
+      "page": "agents-demo",
+      "url": "https://kairum.com.ar/productos/agents/#explorar",
+      "height": 1000,
+      "scrollWidth": 1425,
+      "width": 1440,
+      "path": "runtime/agents-demo-1440.jpg",
+      "sha256": "676cd17430bed3986188579d9bd07594073536faa020c90128bbdee69736f53b",
+      "bytes": 89847
+    },
+    {
+      "page": "home-prompt-demo",
+      "url": "https://kairum.com.ar/",
+      "section": "product-prompt-intelligence",
+      "animation": "complete",
+      "copyOpacity": "1",
+      "height": 1000,
+      "motion": "reduced",
+      "scrollWidth": 1425,
+      "titleTop": 507.453125,
+      "width": 1440,
+      "path": "runtime/home-prompt-demo-1440.jpg",
+      "sha256": "2a870470d4d1f59f671b170387c223a46decba5df7145c758ac29646b697550b",
+      "bytes": 96678
+    },
+    {
+      "page": "home-traffic-demo",
+      "url": "https://kairum.com.ar/",
+      "section": "product-traffic",
+      "animation": "complete",
+      "copyOpacity": "1",
+      "height": 1000,
+      "motion": "reduced",
+      "scrollWidth": 1425,
+      "titleTop": 508.125,
+      "width": 1440,
+      "path": "runtime/home-traffic-demo-1440.jpg",
+      "sha256": "a9cb83cc113575debd6d44d9c8d378010b508e9d215ed82cc37a7b1c083cdbd0",
+      "bytes": 78134
+    },
+    {
+      "page": "analytics-demo",
+      "url": "https://kairum.com.ar/productos/analytics/#explorar",
+      "height": 1000,
+      "scrollWidth": 305,
+      "width": 320,
+      "path": "runtime/analytics-demo-320.jpg",
+      "sha256": "2ccca593718573b9801a21a94d5f117250f63788aca1bebd1cb0281a5e571508",
+      "bytes": 29341
+    },
+    {
+      "page": "agents-demo",
+      "url": "https://kairum.com.ar/productos/agents/#explorar",
+      "height": 1000,
+      "scrollWidth": 305,
+      "width": 320,
+      "path": "runtime/agents-demo-320.jpg",
+      "sha256": "4339f7bc7375b03458767365653bc7a59ab36a30647e5da2b84b416550520d57",
+      "bytes": 29307
+    },
+    {
+      "page": "home-prompt-demo",
+      "url": "https://kairum.com.ar/",
+      "section": "product-prompt-intelligence",
+      "animation": "complete",
+      "copyOpacity": "1",
+      "height": 1000,
+      "motion": "reduced",
+      "scrollWidth": 305,
+      "titleTop": 505.109375,
+      "width": 320,
+      "path": "runtime/home-prompt-demo-320.jpg",
+      "sha256": "ad468c037e2df212b5aeb5071fe6bcf108685d50a1695ff1271d4f3e21540813",
+      "bytes": 39216
+    },
+    {
+      "page": "home-traffic-demo",
+      "url": "https://kairum.com.ar/",
+      "section": "product-traffic",
+      "animation": "complete",
+      "copyOpacity": "1",
+      "height": 1000,
+      "motion": "reduced",
+      "scrollWidth": 305,
+      "titleTop": 504.578125,
+      "width": 320,
+      "path": "runtime/home-traffic-demo-320.jpg",
+      "sha256": "184b02c97135d6478d91c11116d090d9819387779dad61da30302f87712de33b",
+      "bytes": 29058
+    }
+  ],
+  "capture_round": 2
+}
