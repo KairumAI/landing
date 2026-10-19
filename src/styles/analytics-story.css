@@ -20,7 +20,7 @@
   margin: 0;
 }
 .analytics-story :is(a, summary, input):focus-visible {
-  outline: 2px solid var(--product-accent);
+  outline: 2px solid var(--kairum-focus);
   outline-offset: 4px;
   border-radius: 3px;
 }
@@ -83,7 +83,7 @@
   border-bottom: 2px solid transparent;
 }
 .as-story-index a:hover {
-  border-color: var(--product-accent);
+  border-color: var(--kairum-yellow);
 }
 .as-story-index i {
   color: var(--kairum-muted);
@@ -112,7 +112,7 @@
   font-weight: 550;
 }
 .as-story-heading > span i {
-  color: var(--product-accent);
+  color: var(--kairum-accent);
 }
 .analytics-story .as-story-heading > :is(h2, h3) {
   max-width: 25ch;
@@ -198,8 +198,8 @@
   height: 14px;
 }
 .as-brand-own {
-  background: var(--product-soft);
-  color: var(--product-accent);
+  background: var(--kairum-yellow-soft);
+  color: var(--kairum-focus);
 }
 .as-sidebar nav {
   display: grid;
@@ -218,7 +218,7 @@
   text-decoration: none;
 }
 .as-sidebar .as-view-selected {
-  background: var(--product-soft);
+  background: #fff0ad;
   color: var(--kairum-ink);
   font-weight: 550;
 }
@@ -291,7 +291,7 @@
   font-weight: 600;
 }
 .as-periods input:focus-visible + span {
-  outline: 2px solid var(--product-accent);
+  outline: 2px solid var(--kairum-focus);
   outline-offset: 2px;
 }
 .as-presence-grid {
@@ -343,7 +343,7 @@
   height: 9px;
 }
 .as-series-0 i {
-  color: var(--product-accent);
+  color: #9b7500;
 }
 .as-series-1 i {
   color: #70736b;
@@ -363,7 +363,7 @@
   display: inline-flex;
 }
 .as-compare input {
-  accent-color: var(--product-accent);
+  accent-color: #8a6800;
   width: 16px;
   height: 16px;
 }
@@ -521,7 +521,7 @@
   color: var(--kairum-muted);
 }
 .as-narratives details[open] > summary {
-  background: var(--product-soft);
+  background: #fffaf0;
 }
 .as-narratives details[open] > summary .as-topic-name i {
   transform: rotate(90deg);
@@ -574,7 +574,7 @@
   align-items: center;
   margin-top: 10px;
   min-height: 44px;
-  color: var(--product-accent);
+  color: var(--kairum-focus);
   font-size: 12px;
   text-underline-offset: 3px;
 }
@@ -594,7 +594,7 @@
 }
 .analytics-story .as-source-tab-list > [aria-selected="true"] {
   color: var(--kairum-ink);
-  border-bottom-color: var(--product-accent);
+  border-bottom-color: #9b7500;
 }
 .as-table-scroll {
   min-width: 0;
@@ -675,8 +675,8 @@
   display: inline-block;
   padding: 3px 6px;
   border-radius: 4px;
-  background: var(--product-soft);
-  color: var(--product-accent);
+  background: var(--kairum-yellow-soft);
+  color: var(--kairum-focus);
 }
 .as-share {
   display: flex;
@@ -698,11 +698,11 @@
   border-radius: 4px;
 }
 .as-share meter::-webkit-meter-optimum-value {
-  background: var(--product-accent);
+  background: #c29600;
   border-radius: 4px;
 }
 .as-share meter::-moz-meter-bar {
-  background: var(--product-accent);
+  background: #c29600;
   border-radius: 4px;
 }
 .as-share > span {
@@ -726,7 +726,7 @@ body[data-page="analytics"] .product-hero.dark .product-hero-copy > p {
   color: var(--kairum-muted);
 }
 body[data-page="analytics"] .product-hero.dark .eyebrow {
-  color: var(--product-accent);
+  color: var(--kairum-focus);
 }
 body[data-page="analytics"] .product-hero-scene {
   max-width: none;
@@ -936,33 +936,32 @@ body[data-page="analytics"] .product-hero-scene {
 
 /* Commercial introduction, benefit selectors and a single focused product view. */
 body[data-page="analytics"] .product-hero {
-  padding-top: 56px;
+  padding-top: 104px;
 }
 body[data-page="analytics"] .product-hero > .wrap {
   max-width: 1168px;
 }
 body[data-page="analytics"] .product-hero-copy {
-  max-width: 880px;
-  margin: 0 0 32px;
+  max-width: 800px;
+  margin: 0 0 80px;
   text-align: left;
 }
 body[data-page="analytics"] .product-hero-copy h1 {
-  max-width: 24ch;
+  max-width: 20ch;
   margin-inline: 0;
   font-size: clamp(40px, 4.1vw, 58px);
   line-height: 1.1;
   letter-spacing: -0.05em;
-  text-wrap: balance;
 }
 body[data-page="analytics"] .product-hero-copy > p {
-  max-width: 62ch;
-  margin: 20px 0 0;
-  font-size: 18px;
+  max-width: 56ch;
+  margin: 24px 0 0;
+  font-size: 19px;
   line-height: 1.65;
 }
 body[data-page="analytics"] .product-hero-copy .hero-actions {
   justify-content: flex-start;
-  margin-top: 24px;
+  margin-top: 30px;
 }
 .analytics-story[data-analytics-preview="product"] .as-story-index {
   display: grid;
@@ -974,10 +973,9 @@ body[data-page="analytics"] .product-hero-copy .hero-actions {
 .analytics-story[data-analytics-preview="product"] .as-story-index a {
   display: grid;
   align-content: start;
-  grid-template-columns: 20px minmax(0, 1fr);
-  gap: 8px 12px;
-  min-height: 128px;
-  padding: 18px 20px;
+  gap: 12px;
+  min-height: 166px;
+  padding: 22px 25px;
   border: 0;
   border-left: 2px solid var(--kairum-line);
   color: var(--kairum-muted);
@@ -988,8 +986,8 @@ body[data-page="analytics"] .product-hero-copy .hero-actions {
 .analytics-story[data-analytics-preview="product"]
   .as-story-index
   a[aria-selected="true"] {
-  border-left-color: var(--product-accent);
-  background: var(--product-soft);
+  border-left-color: var(--kairum-yellow);
+  background: #fff9e6;
   color: var(--kairum-ink);
 }
 .analytics-story[data-analytics-preview="product"] .as-story-index a:hover {
@@ -1001,7 +999,6 @@ body[data-page="analytics"] .product-hero-copy .hero-actions {
   line-height: 1.35;
 }
 .analytics-story .as-story-index p {
-  grid-column: 2;
   max-width: 32ch;
   color: var(--kairum-muted);
   font-size: 14px;
@@ -1089,7 +1086,7 @@ body[data-page="analytics"] .product-hero-copy .hero-actions {
   width: 24px;
   height: 24px;
   margin-bottom: 20px;
-  color: var(--product-accent);
+  color: var(--kairum-focus);
 }
 .ap-benefit-grid h3,
 .ap-workflow-steps h3 {
@@ -1128,14 +1125,14 @@ body[data-page="analytics"] .product-hero-copy .hero-actions {
 }
 @media (max-width: 800px) {
   body[data-page="analytics"] .product-hero {
-    padding-top: 40px;
+    padding-top: 60px;
   }
   body[data-page="analytics"] .product-hero-copy {
-    margin-bottom: 28px;
+    margin-bottom: 50px;
   }
   .analytics-story[data-analytics-preview="product"] .as-story-index a {
     padding: 18px 16px;
-    min-height: 148px;
+    min-height: 190px;
   }
   .ap-benefit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1168,14 +1165,11 @@ body[data-page="analytics"] .product-hero-copy .hero-actions {
   .analytics-story[data-analytics-preview="product"] .as-story-index a {
     grid-template-columns: 20px minmax(0, 1fr);
     gap: 7px 12px;
-    min-height: 48px;
-    padding: 12px 14px;
+    min-height: 100px;
+    padding: 14px 16px;
   }
   .analytics-story .as-story-index a > p {
     grid-column: 2;
-  }
-  .analytics-story [role="tablist"] [aria-selected="false"] > p {
-    display: none;
   }
   .analytics-story .as-story-index strong {
     font-size: 15px;
