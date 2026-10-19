@@ -56,6 +56,16 @@
   outline-color: var(--kairum-yellow);
 }
 
+.closing-inner:has(> .contact-panel) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--kairum-space-2) var(--kairum-space-7);
+}
+
+.closing-inner:has(> .contact-panel) > div:first-child {
+  min-width: 0;
+}
+
 .info-hero:has(> .contact-panel) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -107,7 +117,8 @@
   scroll-margin-top: 120px;
 }
 
-.home-contact .contact-panel {
+.home-contact .contact-panel,
+.closing-section .contact-panel {
   grid-column: 1 / -1;
   grid-row: 3;
   justify-self: center;
@@ -116,15 +127,25 @@
   margin-top: var(--kairum-space-6);
   padding: var(--kairum-space-6) 0 0;
   border: 0;
-  border-top: 1px solid color-mix(in srgb, var(--kairum-white) 20%, transparent);
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
   border-radius: 0;
   background: transparent;
-  color: var(--kairum-white);
   box-shadow: none;
+}
+
+.home-contact .contact-panel {
+  color: var(--kairum-white);
   color-scheme: dark;
 }
 
-.home-contact .contact-panel .button.contact-submit {
+.closing-section .contact-panel {
+  grid-row: 2;
+  color: var(--kairum-ink);
+  color-scheme: light;
+}
+
+.home-contact .contact-panel .button.contact-submit,
+.closing-section .contact-panel .button.contact-submit {
   grid-area: submit;
   align-self: center;
   justify-self: stretch;
@@ -141,7 +162,8 @@
 }
 
 .contact-panel-header h2,
-.home-contact .contact-panel-header h2 {
+.home-contact .contact-panel-header h2,
+.closing-section .contact-panel-header h2 {
   font-size: clamp(1.625rem, 2.2vw, 2rem);
   line-height: 1.15;
 }
@@ -242,8 +264,10 @@
 }
 
 .contact-challenge {
-  min-width: 0;
-  min-height: 140px;
+  justify-self: center;
+  width: 300px;
+  min-width: 300px;
+  min-height: 65px;
 }
 
 .contact-submit {
@@ -274,9 +298,11 @@
 }
 
 .contact-status:empty {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  /* Keep the preparation row's geometry when verification clears its text.
+     Collapsing it at the bottom of the page also clamps the scroll position. */
+  min-height: calc(1.6em + 2 * var(--kairum-space-3) + 2px);
+  border-color: transparent;
+  background: transparent;
 }
 
 .contact-status[data-state="success"] {
@@ -293,15 +319,17 @@
   color: var(--kairum-danger);
 }
 
-.home-contact .contact-fields {
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) 210px;
+.home-contact .contact-fields,
+.closing-section .contact-fields {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) 300px;
   grid-template-areas:
     "name company footer"
     "email message footer";
   column-gap: var(--kairum-space-6);
 }
 
-.home-contact .contact-footer {
+.home-contact .contact-footer,
+.closing-section .contact-footer {
   display: grid;
   grid-area: footer;
   grid-template-columns: minmax(0, 1fr);
@@ -311,27 +339,31 @@
   gap: var(--kairum-space-4);
 }
 
-.home-contact .contact-field:has(#contact-name) {
+.home-contact .contact-field:has(#contact-name),
+.closing-section .contact-field:has(#contact-name) {
   grid-area: name;
 }
 
-.home-contact .contact-field:has(#contact-email) {
+.home-contact .contact-field:has(#contact-email),
+.closing-section .contact-field:has(#contact-email) {
   grid-area: email;
 }
 
-.home-contact .contact-field:has(#contact-company) {
+.home-contact .contact-field:has(#contact-company),
+.closing-section .contact-field:has(#contact-company) {
   grid-area: company;
 }
 
-.home-contact .contact-field:has(#contact-message) {
+.home-contact .contact-field:has(#contact-message),
+.closing-section .contact-field:has(#contact-message) {
   grid-area: message;
 }
 
-.home-contact .contact-challenge {
+.home-contact .contact-challenge,
+.closing-section .contact-challenge {
   grid-area: challenge;
   align-self: center;
   justify-self: center;
-  width: 150px;
 }
 
 .home-contact .contact-panel-header p {
@@ -366,6 +398,71 @@
   color: color-mix(in srgb, var(--kairum-white) 72%, transparent);
 }
 
+.closing-section .contact-panel-header p,
+.closing-section .contact-field input::placeholder,
+.closing-section .contact-field textarea::placeholder {
+  color: color-mix(in srgb, var(--kairum-ink) 78%, transparent);
+}
+
+.closing-section .contact-field input,
+.closing-section .contact-field textarea {
+  border-color: color-mix(in srgb, var(--kairum-ink) 60%, transparent);
+  background: color-mix(in srgb, var(--kairum-white) 60%, transparent);
+}
+
+.closing-section .contact-fields:disabled input,
+.closing-section .contact-fields:disabled textarea {
+  background: color-mix(in srgb, var(--kairum-white) 35%, transparent);
+  color: var(--kairum-ink);
+}
+
+.closing-section .contact-panel .button.contact-submit {
+  background: var(--kairum-ink);
+  color: var(--kairum-white);
+}
+
+.closing-section .contact-panel .button.contact-submit:disabled {
+  background: color-mix(in srgb, var(--kairum-ink) 16%, transparent);
+  color: var(--kairum-ink);
+}
+
+.footer-bottom:has(> .footer-languages) {
+  flex-wrap: wrap;
+  column-gap: var(--kairum-space-6);
+  row-gap: var(--kairum-space-2);
+}
+
+.footer-bottom:has(> .footer-languages) > span {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-languages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--kairum-space-2);
+  min-width: 0;
+}
+
+.footer-languages a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--kairum-target);
+  padding: var(--kairum-space-2);
+  border-radius: var(--kairum-marketing-control-radius);
+  color: var(--kairum-muted);
+  font-size: var(--kairum-text-sm);
+  line-height: 1.5;
+}
+
+.footer-languages a:hover,
+.footer-languages a[aria-current="page"] {
+  color: var(--kairum-ink);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
 @media (max-width: 960px) {
   .home-contact:has([data-contact-entry]) > .wrap {
     grid-template-columns: minmax(0, 1fr);
@@ -398,7 +495,8 @@
     margin-top: var(--kairum-space-6);
   }
 
-  .home-contact .contact-fields {
+  .home-contact .contact-fields,
+  .closing-section .contact-fields {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     grid-template-areas:
       "name company"
@@ -406,11 +504,12 @@
       "footer footer";
   }
 
-  .home-contact .contact-footer {
-    grid-template-columns: 150px auto;
+  .home-contact .contact-footer,
+  .closing-section .contact-footer {
+    grid-template-columns: 300px minmax(0, 1fr);
     grid-template-areas: "challenge submit";
     align-self: start;
-    justify-self: end;
+    justify-self: stretch;
   }
 
   .info-hero:has(> .contact-panel) {
@@ -437,6 +536,20 @@
 }
 
 @media (max-width: 650px) {
+  .closing-inner:has(> .contact-panel) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--kairum-space-5);
+    justify-items: start;
+  }
+
+  .closing-inner:has(> .contact-panel) > .button {
+    margin-top: 0;
+  }
+
+  .closing-section .contact-panel {
+    grid-row: 3;
+  }
+
   .info-hero:has(> .contact-panel) {
     padding-top: var(--kairum-space-7);
   }
@@ -452,7 +565,9 @@
 
   .contact-panel {
     margin-top: var(--kairum-space-6);
-    padding: 24px 20px;
+    padding: var(--kairum-space-5) 0;
+    border: 0;
+    box-shadow: none;
   }
 
   .contact-fields {
@@ -460,11 +575,13 @@
     gap: 18px;
   }
 
-  .home-contact .contact-panel {
+  .home-contact .contact-panel,
+  .closing-section .contact-panel {
     padding: var(--kairum-space-5) 0 0;
   }
 
-  .home-contact .contact-fields {
+  .home-contact .contact-fields,
+  .closing-section .contact-fields {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "name"
@@ -474,17 +591,43 @@
       "footer";
   }
 
-  .home-contact .contact-footer {
+  .home-contact .contact-footer,
+  .closing-section .contact-footer {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "challenge" "submit";
     justify-self: stretch;
     gap: 18px;
   }
 
-  .home-contact .contact-panel .button.contact-submit {
+  .home-contact .contact-panel .button.contact-submit,
+  .closing-section .contact-panel .button.contact-submit {
     justify-self: stretch;
     width: 100%;
     padding-inline: var(--kairum-space-4);
+  }
+
+  .footer-bottom:has(> .footer-languages) {
+    align-items: flex-start;
+    column-gap: var(--kairum-space-4);
+  }
+
+  .footer-languages {
+    gap: var(--kairum-space-1);
+    margin-inline: calc(-1 * var(--kairum-space-2));
+  }
+}
+
+@media (max-width: 360px) {
+  /* The official normal widget is 300px. Give its row the available viewport
+     width without scaling the iframe or clipping any of its controls. */
+  .contact-footer,
+  .home-contact .contact-footer,
+  .closing-section .contact-footer {
+    display: grid;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 300px;
+    max-width: none;
   }
 }
 

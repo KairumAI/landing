@@ -51,8 +51,20 @@ for (const [id, expected] of Object.entries(reference.spanish_html)) {
   );
   if (sha(restored) !== expected) failures.push(`HTML: ${id}`);
 }
-// R05 stays immutable. Verify the live extension too: it may add only the two
-// exact contact fragments, at unique anchors, without changing any base bytes.
+// R05 stays immutable. Contact may add only its exact fragments at the existing
+// Home, Contacto and the ten booking closings requested in the visual feedback.
+const bookingClosings = new Set([
+  "catalog",
+  "report",
+  "analytics",
+  "agents",
+  "prompt-intelligence",
+  "traffic",
+  "consulting",
+  "marcas",
+  "agencias",
+  "nosotros",
+]);
 let extensions = 0;
 for (const locale of locales) {
   for (const config of [
@@ -64,11 +76,19 @@ for (const locale of locales) {
       const base = pageContent(page.id, locale).html;
       const actual = pageContent(page.id, locale, slots).html;
       let expected = base;
-      if (page.id === "home" || page.id === "contacto") {
+      if (
+        page.id === "home" ||
+        page.id === "contacto" ||
+        bookingClosings.has(page.id)
+      ) {
         const anchor =
           page.id === "home"
             ? "</div></section>\n    </main>"
-            : '<div class="info-context">';
+            : page.id === "contacto"
+              ? '<div class="info-context">'
+              : ["marcas", "agencias", "nosotros"].includes(page.id)
+                ? "</div></section></div></main>"
+                : "</div></section></main>";
         const fragment = localizeLinks(
           page.id === "home"
             ? slots.homeAction + slots.contactPanel
@@ -93,5 +113,5 @@ if (failures.length) {
   );
 }
 console.log(
-  `R05 ${reference.reference_version}: ${Object.keys(reference.assets).length} assets, ${Object.keys(reference.styles).length} base styles and ${Object.keys(reference.spanish_html).length} approved Spanish pages match after reversing the explicitly approved editorial extension; ${extensions} localized contact-extension variants preserve every other base byte. Contact CSS and behavior require browser validation.`,
+  `R05 ${reference.reference_version}: ${Object.keys(reference.assets).length} assets, ${Object.keys(reference.styles).length} base styles and ${Object.keys(reference.spanish_html).length} approved Spanish pages match after reversing the explicit editorial and visual-feedback deltas; ${extensions} localized contact-extension variants preserve every other byte. CSS and behavior require browser validation.`,
 );

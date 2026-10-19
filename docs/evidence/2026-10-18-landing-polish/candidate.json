@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-18",
+  "branch": "feat/landing-visual-feedback",
+  "base_commit": "23c33cfa4802c3794419f4a7755ffc80e1c2b3f7",
+  "state": "uncommitted local working tree",
+  "environment": "Windows ARM64, Edge, static build preview 127.0.0.1:4337",
+  "checks": {
+    "e2e": "122/122",
+    "delivery": "46/46",
+    "types": "115 files, zero diagnostics",
+    "reference": "51 assets, 5 CSS, 13 pages, 126 contact variants",
+    "build": "66 pages, 26 reports, 2959 preserved files",
+    "critic": {
+      "usability": 9.3,
+      "style": 9.2,
+      "fidelity": 9.3,
+      "blockers": 0
+    }
+  },
+  "sources": [
+    {
+      "path": "src/components/kairum/analytics-preview.ts",
+      "sha256": "7077bf4a10390a8fa8f60c0b3e98c0c395522ffae009d96c88c08aab5b37c151"
+    },
+    {
+      "path": "src/i18n/analytics-preview.ts",
+      "sha256": "1d85aadefbfa91e469c88bb5f6b5f75541fbcf67603e3289c7cf0f666fcd0ed4"
+    },
+    {
+      "path": "src/i18n/audience-pages.ts",
+      "sha256": "dff50c3df60475177a7241b0fcf827295098b84a1b0b8da7bab8db1185adee9e"
+    },
+    {
+      "path": "src/i18n/example-context.ts",
+      "sha256": "35e30f297e5927fbf5a4df2e30b0bd7db0cefd5bf070fff9a205cfd269096e01"
+    },
+    {
+      "path": "src/layouts/Base.astro",
+      "sha256": "051ff4a0b462eec53dbd504dc433549eb5594607341ecfeacd2eeeb5a623310d"
+    },
+    {
+      "path": "src/lib/editorial-integration.ts",
+      "sha256": "5b99311b84743a3bfc1cfa838f8657d7517a1ca1e3d11cbca95cbc3d16ad7a1b"
+    },
+    {
+      "path": "src/styles/kairum-refinements.css",
+      "sha256": "4e06690424d02d4c9f0ee96a82f36befb94e7d44fa65dbe8518438cbc7a0b17f"
+    },
+    {
+      "path": "tests/e2e/visual-polish.spec.ts",
+      "sha256": "762fc8b3172fc27babad97871c83584a9ae1ba1ec022421444b77b22cd429f4d"
+    }
+  ],
+  "captures": [
+    {
+      "path": "captures/en-agencias-320.png",
+      "sha256": "8f5048efeff0eecbe3b6d324f5c2a1e9b69f768ab1f21a618dc33f9afe737604"
+    },
+    {
+      "path": "captures/en-home-320.png",
+      "sha256": "d06bbfa3afef957293d52632cb374e72054ce19ea5382022ba07d8cf2bdca90e"
+    },
+    {
+      "path": "captures/en-selection-320.png",
+      "sha256": "a523a21afbe1d7ca69b7d257f7279259925f571c5071e03ac38055b37dae65c8"
+    },
+    {
+      "path": "captures/es-comparison-1440.png",
+      "sha256": "d9465839cce8e1ad4296d73b3cf696a4fe044aa8ac2aa5046188454674c25f3f"
+    },
+    {
+      "path": "captures/es-comparison-320.png",
+      "sha256": "d536d207347948d60651cdf960c7d770614c82b4600764eb85eec9e018d1f94e"
+    },
+    {
+      "path": "captures/es-marcas-320.png",
+      "sha256": "66c391119d367dbc7c82a6a45704af11841eeaf6d8d7621d4c1a1198df8ce6b9"
+    },
+    {
+      "path": "captures/es-selection-1440.png",
+      "sha256": "72fd1dbea305eb9756c2e8f2d15e869669481d95609794e71fde826359cad95c"
+    },
+    {
+      "path": "captures/es-selection-320.png",
+      "sha256": "9bbfd04aedf6ee4f0e67394e839b96321133e23dbf229cc8f41d58d901a4b1de"
+    },
+    {
+      "path": "captures/products-focus-1440.png",
+      "sha256": "74d91c64c6717bf4ab62ca02fe09548c235e6664530dac9fcef7e43b699e7ef2"
+    },
+    {
+      "path": "captures/products-focus-320.png",
+      "sha256": "8325a7e8ab4a682444a40fb720d04d1ac696793ca28b9d9bce06c480338b0891"
+    },
+    {
+      "path": "captures/products-hover-1440.png",
+      "sha256": "dc5aac00e8c5cfc287a6f5aff0b000b92e99f3c9b8b4f5619164dc354e3df80b"
+    },
+    {
+      "path": "captures/products-hover-320.png",
+      "sha256": "4d37e4d1e9f738c3bf1a6593d810ab6c2221f91c30c880d6856ea7096dc9d7b4"
+    },
+    {
+      "path": "captures/pt-br-comparison-320.png",
+      "sha256": "7415458e181b640e5dd6ee9eac72e0d871ba95aed6c60f3a71abe24bcbecb082"
+    },
+    {
+      "path": "captures/pt-br-selection-320.png",
+      "sha256": "18eb2d0353aa2665988ad8dff0f91d3abc48edc547baabe2931ef2df77e5209e"
+    },
+    {
+      "path": "captures/service-0-1440.png",
+      "sha256": "bc7527e8f9b8820745feae5d8fb9ae0d7cbe16ef7bb7540f3aa9aaa7054ef9e7"
+    },
+    {
+      "path": "captures/service-0-320.png",
+      "sha256": "e3990bea418beac2598b67819e881ec37db6f5629eeb2a48276fe4b027d49bd8"
+    },
+    {
+      "path": "captures/service-0-390.png",
+      "sha256": "9601a9b6cc37e9430ddcd00b7f9e7bc4c8d628069179f70d17f1d7556778613a"
+    },
+    {
+      "path": "captures/service-0-768.png",
+      "sha256": "e3e885042c16afbaed84e420be483526047b1854330f47b8deb05653f1d0e0eb"
+    },
+    {
+      "path": "captures/service-1-1440.png",
+      "sha256": "8e35d96e3a9cbfd7785d9f5ca9ed536eb8a89c98262ae59365c3c146bff5f2ea"
+    },
+    {
+      "path": "captures/service-1-320.png",
+      "sha256": "fe662c0b12d7ec2bdb934c99c7bd175f04884d6e7e01bd7e0aa8b481e7a33d4f"
+    },
+    {
+      "path": "captures/service-1-390.png",
+      "sha256": "3d7cd4822086ddd1e19b1475ac956b1120dde6754fc8509d6fbbe67091d801d0"
+    },
+    {
+      "path": "captures/service-1-768.png",
+      "sha256": "2922c1d211da5d5e4d0bffbadb22a883901f8b4f0c9b9ab7b27d302dd346c271"
+    }
+  ]
+}

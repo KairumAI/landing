@@ -1,0 +1,47 @@
+{
+  "base": "5e91ac631a5fbedfbce11fb4743b7af0ca2a1a40",
+  "runtime": "http://127.0.0.1:4418/",
+  "source_sha256": "bd210964d8c8679d9dbdfa113dbbdb99b61706f076b188826e26ce6532611b61",
+  "implementation": {
+    "src/components/kairum/analytics-story.ts": "0fd92fb62148308b7e9ea3aefe35318add6e8ac4eadb60fd6439e447d6a49580",
+    "src/i18n/analytics-story.ts": "881459061cb1bb970bd7d4814788adf2f3279e18c5ba467ff870a6a9d858b2e9",
+    "src/lib/analytics-story-data.ts": "fbc26d550a61405b614a92dfd86f88ab13a730547904cbf83ba1cef396367f4d",
+    "src/scripts/cinematic/analytics-story.ts": "3194bd5cec0c8ae153a0d8eab22ea7aedad5dc1e20a668e224d9c8249af77e80",
+    "src/styles/analytics-story.css": "8863b3761f1b04c9b1076ed810e7e8d35320300ad946bb232cfcbcc522d631e3",
+    "src/layouts/Base.astro": "f0a9239749c16abb0e37974147931f9d345a9c5b1f938015d087a8bbecdcd7aa",
+    "src/lib/editorial-integration.ts": "99efbc2a4a66ca5cba69f5a72f761ba8f9d6110abb660cb4c91a1759e0364266",
+    "src/scripts/cinematic/app.ts": "4dc7bce096ba82028467700d95f127bb46118b3ec497eb86a895de5b2e5b014e",
+    "tests/e2e/analytics-preview.spec.ts": "2c214bd6108b0417dd80273a7ad03e82076e279fe1edda9090ddebab0aaaad38",
+    "tests/e2e/landing.spec.ts": "fb08ed5007016a5a3131901a27bb291290724188b4e686f326f401fdc90c0b3a",
+    "tests/e2e/contact-feedback-layout.spec.ts": "b47985a86ff591ae2c26b9083f9cb761b8fda7ae9e1b432eca9c4a9165275ccc"
+  },
+  "capture_note": "Use direct round-3 viewport images; scrollbar consumes 15 CSS px. Separate captures are not a single page raster.",
+  "verification": {
+    "delivery": {
+      "passed": 46
+    },
+    "independent_review": {
+      "usability": 9.3,
+      "style": 9.4,
+      "fidelity": 9.4,
+      "blockers": 0
+    },
+    "original_delivery": {
+      "passed": 137,
+      "groups": [40, 75, 22]
+    },
+    "distribution_correction": {
+      "base": "a71f82c50cf193905619ed17d9192b52eea865d3",
+      "e2e_passed": 36,
+      "home_workspaces": 1,
+      "product_workspaces": 3,
+      "independent_review": {
+        "usability": 9.3,
+        "style": 9.4,
+        "fidelity": 9.5,
+        "blockers": 0
+      },
+      "semantic_followup_passed": 10
+    }
+  }
+}

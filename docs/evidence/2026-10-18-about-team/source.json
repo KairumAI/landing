@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-18",
+  "request": "Mostrar en Nosotros únicamente las tres personas de la izquierda de la diapositiva 11, conservando nombres y credenciales completos.",
+  "source": {
+    "filename": "Parcial pitch - De Cruz - Barron - Cadeiras.pptx",
+    "sha256": "350f10cba0cc35b08f7f1e89ccfe3824ed41d8a65acd5d0af34642055fa26689",
+    "sourceUnchanged": true,
+    "slideIndex": 11,
+    "slideTitle": "El equipo de KAIRUM",
+    "slidePart": "ppt/slides/slide11.xml",
+    "activeImageRelationshipId": "rIdRasterV251",
+    "activeImagePart": "ppt/media/raster-v25-slide-11-1.png",
+    "activeImagePixels": [2560, 1440],
+    "nativeText": false,
+    "nativePortraitCropRectangles": false,
+    "originalPortraitRelationships": "unreferenced"
+  },
+  "members": [
+    {
+      "orderLeftToRight": 1,
+      "name": "Bruno De Cruz",
+      "externalRole": "Data Scientist",
+      "organization": "Mercado Libre",
+      "sourcePart": "ppt/media/image5.png",
+      "publicFile": "public/kairum/team/bruno-de-cruz.png",
+      "pixels": [460, 460],
+      "bytes": 164698,
+      "sha256": "b5a0fc6e4e38c3900f7151e09587f75e4d9e9c871a271f028e34679cab093f29",
+      "publicFileMatchesSourceBytes": true
+    },
+    {
+      "orderLeftToRight": 2,
+      "name": "Joaquín Cadeiras",
+      "externalRole": "Founder",
+      "organization": "Alveo",
+      "sourcePart": "ppt/media/image6.png",
+      "publicFile": "public/kairum/team/joaquin-cadeiras.png",
+      "pixels": [400, 400],
+      "bytes": 130966,
+      "sha256": "7e521490dc723220ea0f62f0f81b0bc6ed354b3b28daefc1d25b9a94c57e1617",
+      "publicFileMatchesSourceBytes": true
+    },
+    {
+      "orderLeftToRight": 3,
+      "name": "Joaquín Alderete",
+      "externalRole": "Lead Engineer",
+      "organization": "ViewX",
+      "sourcePart": "ppt/media/image7.png",
+      "publicFile": "public/kairum/team/joaquin-alderete.png",
+      "pixels": [657, 425],
+      "bytes": 166154,
+      "sha256": "3c1f20957ceb6704446433c902befcfe52bc41e06f6af5346ce9ddb608221812",
+      "publicFileMatchesSourceBytes": true
+    }
+  ],
+  "excludedSourcePerson": {
+    "name": "Santiago Barron",
+    "reason": "El usuario pidió conservar sólo las tres personas de la izquierda."
+  },
+  "implementation": {
+    "page": "Nosotros",
+    "sectionSelector": ".audience-team",
+    "sectionAttribute": "data-audience-team",
+    "placement": "Después del hero y antes de .audience-why.",
+    "credentialScope": "Experiencia profesional externa; no asigna cargos internos ni implica avales, clientes o alianzas de KAIRUM.",
+    "imageFraming": "CSS; no se reescriben los archivos ni se alteran los rostros.",
+    "newLinks": false,
+    "biographies": false,
+    "localizedLabels": {
+      "es": {
+        "eyebrow": "Quiénes somos",
+        "title": "El equipo de KAIRUM.",
+        "experienceLabel": "Experiencia"
+      },
+      "en": {
+        "eyebrow": "Who we are",
+        "title": "The KAIRUM team.",
+        "experienceLabel": "Experience"
+      },
+      "pt-br": {
+        "eyebrow": "Quem somos",
+        "title": "A equipe KAIRUM.",
+        "experienceLabel": "Experiência"
+      }
+    },
+    "namesAndCredentialsPreservedAcrossLocales": true,
+    "sourcePptxIncludedInPublicFiles": false,
+    "privateNotesIncludedInPublicFiles": false,
+    "excludedPortraitIncludedInPublicFiles": false
+  },
+  "validation": {
+    "sourceInspection": "verified",
+    "sourceAndPublicAssetHashes": "verified",
+    "rendererPlacementAndLocalizedCopy": "verified",
+    "integratedChecks": {
+      "e2e": "137/137",
+      "delivery": "46/46",
+      "types": "119 files, zero diagnostics",
+      "build": "66 pages; 26 reports and 2959 preserved report files",
+      "reference": "passed"
+    },
+    "desktopAndMobileQa": "ES/EN/PT-BR at 1440,768,390,320; 12 clean preview captures",
+    "independentVisualReview": {
+      "usability": 9.3,
+      "style": 9.2,
+      "fidelity": 9.4,
+      "blockers": 0
+    },
+    "runtimeEvidence": "screenshots/ and motion/; final source hashes in candidate.json",
+    "revisionBinding": "Git commit containing candidate.json and its hashed source files",
+    "turnstileScrollWait": "removed at the user request; async load and onload rendering restored"
+  },
+  "authorization": {
+    "commit": true,
+    "push": true,
+    "merge": false
+  }
+}

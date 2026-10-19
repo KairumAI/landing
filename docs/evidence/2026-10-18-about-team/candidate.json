@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-18",
+  "branch": "feat/landing-visual-feedback",
+  "base_commit": "23c33cfa4802c3794419f4a7755ffc80e1c2b3f7",
+  "revision_binding": "Git commit containing this manifest; source hashes identify the checked candidate",
+  "environment": "Windows ARM64, Edge; static build/preview 127.0.0.1:4337; dev 127.0.0.1:4334 retained for user",
+  "checks": {
+    "e2e": "137/137",
+    "delivery": "46/46",
+    "types": "119 files, zero diagnostics",
+    "reference": "51 assets, 5 original CSS, 13 original HTML, 126 contact variants",
+    "build": "66 pages; 26 reports and 2959 preserved files"
+  },
+  "review": {
+    "team": {
+      "usability": 9.3,
+      "style": 9.2,
+      "fidelity": 9.4,
+      "blockers": 0
+    },
+    "source_motion": {
+      "usability": 9.3,
+      "style": 9.2,
+      "fidelity": 9.3,
+      "blockers": 0
+    },
+    "independent_code_review": "no concrete regressions or blockers"
+  },
+  "turnstile_scroll_wait": "removed at user request; final async/onload flow is unchanged from the base; only error-recovery height fix remains in the form script",
+  "prior_rounds": [
+    "../2026-10-18-landing-polish/candidate.json",
+    "../2026-10-18-navigation-performance/candidate.json"
+  ],
+  "sources": [
+    {
+      "path": "public/kairum/team/bruno-de-cruz.png",
+      "sha256": "b5a0fc6e4e38c3900f7151e09587f75e4d9e9c871a271f028e34679cab093f29"
+    },
+    {
+      "path": "public/kairum/team/joaquin-alderete.png",
+      "sha256": "3c1f20957ceb6704446433c902befcfe52bc41e06f6af5346ce9ddb608221812"
+    },
+    {
+      "path": "public/kairum/team/joaquin-cadeiras.png",
+      "sha256": "7e521490dc723220ea0f62f0f81b0bc6ed354b3b28daefc1d25b9a94c57e1617"
+    },
+    {
+      "path": "src/components/kairum/analytics-preview.ts",
+      "sha256": "7077bf4a10390a8fa8f60c0b3e98c0c395522ffae009d96c88c08aab5b37c151"
+    },
+    {
+      "path": "src/components/kairum/audience-pages.ts",
+      "sha256": "ad5662572ccb8b6df0fe45a055a3fca1d7368346b5dd22f29abc2457af784d9e"
+    },
+    {
+      "path": "src/i18n/analytics-preview.ts",
+      "sha256": "1d85aadefbfa91e469c88bb5f6b5f75541fbcf67603e3289c7cf0f666fcd0ed4"
+    },
+    {
+      "path": "src/i18n/audience-pages.ts",
+      "sha256": "9f1893e0599ab09e51774f52c43f4321325171bb668dec327eee08938290668e"
+    },
+    {
+      "path": "src/i18n/example-context.ts",
+      "sha256": "35e30f297e5927fbf5a4df2e30b0bd7db0cefd5bf070fff9a205cfd269096e01"
+    },
+    {
+      "path": "src/layouts/Base.astro",
+      "sha256": "051ff4a0b462eec53dbd504dc433549eb5594607341ecfeacd2eeeb5a623310d"
+    },
+    {
+      "path": "src/lib/editorial-integration.ts",
+      "sha256": "5b99311b84743a3bfc1cfa838f8657d7517a1ca1e3d11cbca95cbc3d16ad7a1b"
+    },
+    {
+      "path": "src/scripts/cinematic/home-motion.ts",
+      "sha256": "07e1cb20025a77583cab33bb952fc3aeece107ee57751c51a67c3246e6c5ee2a"
+    },
+    {
+      "path": "src/scripts/cinematic/navigation.ts",
+      "sha256": "bc7dce3ef6187ea2f454d9ed5c5bf4d8e17de0650040091a57f4e235fc7fe104"
+    },
+    {
+      "path": "src/scripts/contact-form.ts",
+      "sha256": "0b9e9edd04c000aa8c5577596c848c87b84c0bdd53b97e356f1d50db66663168"
+    },
+    {
+      "path": "src/styles/kairum-audiences.css",
+      "sha256": "1d74f46d29733addbc990d0c4c4217057ea395a9339b50cc26fb8338a800d608"
+    },
+    {
+      "path": "src/styles/kairum-contact.css",
+      "sha256": "11f75efecba5b17c297c6b0dfd53ed04b03a7dfda579932b6c6e8613f6e04fcb"
+    },
+    {
+      "path": "src/styles/kairum-refinements.css",
+      "sha256": "32e2353507927ce735cd2b7fe76dc2e8521c75d639769b3bee455163a39617a9"
+    },
+    {
+      "path": "tests/e2e/about-team.spec.ts",
+      "sha256": "3553487ce68c814d1380aaea46a678d20960e64125948b1a403e3b6f9a2403cc"
+    },
+    {
+      "path": "tests/e2e/contact-feedback-layout.spec.ts",
+      "sha256": "a9747e407c00339f23e761f6f15ed8d960c91aed7c81e57980c18f2249b87031"
+    },
+    {
+      "path": "tests/e2e/nav-scrollbar.spec.ts",
+      "sha256": "c85b087a1aa116886266640a290fe12b73df7edf2e355777c51b4e9b01707074"
+    },
+    {
+      "path": "tests/e2e/source-motion.spec.ts",
+      "sha256": "dbcb5d04f3e95673a1b099dbf92a485dce572b91cbb2793bbc1848382764e8c4"
+    },
+    {
+      "path": "tests/e2e/visual-polish.spec.ts",
+      "sha256": "762fc8b3172fc27babad97871c83584a9ae1ba1ec022421444b77b22cd429f4d"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/evidence/2026-10-18-about-team/README.md",
+      "sha256": "2ee1bdaffff12886285b3e0fc1c115e38bdc1134c8d98863ac27bed2dacc7075"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/after-source-entrance-1440.json",
+      "sha256": "5fd4de724b44b770b31b2e999b561f73af64c0d67626d11e9e6af085380877c5"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/after-source-entrance-390.json",
+      "sha256": "0d658cd9b2947dff444e2b01f0cd2b9cf95177ca9ff3758fc9514f6ed967cda5"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/before-source-entrance-1440.json",
+      "sha256": "174440e9aebd75a27886c1ceae0b4287564627f732bd13338f9861158ed4dd85"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/before-source-entrance-390.json",
+      "sha256": "5ee539ab6055d7ca69748b7429b742fd1b7cf67ef4708250ee3531eed7fbd909"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/source-entrance-1440.png",
+      "sha256": "d7a2a87007568148a9f4ff4f003f3c808793d8ef76f35bc0c9771d887a911313"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/source-entrance-390.png",
+      "sha256": "97689d4395d6c6709515233c241479d1e5a7c1cc029991dcdb942d676d47f3ea"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/source-pointer-return.json",
+      "sha256": "11bee121e83d42ae9e138fbd94dbe4429c3f79a1bee3f6dc604464ea6103668d"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/source-pointer-return.png",
+      "sha256": "bc9682d64abc7f9274e5a5afac7dc59b6a1fadeb796e8a00bd58b7db02de1a7f"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/motion/summary.json",
+      "sha256": "c49640bffcef9300a505f97db78740d07ec4ed8d8a77f22f0645fbaa8ec35791"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/en-team-1440.png",
+      "sha256": "eb8e9a55e289f861c42221cba423ffff47adaf4f4627721bcbc5b229f6088ad2"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/en-team-320.png",
+      "sha256": "e8b195c3c475dd6b28ff2fa315831993fc422e2a7f6d25dd92f68ebeaa264ce1"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/en-team-390.png",
+      "sha256": "99178acb1d233362cda9d054460d30179a7b5360e690da64e9f4bfadd8b67e06"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/en-team-768.png",
+      "sha256": "66376a6a8b0fbb006cf20c7bae993fb0bfebdb4a6a3e9cbf69f8f50f5256d0c8"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/es-team-1440.png",
+      "sha256": "1b0c1d0b8c208707f9af021e72d9cbe4ff73720358bb9b048b38b3c3e7babcd9"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/es-team-320.png",
+      "sha256": "b23c3f0034b18a7be5986510afe7797b5820a54b89e96d3abbbd4d98086fb0d2"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/es-team-390.png",
+      "sha256": "b63230ee84e9417409b886324018e19d1ff69bb8aa60b0bf562f8ed4ed9670de"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/es-team-768.png",
+      "sha256": "a464e2a2885fabe455da2e6b5c953c4aa5840ff2d8f37f291006ec8069f7cf4d"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/pt-br-team-1440.png",
+      "sha256": "a6f9a059bf3ff428abb8771affdc7fa8537c7630c8803b0100972e961bc260b9"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/pt-br-team-320.png",
+      "sha256": "34827b6c80f1d4ade331245b04b55e76141cd85b0770d0eef5c240501376869b"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/pt-br-team-390.png",
+      "sha256": "7ad9f302f5807876731dffd34a5d34caa201e2feb17536c1b95838d34390a9bd"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/screenshots/pt-br-team-768.png",
+      "sha256": "a79a1f74eb9609159b964e8f358dc3974567a70fc146b71e27e541787065e316"
+    },
+    {
+      "path": "docs/evidence/2026-10-18-about-team/source.json",
+      "sha256": "f9d5ed52d2e7599d254be65c0c91c5f55cc8ab453f8e3e17892f9733285b2aef"
+    }
+  ]
+}

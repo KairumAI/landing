@@ -9,6 +9,7 @@ import { localeMeta, locales, type Locale } from "../i18n/locales";
 import { createProducts } from "../components/kairum/products";
 import { pages, localizedPath, type PageId } from "./routes";
 import { editorialMedia } from "./editorial-media";
+import { agentsProductCopy } from "../i18n/agents-product";
 
 export function metadata(id: PageId, locale: Locale, site: URL) {
   const baseTranslate = translator(locale);
@@ -54,9 +55,14 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
   const media = editorialMedia(id);
   const socialImage = media?.social ?? localeMeta[locale].ogImage;
   const commercial =
-    id === "report" || id === "analytics" || id === "agencias"
-      ? editorialCopy(locale).commercial[id]
-      : undefined;
+    id === "agents"
+      ? {
+          title: agentsProductCopy[locale].metaTitle,
+          description: agentsProductCopy[locale].description,
+        }
+      : id === "report" || id === "analytics" || id === "agencias"
+        ? editorialCopy(locale).commercial[id]
+        : undefined;
   const title = editorial
     ? editorial.title.includes("| KAIRUM")
       ? editorial.title
@@ -181,7 +187,13 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
       mainEntity: product.faqs.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            id === "agents" && item.question === t("los_agentes_publican_solos")
+              ? agentsProductCopy[locale].publicationAnswer
+              : item.answer,
+        },
       })),
     });
   return {

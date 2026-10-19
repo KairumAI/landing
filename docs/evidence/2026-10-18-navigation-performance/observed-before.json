@@ -1,0 +1,71 @@
+{
+  "environment": {
+    "url": "http://127.0.0.1:4334/",
+    "server": "existing Astro development server; reused without starting or stopping it",
+    "browser": "Microsoft Edge headless via installed Playwright on Windows ARM64",
+    "browserPluginFallback": "privileged native pipe bridge is not available; browser-client is not trusted",
+    "thirdPartyObservation": "Real Cloudflare script and automatic challenge; no widget interaction, no form submission. Both runs ended in captcha-error."
+  },
+  "before": [
+    {
+      "viewport": "1440x1000",
+      "scriptAddedSinceLastScrollMs": 3.1,
+      "ownScriptOnloadMs": 5.403,
+      "longestObservedApiFunctionMs": 7.802,
+      "longestObservedChallengeIframeFunctionMs": 356.41,
+      "iframeSeparateRendererProcess": true,
+      "topFrameLongtasksAfterScriptInsertion": 0,
+      "windowLoadMs": 272.3,
+      "scriptInsertionMs": 2954.9
+    },
+    {
+      "viewport": "390x1000",
+      "scriptAddedSinceLastScrollMs": 2.4,
+      "ownScriptOnloadMs": 6.872,
+      "longestObservedApiFunctionMs": 7.933,
+      "longestObservedChallengeIframeFunctionMs": 57.813,
+      "iframeSeparateRendererProcess": true,
+      "topFrameLongtasksAfterScriptInsertion": 0,
+      "windowLoadMs": 350,
+      "scriptInsertionMs": 1843.6
+    }
+  ],
+  "ownLayoutFixtureBeforeFix": {
+    "mechanism": "Only replace checking status text with an empty ready status, matching the existing callback. No provider token or submission.",
+    "statusHeightBeforePx": 48.390625,
+    "statusMarginTopBeforePx": 16,
+    "documentHeightReductionPx": { "desktop": 65, "mobile": 65 },
+    "bottomScrollPositionReductionPx": { "desktop": 65, "mobile": 65 },
+    "recoveryFromLongErrorTextMobileReductionPx": 109
+  },
+  "conclusions": [
+    "The integration started network loading during active scrolling and rendered immediately on arrival.",
+    "The observed expensive challenge work belongs to a separate Cloudflare iframe renderer process. No comparable own callback task was observed.",
+    "The initial fonts/load ScrollTrigger refresh preceded script insertion in these runs; it did not coincide with verification.",
+    "The empty status collapses a real 65px of layout and clamps the bottom scroll position; this can be perceived as a jump rather than a CPU freeze.",
+    "Real third-party CPU cost cannot be removed or guaranteed by our scheduler. The traces do not prove a general end-user freeze or production performance."
+  ],
+  "runtimeMitigation": "One local scheduler waits for 200ms without scrolling, then requestIdleCallback (bounded 1000ms; timer-only fallback). It independently schedules script insertion and render after load, cancelling pending idle work on resumed scrolling and removing its scroll listener when running. Provider configuration and callbacks are preserved.",
+  "contractRegression": {
+    "before": "3 expected failures against prior runtime",
+    "after": "3 passed in 9.8s",
+    "coverage": [
+      "continuous native scroll defers loading",
+      "quiet time allows exactly one load and render",
+      "resumed scroll defers render when a held script arrives",
+      "fallback without requestIdleCallback"
+    ],
+    "scope": "Synthetic zero-work provider verifies our scheduling and token gating only; it does not benchmark Cloudflare.",
+    "existingContactContracts": {
+      "passed": 49,
+      "failed": 2,
+      "duration": "2.1 minutes",
+      "failureNames": [
+        "es: footer language links share the existing footer and retain the current anchor",
+        "en: footer language links share the existing footer and retain the current anchor"
+      ],
+      "failureMechanism": "The development-only astro-dev-toolbar intercepts footer language-link clicks. No force-click, toolbar alteration, or retry was performed.",
+      "pending": "Root will run the integrated suite against build/preview without the development toolbar."
+    }
+  }
+}

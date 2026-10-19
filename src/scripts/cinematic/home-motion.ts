@@ -15,6 +15,10 @@ export function enhanceHomeScenes(
       const objects = [
         ...root.querySelectorAll<HTMLElement>("[data-home-enter]"),
       ];
+      const sceneObjects = [
+        ...root.querySelectorAll<HTMLElement>("[data-home-object]"),
+      ];
+      const object = sceneObjects[0];
       const canvas = root.querySelector<HTMLCanvasElement>("[data-home-depth]");
       let inView = false,
         complete = false,
@@ -22,12 +26,23 @@ export function enhanceHomeScenes(
         dead = false;
       let timeline: ReturnType<typeof gsap.timeline> | null = null;
       let ambientTween: ReturnType<typeof gsap.to> | null = null;
+      let pointerTween: ReturnType<typeof gsap.to> | null = null;
+      const pointerBases = new Map<HTMLElement, string>();
+      const pointer = { x: 0, y: 0 };
       const ambient = { value: 0 };
       let lastRender = 0;
       let depth:
         | ReturnType<typeof import("./home-depth.js").createHomeDepth>
         | undefined;
       const phase = { value: 0 };
+      function clearPointer() {
+        pointerTween?.kill();
+        pointerTween = null;
+        for (const target of pointerBases.keys())
+          target.style.removeProperty("transform");
+        pointerBases.clear();
+        pointer.x = pointer.y = 0;
+      }
       async function loadDepth() {
         if (
           dead ||
@@ -54,12 +69,15 @@ export function enhanceHomeScenes(
       function settle() {
         timeline?.kill();
         timeline = null;
+        clearPointer();
         ambientTween?.kill();
         ambientTween = null;
         complete = true;
         phase.value = 1;
-        if (typeof gsap !== "undefined" && objects.length > 0)
-          gsap.set(objects, { clearProps: "opacity,transform" });
+        if (typeof gsap !== "undefined")
+          gsap.set([...new Set([...objects, ...sceneObjects])], {
+            clearProps: "opacity,transform",
+          });
         depth?.dispose();
         depth = undefined;
         root.dataset.animation = "complete";
@@ -157,12 +175,27 @@ export function enhanceHomeScenes(
             },
             0.85,
           );
+        } else if (kind === "answer") {
+          // End at each card's authored CSS perspective before clearing styles.
+          timeline.from(
+            objects,
+            {
+              opacity: 0.2,
+              y: 28,
+              rotationY: 0,
+              duration: 1.2,
+              stagger: 0.5,
+              ease: "power3.out",
+              clearProps: "opacity,transform",
+            },
+            0,
+          );
         } else if (objects.length) {
           timeline.fromTo(
             objects,
             {
               opacity: 0.2,
-              y: kind === "answer" ? 28 : 35,
+              y: 35,
               rotationY: kind === "prompts" ? -12 : 0,
             },
             {
@@ -177,7 +210,6 @@ export function enhanceHomeScenes(
             0,
           );
         }
-        const object = root.querySelector<HTMLElement>("[data-home-object]");
         if (object)
           timeline.from(
             object,
@@ -208,6 +240,7 @@ export function enhanceHomeScenes(
         if (!motionAllowed() || typeof gsap === "undefined") return settle();
         if (inView && !document.hidden) {
           void loadDepth();
+          pointerTween?.resume();
           if (!timeline && !complete) start();
           else if (!complete) {
             timeline?.resume();
@@ -215,6 +248,7 @@ export function enhanceHomeScenes(
           }
         } else {
           timeline?.pause();
+          pointerTween?.pause();
           depth?.dispose();
           depth = undefined;
           if (!complete) root.dataset.animation = "paused";
@@ -249,41 +283,56 @@ export function enhanceHomeScenes(
         sync();
       });
       // Real perspective follows the pointer after the finite narrative; never required.
-      const object = root.querySelector<HTMLElement>("[data-home-object]");
       if (object && kind !== "analytics") {
+        function tilt(x: number, y: number, returning = false) {
+          // CSS owns the authored pose and ambient translate. Tweening the DOM
+          // transform through CSSPlugin would absorb that live translate into
+          // GSAP's cache, then snap when clearProps restores the CSS animation.
+          if (pointerBases.size === 0) {
+            for (const target of sceneObjects) {
+              const transform = getComputedStyle(target).transform;
+              pointerBases.set(target, transform === "none" ? "" : transform);
+            }
+          }
+          pointerTween?.kill();
+          pointerTween = gsap.to(pointer, {
+            x,
+            y,
+            duration: returning ? 0.7 : 0.6,
+            onUpdate: () => {
+              for (const [target, base] of pointerBases)
+                target.style.transform = `${base} rotateY(${pointer.y}deg) rotateX(${pointer.x}deg)`;
+            },
+            onComplete: returning ? clearPointer : undefined,
+          });
+          // A leave event can arrive after visibility/viewport already paused us.
+          if (dead || !inView || document.hidden) pointerTween.pause();
+        }
         root.addEventListener("pointermove", (event) => {
           if (
             !complete ||
+            dead ||
             typeof gsap === "undefined" ||
             !motionAllowed() ||
+            !inView ||
+            document.hidden ||
             innerWidth < 961 ||
             event.pointerType === "touch"
           )
             return;
           const r = root.getBoundingClientRect();
-          gsap.to(object, {
-            rotationY: ((event.clientX - r.left) / r.width - 0.5) * 7,
-            rotationX: -((event.clientY - r.top) / r.height - 0.5) * 3,
-            duration: 0.6,
-            overwrite: "auto",
-          });
+          tilt(
+            -((event.clientY - r.top) / r.height - 0.5) * 3,
+            ((event.clientX - r.left) / r.width - 0.5) * 7,
+          );
         });
         root.addEventListener("pointerleave", () => {
-          if (motionAllowed() && typeof gsap !== "undefined")
-            gsap.to(object, {
-              rotationY: 0,
-              rotationX: 0,
-              duration: 0.7,
-              clearProps: "transform",
-              overwrite: "auto",
-            });
+          if (pointerBases.size > 0 && motionAllowed()) tilt(0, 0, true);
         });
         listeners.push(() => {
-          if (!motionAllowed() && typeof gsap !== "undefined") {
-            gsap.killTweensOf(object);
-            gsap.set(object, { clearProps: "transform" });
-          }
+          if (!motionAllowed()) clearPointer();
         });
+        window.addEventListener("resize", clearPointer);
       }
     });
 }

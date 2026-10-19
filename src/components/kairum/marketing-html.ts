@@ -326,7 +326,7 @@ export function createMarketingRenderer(t: Translate, contact?: ContactSlots) {
     return `<section class="faq-section wrap section" id="${id}"><div>${label(t("preguntas_frecuentes"))}<h2>${h("un_poco_mas")}<br>${h("de_contexto")}</h2></div><div class="faq-list">${items.map((item) => `<details><summary>${e(item.question)}${icon("Plus")}</summary><div class="faq-answer"><p>${e(item.answer)}</p></div></details>`).join("")}</div></section>`;
   }
   function cta(title = t("el_proximo_paso_empieza_con_una_conversacion")) {
-    return `<section class="closing-section"><div class="wrap closing-inner"><div>${label(t("hablemos_de_tu_marca"))}<h2>${e(title)}</h2></div>${button(t("agendar_conversacion"), bookUrl, "ink")}</div></section>`;
+    return `<section class="closing-section"><div class="wrap closing-inner"><div>${label(t("hablemos_de_tu_marca"))}<h2>${e(title)}</h2></div>${button(t("agendar_conversacion"), bookUrl, "ink")}${contact?.contactPanel ?? ""}</div></section>`;
   }
   function card(p: Product, index = 0) {
     return `<a class="product-card" href="${productPath(p.id)}"><div class="product-card-top">${icon(p.icon)}<span class="mini-label">0${index + 1} / ${e(p.category)}</span>${icon("ArrowUpRight")}</div><div><h3>${e(p.name)}</h3><p>${e(p.short)}</p></div></a>`;
@@ -475,5 +475,6 @@ export function createMarketingRenderer(t: Translate, contact?: ContactSlots) {
     marketingInfoPage,
     marketingHeader,
     marketingFooter,
+    marketingClosing: cta,
   };
 }

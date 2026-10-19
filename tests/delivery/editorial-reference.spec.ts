@@ -46,3 +46,25 @@ test("an undeclared navigation change is rejected rather than stripped from the 
     /Editorial delta/,
   );
 });
+
+test("the Analytics replacement must match the declared preview exactly", () => {
+  const baseline = baselinePageContent("analytics", "es").html;
+  const rendered = pageContent("analytics", "es").html.replace(
+    'data-analytics-preview="product"',
+    'data-analytics-preview="changed"',
+  );
+  expect(() => restoreR05Content(rendered, baseline, "analytics")).toThrow(
+    /Editorial delta/,
+  );
+});
+
+test("the audience redesign does not exempt the surrounding navigation", () => {
+  const baseline = baselinePageContent("nosotros", "es").html;
+  const rendered = pageContent("nosotros", "es").html.replace(
+    'class="site-header"',
+    'class="changed-header"',
+  );
+  expect(sha(restoreR05Content(rendered, baseline, "nosotros"))).not.toBe(
+    reference.spanish_html.nosotros,
+  );
+});

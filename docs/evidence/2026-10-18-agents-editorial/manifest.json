@@ -1,0 +1,264 @@
+{
+  "base_commit": "03227bd9e95404dacb086636e3a1dc2304c39b09",
+  "branch": "feat/analytics-visual-story",
+  "source": "https://www.tryprofound.com/features/agents",
+  "preview": "http://127.0.0.1:4418/productos/agents/",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ca8e455bd6e5daab541fc05a656bca3bf3f68035ad73e112a34a2fe789f592a6"
+    },
+    {
+      "path": "src/layouts/Base.astro",
+      "sha256": "c018070416c0729c111df67ebaba155afc6831da0b07482fd987182bea09b179"
+    },
+    {
+      "path": "src/lib/editorial-integration.ts",
+      "sha256": "0189844780af25a4700dbe98a102bd07f5acd35fb76418976be4b8d7bab97059"
+    },
+    {
+      "path": "src/lib/metadata.ts",
+      "sha256": "24f2cf1ecf1b66ce968b660e6660674f6642ea7258a56314f2074111bfcb0ede"
+    },
+    {
+      "path": "src/components/kairum/agents-product.ts",
+      "sha256": "946c6f4ef7a9355622891fb6ad0ab01330b7bd0493e7a2388df7877fcf0383fd"
+    },
+    {
+      "path": "src/i18n/agents-product.ts",
+      "sha256": "b3c2d30913e2a8de599a49cfaf3add1f2d675baa0ddff47cfa186b8b8b1b68e1"
+    },
+    {
+      "path": "src/styles/agents-product.css",
+      "sha256": "da9ec916650406c35379ce0e099d149e81a42cf9694d59ecf4e51ecfecf63167"
+    },
+    {
+      "path": "tests/e2e/agents-product.spec.ts",
+      "sha256": "3226b0943d4e6e61bd7c4e0c2b8f7b9ec69357b6f440f76712b4c8dd46159e0a"
+    },
+    {
+      "path": "tests/e2e/landing.spec.ts",
+      "sha256": "f390e5e3727447eeb57071fa7ee40342600222fb70840cb9daae0ffe2a9f7a86"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "kairum-desktop-benefits.jpg",
+      "sha256": "572a522a0a16bbc32ea9c578e19a4f936425f0af1bdb308aba24fb593ce0b5f6",
+      "pixels": [1425, 990],
+      "bytes": 105079
+    },
+    {
+      "path": "kairum-desktop-context.jpg",
+      "sha256": "e86d82444acbf478363b3786f18c8454ea4ad35e24a553adc8408a6d56bf782d",
+      "pixels": [1425, 990],
+      "bytes": 83831
+    },
+    {
+      "path": "kairum-desktop-create.jpg",
+      "sha256": "8e436095cbbac42466fcc222f7aedc59012183b7e55096194fe0a8edfc3cb76c",
+      "pixels": [1425, 990],
+      "bytes": 95123
+    },
+    {
+      "path": "kairum-desktop-diff.jpg",
+      "sha256": "764fa916dcb4186e66ee773dfaad0f033adab4e7bcf0e64e5b5025eae58ea277",
+      "pixels": [1425, 990],
+      "bytes": 90813
+    },
+    {
+      "path": "kairum-desktop-faq.jpg",
+      "sha256": "c81f9856dcbcc51e8486ff61893ac850f0d2ba564b96738f9b030adec6384fdc",
+      "pixels": [1425, 990],
+      "bytes": 89276
+    },
+    {
+      "path": "kairum-desktop-improve.jpg",
+      "sha256": "6bf984f49bfcb15e5ec2520cca0105522d7cacd5086e2824fa0cb47fc4331dd4",
+      "pixels": [1425, 990],
+      "bytes": 96361
+    },
+    {
+      "path": "kairum-desktop-original.jpg",
+      "sha256": "27db0e45a210426a94c37af0facad99acc7d88e1b90baefda73b3269493043a6",
+      "pixels": [1425, 990],
+      "bytes": 70412
+    },
+    {
+      "path": "kairum-desktop-review.jpg",
+      "sha256": "1b336a1c1ca9313929335ff4667117e51d065a9295c2a0c79ed39df7b0a54952",
+      "pixels": [1425, 990],
+      "bytes": 86295
+    },
+    {
+      "path": "kairum-desktop-templates.jpg",
+      "sha256": "ab4282d817f1f85b7409d16f67af268518b364ffbe16da8953bf10940391dfe8",
+      "pixels": [1425, 990],
+      "bytes": 92300
+    },
+    {
+      "path": "kairum-desktop-top.jpg",
+      "sha256": "b4276f3618788c325369bb1a23712aaf202385cf6453b46f4263d4dfd702ba30",
+      "pixels": [1425, 990],
+      "bytes": 89066
+    },
+    {
+      "path": "kairum-mobile-320-create.jpg",
+      "sha256": "dc62520ff65a2a1d9c8157ce9a594e9a48353985f020196a7d7d8e18644bde98",
+      "pixels": [305, 804],
+      "bytes": 27821
+    },
+    {
+      "path": "kairum-mobile-320-faq-output.jpg",
+      "sha256": "37ad6ead71b169c1aa49ea490b3558f4d7be94a635355fdce270bde615b2a43f",
+      "pixels": [305, 804],
+      "bytes": 31407
+    },
+    {
+      "path": "kairum-mobile-320-faq-upper.jpg",
+      "sha256": "bc01b0fbdeb4e0831886a89a533db98af377118a444dc8a9966abaa1a00ad177",
+      "pixels": [305, 804],
+      "bytes": 26218
+    },
+    {
+      "path": "kairum-mobile-320-home.jpg",
+      "sha256": "5ea8985faac46771f254526c156bfc0786bd7ff17100ee30ed4460e5f2e1ad1b",
+      "pixels": [305, 804],
+      "bytes": 24161
+    },
+    {
+      "path": "kairum-mobile-320-improve.jpg",
+      "sha256": "e1a95c9706324c9e506599cd8c40f5220c3dbc01c5cde73ca00a81e0644c9c1c",
+      "pixels": [305, 804],
+      "bytes": 26210
+    },
+    {
+      "path": "kairum-mobile-320-original.jpg",
+      "sha256": "786abdc1ea5190b9f1db4eabab071624bbafa99d7a962cb45a919ea51f32a138",
+      "pixels": [305, 804],
+      "bytes": 32990
+    },
+    {
+      "path": "kairum-mobile-320-proposal.jpg",
+      "sha256": "4f30a84690a3850002161ff0b5f1a1f58420f9c5275f1c42c35e080d1bd034dd",
+      "pixels": [305, 804],
+      "bytes": 26012
+    },
+    {
+      "path": "kairum-mobile-390-create-output.jpg",
+      "sha256": "dbdc676c1782d9e708dd4c478cc734740a70f2746822722659973f1e27db073f",
+      "pixels": [375, 812],
+      "bytes": 36367
+    },
+    {
+      "path": "kairum-mobile-390-create-upper.jpg",
+      "sha256": "3bf4560add568295e823a097e3100d65eaeb55204e332f10d6d5b50402db3994",
+      "pixels": [375, 812],
+      "bytes": 27759
+    },
+    {
+      "path": "kairum-mobile-390-diff-lower.jpg",
+      "sha256": "d3ff2754b670a393a7f277e5c1367411d70ea3a383c1c9fdada83e13035268d2",
+      "pixels": [375, 812],
+      "bytes": 29212
+    },
+    {
+      "path": "kairum-mobile-390-diff-upper.jpg",
+      "sha256": "2898cd2f3b37a88b771264f97a46d79ba00f6c8e883fadb97425fdc4e2f655c8",
+      "pixels": [375, 812],
+      "bytes": 34884
+    },
+    {
+      "path": "kairum-mobile-390-editor.jpg",
+      "sha256": "5699d549a789662c51a700382a445ae15d92ae12145ace3fa7cea64cb8931848",
+      "pixels": [375, 812],
+      "bytes": 33188
+    },
+    {
+      "path": "kairum-mobile-390-top.jpg",
+      "sha256": "48321edcdf1a0232e39afc305b8167701ced8bb41f3a464c3b20c9bd7bfc0918",
+      "pixels": [375, 812],
+      "bytes": 34608
+    },
+    {
+      "path": "kairum-tablet-768-improve.jpg",
+      "sha256": "4c0031be52ab4c22a5469e6476c359f309b7cd8b3b0b265fede6f0731f342866",
+      "pixels": [753, 980],
+      "bytes": 71898
+    },
+    {
+      "path": "kairum-tablet-768-workspace.jpg",
+      "sha256": "e34e157344c3e4ae4775ef325c042363a8edbca4b3e09f7ecbf9f62221990497",
+      "pixels": [753, 980],
+      "bytes": 71575
+    },
+    {
+      "path": "profound-desktop-builder.jpg",
+      "sha256": "a07e0cc599507b2b132dadd4f2bb9c9d28b52f3bc90ed36e520c7ec07febb3e7",
+      "pixels": [1430, 993],
+      "bytes": 89534
+    },
+    {
+      "path": "profound-desktop-editor.jpg",
+      "sha256": "1e1ca1f539a3e7cf6b4aa6965044aae0c370f7c33d2ab5c9daed8ab0f60c5283",
+      "pixels": [1430, 993],
+      "bytes": 112078
+    },
+    {
+      "path": "profound-desktop-features.jpg",
+      "sha256": "ffcc7ae74ab3a1970ea97cd909da4856f5f48bc7da7fec65d5583a296c326cf1",
+      "pixels": [1430, 993],
+      "bytes": 72898
+    },
+    {
+      "path": "profound-desktop-templates.jpg",
+      "sha256": "a559d38ab787ce39a776a181ec5506dff38c45efbd64aece71374976efd9a94d",
+      "pixels": [1430, 993],
+      "bytes": 107163
+    },
+    {
+      "path": "profound-desktop-top.jpg",
+      "sha256": "4992b57ee66db462a5fe322992e6a1353812a3e18236fe750b82ea345b9233d5",
+      "pixels": [1430, 993],
+      "bytes": 78797
+    },
+    {
+      "path": "profound-mobile-demo.jpg",
+      "sha256": "4fdc463cefb20fb92b076c18b5e308bf5d900af64dba6ab080d75dea03a52b1c",
+      "pixels": [380, 822],
+      "bytes": 32572
+    },
+    {
+      "path": "profound-mobile-top.jpg",
+      "sha256": "e69107243d0f8ac833126b08a4954e5c4bded0d204ea1a2fd5c8dcb0282e7adf",
+      "pixels": [380, 822],
+      "bytes": 30412
+    }
+  ],
+  "critic": {
+    "agent": "landing_editorial_critic",
+    "read_only": true,
+    "scores": {
+      "usability": 9.2,
+      "style": 9.3,
+      "fidelity": 9.4
+    },
+    "blockers": 0,
+    "p0_p1_p2": 0,
+    "reported_review_set_sha256": "67c50d6e1ee89d180d2d42143caff5d94250b1ba631e35350cbe1950f947800b"
+  },
+  "verification": {
+    "agents_e2e_passed": 8,
+    "final_repetition_passed": 10,
+    "unique_cases_satisfied": 44,
+    "initial_passed": 39,
+    "initial_failed_contrast": 3,
+    "initial_failed_dist_rebuild": 2,
+    "typecheck_files": 127,
+    "typecheck_diagnostics": 0,
+    "static_pages": 66,
+    "r05": "passed",
+    "format": "passed",
+    "publication": "local-only"
+  }
+}

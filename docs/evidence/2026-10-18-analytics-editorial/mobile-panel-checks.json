@@ -1,0 +1,17 @@
+[
+  {
+    "active": ["analytics-preview-product-comparison"],
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "active": ["analytics-preview-product-alternatives"],
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "active": ["analytics-preview-product-sources"],
+    "scrollWidth": 305,
+    "width": 320
+  }
+]

@@ -1,0 +1,2495 @@
+[
+  {
+    "time": 340.90000000596046,
+    "progress": 0,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 365.20000000298023,
+    "progress": 0,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 374,
+    "progress": 0,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 431.5,
+    "progress": 0.002,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 472.90000000596046,
+    "progress": 0.015,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 486.40000000596046,
+    "progress": 0.025,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 493.79999999701977,
+    "progress": 0.028,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 499.79999999701977,
+    "progress": 0.03,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 516.2000000029802,
+    "progress": 0.031,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 533.2999999970198,
+    "progress": 0.035,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 560.5999999940395,
+    "progress": 0.039,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 566.7999999970198,
+    "progress": 0.045,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 584,
+    "progress": 0.047,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 600.0999999940395,
+    "progress": 0.051,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 620.2999999970198,
+    "progress": 0.055,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 633.5999999940395,
+    "progress": 0.059,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 650.9000000059605,
+    "progress": 0.062,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 666.2000000029802,
+    "progress": 0.067,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 682.7999999970198,
+    "progress": 0.07,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 699.5,
+    "progress": 0.074,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 716.5,
+    "progress": 0.078,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 732.5999999940395,
+    "progress": 0.082,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 749.5999999940395,
+    "progress": 0.085,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 766.2000000029802,
+    "progress": 0.089,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 783.4000000059605,
+    "progress": 0.093,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 800.2000000029802,
+    "progress": 0.097,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 816.7000000029802,
+    "progress": 0.101,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 834.5999999940395,
+    "progress": 0.105,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 850.0999999940395,
+    "progress": 0.109,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 866.9000000059605,
+    "progress": 0.113,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 883.4000000059605,
+    "progress": 0.117,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 899.5999999940395,
+    "progress": 0.12,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 916.2999999970198,
+    "progress": 0.124,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 933.0999999940395,
+    "progress": 0.128,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 949.7999999970198,
+    "progress": 0.132,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 966.2000000029802,
+    "progress": 0.136,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 983.5999999940395,
+    "progress": 0.14,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1000.2999999970198,
+    "progress": 0.144,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1017.2000000029802,
+    "progress": 0.148,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1033.2000000029802,
+    "progress": 0.152,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1049.7999999970198,
+    "progress": 0.155,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1066.5999999940395,
+    "progress": 0.159,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1083.2000000029802,
+    "progress": 0.163,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1101.9000000059605,
+    "progress": 0.167,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1117.2999999970198,
+    "progress": 0.171,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1134,
+    "progress": 0.175,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1150.7999999970198,
+    "progress": 0.179,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1168.9000000059605,
+    "progress": 0.183,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1183.5,
+    "progress": 0.187,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1200.2000000029802,
+    "progress": 0.19,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1216.7000000029802,
+    "progress": 0.194,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1233.5999999940395,
+    "progress": 0.198,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1250,
+    "progress": 0.202,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1266.7999999970198,
+    "progress": 0.206,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1283.5999999940395,
+    "progress": 0.21,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1300.7999999970198,
+    "progress": 0.213,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1316.7999999970198,
+    "progress": 0.217,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1334.7000000029802,
+    "progress": 0.221,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1350.0999999940395,
+    "progress": 0.225,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1366.5,
+    "progress": 0.229,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1383.7000000029802,
+    "progress": 0.233,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 872.2817993164062,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1400.4000000059605,
+    "progress": 0.237,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 870.732421875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1416.7999999970198,
+    "progress": 0.241,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 869.24853515625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1433.5999999940395,
+    "progress": 0.244,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 867.909912109375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1450.5,
+    "progress": 0.248,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 866.5477294921875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1467.2000000029802,
+    "progress": 0.252,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 865.2454833984375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1483.9000000059605,
+    "progress": 0.256,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 864.00146484375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1500.4000000059605,
+    "progress": 0.26,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 862.8139038085938,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1516.9000000059605,
+    "progress": 0.264,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 861.746337890625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1533.7000000029802,
+    "progress": 0.268,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 860.6633911132812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1550.4000000059605,
+    "progress": 0.272,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 859.691162109375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1566.7999999970198,
+    "progress": 0.276,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 858.7066650390625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1583.5999999940395,
+    "progress": 0.279,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 857.82421875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1600.4000000059605,
+    "progress": 0.283,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 856.9317626953125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1616.9000000059605,
+    "progress": 0.287,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 856.0845947265625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1633.5999999940395,
+    "progress": 0.291,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 855.281005859375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1650.2999999970198,
+    "progress": 0.295,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 854.563232421875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1666.9000000059605,
+    "progress": 0.299,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 853.8399047851562,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1683.5,
+    "progress": 0.303,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 853.1558837890625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1700.4000000059605,
+    "progress": 0.307,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 852.546630859375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1716.9000000059605,
+    "progress": 0.31,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 851.9345703125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1733.7999999970198,
+    "progress": 0.314,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 851.3576049804688,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1750.5999999940395,
+    "progress": 0.318,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 850.8453369140625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1767.5,
+    "progress": 0.322,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 850.33251953125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1783.7999999970198,
+    "progress": 0.326,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 849.850830078125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1800.5999999940395,
+    "progress": 0.33,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 849.424560546875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1817.2999999970198,
+    "progress": 0.334,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 848.9996337890625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1833.5999999940395,
+    "progress": 0.338,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 848.6021118164062,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1850.5,
+    "progress": 0.341,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 848.2518310546875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1867.0999999940395,
+    "progress": 0.345,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 847.9039916992188,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1883.7999999970198,
+    "progress": 0.349,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 847.5802001953125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1900.5999999940395,
+    "progress": 0.353,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 847.2791748046875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1917.2000000029802,
+    "progress": 0.357,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 847.0156860351562,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1933.9000000059605,
+    "progress": 0.361,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 846.755859375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1950.7000000029802,
+    "progress": 0.365,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 846.529296875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1967.9000000059605,
+    "progress": 0.369,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 846.3067016601562,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 1984.4000000059605,
+    "progress": 0.373,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 846.09033203125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2000.7999999970198,
+    "progress": 0.377,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.91357421875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2017.5,
+    "progress": 0.38,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.7413330078125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2034.4000000059605,
+    "progress": 0.384,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.5927124023438,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2050.5999999940395,
+    "progress": 0.388,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.448486328125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2067.4000000059605,
+    "progress": 0.392,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.3248901367188,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2084.0999999940395,
+    "progress": 0.396,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.2055053710938,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2100.7000000029802,
+    "progress": 0.4,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.0977783203125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2117.5,
+    "progress": 0.403,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 845.0062866210938,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2134.7000000029802,
+    "progress": 0.407,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.9189453125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2150.7999999970198,
+    "progress": 0.411,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.8410034179688,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2167.5999999940395,
+    "progress": 0.415,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.7755126953125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2184.2000000029802,
+    "progress": 0.419,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.7138061523438,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2200.7000000029802,
+    "progress": 0.423,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.6594848632812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2217.2999999970198,
+    "progress": 0.427,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.6146850585938,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2234.7000000029802,
+    "progress": 0.431,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.572998046875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2250.9000000059605,
+    "progress": 0.435,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.537109375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2267.7999999970198,
+    "progress": 0.439,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.5062866210938,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2284.5,
+    "progress": 0.442,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.4815063476562,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2301.2999999970198,
+    "progress": 0.446,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.459228515625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2317.7000000029802,
+    "progress": 0.45,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.4406127929688,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2334.5,
+    "progress": 0.454,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.4260864257812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2351,
+    "progress": 0.458,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.4133911132812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2367.7999999970198,
+    "progress": 0.462,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.4033203125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2384.2999999970198,
+    "progress": 0.466,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.395263671875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2403.4000000059605,
+    "progress": 0.47,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.3895263671875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2418,
+    "progress": 0.474,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.38427734375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2434.5999999940395,
+    "progress": 0.477,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.3812866210938,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2451,
+    "progress": 0.481,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.3790283203125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2468.2999999970198,
+    "progress": 0.485,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.3773193359375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2484.9000000059605,
+    "progress": 0.489,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.376220703125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2501.2000000029802,
+    "progress": 0.493,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.3756103515625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2517.7999999970198,
+    "progress": 0.497,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375244140625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2534.5999999940395,
+    "progress": 0.5,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.3751220703125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2550.9000000059605,
+    "progress": 0.504,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2567.5999999940395,
+    "progress": 0.508,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2584.2000000029802,
+    "progress": 0.512,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2601,
+    "progress": 0.516,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2617.7000000029802,
+    "progress": 0.52,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2635.0999999940395,
+    "progress": 0.524,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2651.2000000029802,
+    "progress": 0.528,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2667.9000000059605,
+    "progress": 0.532,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2684.5999999940395,
+    "progress": 0.536,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2701.0999999940395,
+    "progress": 0.539,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2717.7999999970198,
+    "progress": 0.543,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2734.4000000059605,
+    "progress": 0.547,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2751.2000000029802,
+    "progress": 0.551,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2767.7000000029802,
+    "progress": 0.555,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2786.2000000029802,
+    "progress": 0.559,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2801.0999999940395,
+    "progress": 0.563,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2817.7999999970198,
+    "progress": 0.567,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2834.5,
+    "progress": 0.57,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2851.2000000029802,
+    "progress": 0.574,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2868.9000000059605,
+    "progress": 0.578,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2884.5999999940395,
+    "progress": 0.582,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2901.2999999970198,
+    "progress": 0.586,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2918.2000000029802,
+    "progress": 0.59,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2934.7000000029802,
+    "progress": 0.594,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2951.7999999970198,
+    "progress": 0.597,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2968.2999999970198,
+    "progress": 0.601,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 2984.5999999940395,
+    "progress": 0.605,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3001.4000000059605,
+    "progress": 0.609,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3018.2999999970198,
+    "progress": 0.613,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3034.7999999970198,
+    "progress": 0.617,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3051.5,
+    "progress": 0.621,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3068.5999999940395,
+    "progress": 0.625,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3084.7999999970198,
+    "progress": 0.629,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3101.5,
+    "progress": 0.632,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3118.2000000029802,
+    "progress": 0.636,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3134.9000000059605,
+    "progress": 0.64,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3151.5999999940395,
+    "progress": 0.644,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3168.4000000059605,
+    "progress": 0.648,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3185.4000000059605,
+    "progress": 0.652,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3201.9000000059605,
+    "progress": 0.656,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3218.4000000059605,
+    "progress": 0.66,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3235.2000000029802,
+    "progress": 0.663,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3251.9000000059605,
+    "progress": 0.667,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3268.5,
+    "progress": 0.671,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3285.2999999970198,
+    "progress": 0.675,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3301.9000000059605,
+    "progress": 0.679,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3318.5,
+    "progress": 0.683,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3335.4000000059605,
+    "progress": 0.687,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3351.7000000029802,
+    "progress": 0.691,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3368.2999999970198,
+    "progress": 0.694,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3385,
+    "progress": 0.698,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3401.7000000029802,
+    "progress": 0.702,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3418.2999999970198,
+    "progress": 0.706,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3435,
+    "progress": 0.71,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3451.5999999940395,
+    "progress": 0.714,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3468.2999999970198,
+    "progress": 0.718,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3485,
+    "progress": 0.722,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3501.7000000029802,
+    "progress": 0.726,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3518.2999999970198,
+    "progress": 0.729,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3535.2000000029802,
+    "progress": 0.733,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3552,
+    "progress": 0.737,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3568.7000000029802,
+    "progress": 0.741,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3585.0999999940395,
+    "progress": 0.745,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3601.7999999970198,
+    "progress": 0.749,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3618.2999999970198,
+    "progress": 0.753,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3635.0999999940395,
+    "progress": 0.757,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3651.7000000029802,
+    "progress": 0.76,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3668.4000000059605,
+    "progress": 0.764,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3685.0999999940395,
+    "progress": 0.768,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3701.7000000029802,
+    "progress": 0.772,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3718.5,
+    "progress": 0.776,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3735.2000000029802,
+    "progress": 0.78,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3752,
+    "progress": 0.784,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3769.4000000059605,
+    "progress": 0.788,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3785.2000000029802,
+    "progress": 0.792,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3802,
+    "progress": 0.795,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3818.7999999970198,
+    "progress": 0.799,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3835.2999999970198,
+    "progress": 0.803,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3851.9000000059605,
+    "progress": 0.807,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3868.5,
+    "progress": 0.811,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3885.4000000059605,
+    "progress": 0.815,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3902.0999999940395,
+    "progress": 0.819,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3918.7000000029802,
+    "progress": 0.823,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3935.4000000059605,
+    "progress": 0.826,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3952.2000000029802,
+    "progress": 0.83,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3968.7999999970198,
+    "progress": 0.834,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 3985.4000000059605,
+    "progress": 0.838,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4002,
+    "progress": 0.842,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4018.7000000029802,
+    "progress": 0.846,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4035.4000000059605,
+    "progress": 0.85,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4052.0999999940395,
+    "progress": 0.853,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4068.9000000059605,
+    "progress": 0.857,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4085.5999999940395,
+    "progress": 0.861,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4102.20000000298,
+    "progress": 0.865,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4118.9000000059605,
+    "progress": 0.869,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4135.5,
+    "progress": 0.873,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4152.20000000298,
+    "progress": 0.877,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4168.9000000059605,
+    "progress": 0.881,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4185.5999999940395,
+    "progress": 0.884,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4202.20000000298,
+    "progress": 0.888,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4218.9000000059605,
+    "progress": 0.892,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4235.5999999940395,
+    "progress": 0.896,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4252.4000000059605,
+    "progress": 0.9,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4268.9000000059605,
+    "progress": 0.904,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4285.70000000298,
+    "progress": 0.908,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4302.5999999940395,
+    "progress": 0.912,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4319.20000000298,
+    "progress": 0.916,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4335.5999999940395,
+    "progress": 0.92,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4352.5999999940395,
+    "progress": 0.923,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4369.0999999940395,
+    "progress": 0.927,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4385.9000000059605,
+    "progress": 0.931,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4402.70000000298,
+    "progress": 0.935,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4419.0999999940395,
+    "progress": 0.939,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4435.70000000298,
+    "progress": 0.943,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4452.5999999940395,
+    "progress": 0.947,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4469.29999999702,
+    "progress": 0.95,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4485.79999999702,
+    "progress": 0.954,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4502.5999999940395,
+    "progress": 0.958,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4519.0999999940395,
+    "progress": 0.962,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4535.9000000059605,
+    "progress": 0.966,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4552.5999999940395,
+    "progress": 0.97,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4569.29999999702,
+    "progress": 0.974,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4586.0999999940395,
+    "progress": 0.978,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4602.70000000298,
+    "progress": 0.982,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4619.20000000298,
+    "progress": 0.985,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4635.9000000059605,
+    "progress": 0.989,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4652.5999999940395,
+    "progress": 0.993,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4669.29999999702,
+    "progress": 0.997,
+    "ambient": "waiting",
+    "x": 42,
+    "y": 844.375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4686,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3746337890625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4702.79999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3733520507812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4719.5999999940395,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.371337890625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4736.29999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.368408203125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4752.79999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3646240234375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4769.4000000059605,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.360107421875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4786.29999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3546142578125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4803.0999999940395,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3482666015625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4819.79999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3411254882812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4836.29999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3330078125,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4852.9000000059605,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.32421875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4869.5999999940395,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3143920898438,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4886.5,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.3037109375,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4903.5999999940395,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.2919921875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4919.79999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.2796020507812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4936.4000000059605,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.2662353515625,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4953.0999999940395,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.2518310546875,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4969.79999999702,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.2366333007812,
+    "width": 328,
+    "height": 165.015625
+  },
+  {
+    "time": 4989.20000000298,
+    "progress": 1,
+    "ambient": "playing",
+    "x": 42,
+    "y": 844.2205810546875,
+    "width": 328,
+    "height": 165.015625
+  }
+]

@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-18",
+  "branch": "feat/landing-visual-feedback",
+  "base_commit": "23c33cfa4802c3794419f4a7755ffc80e1c2b3f7",
+  "state": "uncommitted local working tree",
+  "environment": "Windows ARM64, Edge, static build preview 127.0.0.1:4337",
+  "checks": {
+    "e2e": "133/133",
+    "delivery": "46/46",
+    "layout_evidence_recheck": "4/4",
+    "types": "118 files, zero diagnostics",
+    "reference": "51 assets, 5 CSS, 13 pages, 126 contact variants",
+    "build": "66 pages, 26 reports, 2959 preserved files",
+    "critic": {
+      "usability": 9.3,
+      "style": 9.2,
+      "fidelity": 9.3,
+      "blockers": 0
+    }
+  },
+  "sources": [
+    {
+      "path": "src/components/kairum/analytics-preview.ts",
+      "sha256": "7077bf4a10390a8fa8f60c0b3e98c0c395522ffae009d96c88c08aab5b37c151"
+    },
+    {
+      "path": "src/i18n/analytics-preview.ts",
+      "sha256": "1d85aadefbfa91e469c88bb5f6b5f75541fbcf67603e3289c7cf0f666fcd0ed4"
+    },
+    {
+      "path": "src/i18n/audience-pages.ts",
+      "sha256": "dff50c3df60475177a7241b0fcf827295098b84a1b0b8da7bab8db1185adee9e"
+    },
+    {
+      "path": "src/i18n/example-context.ts",
+      "sha256": "35e30f297e5927fbf5a4df2e30b0bd7db0cefd5bf070fff9a205cfd269096e01"
+    },
+    {
+      "path": "src/layouts/Base.astro",
+      "sha256": "051ff4a0b462eec53dbd504dc433549eb5594607341ecfeacd2eeeb5a623310d"
+    },
+    {
+      "path": "src/lib/editorial-integration.ts",
+      "sha256": "5b99311b84743a3bfc1cfa838f8657d7517a1ca1e3d11cbca95cbc3d16ad7a1b"
+    },
+    {
+      "path": "src/scripts/cinematic/navigation.ts",
+      "sha256": "bc7dce3ef6187ea2f454d9ed5c5bf4d8e17de0650040091a57f4e235fc7fe104"
+    },
+    {
+      "path": "src/scripts/contact-form.ts",
+      "sha256": "d74a5b8d6e40e3a2af9346e91b97f3a31b3e51df4ddda683f6d1fd11d219ac0b"
+    },
+    {
+      "path": "src/styles/kairum-contact.css",
+      "sha256": "11f75efecba5b17c297c6b0dfd53ed04b03a7dfda579932b6c6e8613f6e04fcb"
+    },
+    {
+      "path": "src/styles/kairum-refinements.css",
+      "sha256": "4e06690424d02d4c9f0ee96a82f36befb94e7d44fa65dbe8518438cbc7a0b17f"
+    },
+    {
+      "path": "tests/e2e/visual-polish.spec.ts",
+      "sha256": "762fc8b3172fc27babad97871c83584a9ae1ba1ec022421444b77b22cd429f4d"
+    },
+    {
+      "path": "tests/e2e/nav-scrollbar.spec.ts",
+      "sha256": "c85b087a1aa116886266640a290fe12b73df7edf2e355777c51b4e9b01707074"
+    },
+    {
+      "path": "tests/e2e/contact-feedback-layout.spec.ts",
+      "sha256": "a9747e407c00339f23e761f6f15ed8d960c91aed7c81e57980c18f2249b87031"
+    },
+    {
+      "path": "tests/e2e/contact-performance.spec.ts",
+      "sha256": "8fdd17a2cbc3dfa9c147d10941fd35eb7f8daf372c154e1a497420405a1442c7"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "captures/contact-layout-1440-captcha-error.json",
+      "sha256": "33737d166bc7c4e61b3f533f50fa547c7ca34d931707e3df0dd2d90b1d5743ff"
+    },
+    {
+      "path": "captures/contact-layout-1440-checking.json",
+      "sha256": "33737d166bc7c4e61b3f533f50fa547c7ca34d931707e3df0dd2d90b1d5743ff"
+    },
+    {
+      "path": "captures/contact-layout-390-captcha-error.json",
+      "sha256": "b1de96bc73f96911ad46cd6f4349db2f1911961a1ce12b30d6b021d568e0ce57"
+    },
+    {
+      "path": "captures/contact-layout-390-checking.json",
+      "sha256": "f5b6d4e935c08ed31409a0254e1da116f0781330274e9933bedcdef5786b4749"
+    },
+    {
+      "path": "captures/contact-ready-1440-captcha-error.png",
+      "sha256": "76012cbab869caa0d57b3fbb6e64e82efc9b86ba48dcb802791be68734a4b080"
+    },
+    {
+      "path": "captures/contact-ready-1440-checking.png",
+      "sha256": "76012cbab869caa0d57b3fbb6e64e82efc9b86ba48dcb802791be68734a4b080"
+    },
+    {
+      "path": "captures/contact-ready-390-captcha-error.png",
+      "sha256": "78941dc8ccd7271d810981a43b21b6a75178381a240f587999ead5c626fe4150"
+    },
+    {
+      "path": "captures/contact-ready-390-checking.png",
+      "sha256": "16182c87da05221d1bf8f66f8d0883add720074b3c442e8d7382f7fd65f524fb"
+    },
+    {
+      "path": "captures/products-1440.png",
+      "sha256": "8066ce8e03c882d6c12f650c4325512675e77a713a12b7dec42025f90b35d72c"
+    },
+    {
+      "path": "captures/products-2244.png",
+      "sha256": "871628e1e5ad0213e36007a71179803ad3a1cd1f3c64cf94a3f3c2d55e29ec2c"
+    },
+    {
+      "path": "menu-frames-before-1440.json",
+      "sha256": "44e6015bcd5efc8b81d0cba33b3a7677cfb548e000f4a85c55460b2970a8e25a"
+    },
+    {
+      "path": "menu-frames-before-2244.json",
+      "sha256": "74c1312da9993bbbafb261e53cee68e2d8279a98796e6bb4bcddea2aa71bebc5"
+    },
+    {
+      "path": "menu-frames-final-1440.json",
+      "sha256": "94c1ba0120723b12ca952bd6edf2c55f64abd052e04ec2b5d11a87b215a73353"
+    },
+    {
+      "path": "menu-frames-final-2244.json",
+      "sha256": "e8715743728752cc4957136ed0521995d76ecbc58c67ea621e0bd74f5cb1d6d7"
+    },
+    {
+      "path": "observed-before.json",
+      "sha256": "0d8e4e6b9bc4803dc48c160fade28c9f01670da931504dedd56b4f0bce08bf61"
+    }
+  ]
+}

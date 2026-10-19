@@ -26,16 +26,21 @@ integración con la base Astro de Joaquín.
 Home presenta logos desde el inicio, rotor de modelos, respuesta y fuente sobre
 un escenario oscuro; continúa con Prompt Intelligence, Analytics, Agents,
 Traffic, Brand Hub, servicios, recursos y cierre. Las composiciones alternan
-posición y ancho según su contenido. Analytics mantiene el dashboard, una curva
-de menciones y barras comparativas esquemáticas. Traffic separa visitas humanas
+posición y ancho según su contenido. R05 originalmente usaba un dashboard de
+Analytics con curvas y barras esquemáticas; la revisión aprobada del 17 de
+octubre lo reemplaza por lecturas comparables y tabs reales (ver abajo).
+Traffic separa visitas humanas
 de solicitudes de crawlers; una solicitud no demuestra una cita ni una visita.
 Brand Hub es el contexto compartido de los cuatro productos, no una quinta
 herramienta independiente.
 
-Las cuatro aperturas de producto reutilizan estas mismas escenas. El movimiento
+Prompt Intelligence y Traffic reutilizan sus escenas de Home. Agents conserva su
+muestra en Home y amplía el recorrido en una presentación de producto específica
+([dirección vigente](agents-editorial.md)); Analytics comparte el ejemplo de
+lectura y amplía sus tres vistas en producto. El movimiento
 ambiental continúa después de la entrada y se pausa fuera del viewport o cuando
 la pestaña está oculta. `prefers-reduced-motion` desactiva entradas y movimiento
-continuo. Sin JavaScript siguen visibles texto, imágenes, fallback del gráfico,
+continuo. Sin JavaScript siguen visibles texto, imágenes y las vistas de Analytics,
 enlaces y FAQ nativas. No añadir hilos decorativos ni controles de pausa que
 Bruno retiró del diseño aprobado.
 
@@ -107,3 +112,72 @@ Open Graph, Twitter y Article/BlogPosting apuntan a la imagen de cada lectura.
 No se suman scripts editoriales ni se rasterizan las etiquetas de los diagramas.
 [Dirección y prompts](editorial-illustrations.md) y
 [evidencia de la revisión](../evidence/2026-10-16-editorial-quality/README.md).
+
+## Ajustes solicitados en revisión visual · 2026-10-17
+
+El usuario pidió corregir el retorno del hover y las entradas repetidas al
+navegar entre páginas, retirar la anotación decorativa de la respuesta y
+desvanecer apenas los bordes de las ilustraciones de fondo claro. La máscara
+aditiva ocupa sólo los 4–12 px exteriores; el centro conserva su opacidad y los
+assets originales no se editan.
+
+Los cierres existentes del catálogo y los seis productos reutilizan el mismo
+formulario de Home, manteniendo títulos, agenda y fondo amarillo. Turnstile usa
+su tamaño horizontal oficial, sin transformaciones ni recortes. El selector de
+idioma pasa a la derecha de la fila inferior del footer, con reflow móvil.
+
+Estos cambios quedan registrados en la
+[evidencia de los comentarios](../evidence/2026-10-17-landing-feedback/README.md).
+Las cinco hojas originales y los fingerprints de R05 permanecen intactos; el
+gate permite las inserciones exactas del formulario en los siete cierres
+adicionales. Después el usuario aprobó implementar la propuesta de Analytics y
+la diferenciación de Marcas, Agencias y Nosotros, y abrir una PR.
+
+Analytics reemplaza el dashboard y pedestal por una pregunta, dos lecturas y
+un cambio explicado. Home ofrece la muestra breve; producto reutiliza el
+contrato de tabs accesibles para comparación, alternativas y fuentes, con
+contenido legible sin JS. Marcas abre con una respuesta anotada; Agencias,
+con un entregable y el reparto de responsabilidades; Nosotros, con propósito
+y método editorial. La información personal del equipo queda para después
+por decisión del usuario. Las tres páginas comparten el cierre y formulario
+amarillo existente, sin reemplazar la navegación ni el hero de AI Report.
+
+Los [conceptos](../evidence/2026-10-17-landing-feedback/concepts/README.md)
+registran la composición y sus desviaciones intencionales. Los reemplazos
+exactos se declaran en editorial-integration y se revierten antes de comprobar
+R05; no se regeneran fingerprints ni se modifican sus cinco hojas originales.
+
+## Bordes y selección nativa · 2026-10-18
+
+Las tarjetas de AI Report y Consulting ajustan la caja de imagen al bitmap
+3:2 para que la máscara exterior existente actúe sobre sus bordes reales.
+Los encabezados estrechos usan interlineado `calc(1.22em + 1px)`: el fondo de selección nativo
+ya no invade los descendentes de la línea anterior, conservando exactamente
+los colores originales. Los enlaces de Productos tienen padding interior
+también durante hover y foco.
+
+Las consultas de las escenas se rotulan como ejemplos dirigidos a una IA;
+Analytics explica que alguien podría escribirlas en ChatGPT u otro asistente
+y que las respuestas son ilustrativas. El contexto se localiza en ES/EN/PT-BR,
+sin acreditar mediciones ni integraciones. Ver la
+[evidencia de estos ajustes](../evidence/2026-10-18-landing-polish/README.md).
+
+## Equipo y continuidad de la escena · 2026-10-18
+
+El usuario aportó después la diapositiva 11 de su pitch para incorporar el
+equipo a Nosotros. La sección usa sólo a las tres personas de la izquierda,
+en su orden original: Bruno De Cruz, Joaquín Cadeiras y Joaquín Alderete.
+Sus fotos se extraen intactas del archivo y se encuadran con CSS; los nombres,
+roles y organizaciones conservan el contenido de la diapositiva. La etiqueta
+«Experiencia» distingue esas credenciales de cargos internos en KAIRUM.
+No se añaden biografías, perfiles, logos de empresas ni una cuarta persona.
+
+La composición mantiene el hero editorial y coloca el equipo antes de propósito
+y método: tres columnas en escritorio y una en móvil, con copy ES/EN/PT-BR.
+La [evidencia de fuente y runtime](../evidence/2026-10-18-about-team/README.md)
+registra los assets y la revisión independiente.
+
+La tarjeta Fuente de Home entra hacia su perspectiva CSS y empieza la flotación
+desde su pose de reposo. Ambas tarjetas de la escena responden al puntero y
+regresan a sus respectivas perspectivas, manteniendo reduced motion y las
+pausas por visibilidad. La corrección es aditiva y conserva los CSS de R05.

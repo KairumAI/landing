@@ -1,0 +1,27 @@
+{
+  "motion_source_commit": "96134894a2b37f6a939c767ada123bf73e8b8207",
+  "environment": "Windows ARM64, Edge, viewport 1440x1000, preview 127.0.0.1:4335",
+  "method": "Real getBoundingClientRect samples on requestAnimationFrame during pointerleave; maximum single-frame x/y/width/height delta after 500 ms; 700 ms return duration",
+  "baseline_max_late_step_px": {
+    "answer": 10.17730712890625,
+    "archive": 5.24847412109375,
+    "agents": 7.46551513671875
+  },
+  "baseline_hyperlink": {
+    "destination": "/productos/prompt-intelligence/",
+    "module_delay_ms": 250,
+    "hidden_after_first_opaque_paint_samples": 23,
+    "opacity_at_307_ms": 0
+  },
+  "after_initial_fix": {
+    "focused_tests": "4 passed (26.3 s); three max_late_step < 2 px and no hidden samples after first opaque paint",
+    "exact_values": "Final integrated suite writes maxLateStep and raw frames to its configured output directory in motion-feedback-*/<scene>-return-frames.json",
+    "scope": "Before the final visibility lifecycle guard; same pointer composition and viewport reveal fix"
+  },
+  "lifecycle_red": {
+    "hidden_pointerleave_displacement_px": 1.7645263671875,
+    "cause": "A pointerleave arriving after visibilitychange created a fresh tween after the previous one was paused",
+    "fix": "New pointer tweens inherit dead/outside/hidden pause state; integrated verification pending"
+  },
+  "browser_plugin": "Invocation failed: privileged native pipe bridge is not available; browser-client is not trusted. Used authorized Edge/Playwright fallback."
+}

@@ -1,10 +1,35 @@
 import { escapeHtml as e } from "./escape";
 import { editorialCopy } from "../i18n/editorial";
+import { exampleContextCopy } from "../i18n/example-context";
 import { translator } from "../i18n/marketing";
 import { localeMeta, type Locale } from "../i18n/locales";
+import { createHomeScenes } from "../components/kairum/home-scenes";
+import { createMarketingRenderer } from "../components/kairum/marketing-html";
+import { renderAnalyticsPreview } from "../components/kairum/analytics-story";
+import { analyticsProductCopy } from "../i18n/analytics-product";
+import { agentsProductCopy } from "../i18n/agents-product";
+import {
+  renderAgentsPreview,
+  renderAgentsBenefits,
+  renderAgentsChapters,
+} from "../components/kairum/agents-product";
+import {
+  renderAnalyticsBenefits,
+  renderAnalyticsWorkflow,
+} from "../components/kairum/analytics-product";
+import {
+  renderAudienceBody,
+  type AudiencePageId,
+} from "../components/kairum/audience-pages";
+import type { ContactSlots } from "../components/kairum/contact-form";
 
 type Edit = { from: string; to: string };
-function editorialEdits(baseline: string, id: string, locale: Locale) {
+function editorialEdits(
+  baseline: string,
+  id: string,
+  locale: Locale,
+  contact?: ContactSlots,
+) {
   let html = baseline;
   const edits: Edit[] = [];
   const ui = editorialCopy(locale).ui;
@@ -88,15 +113,127 @@ function editorialEdits(baseline: string, id: string, locale: Locale) {
     if (!anchor) throw new Error(`Missing commercial section anchor: ${id}`);
     edit(anchor, `${block}${anchor}`);
   }
+  // User-approved visual feedback, 2026-10-17. Preserve R05 source bytes and
+  // reverse these exact rendered replacements before checking its fingerprints.
+  const localize = (fragment: string) =>
+    fragment.replace(
+      /href="(\/[^\"]*)"/g,
+      (_original, path: string) =>
+        `href="${path.startsWith("/informes/") ? `https://kairum.com.ar${path}` : l(path)}"`,
+    );
+  if (id === "home" || id === "analytics") {
+    const mode = id === "home" ? "home" : "product";
+    const original = createHomeScenes(t).homeAnalyticsScene(
+      id === "home" ? "home" : "analytics-product",
+    );
+    edit(localize(original), localize(renderAnalyticsPreview(locale, mode)));
+  }
+  if (id === "analytics") {
+    const c = analyticsProductCopy[locale];
+    const hero = html.match(
+      /<div class="product-hero-copy"[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+    )?.[0];
+    if (!hero) throw new Error("Missing Analytics product introduction");
+    edit(
+      hero,
+      hero.replace(
+        /<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+        `<h1>${e(c.title)}</h1><p>${e(c.description)}</p>`,
+      ),
+    );
+  }
+  if (id === "agents") {
+    const c = agentsProductCopy[locale];
+    edit(
+      e(t("la_propuesta_incluye_revision_humana_de_una_version_exacta_la")),
+      e(c.publicationAnswer),
+    );
+    edit(
+      localize(createHomeScenes(t).homeAgentsScene()),
+      localize(renderAgentsPreview(locale)),
+    );
+    const hero = html.match(
+      /<div class="product-hero-copy"[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+    )?.[0];
+    if (!hero) throw new Error("Missing Agents product introduction");
+    edit(
+      hero,
+      hero.replace(
+        /<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+        `<h1>${e(c.title)}</h1><p>${e(c.description)}</p>`,
+      ),
+    );
+    const workflow = html.match(
+      /<section class="section story-section" id="como-funciona">[\s\S]*?<\/section>/,
+    )?.[0];
+    const capabilities = html.match(
+      /<section class="section wrap" id="capacidades">[\s\S]*?<\/section>/,
+    )?.[0];
+    if (!workflow || !capabilities)
+      throw new Error("Missing Agents editorial sections");
+    edit(workflow, renderAgentsBenefits(locale));
+    edit(capabilities, localize(renderAgentsChapters(locale)));
+  }
+  // Keep reused questions clearly illustrative without editing the R05 renderers.
+  const example = exampleContextCopy(locale);
+  if (id === "home") {
+    const question = `${e(t("que_software_sirve_para_coordinar"))}<br> ${e(t("un_equipo_de_diseno"))}`;
+    const original = `<div class="glass-question" data-home-enter>${icon("MagnifyingGlass")}<span>${question}</span></div>`;
+    edit(
+      original,
+      `<div class="glass-question" data-home-enter>${icon("MagnifyingGlass")}<div><div><small data-example-context="ai-query">${e(example.homeQueryLabel)}</small></div><span>${question}</span></div></div>`,
+    );
+  }
+  if (id === "home" || id === "prompt-intelligence") {
+    const original = `<article class="prompt-featured-query" data-home-enter><div>${icon("MagnifyingGlass")}<span>${e(t("pregunta_de_tu_equipo"))}</span></div>`;
+    edit(
+      original,
+      `<article class="prompt-featured-query" data-home-enter><div>${icon("MagnifyingGlass")}<span data-example-context="ai-question">${e(example.promptQuestionLabel)}</span></div>`,
+    );
+  }
+  if (id === "report") {
+    const original = `<div id="report-hero-0" data-tab-panel><span class="eyebrow">${e(t("descubrimiento"))}</span>`;
+    edit(
+      original,
+      `${original}<p class="mini-label" data-example-context="report-query">${e(example.reportQueryContext)}</p>`,
+    );
+  }
+  if (id === "analytics") {
+    const original = `<div class="sheet-context">${e(t("mismo_pack_misma_superficie_cobertura_comparable"))}</div>`;
+    edit(
+      original,
+      `<div class="sheet-context">${e(t("mismo_pack_misma_superficie_cobertura_comparable"))}<br><span data-example-context="analytics-comparison">${e(example.analyticsComparisonContext)}</span></div>`,
+    );
+    const workflow = html.match(
+      /<section class="section story-section" id="como-funciona">[\s\S]*?<\/section>/,
+    )?.[0];
+    const capabilities = html.match(
+      /<section class="section wrap" id="capacidades">[\s\S]*?<\/section>/,
+    )?.[0];
+    if (!workflow || !capabilities)
+      throw new Error("Missing Analytics editorial sections");
+    edit(workflow, renderAnalyticsBenefits(locale));
+    edit(capabilities, renderAnalyticsWorkflow(locale));
+  }
+  if (id === "marcas" || id === "agencias" || id === "nosotros") {
+    const body = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+    if (!body) throw new Error(`Missing audience main: ${id}`);
+    const closing = createMarketingRenderer(t, contact).marketingClosing();
+    edit(
+      body,
+      localize(renderAudienceBody(id as AudiencePageId, locale, closing)),
+    );
+  }
   return { html, edits };
 }
 export const integrateEditorialContent = (
   html: string,
   id: string,
   locale: Locale,
-) => editorialEdits(html, id, locale).html;
+  contact?: ContactSlots,
+) => editorialEdits(html, id, locale, contact).html;
 
-/** Undo only the explicit user-approved editorial deltas; all remaining bytes must still match R05. */
+/** Undo only explicit user-approved deltas; all remaining bytes must match R05. */
 export function restoreR05Content(
   rendered: string,
   baseline: string,

@@ -1,0 +1,158 @@
+[
+  {
+    "state": "opening",
+    "overflow": 6,
+    "opacity": 0,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 1,
+    "opacity": 0.626874,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.927059,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.983045,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.990541,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.995131,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.997803,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.999198,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.999804,
+    "animated": true
+  },
+  {
+    "state": "opening",
+    "overflow": 0,
+    "opacity": 0.999985,
+    "animated": true
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  },
+  {
+    "state": "open",
+    "overflow": 0,
+    "opacity": 1,
+    "animated": false
+  }
+]

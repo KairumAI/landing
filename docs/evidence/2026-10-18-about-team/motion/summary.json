@@ -1,0 +1,32 @@
+{
+  "measurement": "Maximum adjacent-frame geometry change in CSS px; late entry uses phase .45 to .95, handoff uses phase >= .95.",
+  "before": [
+    {
+      "width": 1440,
+      "lateEntranceStepPx": 4.56549072265625,
+      "ambientHandoffStepPx": 5.498779296875,
+      "sampleCount": 260
+    },
+    {
+      "width": 390,
+      "lateEntranceStepPx": 0.0133056640625,
+      "ambientHandoffStepPx": 5.431396484375,
+      "sampleCount": 263
+    }
+  ],
+  "after": [
+    {
+      "width": 1440,
+      "lateEntranceStepPx": 0.01336669921875,
+      "ambientHandoffStepPx": 0.0191650390625,
+      "sampleCount": 279
+    },
+    {
+      "width": 390,
+      "lateEntranceStepPx": 0.0145263671875,
+      "ambientHandoffStepPx": 0.01605224609375,
+      "sampleCount": 277
+    }
+  ],
+  "pointerReturnMaxLateStepPx": 0.0693359375
+}
