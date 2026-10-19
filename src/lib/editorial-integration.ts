@@ -7,6 +7,12 @@ import { createHomeScenes } from "../components/kairum/home-scenes";
 import { createMarketingRenderer } from "../components/kairum/marketing-html";
 import { renderAnalyticsPreview } from "../components/kairum/analytics-story";
 import { analyticsProductCopy } from "../i18n/analytics-product";
+import { agentsProductCopy } from "../i18n/agents-product";
+import {
+  renderAgentsPreview,
+  renderAgentsBenefits,
+  renderAgentsChapters,
+} from "../components/kairum/agents-product";
 import {
   renderAnalyticsBenefits,
   renderAnalyticsWorkflow,
@@ -135,6 +141,38 @@ function editorialEdits(
         `<h1>${e(c.title)}</h1><p>${e(c.description)}</p>`,
       ),
     );
+  }
+  if (id === "agents") {
+    const c = agentsProductCopy[locale];
+    edit(
+      e(t("la_propuesta_incluye_revision_humana_de_una_version_exacta_la")),
+      e(c.publicationAnswer),
+    );
+    edit(
+      localize(createHomeScenes(t).homeAgentsScene()),
+      localize(renderAgentsPreview(locale)),
+    );
+    const hero = html.match(
+      /<div class="product-hero-copy"[^>]*>[\s\S]*?<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+    )?.[0];
+    if (!hero) throw new Error("Missing Agents product introduction");
+    edit(
+      hero,
+      hero.replace(
+        /<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>/,
+        `<h1>${e(c.title)}</h1><p>${e(c.description)}</p>`,
+      ),
+    );
+    const workflow = html.match(
+      /<section class="section story-section" id="como-funciona">[\s\S]*?<\/section>/,
+    )?.[0];
+    const capabilities = html.match(
+      /<section class="section wrap" id="capacidades">[\s\S]*?<\/section>/,
+    )?.[0];
+    if (!workflow || !capabilities)
+      throw new Error("Missing Agents editorial sections");
+    edit(workflow, renderAgentsBenefits(locale));
+    edit(capabilities, localize(renderAgentsChapters(locale)));
   }
   // Keep reused questions clearly illustrative without editing the R05 renderers.
   const example = exampleContextCopy(locale);

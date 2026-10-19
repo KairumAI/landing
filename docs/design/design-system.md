@@ -34,8 +34,10 @@ de solicitudes de crawlers; una solicitud no demuestra una cita ni una visita.
 Brand Hub es el contexto compartido de los cuatro productos, no una quinta
 herramienta independiente.
 
-Prompt Intelligence, Agents y Traffic reutilizan sus escenas de Home; Analytics
-comparte el ejemplo de lectura y amplía sus tres vistas en producto. El movimiento
+Prompt Intelligence y Traffic reutilizan sus escenas de Home. Agents conserva su
+muestra en Home y amplía el recorrido en una presentación de producto específica
+([dirección vigente](agents-editorial.md)); Analytics comparte el ejemplo de
+lectura y amplía sus tres vistas en producto. El movimiento
 ambiental continúa después de la entrada y se pausa fuera del viewport o cuando
 la pestaña está oculta. `prefers-reduced-motion` desactiva entradas y movimiento
 continuo. Sin JavaScript siguen visibles texto, imágenes y las vistas de Analytics,

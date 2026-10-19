@@ -308,7 +308,6 @@ test("product openers preserve approved scenes and Analytics uses the illustrati
   await page.emulateMedia({ reducedMotion: "reduce" });
   const scenes = {
     "prompt-intelligence": "prompts",
-    agents: "agents",
     traffic: "traffic",
   };
   for (const [product, scene] of Object.entries(scenes)) {
@@ -319,6 +318,9 @@ test("product openers preserve approved scenes and Analytics uses the illustrati
       /Prendo|Norte|Planificado/,
     );
   }
+  await page.goto("/productos/agents/");
+  await expect(page.locator('[data-agents-preview="product"]')).toBeVisible();
+  await expect(page.locator(".agent-workflow")).toHaveCount(0);
   await page.goto("/productos/analytics/");
   await expect(
     page.locator('[data-analytics-preview="product"]'),
