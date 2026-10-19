@@ -13,7 +13,9 @@ export function enhanceHomeScenes(
     .forEach((root) => {
       const kind = root.dataset.homeScene!;
       const objects = [
-        ...root.querySelectorAll<HTMLElement>("[data-home-enter]"),
+        ...root.querySelectorAll<HTMLElement>(
+          "[data-home-enter], [data-functional-step]",
+        ),
       ];
       const sceneObjects = [
         ...root.querySelectorAll<HTMLElement>("[data-home-object]"),
@@ -125,7 +127,18 @@ export function enhanceHomeScenes(
             syncAmbient();
           },
         });
-        if (kind === "agents") {
+        if (root.hasAttribute("data-functional-scene")) {
+          const steps = [
+            ...root.querySelectorAll<HTMLElement>("[data-functional-step]"),
+          ].filter((step) => !step.closest("[hidden]"));
+          timeline.from(steps, {
+            opacity: 0.45,
+            x: -8,
+            duration: 0.4,
+            stagger: 0.12,
+            clearProps: "opacity,transform",
+          });
+        } else if (kind === "agents") {
           timeline.fromTo(
             objects.slice(0, 2),
             { opacity: 0.25, y: 28, rotationY: -8 },
@@ -210,7 +223,7 @@ export function enhanceHomeScenes(
             0,
           );
         }
-        if (object)
+        if (object && !root.hasAttribute("data-functional-scene"))
           timeline.from(
             object,
             {
@@ -226,7 +239,11 @@ export function enhanceHomeScenes(
           phase,
           {
             value: 1,
-            duration: kind === "answer" ? 4.3 : 3.6,
+            duration: root.hasAttribute("data-functional-scene")
+              ? 1.1
+              : kind === "answer"
+                ? 4.3
+                : 3.6,
             ease: "none",
             onUpdate: () => {
               depth?.render(phase.value);
@@ -283,7 +300,11 @@ export function enhanceHomeScenes(
         sync();
       });
       // Real perspective follows the pointer after the finite narrative; never required.
-      if (object && kind !== "analytics") {
+      if (
+        object &&
+        kind !== "analytics" &&
+        !root.hasAttribute("data-functional-scene")
+      ) {
         function tilt(x: number, y: number, returning = false) {
           // CSS owns the authored pose and ambient translate. Tweening the DOM
           // transform through CSSPlugin would absorb that live translate into

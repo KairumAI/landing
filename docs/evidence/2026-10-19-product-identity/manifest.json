@@ -1,0 +1,472 @@
+{
+  "base_commit": "9ef3810e3fd509a366bb064933910deab1b2c1c0",
+  "branch": "feat/product-identity-20261019",
+  "capture_round": "runtime-r4",
+  "capture_method": "Playwright Chromium, reduced motion; viewport opening or full-page screenshot clipped to the native component bounds from scroll0; no CSS or image edits",
+  "widths": [1440, 768, 390, 320],
+  "source_sha256": {
+    "src/components/kairum/agents-product.ts": "b67d9056796be5d0db092eb43d3badb43d215353f19e1209ddcab84fb2a81be8",
+    "src/components/kairum/product-demonstrations.ts": "d760a9169fd4d5a8759af4938704ae40d2cb44728ea1a18acae23af9905a2122",
+    "src/i18n/product-identity.ts": "8f4d34b339281f8da5b332ff01a87561282fafad86b7bf1ec2cc7baefeedfac7",
+    "src/layouts/Base.astro": "87b7670dd9b50279d8e8a27698e6bbed7f081dec5422dccd325154d50921a078",
+    "src/lib/editorial-integration.ts": "29b9ddcdb9bf9edcc6dfe5821202515f4c4e187291597c16d31e9db0bac5ae50",
+    "src/scripts/cinematic/analytics-story.ts": "31eed7208f0ba032c4f489994f54b6fea3cf1887d3f9f21570b2ca925998a520",
+    "src/scripts/cinematic/home-motion.ts": "c268f44c101bbb47eca7d1124e9f5e9a6b7e286ca0a4486c1f8c08ce951465c5",
+    "src/styles/agents-product.css": "3c63a17d06a989c106531cfa9aa3608b38e70d69a1969d9c2428a75e0663d2dc",
+    "src/styles/analytics-story.css": "f0de2770d3abaa30fba850efd7cd1eed717af3178848610d42b98d640c63df4d",
+    "src/styles/product-identity.css": "59e1c47b1358c9f74f0a3b54d96854ad1a339caa1d59a3ce975d3a77396fcb22",
+    "tests/e2e/landing.spec.ts": "71b1b18444ec4e96929549ad833f4c4bce4b697b528f62c8194de349bc32b09c",
+    "tests/e2e/product-identity.spec.ts": "99597033d4ce5b78e8b13da13131a4a03001b0a589b4bb232d154ccd99e2ee4c"
+  },
+  "capture_count": 56,
+  "captures": [
+    {
+      "file": "runtime/agents-demo-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1200,
+      "pixel_height": 607,
+      "sha256": "facb0c0835841e6df4df64b545dde32eba28104f4c784ae7136d02483ef8fca3",
+      "captured_at": "2026-10-19T16:55:48.120156+00:00"
+    },
+    {
+      "file": "runtime/agents-demo-320.png",
+      "viewport_width": 320,
+      "pixel_width": 288,
+      "pixel_height": 1560,
+      "sha256": "cca0797b81d17dc10ec2038efcb7a6ba7a15163700ee930f81420b7109e37a00",
+      "captured_at": "2026-10-19T16:55:49.045299+00:00"
+    },
+    {
+      "file": "runtime/agents-demo-390.png",
+      "viewport_width": 390,
+      "pixel_width": 342,
+      "pixel_height": 1454,
+      "sha256": "0832ee4e40c9efa18a04716f7bef1b3e76b8431acb7e9efce0494862e15f6e9a",
+      "captured_at": "2026-10-19T16:55:48.787259+00:00"
+    },
+    {
+      "file": "runtime/agents-demo-768.png",
+      "viewport_width": 768,
+      "pixel_width": 704,
+      "pixel_height": 738,
+      "sha256": "eeca78cf504c716067cfc75f6ed1d2967555f47109a14464da425c62f67fb4dd",
+      "captured_at": "2026-10-19T16:55:48.445206+00:00"
+    },
+    {
+      "file": "runtime/agents-opening-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 1000,
+      "sha256": "110f932a7c1f5d8f711c4aa7d93488518bd4b998143a7c4330eff3d8ce9dbf42",
+      "captured_at": "2026-10-19T16:55:47.801107+00:00"
+    },
+    {
+      "file": "runtime/agents-opening-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1000,
+      "sha256": "4d4cd1a6c8cb30ceb90bfd6d2580b42395a8359da598e3f0c12d7d6c0ddc271b",
+      "captured_at": "2026-10-19T16:55:48.939282+00:00"
+    },
+    {
+      "file": "runtime/agents-opening-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1000,
+      "sha256": "850562a1ebe668ec3313416add2d78d16effed2427206e7bb928e7088e2a7589",
+      "captured_at": "2026-10-19T16:55:48.653238+00:00"
+    },
+    {
+      "file": "runtime/agents-opening-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 1000,
+      "sha256": "a7a34f26ded1adcb31e8c873e78f7bef72fafeedf56823406097de7d1799b093",
+      "captured_at": "2026-10-19T16:55:48.314186+00:00"
+    },
+    {
+      "file": "runtime/analytics-demo-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1168,
+      "pixel_height": 1210,
+      "sha256": "fca74913c63f11921b2dd01d5f7e143c2c0316ea1a5dbd5c45e9e4b905f69367",
+      "captured_at": "2026-10-19T16:55:45.358730+00:00"
+    },
+    {
+      "file": "runtime/analytics-demo-320.png",
+      "viewport_width": 320,
+      "pixel_width": 288,
+      "pixel_height": 1797,
+      "sha256": "c2d2f8ac00455a9f1f559606402ef90925a271f50ba88c1c70363f4e802b90d8",
+      "captured_at": "2026-10-19T16:55:47.087997+00:00"
+    },
+    {
+      "file": "runtime/analytics-demo-390.png",
+      "viewport_width": 390,
+      "pixel_width": 342,
+      "pixel_height": 1665,
+      "sha256": "b0dd0980bc385b69f5e54ef3a18c0005c6fcb5d14374f9c25f0b967b6721f093",
+      "captured_at": "2026-10-19T16:55:46.718940+00:00"
+    },
+    {
+      "file": "runtime/analytics-demo-768.png",
+      "viewport_width": 768,
+      "pixel_width": 704,
+      "pixel_height": 1289,
+      "sha256": "06caa918c79b05854ed78c1daa68a7c0235b70cba753bf65cfaa78db3e8af51f",
+      "captured_at": "2026-10-19T16:55:46.219863+00:00"
+    },
+    {
+      "file": "runtime/analytics-opening-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 1000,
+      "sha256": "aa9b523c5608dc603d08c9f26f47b179f51c779e3f46ab8948ce0a99c222829e",
+      "captured_at": "2026-10-19T16:55:44.888657+00:00"
+    },
+    {
+      "file": "runtime/analytics-opening-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1000,
+      "sha256": "ff820085e69a724e426f622d4c57ca262d3b1fe61d850ef1631d610c55bacd37",
+      "captured_at": "2026-10-19T16:55:46.952976+00:00"
+    },
+    {
+      "file": "runtime/analytics-opening-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1000,
+      "sha256": "a9cf3b9b6639c419df3abd9e05ab4a3d8b14a9552e581f3cbd817ef90dac656a",
+      "captured_at": "2026-10-19T16:55:46.427895+00:00"
+    },
+    {
+      "file": "runtime/analytics-opening-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 1000,
+      "sha256": "4c4458f9e70eff0891da1bdbaa90b9287a6a73664742c516cf4c52895cfbc313",
+      "captured_at": "2026-10-19T16:55:45.940820+00:00"
+    },
+    {
+      "file": "runtime/catalog-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1312,
+      "pixel_height": 1014,
+      "sha256": "53873af525f11ec36ad6cf99d71b88da8273b53949edf34d7191b0f8b097d0fe",
+      "captured_at": "2026-10-19T16:55:55.142238+00:00"
+    },
+    {
+      "file": "runtime/catalog-320.png",
+      "viewport_width": 320,
+      "pixel_width": 288,
+      "pixel_height": 1762,
+      "sha256": "e7db308c52dfc7e23f91855a8d4292a9e1aa9420ceaaacc149c4e322e532b79c",
+      "captured_at": "2026-10-19T16:55:55.543300+00:00"
+    },
+    {
+      "file": "runtime/catalog-390.png",
+      "viewport_width": 390,
+      "pixel_width": 342,
+      "pixel_height": 1715,
+      "sha256": "54ea17a99a1653beb150657670e8eef4d5927ff8fa6baead2def63eb3a1da8f8",
+      "captured_at": "2026-10-19T16:55:55.432283+00:00"
+    },
+    {
+      "file": "runtime/catalog-768.png",
+      "viewport_width": 768,
+      "pixel_width": 704,
+      "pixel_height": 1229,
+      "sha256": "6539beb125cc00a5510fac132b805b9b8f33b0f9592b182fc036f16f0f32c99e",
+      "captured_at": "2026-10-19T16:55:55.298262+00:00"
+    },
+    {
+      "file": "runtime/home-agents-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 558,
+      "sha256": "1f10acb552f10dacd61d6d894d60a0558f0f28ae204728c5d223e89222835bd0",
+      "captured_at": "2026-10-19T16:55:51.275643+00:00"
+    },
+    {
+      "file": "runtime/home-agents-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1199,
+      "sha256": "00d67309889eb12151d6442fea041e3dc36e3ab432f164075a9fd76933777d65",
+      "captured_at": "2026-10-19T16:55:54.562149+00:00"
+    },
+    {
+      "file": "runtime/home-agents-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1149,
+      "sha256": "0f1190da8d18a4e134306798a8cef201a4710017aa876c6f665f7aaef0dd1e64",
+      "captured_at": "2026-10-19T16:55:53.569996+00:00"
+    },
+    {
+      "file": "runtime/home-agents-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 759,
+      "sha256": "cb197c8175beada9a16dbc76b8f0ab51a70fbea89e9d2299367d78f4efc859c9",
+      "captured_at": "2026-10-19T16:55:52.711864+00:00"
+    },
+    {
+      "file": "runtime/home-analytics-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 1236,
+      "sha256": "5c208b3f0bd9b436dd343ca8dac771c3c93a7c2878cec63a496d0349ed5d04a9",
+      "captured_at": "2026-10-19T16:55:50.763564+00:00"
+    },
+    {
+      "file": "runtime/home-analytics-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1645,
+      "sha256": "1a5beeb11e19a485d1d6492fabe22ffeda87308fd7273452e9cb80393721f457",
+      "captured_at": "2026-10-19T16:55:54.384122+00:00"
+    },
+    {
+      "file": "runtime/home-analytics-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1595,
+      "sha256": "fcca45705388d475e6d1062539324ad59ad342956c82a398719e8d750f5c4176",
+      "captured_at": "2026-10-19T16:55:53.291953+00:00"
+    },
+    {
+      "file": "runtime/home-analytics-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 1225,
+      "sha256": "ee6b2dc64acf35ab976fe9020685ee432eda077a65642745e514fb020cb0ea8d",
+      "captured_at": "2026-10-19T16:55:52.478828+00:00"
+    },
+    {
+      "file": "runtime/home-prompt-intelligence-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 653,
+      "sha256": "0ba590830c9c83a58b4b43d9884f5ea7c10a1fddaaf8a9cb9575d220553edc57",
+      "captured_at": "2026-10-19T16:55:50.300493+00:00"
+    },
+    {
+      "file": "runtime/home-prompt-intelligence-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 891,
+      "sha256": "fa940687f2460053ee4c3ed960b59ef7b38f9869111199dcdf9a1524485060c8",
+      "captured_at": "2026-10-19T16:55:54.193092+00:00"
+    },
+    {
+      "file": "runtime/home-prompt-intelligence-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 873,
+      "sha256": "9079f7744bda838cec3277e4714fae610787a095ce4b61fb51d83d9585c1449c",
+      "captured_at": "2026-10-19T16:55:53.107925+00:00"
+    },
+    {
+      "file": "runtime/home-prompt-intelligence-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 845,
+      "sha256": "8454352463630e8553733f0c208f53c25c383042aab29ab4a4be85ad1c3fc5aa",
+      "captured_at": "2026-10-19T16:55:52.208786+00:00"
+    },
+    {
+      "file": "runtime/home-traffic-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 670,
+      "sha256": "bc8550f0545de0c8b700d92cd9247f707e796f09fa0b20de5c69602d27d1c756",
+      "captured_at": "2026-10-19T16:55:51.847731+00:00"
+    },
+    {
+      "file": "runtime/home-traffic-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1242,
+      "sha256": "ff36b552d59fd23b0e649f52336dba785654392162319f34da3a4c483a13ae2f",
+      "captured_at": "2026-10-19T16:55:54.760180+00:00"
+    },
+    {
+      "file": "runtime/home-traffic-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1230,
+      "sha256": "f36749421af00e6b6abebb4d485ff6cd3ad3301bed80f7634cff302da728bf66",
+      "captured_at": "2026-10-19T16:55:53.881044+00:00"
+    },
+    {
+      "file": "runtime/home-traffic-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 874,
+      "sha256": "375617c91b11b97d43669145c196cf602ae6e3aa976133cd52a3ddfde412ad16",
+      "captured_at": "2026-10-19T16:55:52.894892+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-demo-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1312,
+      "pixel_height": 443,
+      "sha256": "a5604339c5c149752e5587a9af16cc335ec6901fb6a0eab5f03ac568a78a8ef9",
+      "captured_at": "2026-10-19T16:55:43.525446+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-demo-320.png",
+      "viewport_width": 320,
+      "pixel_width": 288,
+      "pixel_height": 451,
+      "sha256": "34d41d15d72aa87160f4e54f29914df03ce01e9fed97b1b4062d45dc64c6a0cd",
+      "captured_at": "2026-10-19T16:55:47.730096+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-demo-390.png",
+      "viewport_width": 390,
+      "pixel_width": 342,
+      "pixel_height": 423,
+      "sha256": "62f8b603a9feb17c9a35c38d6681675444b67365007bf5e2153be7e1cb151b5f",
+      "captured_at": "2026-10-19T16:55:46.542912+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-demo-768.png",
+      "viewport_width": 768,
+      "pixel_width": 704,
+      "pixel_height": 416,
+      "sha256": "ce6251e0319884829a297f649146a5a1531f61bf4e53a7e29349bc3a5a2f44b3",
+      "captured_at": "2026-10-19T16:55:44.992673+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-opening-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 1000,
+      "sha256": "d08ec7a64b5228e6bd772ead475246c622c8cf755bc7ab988a9bf3feb18205e3",
+      "captured_at": "2026-10-19T16:55:43.114141+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-opening-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1000,
+      "sha256": "7fd940c33c9324305d20dc3949ed4a3021a3782afd2067540f28b0112d88db9e",
+      "captured_at": "2026-10-19T16:55:47.506061+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-opening-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1000,
+      "sha256": "2b073d0df9e7aa1bf19cd913ad4f920a8388088613afd0f47f41c68cea584bef",
+      "captured_at": "2026-10-19T16:55:46.387889+00:00"
+    },
+    {
+      "file": "runtime/prompt-intelligence-opening-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 1000,
+      "sha256": "2b28556b9128aef03da662a87117f67b67a76656132c8632b979d7d6809f2d0e",
+      "captured_at": "2026-10-19T16:55:44.795643+00:00"
+    },
+    {
+      "file": "runtime/traffic-demo-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1312,
+      "pixel_height": 453,
+      "sha256": "5f3646399ea2ea0a6db0b740d263240d54415ec1cd7d4cbd08f48f31b12df17a",
+      "captured_at": "2026-10-19T16:55:49.056301+00:00"
+    },
+    {
+      "file": "runtime/traffic-demo-320.png",
+      "viewport_width": 320,
+      "pixel_width": 288,
+      "pixel_height": 816,
+      "sha256": "10a1977176886155f4e3ddf0d8ae624c5bd0e089250378c84c7ea14f8542c861",
+      "captured_at": "2026-10-19T16:55:51.878736+00:00"
+    },
+    {
+      "file": "runtime/traffic-demo-390.png",
+      "viewport_width": 390,
+      "pixel_width": 342,
+      "pixel_height": 816,
+      "sha256": "d4eecf0c31851519f85fc0802fa6e2815a5787050abfa29a5cf2dbf9cd280f06",
+      "captured_at": "2026-10-19T16:55:50.919588+00:00"
+    },
+    {
+      "file": "runtime/traffic-demo-768.png",
+      "viewport_width": 768,
+      "pixel_width": 704,
+      "pixel_height": 453,
+      "sha256": "e21f9db40ad9afbdca21f7efb28e2683ec73d2ac5c31b648bce619b13c3062c3",
+      "captured_at": "2026-10-19T16:55:50.020449+00:00"
+    },
+    {
+      "file": "runtime/traffic-opening-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1440,
+      "pixel_height": 1000,
+      "sha256": "0aace0f2e903f870b5412ccc24b339ae5fd8ab899324af17ab0b9c0c0d71fdb4",
+      "captured_at": "2026-10-19T16:55:48.913279+00:00"
+    },
+    {
+      "file": "runtime/traffic-opening-320.png",
+      "viewport_width": 320,
+      "pixel_width": 320,
+      "pixel_height": 1000,
+      "sha256": "30b79498fdb0decf39641f4b1da882c2115fa21d5a05523eca75aa9c51efd1df",
+      "captured_at": "2026-10-19T16:55:51.750716+00:00"
+    },
+    {
+      "file": "runtime/traffic-opening-390.png",
+      "viewport_width": 390,
+      "pixel_width": 390,
+      "pixel_height": 1000,
+      "sha256": "98353665d0e096334ef9fb9661db4c8817958b2371ca2cd91484cbb53ff52a71",
+      "captured_at": "2026-10-19T16:55:50.758563+00:00"
+    },
+    {
+      "file": "runtime/traffic-opening-768.png",
+      "viewport_width": 768,
+      "pixel_width": 768,
+      "pixel_height": 1000,
+      "sha256": "3b7ad8adab82003d75eaef7621149178d75ad553e434088139685bfc059d9378",
+      "captured_at": "2026-10-19T16:55:49.886429+00:00"
+    },
+    {
+      "file": "runtime/es-team-1440.png",
+      "viewport_width": 1440,
+      "pixel_width": 1312,
+      "pixel_height": 736,
+      "sha256": "ea0598a10915a47c59a08c09065759cb1e2815043093793839d71eda06d194b4",
+      "captured_at": "2026-10-19T16:55:31.558590+00:00"
+    },
+    {
+      "file": "runtime/es-team-320.png",
+      "viewport_width": 320,
+      "pixel_width": 288,
+      "pixel_height": 1409,
+      "sha256": "4855a2d910f22a8faf780a459f4f4198e32f7cea89fd138bbab68d907d6562db",
+      "captured_at": "2026-10-19T16:55:32.679764+00:00"
+    },
+    {
+      "file": "runtime/es-team-390.png",
+      "viewport_width": 390,
+      "pixel_width": 342,
+      "pixel_height": 1409,
+      "sha256": "0a64f0c925d78350e92ccd81fedc39ce1db9104772f288b740ea2d66e2df94f0",
+      "captured_at": "2026-10-19T16:55:32.420724+00:00"
+    },
+    {
+      "file": "runtime/es-team-768.png",
+      "viewport_width": 768,
+      "pixel_width": 704,
+      "pixel_height": 698,
+      "sha256": "29f8a50dc6ca1ea56f7cdf21d609ad36e67834a09423a4e09bb61e0b54f87516",
+      "captured_at": "2026-10-19T16:55:32.064668+00:00"
+    }
+  ]
+}
