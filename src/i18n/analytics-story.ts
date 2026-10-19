@@ -5,6 +5,7 @@ export interface AnalyticsStoryCopy {
   disclosure: string;
   scope: string;
   navigation: string;
+  preview: string;
   views: readonly [string, string, string];
   headings: readonly [string, string, string];
   descriptions: readonly [string, string, string];
@@ -57,6 +58,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     scope:
       "Estas vistas ilustran el recorrido de Analytics. Los datos, las respuestas y las fuentes son ficticios; no representan resultados de clientes ni una integración activa.",
     navigation: "Explorar las tres vistas de Analytics",
+    preview: "Vista previa de Analytics",
     views: ["Presencia", "Sentimiento", "Citas"],
     headings: [
       "Conocé tu lugar en las respuestas.",
@@ -195,6 +197,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     scope:
       "These views illustrate the Analytics journey. All data, responses and sources are fictional; they represent neither client results nor an active integration.",
     navigation: "Explore the three Analytics views",
+    preview: "Analytics preview",
     views: ["Presence", "Sentiment", "Citations"],
     headings: [
       "See your place in AI answers.",
@@ -328,6 +331,7 @@ export const analyticsStoryCopy: Record<Locale, AnalyticsStoryCopy> = {
     scope:
       "Estas telas ilustram o percurso do Analytics. Os dados, as respostas e as fontes são fictícios; não representam resultados de clientes nem uma integração ativa.",
     navigation: "Explorar as três visões do Analytics",
+    preview: "Prévia do Analytics",
     views: ["Presença", "Sentimento", "Citações"],
     headings: [
       "Conheça seu lugar nas respostas.",

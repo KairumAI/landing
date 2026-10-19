@@ -213,7 +213,7 @@
   line-height: 1.4;
   text-decoration: none;
 }
-.as-sidebar a[aria-current] {
+.as-sidebar .as-view-selected {
   background: #fff0ad;
   color: var(--kairum-ink);
   font-weight: 550;
@@ -239,7 +239,7 @@
   margin-bottom: 20px;
   border-bottom: 1px solid var(--kairum-line);
 }
-.analytics-story .as-toolbar h4 {
+.analytics-story .as-toolbar :is(h3, h4) {
   flex-basis: 100%;
   color: var(--kairum-ink);
   font-size: 20px;
@@ -368,7 +368,7 @@
   border-left: 1px solid var(--kairum-line);
   padding-left: 26px;
 }
-.analytics-story h5 {
+.analytics-story :is(h4, h5) {
   color: var(--kairum-ink);
   font-size: 14px;
   font-weight: 550;

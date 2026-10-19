@@ -383,7 +383,7 @@ test("ambient motion continues after entry and reduced preference settles all sc
 });
 
 for (const locale of locales) {
-  test(`${locale}: all three Analytics scenes stay readable with full motion and load menu masks`, async ({
+  test(`${locale}: the Home Analytics sample stays readable with full motion and loads menu masks`, async ({
     page,
   }) => {
     const failures: string[] = [];
@@ -420,9 +420,9 @@ for (const locale of locales) {
         ".analytics-sidebar,.analytics-plinth,canvas[data-study-chart]",
       ),
     ).toHaveCount(0);
-    await expect(scene.locator(".as-story-section")).toHaveCount(3);
+    await expect(scene.locator(".as-story-section")).toHaveCount(1);
     await expect(scene).toHaveAttribute("data-chart-ready", "true");
-    await expect(scene.locator("canvas")).toHaveCount(2);
+    await expect(scene.locator("canvas")).toHaveCount(1);
     expect((await scene.innerText()).length).toBeGreaterThan(120);
     expect(failures).toEqual([]);
   });

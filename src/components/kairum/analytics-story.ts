@@ -11,7 +11,9 @@ export function renderAnalyticsPreview(
   const prefix = `analytics-preview-${mode}`;
   const keys = ["comparison", "alternatives", "sources"] as const;
   const glyphs = ["Eye", "Quotes", "Globe"];
-  const sectionHeading = mode === "home" ? "h3" : "h2";
+  const sectionHeading = "h2";
+  const toolbarHeading = mode === "home" ? "h3" : "h4";
+  const rankingHeading = mode === "home" ? "h4" : "h5";
   const icon = (name: string) =>
     `<i data-icon="${name}" aria-hidden="true" style="--icon:url('/kairum/assets/icons/${name}.svg')"></i>`;
   const brand = (index: number) =>
@@ -26,10 +28,14 @@ export function renderAnalyticsPreview(
   const badge = (index: number) =>
     `<span class="as-brand-symbol ${index === 0 ? "as-brand-own" : ""}" aria-hidden="true">${icon(index === 0 ? "Stack" : "Circle")}</span>`;
   const scope = `<p class="as-disclosure">${e(c.disclosure)}</p>`;
+  const viewLink = (key: (typeof keys)[number]) =>
+    mode === "home"
+      ? `/productos/analytics/#analytics-preview-product-${key}`
+      : `#${prefix}-${key}`;
   const sidebar = (active: number) =>
-    `<aside class="as-sidebar"><div class="as-brand">${badge(0)}<strong>${e(c.brand)}</strong></div><nav aria-label="${e(`${c.navigation}: ${c.views[active]}`)}">${keys.map((key, i) => `<a href="#${prefix}-${key}" ${active === i ? 'aria-current="location"' : ""}>${icon(glyphs[i])}<span>${e(c.views[i])}</span></a>`).join("")}</nav></aside>`;
+    `<aside class="as-sidebar"><div class="as-brand">${badge(0)}<strong>${e(c.brand)}</strong></div><nav aria-label="${e(c.navigation)}">${keys.map((key, i) => `<a href="${viewLink(key)}" ${active === i ? `class="as-view-selected"${mode === "product" ? ' aria-current="location"' : ""}` : ""}>${icon(glyphs[i])}<span>${e(c.views[i])}</span></a>`).join("")}</nav></aside>`;
   const toolbar = (active: number) =>
-    `<header class="as-toolbar"><h4>${e(c.views[active])}</h4>${active === 0 ? `<fieldset class="as-periods"><legend class="sr-only">${e(c.readings)}</legend>${[7, 14].map((period, i) => `<label><input type="radio" name="${prefix}-period" value="${period}" ${i === 0 ? "checked" : ""} data-as-period><span>${e(c.periods[i])}</span></label>`).join("")}</fieldset>` : `<p>${e(active === 1 ? c.sentimentSample : c.sourcesSample)}</p>`}</header>`;
+    `<header class="as-toolbar"><${toolbarHeading}>${e(c.views[active])}</${toolbarHeading}>${active === 0 ? `<fieldset class="as-periods"><legend class="sr-only">${e(c.readings)}</legend>${[7, 14].map((period, i) => `<label><input type="radio" name="${prefix}-period" value="${period}" ${i === 0 ? "checked" : ""} data-as-period><span>${e(c.periods[i])}</span></label>`).join("")}</fieldset>` : `<p>${e(active === 1 ? c.sentimentSample : c.sourcesSample)}</p>`}</header>`;
   const frame = (active: number, content: string) =>
     `<div class="as-workspace"><div class="as-window-bar"><span aria-hidden="true">${icon("Circle")}${icon("Circle")}${icon("Circle")}</span>${scope}</div><div class="as-workspace-layout">${sidebar(active)}<div class="as-main">${toolbar(active)}${content}</div></div></div>`;
   const dataRows = data.series[0]
@@ -40,8 +46,11 @@ export function renderAnalyticsPreview(
     .join("");
   const presence = frame(
     0,
-    `<div class="as-presence-grid"><figure class="as-trend"><figcaption><span>${e(c.visibility)}</span><strong>${percent(38)}</strong></figcaption><div class="as-chart-wrap" hidden><canvas data-as-chart role="img" aria-label="${e(c.chart)}" aria-describedby="${prefix}-chart-sample"></canvas></div><details class="as-chart-data" open><summary>${e(c.data)}</summary><div class="as-table-scroll"><table><thead><tr><th scope="col">${e(c.reading)}</th>${[0, 1, 2].map((i) => `<th scope="col">${e(brand(i))}</th>`).join("")}</tr></thead><tbody>${dataRows}</tbody></table></div></details><div class="as-chart-legend">${[0, 1, 2].map((i) => `<span class="as-legend-series as-series-${i}">${icon("Circle")}${e(brand(i))}</span>`).join("")}</div><label class="as-compare"><input type="checkbox" data-as-compare checked>${e(c.comparison)}</label></figure><div class="as-ranking"><h5>${e(c.ranking)}</h5><ol>${data.ranking.map((value, i) => `<li>${badge(i)}<span>${e(brand(i))}</span><strong>${percent(value)}</strong></li>`).join("")}</ol><p>${e(c.overlap)}</p></div></div><p class="as-reading-note" id="${prefix}-chart-sample">${e(c.closing)} ${e(c.sample)}</p>`,
+    `<div class="as-presence-grid"><figure class="as-trend"><figcaption><span>${e(c.visibility)}</span><strong>${percent(38)}</strong></figcaption><div class="as-chart-wrap" hidden><canvas data-as-chart role="img" aria-label="${e(c.chart)}" aria-describedby="${prefix}-chart-sample"></canvas></div><details class="as-chart-data" open><summary>${e(c.data)}</summary><div class="as-table-scroll"><table><thead><tr><th scope="col">${e(c.reading)}</th>${[0, 1, 2].map((i) => `<th scope="col">${e(brand(i))}</th>`).join("")}</tr></thead><tbody>${dataRows}</tbody></table></div></details><div class="as-chart-legend">${[0, 1, 2].map((i) => `<span class="as-legend-series as-series-${i}">${icon("Circle")}${e(brand(i))}</span>`).join("")}</div><label class="as-compare"><input type="checkbox" data-as-compare checked>${e(c.comparison)}</label></figure><div class="as-ranking"><${rankingHeading}>${e(c.ranking)}</${rankingHeading}><ol>${data.ranking.map((value, i) => `<li>${badge(i)}<span>${e(brand(i))}</span><strong>${percent(value)}</strong></li>`).join("")}</ol><p>${e(c.overlap)}</p></div></div><p class="as-reading-note" id="${prefix}-chart-sample">${e(c.closing)} ${e(c.sample)}</p>`,
   );
+  // Home is a single product sample. The complete story lives on its own page.
+  if (mode === "home")
+    return `<div class="analytics-preview analytics-story" data-analytics-preview="home" data-analytics-story data-locale="${locale}" data-chart-label="${e(c.reading)}" role="group" aria-label="${e(c.preview)}"><section class="as-story-section" id="${prefix}-comparison" aria-label="${e(c.views[0])}">${presence}</section></div>`;
   const sentiments = frame(
     1,
     `<div class="as-panel-intro"><h5>${e(c.sentimentTitle)}</h5><div class="as-tone-legend">${c.tones.map((tone, i) => `<span class="as-tone-${i}">${icon("Circle")}${e(tone)}</span>`).join("")}</div></div><div class="as-narrative-head" aria-hidden="true"><span>${e(c.topic)}</span><span>${e(c.mentions)}</span><span>${e(c.tone)}</span></div><ul class="as-narratives">${c.topics

@@ -2,6 +2,18 @@
 
 final result: passed
 
+## Ajuste vigente de distribución
+
+Tras la precisión de Bruno, Home conserva sólo un workspace de Presencia y el
+CTA al producto. La página de Analytics contiene los tres capítulos completos.
+Capturas actuales en `docs/evidence/2026-10-18-analytics-story/home-product-distribution/`:
+Home 1440/768/390/320 y detalle de producto en escritorio/móvil. Cero desbordes;
+los enlaces localizados de la muestra abren las secciones correspondientes.
+Crítica independiente: 9,3 usabilidad, 9,4 estilo, 9,5 fidelidad; cero bloqueantes.
+El nivel de los títulos de Home se corrigió sin cambiar su estilo. Pruebas de
+esta corrección: 36/36 Analytics y landing. Las rondas anteriores siguen abajo
+como evidencia histórica de la implementación completa.
+
 ## Fuente y runtime
 
 - Fuente: `docs/evidence/2026-10-18-analytics-story/source-light-story.png`,

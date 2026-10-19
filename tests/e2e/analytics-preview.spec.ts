@@ -4,15 +4,81 @@ import { localizedPath } from "../../src/lib/routes";
 import { analyticsStoryCopy } from "../../src/i18n/analytics-story";
 
 for (const locale of ["es", "en", "pt-br"] as const) {
-  test(`${locale}: all three Analytics scenes remain readable and interactive`, async ({
+  test(`${locale}: Home shows one Analytics sample and leads to the full product`, async ({
+    page,
+  }) => {
+    const copy = analyticsStoryCopy[locale];
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto(`${localizedPath("/", locale)}#product-analytics`);
+    const section = page.locator("#product-analytics");
+    const preview = section.locator('[data-analytics-preview="home"]');
+    await expect(preview).toHaveAccessibleName(copy.preview);
+    await expect(preview.locator(".as-workspace")).toHaveCount(1);
+    await expect(
+      preview.getByRole("heading", {
+        name: copy.views[0],
+        exact: true,
+        level: 3,
+      }),
+    ).toBeVisible();
+    await expect(preview.locator(".as-disclosure")).toHaveCount(1);
+    await expect(preview.locator("canvas")).toHaveCount(1);
+    await expect(
+      preview.locator(
+        ".as-story-index, .as-story-heading, .as-narratives, .as-source-tabs",
+      ),
+    ).toHaveCount(0);
+    await expect(preview).toHaveAttribute("data-chart-ready", "true");
+    const productPath = localizedPath("/productos/analytics/", locale);
+    await expect(section.locator(`a[href="${productPath}"]`)).toBeVisible();
+    for (const [index, key] of [
+      "comparison",
+      "alternatives",
+      "sources",
+    ].entries()) {
+      await expect(
+        preview.getByRole("link", { name: copy.views[index], exact: true }),
+      ).toHaveAttribute(
+        "href",
+        `${productPath}#analytics-preview-product-${key}`,
+      );
+    }
+    for (const width of [1440, 768, 390, 320]) {
+      await page.setViewportSize({ width, height: 1000 });
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth),
+      ).toBeLessThanOrEqual(width);
+    }
+    const audit = await new AxeBuilder({ page })
+      .include("[data-analytics-story]")
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(audit.violations).toEqual([]);
+    await preview
+      .getByRole("link", { name: copy.views[1], exact: true })
+      .click();
+    await expect(page).toHaveURL(
+      `${productPath}#analytics-preview-product-alternatives`,
+    );
+    await expect(
+      page.locator('[data-analytics-preview="product"] .as-story-section'),
+    ).toHaveCount(3);
+    await expect(
+      page.getByRole("heading", { name: copy.headings[1], exact: true }),
+    ).toBeInViewport();
+  });
+
+  test(`${locale}: the full product keeps all three Analytics scenes readable and interactive`, async ({
     page,
   }) => {
     const copy = analyticsStoryCopy[locale];
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.emulateMedia({ reducedMotion: "reduce" });
-    await page.goto(`${localizedPath("/", locale)}#product-analytics`);
-    const story = page.locator('[data-analytics-preview="home"]');
+    await page.goto(
+      `${localizedPath("/productos/analytics/", locale)}#analytics-preview-product-comparison`,
+    );
+    const story = page.locator('[data-analytics-preview="product"]');
     await expect(story.locator(".as-story-section")).toHaveCount(3);
     await expect(story.locator(".as-disclosure")).toHaveCount(3);
     for (const heading of copy.headings)
@@ -141,6 +207,19 @@ test("without JavaScript all scenes, source views and underlying observations st
     viewport: { width: 320, height: 1000 },
   });
   const page = await context.newPage();
+  await page.goto("/#product-analytics");
+  const preview = page.locator('[data-analytics-preview="home"]');
+  await expect(preview.locator(".as-workspace")).toHaveCount(1);
+  await expect(preview.locator(".as-chart-data")).toHaveAttribute("open", "");
+  await expect(
+    preview.getByRole("link", {
+      name: analyticsStoryCopy.es.views[2],
+      exact: true,
+    }),
+  ).toHaveAttribute(
+    "href",
+    "/productos/analytics/#analytics-preview-product-sources",
+  );
   await page.goto("/productos/analytics/#analytics-preview-product-sources");
   const story = page.locator("[data-analytics-story]");
   await expect(story.locator(".as-story-section")).toHaveCount(3);

@@ -4,6 +4,25 @@ Base: PR #6, `5e91ac631a5fbedfbce11fb4743b7af0ca2a1a40`.
 Rama de trabajo: `feat/analytics-visual-story`. Alcance: Home y apertura de
 `/productos/analytics/` en ES/EN/PT-BR. Sin publicación ni cambios del panel.
 
+## Corrección de distribución posterior a `a71f82c`
+
+Bruno precisó que Home debe presentar una sola muestra y dirigir al producto.
+La evidencia vigente para esta distribución está en
+[`home-product-distribution/`](home-product-distribution/): Home en 1440, 768,
+390 y 320 px; Presencia, Sentimiento y Citas en producto a 1440, y Sentimiento
+a 320. `viewports.json` confirma un workspace en Home, cero títulos de capítulos
+adicionales y ningún desborde. El recorrido se verificó siguiendo el enlace
+Sentimiento desde Home hasta el capítulo del producto. El CTA general conserva
+su ruta. Los tres idiomas tienen enlaces equivalentes.
+
+Crítica independiente: usabilidad 9,3; estilo 9,4; fidelidad al alcance/marca 9,5;
+cero bloqueantes y cero P0/P1/P2. Se atendió también la observación semántica
+P3: los títulos de la muestra de Home siguen la jerarquía h2 → h3 → h4.
+Verificación de esta corrección: 36/36 pruebas de Analytics y landing, además
+de tipos, compilación y referencia R05. Tras el ajuste semántico se repitieron
+las diez pruebas de Analytics: 10/10. La evidencia anterior documenta la
+entrega original y conserva su alcance histórico.
+
 ## Referencia y composición
 
 [Boceto claro dirigido por Astra](source-light-story.png), refinado después de

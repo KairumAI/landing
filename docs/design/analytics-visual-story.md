@@ -9,8 +9,11 @@ refinada es [este boceto](../evidence/2026-10-18-analytics-story/source-light-st
 
 - Superficies KAIRUM marfil y blancas, tinta y gris, acento amarillo.
 - Inter y los iconos Phosphor locales existentes.
-- Una presentación general y tres escenas con título, explicación breve y
-  espacio de producto compartido. No se duplican tres encabezados de página.
+- Home muestra un único panel de Presencia, con gráfico y comparación de marcas.
+  Conserva el botón «Explorar Analytics»; los enlaces del panel también llevan
+  a las secciones de producto, respetando el idioma.
+- La página de Analytics desarrolla las tres escenas con título, explicación
+  y espacio de producto compartido. La descripción completa vive en esa página.
 - El inicio, Prompt Intelligence y las demás escenas aprobadas de R05 conservan
   su contenido. La sustitución de Analytics se declara en la integración reversible.
 
@@ -39,7 +42,8 @@ acercarse Analytics al viewport, usando Chart.js 4.5.1 ya aprobado. Si no carga
 o no hay JavaScript, las tablas conservan las observaciones, las fuentes y los
 detalles. Los controles de gráfico aparecen sólo cuando funcionan.
 
-Las tres escenas permanecen en el documento. En móvil la navegación lateral
+Las tres escenas permanecen en el documento de producto; Home sólo incluye
+Presencia, sin índice ni capítulos adicionales. En móvil la navegación lateral
 pasa a una fila y el ranking continúa debajo del gráfico. Los controles tienen
 un mínimo de 44 px, foco visible y movimiento reducido. No se agregan paquetes,
 proveedores, nuevas rutas ni configuración privada.
