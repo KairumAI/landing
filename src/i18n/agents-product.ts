@@ -80,7 +80,7 @@ export const agentsProductCopy: Record<Locale, AgentsProductCopy> = {
     publicationAnswer:
       "Cada propuesta requiere que tu equipo revise una versión concreta. El canal, el destino y los permisos se acuerdan antes de publicar; cuando ese paso no está definido, se entrega el borrador para revisión.",
     disclosure:
-      "Vista ilustrativa del producto con contenido de KAIRUM. El alcance y la entrega se acuerdan con cada equipo.",
+      "Del brief a la propuesta, con contexto y revisión de tu equipo.",
     stepNames: [
       "Definir el brief",
       "Reunir el contexto",
@@ -249,8 +249,7 @@ export const agentsProductCopy: Record<Locale, AgentsProductCopy> = {
     pending: "Awaiting review",
     publicationAnswer:
       "Every proposal requires your team to review a specific version. The channel, destination and permissions are agreed before publishing; when that step is not defined, the draft is delivered for review.",
-    disclosure:
-      "Illustrative product view using KAIRUM content. Scope and delivery are agreed with each team.",
+    disclosure: "From brief to proposal, with context and your team’s review.",
     stepNames: [
       "Define the brief",
       "Gather context",
@@ -418,8 +417,7 @@ export const agentsProductCopy: Record<Locale, AgentsProductCopy> = {
     pending: "Aguardando revisão",
     publicationAnswer:
       "Cada proposta exige que sua equipe revise uma versão concreta. O canal, o destino e as permissões são combinados antes de publicar; quando essa etapa não está definida, o rascunho é entregue para revisão.",
-    disclosure:
-      "Visão ilustrativa do produto com conteúdo da KAIRUM. O escopo e a entrega são combinados com cada equipe.",
+    disclosure: "Do brief à proposta, com contexto e revisão da sua equipe.",
     stepNames: [
       "Definir o briefing",
       "Reunir o contexto",

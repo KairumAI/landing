@@ -93,7 +93,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
   es: {
     brands: {
       example: {
-        label: "Ejemplo de consulta a una IA",
+        label: "Pregunta de tu audiencia",
         question: "¿Qué software sirve para coordinar un equipo de diseño?",
         answer:
           "Tu marca reúne briefs y comentarios para coordinar el trabajo de diseño.",
@@ -101,8 +101,8 @@ const dictionaries: Record<Locale, AudienceDetails> = {
           "Briefs, comentarios y revisiones por proyecto, en un solo lugar.",
         sourcePath: "tu-marca.example/equipo",
         annotation:
-          "La fuente habla de revisiones. La respuesta del ejemplo no las menciona.",
-        note: "Una persona podría hacer esta consulta en ChatGPT u otro asistente. La respuesta y la fuente son ilustrativas; no son una medición ni una respuesta real de un proveedor.",
+          "La fuente incluye revisiones que la respuesta no menciona.",
+        note: "Pregunta, respuesta y fuente: una lectura para decidir qué revisar.",
       },
       reading: {
         eyebrow: "Del análisis a la acción",
@@ -134,7 +134,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
     },
     agencies: {
       example: {
-        label: "Entregable ilustrativo",
+        label: "Lectura para tu cliente",
         brand: "KAIRUM",
         title: "Una lectura\npara compartir.",
         items: [
@@ -144,14 +144,14 @@ const dictionaries: Record<Locale, AudienceDetails> = {
           },
           {
             title: "Evidencia",
-            text: "La página del ejemplo habla de briefs, comentarios y revisiones por proyecto.",
+            text: "La página reúne briefs, comentarios y revisiones por proyecto.",
           },
           {
             title: "Prioridad para revisar",
             text: "Contrastar cómo se presenta esa capacidad y acordar qué preguntas investigar.",
           },
         ],
-        note: "Ejemplo de un proyecto de diseño. El alcance y los entregables se acuerdan con cada cliente; no representa un resultado medido.",
+        note: "Pregunta, evidencia y prioridades para preparar la próxima conversación.",
       },
       workflow: {
         eyebrow: "Proceso",
@@ -280,15 +280,14 @@ const dictionaries: Record<Locale, AudienceDetails> = {
   en: {
     brands: {
       example: {
-        label: "Example query to an AI assistant",
+        label: "Your audience’s question",
         question: "What software helps coordinate a design team?",
         answer:
           "Your brand brings briefs and feedback together to coordinate design work.",
         source: "Briefs, feedback and reviews per project, in one place.",
         sourcePath: "your-brand.example/team",
-        annotation:
-          "The source mentions reviews. The example answer leaves them out.",
-        note: "Someone might ask this in ChatGPT or another assistant. The answer and source are illustrative; they are neither a measurement nor a real provider response.",
+        annotation: "The source includes reviews that the answer leaves out.",
+        note: "Question, answer and source: a reading to decide what to review.",
       },
       reading: {
         eyebrow: "From analysis to action",
@@ -320,7 +319,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
     },
     agencies: {
       example: {
-        label: "Illustrative deliverable",
+        label: "A reading for your client",
         brand: "KAIRUM",
         title: "A reading\nto share.",
         items: [
@@ -330,14 +329,14 @@ const dictionaries: Record<Locale, AudienceDetails> = {
           },
           {
             title: "Evidence",
-            text: "The example page describes briefs, feedback and reviews per project.",
+            text: "The page brings together briefs, feedback and reviews per project.",
           },
           {
             title: "Priority to review",
             text: "Check how that capability is presented and agree on which questions to investigate.",
           },
         ],
-        note: "An example design project. Scope and deliverables are agreed with each client; this does not represent a measured result.",
+        note: "Question, evidence and priorities to prepare the next conversation.",
       },
       workflow: {
         eyebrow: "Process",
@@ -466,15 +465,14 @@ const dictionaries: Record<Locale, AudienceDetails> = {
   "pt-br": {
     brands: {
       example: {
-        label: "Exemplo de consulta a uma IA",
+        label: "Pergunta do seu público",
         question: "Qual software ajuda a coordenar uma equipe de design?",
         answer:
           "Sua marca reúne briefs e comentários para coordenar o trabalho de design.",
         source: "Briefs, comentários e revisões por projeto, em um só lugar.",
         sourcePath: "sua-marca.example/equipe",
-        annotation:
-          "A fonte menciona revisões. A resposta do exemplo não fala delas.",
-        note: "Uma pessoa poderia fazer esta consulta no ChatGPT ou em outro assistente. A resposta e a fonte são ilustrativas; não são uma medição nem uma resposta real de um provedor.",
+        annotation: "A fonte inclui revisões que a resposta não menciona.",
+        note: "Pergunta, resposta e fonte: uma leitura para decidir o que revisar.",
       },
       reading: {
         eyebrow: "Da análise à ação",
@@ -506,7 +504,7 @@ const dictionaries: Record<Locale, AudienceDetails> = {
     },
     agencies: {
       example: {
-        label: "Entrega ilustrativa",
+        label: "Leitura para seu cliente",
         brand: "KAIRUM",
         title: "Uma leitura\npara compartilhar.",
         items: [
@@ -516,14 +514,14 @@ const dictionaries: Record<Locale, AudienceDetails> = {
           },
           {
             title: "Evidência",
-            text: "A página do exemplo fala de briefs, comentários e revisões por projeto.",
+            text: "A página reúne briefs, comentários e revisões por projeto.",
           },
           {
             title: "Prioridade para revisar",
             text: "Conferir como essa capacidade é apresentada e combinar quais perguntas investigar.",
           },
         ],
-        note: "Exemplo de um projeto de design. O escopo e as entregas são combinados com cada cliente; não representa um resultado medido.",
+        note: "Pergunta, evidência e prioridades para preparar a próxima conversa.",
       },
       workflow: {
         eyebrow: "Processo",

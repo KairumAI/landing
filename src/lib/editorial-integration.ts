@@ -174,7 +174,7 @@ function editorialEdits(
     edit(workflow, renderAgentsBenefits(locale));
     edit(capabilities, localize(renderAgentsChapters(locale)));
   }
-  // Keep reused questions clearly illustrative without editing the R05 renderers.
+  // Add useful reading labels without editing the preserved R05 renderers.
   const example = exampleContextCopy(locale);
   if (id === "home") {
     const question = `${e(t("que_software_sirve_para_coordinar"))}<br> ${e(t("un_equipo_de_diseno"))}`;

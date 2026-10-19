@@ -1,0 +1,369 @@
+{
+  "date": "2026-10-19",
+  "publishedBase": "622871833153e281cdff8ab8a79f61532202ff65",
+  "workingBranch": "fix/landing-functional-legends",
+  "reference": "R05 477f1e2338d2",
+  "sourceFiles": {
+    "src/i18n/example-context.ts": "cbacd3393a116a32081f4a756e8a0da7dc7f4ff99269048da531a727fb8e29e4",
+    "src/i18n/analytics-story.ts": "dbf94655a9b72948edaed09a6e4e3418af211234258183487fb2475b375eeafd",
+    "src/i18n/agents-product.ts": "09a72118ee20f30dd74796c636764b513bc8ffa95896d1b575cc56c45ce7aecb",
+    "src/i18n/audience-pages.ts": "49e6083c53c5e0095e3f1f1782ba253da83b318d07dc7b150b10725f9f0ea519",
+    "src/lib/editorial-integration.ts": "984a9e4b711598ce0bed43268859773359654c9250835b4e82de52cf4bfeee48"
+  },
+  "screenshots": [
+    {
+      "url": "https://kairum.com.ar/",
+      "file": "runtime/01-home-1440.jpg",
+      "sha256": "a372909b724224fe0b4d98245e357b13c2dde21c9cc4ca62625ed337e537b609",
+      "imageWidth": 1425,
+      "imageHeight": 1000,
+      "capturedAt": "2026-10-19T13:56:29.336125+00:00"
+    },
+    {
+      "url": "https://www.tryprofound.com/features/answer-engine-insights",
+      "file": "runtime/02-profound-analytics-1440.jpg",
+      "sha256": "9ae298d9f88ad0ca0247af868f97b0aef245738c4c65535141dde43138c30296",
+      "imageWidth": 1430,
+      "imageHeight": 993,
+      "capturedAt": "2026-10-19T13:57:20.766439+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#product-prompt-intelligence",
+      "file": "runtime/03-home-prompt-1440.jpg",
+      "sha256": "196b2bc6057b3f5e9b19fe0618662cd0518e16f30049cad5729bf5bad4a8b526",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T13:57:19.884392+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#product-analytics",
+      "file": "runtime/04-home-analytics-1440.jpg",
+      "sha256": "42d6a05366e9ff65e01da9ab88197839179d2a965dfbb6b3d3e434d3e069d684",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T13:58:04.557761+00:00"
+    },
+    {
+      "url": "https://www.tryprofound.com/features/answer-engine-insights",
+      "file": "runtime/05-profound-panel-1440.jpg",
+      "sha256": "dd1258d0ced1d43c6d898478b10f53a07870434f650b04f2a74a6aac31be5d8e",
+      "imageWidth": 1430,
+      "imageHeight": 993,
+      "capturedAt": "2026-10-19T13:58:04.840811+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/analytics/",
+      "file": "runtime/06-analytics-product-1440.jpg",
+      "sha256": "3c653ffb58db5bf4af9cdbd7f85d130deb06f21fb4823fca8715d06d1db12ae9",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:52.177437+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#product-agents",
+      "file": "runtime/07-home-agents-1440.jpg",
+      "sha256": "e6342819e4f72c407d953e6d8869e160ffa540a8a4986e524afc77899664d05f",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T13:59:29.270676+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#product-traffic",
+      "file": "runtime/08-home-traffic-1440.jpg",
+      "sha256": "da69b4962b5a9c04090bf41af4a36bae55b48c48ce9edc604d655813227370de",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T13:59:05.365793+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/agents/#contenido",
+      "file": "runtime/09-agents-product-desktop.jpg",
+      "sha256": "88d2fe8e3192f29103a4f07d50c83cdc882aeb044e75c82c7c371cb6c2af078c",
+      "imageWidth": 1265,
+      "imageHeight": 712,
+      "capturedAt": "2026-10-19T13:59:06.201900+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#evidencia",
+      "file": "runtime/10-home-brandhub-1440.jpg",
+      "sha256": "d60fb4067ee39056123c5eeff1a5e49e93a3972949e59aaf3d70af02f37caefc",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T13:59:27.309451+00:00"
+    },
+    {
+      "url": "https://www.tryprofound.com/features/agents",
+      "file": "runtime/11-profound-agents-1440.jpg",
+      "sha256": "b58fd3eb8276f4992893c31e2230c0282b00a1c4ea47443f861461e0574c4a2d",
+      "imageWidth": 1430,
+      "imageHeight": 993,
+      "capturedAt": "2026-10-19T14:00:31.001930+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#como-empezar",
+      "file": "runtime/12-home-servicios-1440.jpg",
+      "sha256": "23cc80cf91aa8f4006306fbb9b00b2e38991b7b3466d0c81033d0d0edce24ef4",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:00:31.119940+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#recursos",
+      "file": "runtime/13-home-recursos-1440.jpg",
+      "sha256": "59fc373ee316cd3c0f4868d935c4fec9a4d032eb1238c5273e5b6067d798af0a",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:00:50.046596+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/#contacto",
+      "file": "runtime/14-home-contacto-1440.jpg",
+      "sha256": "8432d114ad20972042cfd8e4bcdcaeee595a248db1b0ac60b49d1b4b9a4aac28",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:13.541522+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/",
+      "file": "runtime/15-catalogo-1440.jpg",
+      "sha256": "c48062512203e0bf2e4c64d1137ad2bfacdf528de25ab36a2851f25c87c28301",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:14.288581+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/report/",
+      "file": "runtime/16-ai-report-1440.jpg",
+      "sha256": "affb1137f13679781265ff34cb41122b02480624b934ba4145e2ed813d74c49c",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:25.203432+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/prompt-intelligence/",
+      "file": "runtime/17-prompt-product-1440.jpg",
+      "sha256": "8e3b06d3e0f95c69f650f9053909a92d5830b4d55f978e3ca33d7c5486dcd881",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:26.199508+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/traffic/",
+      "file": "runtime/18-traffic-product-1440.jpg",
+      "sha256": "46e56316cad92b7ec43b629863d12fd952ab01f4c40bae5c7d3f859bae534444",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:08:12.306076+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/consulting/",
+      "file": "runtime/19-consulting-1440.jpg",
+      "sha256": "7e410e6dcc7d85faeedeaa37cb5a91d68aa6cd619072d98bc99b62f0e17d5b34",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:41.438654+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/agents/",
+      "file": "runtime/20-agents-product-1440.jpg",
+      "sha256": "b4276f3618788c325369bb1a23712aaf202385cf6453b46f4263d4dfd702ba30",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:01:53.349522+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/soluciones/marcas/",
+      "file": "runtime/21-marcas-1440.jpg",
+      "sha256": "24a790b0dda933a7f819275aff9c96ad8a5d8bc006b9dc80a4b675f9c423ac06",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:02:04.264297+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/soluciones/agencias/",
+      "file": "runtime/22-agencias-1440.jpg",
+      "sha256": "ae4f2655e442e87e1c93498f48354c2976edfd91b261e22572e2720edfd0da64",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:02:04.962345+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/nosotros/",
+      "file": "runtime/23-nosotros-1440.jpg",
+      "sha256": "aee9207c9a72a2e40b99e8e2610dfd4221daad6422c7db65da8a2188eb3e32e2",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:02:39.466684+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/blog/",
+      "file": "runtime/24-blog-1440.jpg",
+      "sha256": "5592c18c60bae376649a0c9b0fc85ff8c0a8caf0ca9afd2ff4869275d548c12d",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:02:40.506752+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/recursos/",
+      "file": "runtime/25-recursos-1440.jpg",
+      "sha256": "be5c2475d4d53a4401accf385a7c87dfefb44d37415ff2c20f7f0256f3acd4a5",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:05.724373+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/recursos/como-medir-visibilidad-ia/",
+      "file": "runtime/26-guia-1440.jpg",
+      "sha256": "cc400a9a5e09dbad2b8da449cd74789d64b57a7c1d20bbee15b90aafd9a36025",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:06.943450+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/blog/como-elegir-preguntas/",
+      "file": "runtime/27-articulo-preguntas-1440.jpg",
+      "sha256": "106fb5082f4f7c3e4fc598ee24b75477a9a629bee279d3d05602a2990a8bf448",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:16.421043+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/blog/menciones-citas-visitas/",
+      "file": "runtime/28-articulo-senales-1440.jpg",
+      "sha256": "ba85e8f98660fd34f0b2aa06daab567e4b18799024e6ed9908423450c282511b",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:17.229093+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/blog/como-interpretar-resultados/",
+      "file": "runtime/29-articulo-resultados-1440.jpg",
+      "sha256": "ae41f9b4633ff5b0e991bfb49457af51c2d3c6cdd31b8de46abc63f6e2996c26",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:30.655919+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/glosario/",
+      "file": "runtime/30-glosario-1440.jpg",
+      "sha256": "fd3a46e9f7bbc4bcb2a24fc787b292c9b4f15eca4c5ec0ed6fc2d70228dcb48b",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:31.381963+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/metodologia/",
+      "file": "runtime/31-metodologia-1440.jpg",
+      "sha256": "006219762b2a3cf46a033da54c4838f03de6a6db841245ceac9bb2be968ad1f8",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:03:38.194377+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/contacto/",
+      "file": "runtime/32-contacto-1440.jpg",
+      "sha256": "1d9b63fd902555a05aaab044ebf51cbbe2e1da9902ec84a93624f9ed4543571a",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:04:01.155748+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/acceso/",
+      "file": "runtime/33-acceso-1440.jpg",
+      "sha256": "0306073ea7ea61c471b36c796a6fe851df2eace0d6904b78697bb5915062e378",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:10:53.789711+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/nosotros/",
+      "file": "runtime/34-equipo-1440.jpg",
+      "sha256": "323efc41cccc8528e06810c4de9aef744f8b13aa65bc590af72116a0493ad544",
+      "imageWidth": 1425,
+      "imageHeight": 990,
+      "capturedAt": "2026-10-19T14:04:32.660581+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/",
+      "file": "runtime/35-home-768.jpg",
+      "sha256": "a8f24bdb13db75258020854706cfe12755849a66a41da434916bbf3502a173f8",
+      "imageWidth": 768,
+      "imageHeight": 1024,
+      "capturedAt": "2026-10-19T14:12:49.039462+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/productos/analytics/",
+      "width": 768,
+      "height": 1024,
+      "file": "runtime/36-analytics-768.jpg",
+      "sha256": "f65ba9e4419e7b05bee4bd947d6d641a81bea6ce608f83c406a297c57018c07c",
+      "imageWidth": 768,
+      "imageHeight": 1024,
+      "capturedAt": "2026-10-19T14:13:34.813792+00:00"
+    },
+    {
+      "url": "https://kairum.com.ar/",
+      "width": 390,
+      "height": 844,
+      "file": "runtime/37-home-390.jpg",
+      "sha256": "a6a16725cec8950d3e10b99bb3b37f91c347bb605cef305aab438ecfc646e6f1",
+      "imageWidth": 390,
+      "imageHeight": 844,
+      "capturedAt": "2026-10-19T14:13:40.055951+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:4418/soluciones/marcas/",
+      "height": 1000,
+      "labels": [
+        "Pregunta de tu audiencia",
+        "Pregunta, respuesta y fuente: una lectura para decidir qué revisar."
+      ],
+      "overflow": false,
+      "width": 1440,
+      "file": "runtime/38-leyendas-marcas-1440.jpg",
+      "sha256": "ec04344f8305d9ff4d4b995e382a2e5eba90de681b06f19524724b5f8a17dd39",
+      "imageWidth": 1440,
+      "imageHeight": 1000,
+      "capturedAt": "2026-10-19T14:20:21.592609+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:4418/soluciones/agencias/",
+      "height": 1024,
+      "labels": [
+        "Lectura para tu cliente",
+        "Pregunta, evidencia y prioridades para preparar la próxima conversación."
+      ],
+      "overflow": false,
+      "width": 768,
+      "file": "runtime/39-leyendas-agencias-768.jpg",
+      "sha256": "36edf0b41cc4699039f7603c8643bf1588c426acd188c3ff7f5583ca647810f2",
+      "imageWidth": 768,
+      "imageHeight": 1024,
+      "capturedAt": "2026-10-19T14:20:23.319678+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:4418/productos/report/",
+      "height": 844,
+      "labels": ["Pregunta de negocio · Respuesta · Evidencia"],
+      "overflow": false,
+      "width": 390,
+      "file": "runtime/40-leyendas-report-390.jpg",
+      "sha256": "55d2a28733d2fe2118399f3ced9623cd677cb117be8cf35cfa057774a5e15604",
+      "imageWidth": 390,
+      "imageHeight": 844,
+      "capturedAt": "2026-10-19T14:22:13.922168+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:4418/productos/analytics/",
+      "height": 844,
+      "labels": ["Presencia · Narrativas · Fuentes"],
+      "overflow": false,
+      "width": 320,
+      "file": "runtime/41-leyendas-analytics-320.jpg",
+      "sha256": "30b7fb07043808253e34189f8b722d41f4144b88ad3830781dd238be2c0348a7",
+      "imageWidth": 320,
+      "imageHeight": 844,
+      "capturedAt": "2026-10-19T14:22:15.898249+00:00"
+    }
+  ]
+}
