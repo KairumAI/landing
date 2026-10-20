@@ -1,7 +1,8 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
-import { pages, localizedPath } from "../../src/lib/routes";
+import { pages, localizedPath, pageLocales } from "../../src/lib/routes";
+import { editorialMedia } from "../../src/lib/editorial-media";
 import { localeMeta, locales } from "../../src/i18n/locales";
 
 const bookingUrl = "https://calendly.com/brunodecruz/30min";
@@ -113,7 +114,10 @@ for (const locale of locales) {
       descriptions = new Set<string>();
     page.on("pageerror", (error) => errors.push(error.message));
     await page.emulateMedia({ reducedMotion: "reduce" });
-    for (const entry of pages) {
+    const availablePages = pages.filter((entry) =>
+      pageLocales(entry.id).includes(locale),
+    );
+    for (const entry of availablePages) {
       const path = localizedPath(entry.path, locale);
       const response = await page.goto(path);
       expect(response?.status(), path).toBe(200);
@@ -146,7 +150,7 @@ for (const locale of locales) {
             ]),
           );
         expect(alternates).toEqual([
-          ...locales.map((code) => [
+          ...pageLocales(entry.id).map((code) => [
             localeMeta[code].hreflang,
             `${seoOrigin}${localizedPath(entry.path, code)}`,
           ]),
@@ -165,9 +169,7 @@ for (const locale of locales) {
       );
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         "content",
-        (await page.locator(".editorial-cover").count())
-          ? `${seoOrigin}/editorial/${entry.id}-social.jpg`
-          : `${seoOrigin}${localeMeta[locale].ogImage}`,
+        `${seoOrigin}${editorialMedia(entry.id)?.social ?? localeMeta[locale].ogImage}`,
       );
       await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
         "content",
@@ -183,9 +185,14 @@ for (const locale of locales) {
         name: languageNames[locale],
         exact: true,
       });
-      await expect(
-        language.getByRole("link", { name: "English", exact: true }),
-      ).toHaveAttribute("href", localizedPath(entry.path, "en"));
+      for (const code of pageLocales(entry.id)) {
+        await expect(
+          language.getByRole("link", {
+            name: localeMeta[code].name,
+            exact: true,
+          }),
+        ).toHaveAttribute("href", localizedPath(entry.path, code));
+      }
       for (const width of [320, 1440]) {
         await page.setViewportSize({ width, height: 1000 });
         expect(
@@ -221,7 +228,7 @@ for (const locale of locales) {
         ].includes(entry.id),
       );
     }
-    expect(descriptions.size).toBe(pages.length);
+    expect(descriptions.size).toBe(availablePages.length);
     for (const path of links)
       expect((await request.get(path)).status(), path).toBe(200);
     expect(errors).toEqual([]);
@@ -497,17 +504,19 @@ test("NoJS keeps content, native product FAQ and booking links at 320px", async 
   await context.close();
 });
 
-test("sitemap covers the 60 indexable equivalent pages and robots/llms describe current content", async ({
+test("sitemap covers the indexable published locales and robots/llms describe current content", async ({
   request,
 }) => {
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
   const xml = await sitemap.text();
-  expect(xml.match(/<loc>/g)).toHaveLength(60);
+  expect(xml.match(/<loc>/g)).toHaveLength(61);
   for (const page of pages)
     for (const locale of locales) {
       const url = `${seoOrigin}${localizedPath(page.path, locale)}`;
-      expect(xml.includes(`<loc>${url}</loc>`)).toBe(page.indexable);
+      expect(xml.includes(`<loc>${url}</loc>`)).toBe(
+        page.indexable && pageLocales(page.id).includes(locale),
+      );
     }
   expect(xml).not.toContain("404");
   expect(xml).not.toContain("<lastmod>");

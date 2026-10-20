@@ -1,4 +1,8 @@
-import { editorialEntries, type EditorialPageId } from "../i18n/editorial";
+import {
+  editorialEntries,
+  editorialLocales,
+  type EditorialPageId,
+} from "../i18n/editorial";
 import { renderEditorialPage } from "../components/kairum/editorial-html";
 import { integrateEditorialContent } from "./editorial-integration";
 import { locales, type Locale } from "../i18n/locales";
@@ -29,6 +33,7 @@ export const pages: readonly {
   id: PageId;
   path: string;
   indexable: boolean;
+  locales?: readonly Locale[];
 }[] = [
   { id: "home", path: "/", indexable: true },
   { id: "catalog", path: "/productos/", indexable: true },
@@ -37,7 +42,12 @@ export const pages: readonly {
     path: `/productos/${id}/`,
     indexable: true,
   })),
-  ...editorialEntries.map(({ id, path }) => ({ id, path, indexable: true })),
+  ...editorialEntries.map(({ id, path }) => ({
+    id,
+    path,
+    indexable: true,
+    locales: editorialLocales(id),
+  })),
   ...infoIds.map((id) => ({
     id,
     path: `/${id === "marcas" || id === "agencias" ? "soluciones/" : ""}${id}/`,
@@ -49,10 +59,13 @@ export function localizedPath(path: string, locale: Locale): string {
 }
 export function equivalentPaths(id: PageId) {
   const page = pages.find((page) => page.id === id)!;
-  return locales.map((locale) => ({
+  return pageLocales(id).map((locale) => ({
     locale,
     path: localizedPath(page.path, locale),
   }));
+}
+export function pageLocales(id: PageId): readonly Locale[] {
+  return pages.find((page) => page.id === id)!.locales ?? locales;
 }
 export function localizeLinks(html: string, locale: Locale): string {
   return html.replace(/href="(\/[^"]*)"/g, (original, path: string) => {

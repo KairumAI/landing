@@ -426,6 +426,22 @@
 .editorial-reading {
   min-width: 0;
 }
+.editorial-source-figure {
+  margin: 30px 0;
+}
+.editorial-source-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.editorial-cover.editorial-approved-cover img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+.editorial-card-image img[src$="KAIRUM-blog-compras-IA-portada.png"] {
+  object-fit: contain;
+  background: #191919;
+}
 .editorial-section {
   margin-bottom: 46px;
   scroll-margin-top: 112px;

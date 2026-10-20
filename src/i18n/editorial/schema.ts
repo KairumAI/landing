@@ -1,6 +1,14 @@
+import { locales, type Locale } from "../locales";
+
 export const editorialEntries = [
   { id: "resources", path: "/recursos/", kind: "hub" },
   { id: "blog", path: "/blog/", kind: "blog" },
+  {
+    id: "adobe-shopping",
+    path: "/blog/compras-desde-ia-adobe/",
+    kind: "article",
+    locales: ["es"],
+  },
   {
     id: "visibility-guide",
     path: "/recursos/como-medir-visibilidad-ia/",
@@ -25,6 +33,10 @@ export const editorialEntries = [
   { id: "methodology", path: "/metodologia/", kind: "reference" },
 ] as const;
 export type EditorialPageId = (typeof editorialEntries)[number]["id"];
+export function editorialLocales(id: EditorialPageId): readonly Locale[] {
+  const entry = editorialEntries.find((entry) => entry.id === id)!;
+  return "locales" in entry ? entry.locales : locales;
+}
 export type Section = {
   id: string;
   title: string;
@@ -45,6 +57,10 @@ export type EditorialPage = {
   description: string;
   category: string;
   summary: string;
+  // Static reviewed rich text uses the same article shell without adding copy.
+  bodyHtml?: string;
+  reviewedDate?: string;
+  reviewedLabel?: string;
   sections: Section[];
   sources: Source[];
   related: EditorialPageId[];

@@ -134,7 +134,7 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
         url: new URL(localizedPath("/metodologia/", locale), site).href,
       },
       publisher: { "@id": `${home}#organization` },
-      dateModified: reviewedDate,
+      dateModified: editorial.reviewedDate ?? reviewedDate,
       inLanguage: localeMeta[locale].htmlLang,
       citation: editorial.sources.map((source) => source.url),
       image: new URL(socialImage, site).href,

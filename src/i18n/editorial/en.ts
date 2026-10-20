@@ -1,4 +1,5 @@
 import type { EditorialCopy } from "./schema";
+import { adobeShopping } from "./adobe-shopping";
 
 export const en: EditorialCopy = {
   ui: {
@@ -122,6 +123,7 @@ export const en: EditorialCopy = {
     },
   },
   pages: {
+    "adobe-shopping": adobeShopping,
     resources: {
       title: "GEO, AEO and AI visibility resources | KAIRUM",
       description:

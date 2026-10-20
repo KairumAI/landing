@@ -1,0 +1,174 @@
+{
+  "browser": "Playwright Chromium; Browser plugin not available",
+  "evidence": [
+    {
+      "width": 1440,
+      "url": "http://127.0.0.1:4323/blog/compras-desde-ia-adobe/",
+      "title": "Tu próximo cliente puede llegar desde una IA. ¿Tu marca está preparada? | KAIRUM",
+      "canonical": "https://kairum.com.ar/blog/compras-desde-ia-adobe/",
+      "scrollWidth": 1440,
+      "textSha256": "9617c3eb4f515becf51e47d5a000293bc9bd99f5fae1d86e23f881179de0eafe",
+      "images": [
+        {
+          "src": "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          "width": 1920,
+          "height": 1080,
+          "complete": true,
+          "rendered": {
+            "x": 64,
+            "y": -717.390625,
+            "width": 1312,
+            "height": 738,
+            "top": -717.390625,
+            "right": 1376,
+            "bottom": 20.609375,
+            "left": 64
+          }
+        },
+        {
+          "src": "/editorial/KAIRUM-Adobe-conversion-relativa-grafico.png",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "rendered": {
+            "x": 376,
+            "y": 291.796875,
+            "width": 760,
+            "height": 570,
+            "top": 291.796875,
+            "right": 1136,
+            "bottom": 861.796875,
+            "left": 376
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "url": "http://127.0.0.1:4323/blog/compras-desde-ia-adobe/",
+      "title": "Tu próximo cliente puede llegar desde una IA. ¿Tu marca está preparada? | KAIRUM",
+      "canonical": "https://kairum.com.ar/blog/compras-desde-ia-adobe/",
+      "scrollWidth": 768,
+      "textSha256": "9617c3eb4f515becf51e47d5a000293bc9bd99f5fae1d86e23f881179de0eafe",
+      "images": [
+        {
+          "src": "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          "width": 1920,
+          "height": 1080,
+          "complete": true,
+          "rendered": {
+            "x": 32,
+            "y": 652.578125,
+            "width": 704,
+            "height": 396,
+            "top": 652.578125,
+            "right": 736,
+            "bottom": 1048.578125,
+            "left": 32
+          }
+        },
+        {
+          "src": "/editorial/KAIRUM-Adobe-conversion-relativa-grafico.png",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "rendered": {
+            "x": 32,
+            "y": 1536.765625,
+            "width": 704,
+            "height": 528,
+            "top": 1536.765625,
+            "right": 736,
+            "bottom": 2064.765625,
+            "left": 32
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:4323/blog/compras-desde-ia-adobe/",
+      "title": "Tu próximo cliente puede llegar desde una IA. ¿Tu marca está preparada? | KAIRUM",
+      "canonical": "https://kairum.com.ar/blog/compras-desde-ia-adobe/",
+      "scrollWidth": 390,
+      "textSha256": "9617c3eb4f515becf51e47d5a000293bc9bd99f5fae1d86e23f881179de0eafe",
+      "images": [
+        {
+          "src": "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          "width": 1920,
+          "height": 1080,
+          "complete": true,
+          "rendered": {
+            "x": 24,
+            "y": -430.203125,
+            "width": 342,
+            "height": 192.375,
+            "top": -430.203125,
+            "right": 366,
+            "bottom": -237.828125,
+            "left": 24
+          }
+        },
+        {
+          "src": "/editorial/KAIRUM-Adobe-conversion-relativa-grafico.png",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "rendered": {
+            "x": 24,
+            "y": 417.921875,
+            "width": 342,
+            "height": 256.5,
+            "top": 417.921875,
+            "right": 366,
+            "bottom": 674.421875,
+            "left": 24
+          }
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:4323/blog/compras-desde-ia-adobe/",
+      "title": "Tu próximo cliente puede llegar desde una IA. ¿Tu marca está preparada? | KAIRUM",
+      "canonical": "https://kairum.com.ar/blog/compras-desde-ia-adobe/",
+      "scrollWidth": 320,
+      "textSha256": "9617c3eb4f515becf51e47d5a000293bc9bd99f5fae1d86e23f881179de0eafe",
+      "images": [
+        {
+          "src": "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          "width": 1920,
+          "height": 1080,
+          "complete": true,
+          "rendered": {
+            "x": 16,
+            "y": 856.484375,
+            "width": 288,
+            "height": 162,
+            "top": 856.484375,
+            "right": 304,
+            "bottom": 1018.484375,
+            "left": 16
+          }
+        },
+        {
+          "src": "/editorial/KAIRUM-Adobe-conversion-relativa-grafico.png",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "rendered": {
+            "x": 16,
+            "y": 1733.421875,
+            "width": 288,
+            "height": 216,
+            "top": 1733.421875,
+            "right": 304,
+            "bottom": 1949.421875,
+            "left": 16
+          }
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

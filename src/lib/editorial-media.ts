@@ -10,14 +10,24 @@ const illustrated = new Set<EditorialPageId>([
 ]);
 
 export const editorialMedia = (id: string) =>
-  illustrated.has(id as EditorialPageId)
+  id === "adobe-shopping"
     ? {
-        small: `/editorial/${id}-640.webp`,
-        large: `/editorial/${id}-1280.webp`,
-        social: `/editorial/${id}-social.jpg`,
-        width: 1280,
-        height: 853,
-        socialWidth: 1200,
-        socialHeight: 800,
+        small: "/editorial/KAIRUM-blog-compras-IA-portada.png",
+        large: "/editorial/KAIRUM-blog-compras-IA-portada.png",
+        social: "/editorial/KAIRUM-blog-compras-IA-portada.png",
+        width: 1920,
+        height: 1080,
+        socialWidth: 1920,
+        socialHeight: 1080,
       }
-    : undefined;
+    : illustrated.has(id as EditorialPageId)
+      ? {
+          small: `/editorial/${id}-640.webp`,
+          large: `/editorial/${id}-1280.webp`,
+          social: `/editorial/${id}-social.jpg`,
+          width: 1280,
+          height: 853,
+          socialWidth: 1200,
+          socialHeight: 800,
+        }
+      : undefined;
