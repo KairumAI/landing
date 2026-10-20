@@ -1,6 +1,6 @@
 import { bookingUrl, localeMeta, locales, type Locale } from "./locales";
 import { seo } from "./marketing/seo";
-import { pages, pageContent, localizedPath } from "../lib/routes";
+import { pages, pageContent, localizedPath, pageLocales } from "../lib/routes";
 import { metadata } from "../lib/metadata";
 
 const url = (path: string, site: URL) => new URL(path, site).href;
@@ -9,7 +9,7 @@ export function renderLlmsIndex(site: URL): string {
   const links = pages
     .filter((page) => page.indexable)
     .flatMap((page) =>
-      locales.map((locale) => {
+      pageLocales(page.id).map((locale) => {
         const meta = metadata(page.id, locale, site);
         return `- [${meta.title} (${localeMeta[locale].name})](${url(localizedPath(page.path, locale), site)}): ${meta.description}`;
       }),
@@ -58,7 +58,7 @@ function plainText(html: string): string {
 }
 export function renderLlmsFull(locale: Locale, site: URL): string {
   const sections = pages
-    .filter((page) => page.indexable)
+    .filter((page) => page.indexable && pageLocales(page.id).includes(locale))
     .map((page) => {
       const meta = metadata(page.id, locale, site);
       return `## ${meta.title}\n\n${url(localizedPath(page.path, locale), site)}\n\n${plainText(pageContent(page.id, locale).html)}`;

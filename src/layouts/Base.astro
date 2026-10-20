@@ -1,6 +1,6 @@
 ---
 import { toLocale } from "../i18n";
-import { locales, localeMeta, type Locale } from "../i18n/locales";
+import { localeMeta, type Locale } from "../i18n/locales";
 import { equivalentPaths, type PageId } from "../lib/routes";
 import { metadata } from "../lib/metadata";
 import "../styles/kairum-tokens.css";
@@ -63,7 +63,8 @@ const ogImage = new URL(meta.socialImage, Astro.site).href;
     <meta property="og:type" content={meta.isArticle ? "article" : "website"} />
     <meta property="og:site_name" content="KAIRUM" />
     <meta property="og:locale" content={localeMeta[locale].ogLocale} />
-    {locales
+    {alternates
+      .map(({ locale: code }) => code)
       .filter((code) => code !== locale)
       .map((code) => (
         <meta
