@@ -1,0 +1,62 @@
+{
+  "mode": "Real Astro runtime; isolated publication branch",
+  "origin": "http://127.0.0.1:4328",
+  "path": "/blog/chatgpt-ads-argentina/",
+  "records": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "textHash": "5df5f672271f4016c659f1af864b07de911905a0cac80df025d2c112b9e77b60",
+      "cover": {
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "width": 1312,
+        "height": 738
+      },
+      "accessibilityViolations": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "textHash": "5df5f672271f4016c659f1af864b07de911905a0cac80df025d2c112b9e77b60",
+      "cover": {
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "width": 704,
+        "height": 396
+      },
+      "accessibilityViolations": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "textHash": "5df5f672271f4016c659f1af864b07de911905a0cac80df025d2c112b9e77b60",
+      "cover": {
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "width": 342,
+        "height": 192
+      },
+      "accessibilityViolations": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "textHash": "5df5f672271f4016c659f1af864b07de911905a0cac80df025d2c112b9e77b60",
+      "cover": {
+        "complete": true,
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "width": 288,
+        "height": 162
+      },
+      "accessibilityViolations": []
+    }
+  ],
+  "coverHash": "ff5cab5af454ff22ac2d6cdfe4fb187403719cdb2066a777e77de82e77b72220",
+  "errors": [],
+  "failedRequests": []
+}

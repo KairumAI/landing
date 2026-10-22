@@ -438,7 +438,8 @@
   aspect-ratio: 16 / 9;
   object-fit: contain;
 }
-.editorial-card-image img[src$="KAIRUM-blog-compras-IA-portada.png"] {
+.editorial-card-image img[src$="KAIRUM-blog-compras-IA-portada.png"],
+.editorial-card-image img[src$="chatgpt-ads-argentina-portada.png"] {
   object-fit: contain;
   background: #191919;
 }

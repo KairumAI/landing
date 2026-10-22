@@ -63,19 +63,21 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
       : id === "report" || id === "analytics" || id === "agencias"
         ? editorialCopy(locale).commercial[id]
         : undefined;
-  const title = editorial
-    ? editorial.title.includes("| KAIRUM")
-      ? editorial.title
-      : `${editorial.title} | KAIRUM`
-    : commercial
-      ? commercial.title
-      : id === "home"
-        ? s.homeTitle
-        : id === "catalog"
-          ? s.catalogTitle
-          : product
-            ? `${product.name} — KAIRUM`
-            : `${info[id as keyof typeof info].title} — KAIRUM`;
+  const title =
+    editorial?.seoTitle ??
+    (editorial
+      ? editorial.title.includes("| KAIRUM")
+        ? editorial.title
+        : `${editorial.title} | KAIRUM`
+      : commercial
+        ? commercial.title
+        : id === "home"
+          ? s.homeTitle
+          : id === "catalog"
+            ? s.catalogTitle
+            : product
+              ? `${product.name} — KAIRUM`
+              : `${info[id as keyof typeof info].title} — KAIRUM`);
   const description =
     editorial?.description ??
     commercial?.description ??

@@ -4,6 +4,12 @@ export const editorialEntries = [
   { id: "resources", path: "/recursos/", kind: "hub" },
   { id: "blog", path: "/blog/", kind: "blog" },
   {
+    id: "chatgpt-ads",
+    path: "/blog/chatgpt-ads-argentina/",
+    kind: "article",
+    locales: ["es"],
+  },
+  {
     id: "adobe-shopping",
     path: "/blog/compras-desde-ia-adobe/",
     kind: "article",
@@ -54,6 +60,7 @@ export type Section = {
 export type Source = { title: string; url: string };
 export type EditorialPage = {
   title: string;
+  seoTitle?: string;
   description: string;
   category: string;
   summary: string;
