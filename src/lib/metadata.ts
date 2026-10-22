@@ -62,7 +62,11 @@ export function metadata(id: PageId, locale: Locale, site: URL) {
         }
       : id === "report" || id === "analytics" || id === "agencias"
         ? editorialCopy(locale).commercial[id]
-        : undefined;
+        : id === "prompt-intelligence" ||
+            id === "traffic" ||
+            id === "consulting"
+          ? s.products[id]
+          : undefined;
   const title = editorial
     ? editorial.title.includes("| KAIRUM")
       ? editorial.title
