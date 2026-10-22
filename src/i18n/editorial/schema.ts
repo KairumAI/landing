@@ -4,6 +4,11 @@ export const editorialEntries = [
   { id: "resources", path: "/recursos/", kind: "hub" },
   { id: "blog", path: "/blog/", kind: "blog" },
   {
+    id: "geo-comparison",
+    path: "/blog/kairum-vs-fardo-cleexs-tribu-geo/",
+    kind: "article",
+  },
+  {
     id: "adobe-shopping",
     path: "/blog/compras-desde-ia-adobe/",
     kind: "article",

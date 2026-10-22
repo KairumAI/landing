@@ -1,5 +1,6 @@
 import type { EditorialCopy } from "./schema";
 import { adobeShopping } from "./adobe-shopping";
+import { geoComparison } from "./geo-comparison";
 
 export const ptBr: EditorialCopy = {
   ui: {
@@ -123,6 +124,7 @@ export const ptBr: EditorialCopy = {
     },
   },
   pages: {
+    "geo-comparison": geoComparison["pt-br"],
     "adobe-shopping": adobeShopping,
     resources: {
       title: "Recursos de GEO, AEO e visibilidade em IA | KAIRUM",
