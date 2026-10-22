@@ -74,6 +74,7 @@ export function renderEditorialPage(id: EditorialPageId, locale: Locale) {
     return `<article class="editorial-card"><a href="${editorialPath(key)}"><div class="editorial-card-art${editorialMedia(key) ? " editorial-card-image" : ""}" aria-hidden="true">${art}</div><div class="editorial-card-copy"><span class="eyebrow">${e(item.category)}</span><h3>${e(item.title)}</h3><p>${e(item.description)}</p><span class="editorial-card-foot"><span>${readingMinutes(item)} ${e(ui.minutes)}</span><span>${e(ui.read)} ${arrow}</span></span></div></a></article>`;
   };
   const articleIds: EditorialPageId[] = [
+    "chatgpt-ads",
     "adobe-shopping",
     "mentions-citations-visits",
     "choosing-questions",

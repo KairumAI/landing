@@ -10,24 +10,34 @@ const illustrated = new Set<EditorialPageId>([
 ]);
 
 export const editorialMedia = (id: string) =>
-  id === "adobe-shopping"
+  id === "chatgpt-ads"
     ? {
-        small: "/editorial/KAIRUM-blog-compras-IA-portada.png",
-        large: "/editorial/KAIRUM-blog-compras-IA-portada.png",
-        social: "/editorial/KAIRUM-blog-compras-IA-portada.png",
-        width: 1920,
-        height: 1080,
-        socialWidth: 1920,
-        socialHeight: 1080,
+        small: "/editorial/chatgpt-ads-argentina-portada.png",
+        large: "/editorial/chatgpt-ads-argentina-portada.png",
+        social: "/editorial/chatgpt-ads-argentina-portada.png",
+        width: 1600,
+        height: 900,
+        socialWidth: 1600,
+        socialHeight: 900,
       }
-    : illustrated.has(id as EditorialPageId)
+    : id === "adobe-shopping"
       ? {
-          small: `/editorial/${id}-640.webp`,
-          large: `/editorial/${id}-1280.webp`,
-          social: `/editorial/${id}-social.jpg`,
-          width: 1280,
-          height: 853,
-          socialWidth: 1200,
-          socialHeight: 800,
+          small: "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          large: "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          social: "/editorial/KAIRUM-blog-compras-IA-portada.png",
+          width: 1920,
+          height: 1080,
+          socialWidth: 1920,
+          socialHeight: 1080,
         }
-      : undefined;
+      : illustrated.has(id as EditorialPageId)
+        ? {
+            small: `/editorial/${id}-640.webp`,
+            large: `/editorial/${id}-1280.webp`,
+            social: `/editorial/${id}-social.jpg`,
+            width: 1280,
+            height: 853,
+            socialWidth: 1200,
+            socialHeight: 800,
+          }
+        : undefined;

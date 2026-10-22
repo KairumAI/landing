@@ -1,5 +1,6 @@
 import type { EditorialCopy } from "./schema";
 import { adobeShopping } from "./adobe-shopping";
+import { chatgptAds } from "./chatgpt-ads";
 
 export const ptBr: EditorialCopy = {
   ui: {
@@ -123,6 +124,7 @@ export const ptBr: EditorialCopy = {
     },
   },
   pages: {
+    "chatgpt-ads": chatgptAds,
     "adobe-shopping": adobeShopping,
     resources: {
       title: "Recursos de GEO, AEO e visibilidade em IA | KAIRUM",

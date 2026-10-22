@@ -39,7 +39,7 @@ test("illustrated readings deliver responsive local covers, useful figures and m
 }) => {
   await page.goto("/blog/");
   const illustrations = page.locator(".editorial-card-image img");
-  await expect(illustrations).toHaveCount(4);
+  await expect(illustrations).toHaveCount(5);
   for (const illustration of await illustrations.all()) {
     await illustration.scrollIntoViewIfNeeded();
     await expect
@@ -189,6 +189,7 @@ test("new editorial pages reflow, have no accessibility blockers and report no s
     "/recursos/",
     "/blog/",
     "/blog/compras-desde-ia-adobe/",
+    "/blog/chatgpt-ads-argentina/",
     "/recursos/como-medir-visibilidad-ia/",
     "/blog/menciones-citas-visitas/",
     "/glosario/",
@@ -242,7 +243,7 @@ test("new pages are discoverable in sitemap and text readers, with no unfinished
   request,
 }) => {
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap.match(/<loc>/g)).toHaveLength(61);
+  expect(sitemap.match(/<loc>/g)).toHaveLength(62);
   const llms = await (await request.get("/llms.txt")).text();
   for (const path of paths) {
     expect(sitemap).toContain(`<loc>https://kairum.com.ar${path}</loc>`);
