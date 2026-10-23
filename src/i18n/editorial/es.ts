@@ -1,3 +1,4 @@
+import { geoComparison } from "./geo-comparison";
 import type { EditorialCopy } from "./schema";
 import { adobeShopping } from "./adobe-shopping";
 import { chatgptAds } from "./chatgpt-ads";
@@ -124,6 +125,7 @@ export const es: EditorialCopy = {
     },
   },
   pages: {
+    "geo-comparison": geoComparison,
     "chatgpt-ads": chatgptAds,
     "adobe-shopping": adobeShopping,
     resources: {

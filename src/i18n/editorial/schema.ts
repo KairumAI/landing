@@ -4,6 +4,12 @@ export const editorialEntries = [
   { id: "resources", path: "/recursos/", kind: "hub" },
   { id: "blog", path: "/blog/", kind: "blog" },
   {
+    id: "geo-comparison",
+    path: "/blog/kairum-vs-fardo-cleexs-tribu-geo/",
+    kind: "article",
+    locales: ["es"],
+  },
+  {
     id: "chatgpt-ads",
     path: "/blog/chatgpt-ads-argentina/",
     kind: "article",

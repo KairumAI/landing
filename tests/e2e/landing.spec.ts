@@ -510,7 +510,7 @@ test("sitemap covers the indexable published locales and robots/llms describe cu
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
   const xml = await sitemap.text();
-  expect(xml.match(/<loc>/g)).toHaveLength(62);
+  expect(xml.match(/<loc>/g)).toHaveLength(63);
   for (const page of pages)
     for (const locale of locales) {
       const url = `${seoOrigin}${localizedPath(page.path, locale)}`;

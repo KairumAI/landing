@@ -434,6 +434,27 @@
   width: 100%;
   height: auto;
 }
+.editorial-comparison-table summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 12px 0;
+  font-weight: 600;
+}
+.editorial-comparison-table .editorial-table-wrap {
+  overflow-x: auto;
+}
+.editorial-comparison-table table {
+  min-width: 960px;
+}
+@media (min-width: 1101px) {
+  .editorial-reading-layout:has(.editorial-comparison-figure) {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 40px;
+  }
+  .editorial-reading:has(.editorial-comparison-figure) p {
+    max-width: 760px;
+  }
+}
 .editorial-cover.editorial-approved-cover img {
   aspect-ratio: 16 / 9;
   object-fit: contain;

@@ -1,0 +1,135 @@
+{
+  "host": "BrunoHP",
+  "browser": "installed Google Chrome / Playwright",
+  "browserPlugin": "Browser plugin not available",
+  "results": [
+    {
+      "width": 1440,
+      "url": "http://127.0.0.1:4322/blog/kairum-vs-fardo-cleexs-tribu-geo/",
+      "status": 200,
+      "title": "KAIRUM vs. Fardo, Cleexs y Tribu GEO: de la pregunta a la acción | KAIRUM",
+      "scrollWidth": 1440,
+      "visibleTextSha256": "6c3e59d141cae14dcbb875e4d9d9fec5ee83e811755e35534e9b07ea77f05a17",
+      "images": [
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-matriz-valor-v3.png",
+          "loaded": true,
+          "naturalWidth": 1600,
+          "naturalHeight": 1260,
+          "renderedWidth": 1082
+        },
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-pregunta-a-accion-v3.png",
+          "loaded": true,
+          "naturalWidth": 1600,
+          "naturalHeight": 1175,
+          "renderedWidth": 1082
+        }
+      ],
+      "horizontalScroll": {
+        "scrollLeft": 0,
+        "width": 1082,
+        "scrollWidth": 1082
+      },
+      "sourcesNavigation": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "width": 768,
+      "url": "http://127.0.0.1:4322/blog/kairum-vs-fardo-cleexs-tribu-geo/",
+      "status": 200,
+      "title": "KAIRUM vs. Fardo, Cleexs y Tribu GEO: de la pregunta a la acción | KAIRUM",
+      "scrollWidth": 768,
+      "visibleTextSha256": "6c3e59d141cae14dcbb875e4d9d9fec5ee83e811755e35534e9b07ea77f05a17",
+      "images": [
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-matriz-valor-movil-v3.png",
+          "loaded": true,
+          "naturalWidth": 780,
+          "naturalHeight": 2605,
+          "renderedWidth": 704
+        },
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-pregunta-a-accion-movil-v3.png",
+          "loaded": true,
+          "naturalWidth": 780,
+          "naturalHeight": 2190,
+          "renderedWidth": 704
+        }
+      ],
+      "horizontalScroll": {
+        "scrollLeft": 0,
+        "width": 704,
+        "scrollWidth": 960
+      },
+      "sourcesNavigation": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:4322/blog/kairum-vs-fardo-cleexs-tribu-geo/",
+      "status": 200,
+      "title": "KAIRUM vs. Fardo, Cleexs y Tribu GEO: de la pregunta a la acción | KAIRUM",
+      "scrollWidth": 390,
+      "visibleTextSha256": "6c3e59d141cae14dcbb875e4d9d9fec5ee83e811755e35534e9b07ea77f05a17",
+      "images": [
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-matriz-valor-movil-v3.png",
+          "loaded": true,
+          "naturalWidth": 780,
+          "naturalHeight": 2605,
+          "renderedWidth": 342
+        },
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-pregunta-a-accion-movil-v3.png",
+          "loaded": true,
+          "naturalWidth": 780,
+          "naturalHeight": 2190,
+          "renderedWidth": 342
+        }
+      ],
+      "horizontalScroll": {
+        "scrollLeft": 0,
+        "width": 342,
+        "scrollWidth": 960
+      },
+      "sourcesNavigation": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:4322/blog/kairum-vs-fardo-cleexs-tribu-geo/",
+      "status": 200,
+      "title": "KAIRUM vs. Fardo, Cleexs y Tribu GEO: de la pregunta a la acción | KAIRUM",
+      "scrollWidth": 320,
+      "visibleTextSha256": "6c3e59d141cae14dcbb875e4d9d9fec5ee83e811755e35534e9b07ea77f05a17",
+      "images": [
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-matriz-valor-movil-v3.png",
+          "loaded": true,
+          "naturalWidth": 780,
+          "naturalHeight": 2605,
+          "renderedWidth": 288
+        },
+        {
+          "currentSrc": "http://127.0.0.1:4322/editorial/KAIRUM-pregunta-a-accion-movil-v3.png",
+          "loaded": true,
+          "naturalWidth": 780,
+          "naturalHeight": 2190,
+          "renderedWidth": 288
+        }
+      ],
+      "horizontalScroll": {
+        "scrollLeft": 0,
+        "width": 288,
+        "scrollWidth": 960
+      },
+      "sourcesNavigation": true,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}
