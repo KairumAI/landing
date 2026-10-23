@@ -243,7 +243,7 @@ test("new pages are discoverable in sitemap and text readers, with no unfinished
   request,
 }) => {
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap.match(/<loc>/g)).toHaveLength(62);
+  expect(sitemap.match(/<loc>/g)).toHaveLength(63);
   const llms = await (await request.get("/llms.txt")).text();
   for (const path of paths) {
     expect(sitemap).toContain(`<loc>https://kairum.com.ar${path}</loc>`);
